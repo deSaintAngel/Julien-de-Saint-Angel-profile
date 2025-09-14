@@ -92,6 +92,15 @@
             .container {
                 grid-template-columns: 1fr;
             }
+
+            .header-content {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .profile-header {
+                flex-direction: column;
+            }
         }
 
         .cv-download {
@@ -141,26 +150,74 @@
         form button:hover {
             background: #094081;
         }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        /* Style pour l'image réduite */
+        .header-image {
+            width: 450px; /* Taille réduite */
+            height: auto;
+            margin-left: 20px;
+            margin-bottom: 20px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #0d47a1;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .title-section {
+            flex: 1;
+        }
     </style>
 </head>
 <body>
 
-<div class="lang-switch">
-    <button onclick="switchLanguage('fr')">FR</button>
-    <button onclick="switchLanguage('en')">EN</button>
+<div class="header-content">
+    <div class="profile-header">
+
+    </div>
+
+    <div class="lang-switch">
+        <button onclick="switchLanguage('fr')">FR</button>
+        <button onclick="switchLanguage('en')">EN</button>
+    </div>
 </div>
 
 <!-- FRENCH VERSION -->
 <div id="fr" class="lang">
-    <h1>
-        Julien de Saint Angel
-        <a href="cv_julien_de_saint_angel_2025.pdf" download class="cv-download" title="Télécharger le CV en PDF">
-            <i class="fas fa-file-pdf"></i> Télécharger CV
-        </a>
-    </h1>
-    <p><strong>Ingénieur IA & Informatique appliquée</strong><br>
-        Docteur en informatique appliquée – spécialisé en réseaux neuronaux hypersphériques et détection d’anomalies</p>
-
+    <div class="profile-header">
+        <!-- Ajout de l'image dans l'en-tête -->
+        <img src="julien.png" alt="Photo de Julien de Saint Angel" class="profile-img">
+        <div class="title-section">
+            <h1>
+                Julien de Saint Angel
+                <a href="cv_julien_de_saint_angel_2025.pdf" download class="cv-download" title="Télécharger le CV en PDF">
+                    <i class="fas fa-file-pdf"></i> Télécharger CV
+                </a>
+            </h1>
+            <p><strong>Ingénieur IA & Informatique appliquée</strong><br>
+                Docteur en informatique appliquée – spécialisé en réseaux neuronaux hypersphériques et détection d'anomalies</p>
+        </div>
+        <img src="im_n.jpg" alt="Photo supplémentaire de Julien de Saint Angel" class="header-image">
+    </div>
     <div class="container">
         <!-- Colonne gauche -->
         <div>
@@ -341,14 +398,22 @@
 
 <!-- ENGLISH VERSION -->
 <div id="en" class="lang" style="display:none">
-    <h1>
-        Julien de Saint Angel
-        <a href="cv_julien_de_saint_angel_2025_en.pdf" download class="cv-download" title="Download CV in PDF">
-            <i class="fas fa-file-pdf"></i> Download CV
-        </a>
-    </h1>
-    <p><strong>AI & Applied Computer Science</strong><br>
-        PhD in Applied Computer Science – specialized in hyperspherical neural networks and anomaly detection</p>
+    <div class="profile-header">
+    <!-- Ajout de l'image dans l'en-tête -->
+    <img src="julien.png" alt="Photo de Julien de Saint Angel" class="profile-img">
+    <div class="title-section">
+        <h1>
+            Julien de Saint Angel
+            <a href="cv_julien_de_saint_angel_2025_en.pdf" download class="cv-download" title="Download CV in PDF">
+                <i class="fas fa-file-pdf"></i> Download CV
+            </a>
+        </h1>
+        <p><strong>AI & Applied Computer Science</strong><br>
+            PhD in Applied Computer Science – specialized in hyperspherical neural networks and anomaly detection</p>
+
+    </div>
+        <img src="im_n.jpg" alt="Photo supplémentaire de Julien de Saint Angel" class="header-image">
+</div>
 
     <div class="container">
         <!-- Left column -->
