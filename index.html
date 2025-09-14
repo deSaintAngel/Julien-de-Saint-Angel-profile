@@ -209,6 +209,10 @@
                     d’images. Fort d’une expérience à l’interface de plusieurs disciplines et disposant d’un large
                     spectre de compétences, je suis capable de livrer des résultats concrets sur des projets
                     ambitieux.</p>
+
+                <button class="contact-btn" onclick="showMoreInfo()">
+                    + d’infos
+                </button>
             </section>
             <section>
                 <h2>Contributions & Projets</h2>
@@ -228,19 +232,31 @@
                 </ul>
             </section>
 
-            <section>
-                <h2>Expérience professionnelle</h2>
-                <ul>
-                    <li>Fév.–Mai 2019 : Stage XLIM (UMR 7252) & MIA (EA 3165) – caractérisation du geste sportif avec
-                        caméras rapides
-                    </li>
-                    <li>Mai 2018 : Stage LIENSs (UMR 7266) – marégraphe visuel automatisé</li>
-                    <li>Mar.–Juin 2015 : Stage SYRTE (UMR 8630), Observatoire de Paris – algorithmes d’interpolation
-                        d’orbites satellites
-                    </li>
-                    <li>2015–2017 : Enseignant lycée, Lycées Saint-Exupéry, La Rochelle</li>
-                </ul>
-            </section>
+        <section>
+            <h2>Expérience professionnelle</h2>
+            <ul>
+                <li>
+                    <strong>Fév.–Mai 2019 :</strong> Stage aux laboratoires XLIM (UMR 7252) et MIA (EA 3165)<br>
+                    <em>Encadrants :</em> B. Tremblais et R. Pétéri<br>
+                    Caractérisation du geste sportif par caméras rapides utilisant l’analyse trajectographique de points critiques.
+                </li>
+                <li>
+                    <strong>Mai 2018 :</strong> Stage au laboratoire LIENSs (UMR 7266)<br>
+                    <em>Encadrants :</em> E. Poirier (IGR) et L. Testud<br>
+                    Réalisation d’un marégraphe visuel : lecture automatisée de l’image d’une échelle de marée.
+                </li>
+                <li>
+                    <strong>Mar.–Juin 2015 :</strong> Stage au laboratoire SYRTE (UMR 8630), Observatoire de Paris<br>
+                    <em>Encadrant :</em> J.-Y. Richard<br>
+                    Développement d’algorithmes d’interpolation pour les orbites de satellites artificiels (équations différentielles, simulation numérique).
+                </li>
+                <li>
+                    <strong>2015–2017 :</strong> Enseignant fonctionnaire second degré, Lycées Saint-Exupéry, La Rochelle<br>
+                    Professeur de mathématiques. Développement de compétences en communication, vulgarisation scientifique et travail en équipe.
+                </li>
+            </ul>
+        </section>
+
 
             <section>
                 <h2>Formation</h2>
@@ -381,6 +397,10 @@
                     learning, signal processing, and image processing. With experience at the interface of several
                     disciplines and a wide range of skills, I am able to deliver concrete results on ambitious
                     projects.</p>
+
+                <button class="contact-btn" onclick="showMoreInfoEN()">
+                    + more info
+                </button>
             </section>
             <section>
                 <h2>Contributions & Projects</h2>
@@ -400,19 +420,31 @@
                 </ul>
             </section>
 
-            <section>
-                <h2>Professional Experience</h2>
-                <ul>
-                    <li>Feb–May 2019: Internship XLIM (UMR 7252) & MIA (EA 3165) – Sports gesture characterization with
-                        high-speed cameras
-                    </li>
-                    <li>May 2018: Internship LIENSs (UMR 7266) – Automated visual tide gauge</li>
-                    <li>Mar–Jun 2015: Internship SYRTE (UMR 8630), Observatoire de Paris – Satellite orbit interpolation
-                        algorithms
-                    </li>
-                    <li>2015–2017: High school teacher, Lycées Saint-Exupéry, La Rochelle</li>
-                </ul>
-            </section>
+        <section>
+            <h2>Professional Experience</h2>
+            <ul>
+                <li>
+                    <strong>Feb–May 2019:</strong> Internship at XLIM (UMR 7252) and MIA (EA 3165)<br>
+                    <em>Supervisors:</em> B. Tremblais and R. Pétéri<br>
+                    Characterization of sports gestures using high-speed cameras with trajectographic analysis of critical points.
+                </li>
+                <li>
+                    <strong>May 2018:</strong> Internship at LIENSs Laboratory (UMR 7266)<br>
+                    <em>Supervisors:</em> E. Poirier (IGR) and L. Testud<br>
+                    Development of an automated visual tide gauge: automatic reading of images from a tidal scale.
+                </li>
+                <li>
+                    <strong>Mar–Jun 2015:</strong> Internship at SYRTE Laboratory (UMR 8630), Observatoire de Paris<br>
+                    <em>Supervisor:</em> J.-Y. Richard<br>
+                    Development of algorithms for interpolating artificial satellite orbits (differential equations, numerical simulation).
+                </li>
+                <li>
+                    <strong>2015–2017:</strong> High school teacher, Lycées Saint-Exupéry, La Rochelle<br>
+                    Mathematics teacher. Development of communication skills, scientific outreach, and teamwork.
+                </li>
+            </ul>
+        </section>
+
 
             <section>
                 <h2>Education</h2>
@@ -528,6 +560,98 @@
     </div>
 </div>
 
+<!-- MODAL + D'INFOS -->
+<div id="modal-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.5); justify-content:center; align-items:center; overflow:auto;">
+    <div style="background:white; padding:20px; border-radius:8px; max-width:600px; max-height:90%; overflow-y:auto;">
+        <h3>Secteur d’activité recherché</h3>
+        <ul>
+            <li>R&D et laboratoires d’innovation</li>
+            <li>Start-up / entreprises tech en croissance</li>
+            <li>Santé et biotech</li>
+            <li>Industrie (automobile, énergie, aéronautique, manufacturing, Industrie 4.0 / IoT)</li>
+            <li>Finance & FinTech (détection de fraude, analyse de risques, trading algorithmique)</li>
+            <li>Cybersécurité (détection d’intrusions, anomalies et comportements suspects)</li>
+            <li>Multimédia, jeux vidéo, créativité assistée par IA</li>
+            <li>Services numériques (ESN, conseil, cloud, SaaS)</li>
+            <li>Ingénierie des données, analyse de données, Big Data, intelligence décisionnelle</li>
+        </ul>
+
+        <h3>Taille de boîte</h3>
+        <p>Ouvert aussi bien aux petites structures qu’aux grands groupes.</p>
+
+        <h3>Domaines IA & Data</h3>
+        <ul>
+            <li>Traitement d’images (vision par ordinateur, ...)</li>
+            <li>Traitement du signal</li>
+            <li>NLP (traitement du langage naturel)</li>
+            <li>Data science & machine learning (analyse, modèles prédictifs, optimisation, MLOps)</li>
+            <li>Applications santé, innovation et agents IA</li>
+            <li>Détection d’anomalies (finance, cybersécurité, ...)</li>
+        </ul>
+
+        <h3>Types de postes ciblés</h3>
+        <ul>
+            <li>Chercheur / Ingénieur de recherche (R&D industrielle)</li>
+            <li>Post-Doctorant / Chargé de Recherche (académique ou public)</li>
+            <li>Ingénieur Machine Learning / Scientifique IA / Ingénieur ML (industrialisation et MLOps)</li>
+            <li>Data Scientist / Responsable Data Scientist</li>
+            <li>Ingénieur Vision par Ordinateur / Expert en Vision par Ordinateur</li>
+        </ul>
+
+        <button onclick="closeMoreInfo()"
+                style="padding:8px 15px; border:none; background:#0d47a1; color:white; border-radius:5px; cursor:pointer;">
+            Fermer
+        </button>
+    </div>
+</div>
+
+<!-- MODAL + MORE INFO (EN) -->
+<div id="modal-info-en" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+  background:rgba(0,0,0,0.5); justify-content:center; align-items:center; overflow:auto;">
+    <div style="background:white; padding:20px; border-radius:8px; max-width:600px; max-height:90%; overflow-y:auto;">
+        <h3>Target Industry Sectors</h3>
+        <ul>
+            <li>R&D and innovation labs</li>
+            <li>Start-ups / growing tech companies</li>
+            <li>Health & biotech</li>
+            <li>Industry (automotive, energy, aerospace, manufacturing, Industry 4.0 / IoT)</li>
+            <li>Finance & FinTech (fraud detection, risk analysis, algorithmic trading)</li>
+            <li>Cybersecurity (intrusion detection, anomalies, suspicious behaviors)</li>
+            <li>Multimedia, video games, AI agents</li>
+            <li>Digital services (consulting, cloud, SaaS)</li>
+            <li>Data engineering, analytics, big data, business intelligence</li>
+        </ul>
+
+        <h3>Company Size</h3>
+        <p>Open to both small companies and large corporations.</p>
+
+        <h3>AI & Data Domains</h3>
+        <ul>
+            <li>Image processing (computer vision, sports motion analysis, visual tide gauge)</li>
+            <li>Signal processing (audio, biomedical, trajectory)</li>
+            <li>NLP (natural language processing)</li>
+            <li>Data science & machine learning (analysis, predictive models, optimization, MLOps)</li>
+            <li>Health applications, innovation, AI-assisted creativity</li>
+            <li>Anomaly detection (finance, cybersecurity, predictive maintenance)</li>
+        </ul>
+
+        <h3>Target Positions</h3>
+        <ul>
+            <li>Research Scientist / Research Engineer (industrial R&D)</li>
+            <li>Postdoctoral / Research Fellow  (academic or public)</li>
+            <li>Machine Learning Engineer / AI Scientist / ML Engineer (industrialization & MLOps)</li>
+            <li>Data Scientist / Lead Data Scientist</li>
+            <li>Computer Vision Engineer / Expert in Computer Vision</li>
+        </ul>
+
+        <button onclick="closeMoreInfoEN()"
+                style="padding:8px 15px; border:none; background:#0d47a1; color:white; border-radius:5px; cursor:pointer;">
+            Close
+        </button>
+    </div>
+</div>
+
 <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 <script>
     (function () {
@@ -569,6 +693,26 @@
     });
 </script>
 
+<script>
+    function showMoreInfo() {
+        document.getElementById('modal-info').style.display = 'flex';
+    }
+
+    function closeMoreInfo() {
+        document.getElementById('modal-info').style.display = 'none';
+    }
+</script>
+
+<script>
+    function showMoreInfoEN() {
+        document.getElementById('modal-info-en').style.display = 'flex';
+    }
+
+    function closeMoreInfoEN() {
+        document.getElementById('modal-info-en').style.display = 'none';
+    }
+</script>
+
 <!-- SWITCH LANGUE -->
 <script>
     function switchLanguage(lang) {
@@ -588,5 +732,4 @@
 
 </body>
 </html>
-
 
