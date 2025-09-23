@@ -140,6 +140,7 @@
             padding: 8px 15px;
             border-radius: 5px;
             font-weight: 500;
+            transition: all 0.3s;
         }
         
         .nav-sticky a:hover {
@@ -354,6 +355,11 @@
             border-radius: 5px;
         }
         
+        .skill-card:hover {
+            background: #f0f8ff;
+            border-left: 4px solid var(--secondary-orange);
+        }
+        
         .skill-card.expanded {
             background: #f0f8ff;
             border-left: 4px solid var(--secondary-orange);
@@ -391,14 +397,16 @@
             font-size: 0.9rem;
         }
         
+        .tag:hover {
+            background: var(--primary-blue);
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
         .tag.active {
             background: var(--primary-blue);
             color: white;
-        }
-        
-        .tag:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         
         .highlight {
@@ -485,6 +493,14 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
         
+        /* Formulaire de contact - ajusté pour s'étendre sur les deux colonnes */
+        #contact-form {
+            grid-column: 1 / -1;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: calc(100% - 40px);
+        }
+        
         /* Responsive */
         @media (max-width: 968px) {
             .container {
@@ -494,6 +510,11 @@
             
             .header-image {
                 display: none;
+            }
+            
+            #contact-form {
+                grid-column: 1;
+                width: 100%;
             }
         }
         
@@ -608,12 +629,12 @@
 
     <!-- Navigation Sticky -->
     <nav class="nav-sticky">
-        <a href="#expertise">Expertise</a>
-        <a href="#competences">Compétences</a>
-        <a href="#projets">Projets</a>
-        <a href="#experience">Expérience</a>
-        <a href="#publications">Publications</a>
-        <a href="#contact-form">Contact</a>
+        <a href="#expertise" data-section="expertise">Expertise</a>
+        <a href="#competences" data-section="competences">Compétences</a>
+        <a href="#projets" data-section="projets">Projets</a>
+        <a href="#experience" data-section="experience">Expérience</a>
+        <a href="#publications" data-section="publications">Publications</a>
+        <a href="#contact-form" data-section="contact-form">Contact</a>
     </nav>
 
     <!-- Container Principal -->
@@ -633,12 +654,12 @@
                     <h2><i class="fas fa-tools icon"></i>Compétences</h2>
                     
                     <div class="tags-container">
-                        <span class="tag" data-tag="ia">IA</span>
-                        <span class="tag" data-tag="deeplearning">Deep Learning</span>
-                        <span class="tag" data-tag="hyperspherique">Hypersphérique</span>
-                        <span class="tag" data-tag="anomalies">Détection d'anomalies</span>
-                        <span class="tag" data-tag="vision">Vision par ordinateur</span>
-                        <span class="tag" data-tag="signal">Traitement du signal</span>
+                        <span class="tag" data-tag="ia" data-target="publications">IA</span>
+                        <span class="tag" data-tag="deeplearning" data-target="publications">Deep Learning</span>
+                        <span class="tag" data-tag="hyperspherique" data-target="expertise">Hypersphérique</span>
+                        <span class="tag" data-tag="anomalies" data-target="publications">Détection d'anomalies</span>
+                        <span class="tag" data-tag="vision" data-target="projets">Vision par ordinateur</span>
+                        <span class="tag" data-tag="signal" data-target="projets">Traitement du signal</span>
                     </div>
                     
                     <div class="skill-card" onclick="toggleSkill(this)">
@@ -693,12 +714,12 @@
                     <h2><i class="fas fa-tools icon"></i>Skills</h2>
                     
                     <div class="tags-container">
-                        <span class="tag" data-tag="ia">AI</span>
-                        <span class="tag" data-tag="deeplearning">Deep Learning</span>
-                        <span class="tag" data-tag="hyperspherique">Hyperspherical</span>
-                        <span class="tag" data-tag="anomalies">Anomaly Detection</span>
-                        <span class="tag" data-tag="vision">Computer Vision</span>
-                        <span class="tag" data-tag="signal">Signal Processing</span>
+                        <span class="tag" data-tag="ia" data-target="publications-en">AI</span>
+                        <span class="tag" data-tag="deeplearning" data-target="publications-en">Deep Learning</span>
+                        <span class="tag" data-tag="hyperspherique" data-target="expertise-en">Hyperspherical</span>
+                        <span class="tag" data-tag="anomalies" data-target="publications-en">Anomaly Detection</span>
+                        <span class="tag" data-tag="vision" data-target="projects-en">Computer Vision</span>
+                        <span class="tag" data-tag="signal" data-target="projects-en">Signal Processing</span>
                     </div>
                     
                     <div class="skill-card" onclick="toggleSkill(this)">
@@ -1185,6 +1206,13 @@
                     e.preventDefault();
                     const targetId = this.getAttribute('href').substring(1);
                     smoothScroll(targetId);
+                    
+                    // Ajouter l'effet de surbrillance à la section cible
+                    const targetSection = document.getElementById(targetId);
+                    if (targetSection) {
+                        targetSection.classList.add('highlight');
+                        setTimeout(() => targetSection.classList.remove('highlight'), 2000);
+                    }
                 });
             });
             
@@ -1220,21 +1248,26 @@
             document.querySelectorAll('.tag').forEach(tag => {
                 tag.addEventListener('click', function() {
                     const tagValue = this.getAttribute('data-tag');
+                    const targetSection = this.getAttribute('data-target');
                     
                     // Activer/désactiver le tag
                     document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
                     this.classList.add('active');
                     
-                    // Highlight sections avec ce tag
-                    document.querySelectorAll('[data-tags]').forEach(section => {
-                        if (section.getAttribute('data-tags').includes(tagValue)) {
+                    // Scroll vers la section cible
+                    if (targetSection) {
+                        const currentLang = document.getElementById('fr').style.display !== 'none' ? '' : '-en';
+                        const sectionId = targetSection + currentLang;
+                        const section = document.getElementById(sectionId);
+                        
+                        if (section) {
                             section.classList.add('highlight');
                             setTimeout(() => section.classList.remove('highlight'), 2000);
                             
                             // Scroll vers la section
-                            smoothScroll(section.id);
+                            smoothScroll(sectionId);
                         }
-                    });
+                    }
                 });
             });
         });
