@@ -3,809 +3,1251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="Web CV of Julien de Saint Angel, AI engineer specialized in neural networks for anomaly detection, with practical experience in deep learning, signal & image processing, and industrial applications.">
-    <title>Julien de Saint Angel - Web CV</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap"
-          rel="stylesheet">
+    <meta name="description" content="Julien de Saint Angel - Docteur en IA spécialisé en réseaux neuronaux hypersphériques et détection d'anomalies. Expertise en deep learning, traitement d'images et optimisation.">
+    <meta name="keywords" content="IA, intelligence artificielle, réseaux neuronaux hypersphériques, détection d'anomalies, deep learning, machine learning, PhD AI, computer vision, hyperspherical neural networks, anomaly detection">
+    <meta name="author" content="Julien de Saint Angel">
+    
+    <!-- Open Graph pour les réseaux sociaux -->
+    <meta property="og:title" content="Julien de Saint Angel - Expert en IA et réseaux neuronaux hypersphériques">
+    <meta property="og:description" content="Docteur en intelligence artificielle spécialisé dans les réseaux neuronaux hypersphériques et la détection d'anomalies.">
+    <meta property="og:image" content="julien.png">
+    <meta property="og:url" content="https://votresite.com">
+    
+    <title>Julien de Saint Angel - Expert IA | Réseaux Neuronaux Hypersphériques</title>
+    
+    <!-- Polices et icônes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
+    
+    <!-- MathJax pour formules LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
     <style>
+        :root {
+            --primary-blue: #0d47a1;
+            --secondary-orange: #ff5722;
+            --gradient-ia: linear-gradient(135deg, #007cf0 0%, #00dfd8 50%, #ff0080 100%);
+            --light-bg: #f9f9f9;
+            --white: #ffffff;
+            --shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
             font-family: 'Roboto', sans-serif;
-            background: #f9f9f9;
+            background: var(--light-bg);
             color: #333;
-            margin: 0;
-            padding: 20px;
+            line-height: 1.6;
         }
-
+        
         h1, h2, h3 {
             font-family: 'Montserrat', sans-serif;
-            color: #0d47a1;
+            color: var(--primary-blue);
         }
-
+        
         a {
-            color: blue;
+            color: var(--primary-blue);
             text-decoration: none;
+            transition: all 0.3s ease;
         }
-
+        
         a:hover {
-            text-decoration: underline;
+            color: var(--secondary-orange);
+        }
+        
+        /* Hero avec gradient IA */
+        .hero {
+            background: var(--gradient-ia);
+            padding: 60px 20px 40px;
+            text-align: center;
+            color: white;
+            position: relative;
+            margin-bottom: 30px;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .hero-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid white;
+            animation: fadeIn 1s ease-in-out;
+            margin-bottom: 20px;
+            object-fit: cover;
+        }
+        
+        .hero h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .hero-title-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 20px;
+            white-space: normal;
+            text-overflow: unset;
+            line-height: 1.4;
         }
 
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Navigation sticky */
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            background: var(--white);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-sticky a {
+            margin: 0 15px;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: 500;
+        }
+        
+        .nav-sticky a:hover {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        /* Container principal */
         .container {
             display: grid;
             grid-template-columns: 1fr 2fr;
             gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
-
+        
+        /* Sections avec effet hover */
         section {
-            background: #fff;
-            padding: 20px;
+            background: var(--white);
+            padding: 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+            box-shadow: var(--shadow);
             margin-bottom: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            scroll-margin-top: 100px;
         }
-
+        
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+        
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+        
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
         .icon {
             margin-right: 8px;
-            color: #0d47a1;
+            color: var(--primary-blue);
         }
-
+        
         ul {
             padding-left: 20px;
         }
-
+        
         li {
             margin-bottom: 10px;
         }
-
+        
         iframe {
             width: 100%;
             height: 360px;
             border: 0;
             border-radius: 12px;
+            margin-top: 15px;
         }
-
+        
         .skills i {
             margin-right: 8px;
-            color: #ff5722;
+            color: var(--secondary-orange);
         }
-
+        
+        /* Switch de langue */
         .lang-switch {
-            text-align: right;
-            margin-bottom: 10px;
+            position: absolute;
+            top: 20px;
+            right: 20px;
         }
-
+        
         .lang-switch button {
             margin-left: 5px;
-            padding: 5px 12px;
+            padding: 8px 15px;
             font-weight: bold;
             cursor: pointer;
             border-radius: 5px;
             border: none;
-            background: #0d47a1;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
         }
-
-        @media (max-width: 800px) {
-            .container {
-                grid-template-columns: 1fr;
-            }
-
-            .header-content {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .profile-header {
-                flex-direction: column;
-            }
+        
+        .lang-switch button:hover {
+            background: rgba(255, 255, 255, 0.3);
         }
-
+        
+        .lang-switch button.active {
+            background: white;
+            color: var(--primary-blue);
+        }
+        
+        /* Téléchargement CV */
         .cv-download {
-            margin-left: 12px;
+            display: inline-flex;
+            align-items: center;
             font-size: 1rem;
             font-weight: bold;
-            color: #ff5722;
+            color: white;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: all 0.3s;
         }
-
+        
         .cv-download:hover {
-            color: #d32f2f;
-            text-decoration: underline;
+            color: var(--secondary-orange);
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
-
+        
+        /* Boutons */
         .contact-btn {
             margin-top: 10px;
-            padding: 6px 12px;
-            background: #0d47a1;
+            padding: 10px 20px;
+            background: var(--primary-blue);
             color: white;
             border: none;
             border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
         }
-
+        
         .contact-btn:hover {
             background: #094081;
         }
-
+        
+        /* Formulaire */
         form input, form textarea {
             width: 100%;
-            padding: 8px;
-            margin-bottom: 10px;
+            padding: 12px;
+            margin-bottom: 15px;
             border-radius: 5px;
             border: 1px solid #ccc;
             font-size: 14px;
+            transition: border 0.3s;
         }
-
+        
+        form input:focus, form textarea:focus {
+            border-color: var(--primary-blue);
+            outline: none;
+        }
+        
         form button {
-            background: #0d47a1;
+            background: var(--primary-blue);
             color: white;
             border: none;
-            padding: 10px 15px;
+            padding: 12px 20px;
             border-radius: 5px;
             cursor: pointer;
+            font-weight: bold;
+            transition: background 0.3s;
         }
-
+        
         form button:hover {
             background: #094081;
         }
-
+        
+        /* Header content */
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
             margin-bottom: 20px;
         }
-
-        /* Style pour l'image réduite */
+        
+        .profile-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--primary-blue);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .title-section {
+            flex: 1;
+        }
+        
         .header-image {
-            width: 450px; /* Taille réduite */
+            width: 300px;
             height: auto;
             margin-left: 20px;
             margin-bottom: 20px;
             border-radius: 4px;
             box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
-
-        .profile-header {
-            display: flex;
-            align-items: center;
-            gap: 20px;
+        
+        /* Cartes compétences cliquables */
+        .skill-card {
+            cursor: pointer;
+            padding: 15px;
+            border-left: 4px solid var(--primary-blue);
+            margin-bottom: 10px;
+            transition: all 0.3s;
+            border-radius: 5px;
         }
-
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid #0d47a1;
+        
+        .skill-card.expanded {
+            background: #f0f8ff;
+            border-left: 4px solid var(--secondary-orange);
+        }
+        
+        .skill-details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background: white;
+            border-radius: 5px;
+            border-left: 3px solid #e0e0e0;
+        }
+        
+        .skill-card.expanded .skill-details {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        /* Tags cliquables */
+        .tags-container {
+            margin: 15px 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        
+        .tag {
+            display: inline-block;
+            background: #e3f2fd;
+            padding: 5px 12px;
+            margin: 5px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+        
+        .tag.active {
+            background: var(--primary-blue);
+            color: white;
+        }
+        
+        .tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        
+        .highlight {
+            background: #fff9c4;
+            transition: background 0.5s;
+        }
+        
+        /* Section expertise */
+        .expertise-equation {
+            background: #f5f5f5;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 15px 0;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .btn-thesis {
+            display: inline-flex;
+            align-items: center;
+            background: var(--primary-blue);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            margin-top: 10px;
+            transition: background 0.3s;
+        }
+        
+        .btn-thesis:hover {
+            background: #094081;
+            color: white;
+        }
+        
+        /* Modales */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.5);
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+        }
+        
+        .modal-content {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 90%;
+            text-align: center;
+            position: relative;
+        }
+        
+        .modal-info {
+            max-width: 700px;
+            max-height: 90%;
+            overflow-y: auto;
+            text-align: left;
+        }
+        
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #777;
+        }
+        
+        /* Image dans la colonne de gauche */
+        .profile-image-left {
+            width: 100%;
+            max-width: 250px;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px auto;
+            display: block;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
-
-        .title-section {
-            flex: 1;
+        
+        /* Responsive */
+        @media (max-width: 968px) {
+            .container {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .header-image {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 50px 15px 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+                white-space: normal;
+                text-overflow: unset;
+            }
+            
+            .nav-sticky {
+                position: relative;
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-sticky a {
+                margin: 5px 0;
+                width: 100%;
+                text-align: center;
+            }
+            
+            .profile-header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .lang-switch {
+                position: relative;
+                top: auto;
+                right: auto;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            
+            .header-image {
+                width: 100%;
+                margin: 15px 0;
+            }
+            
+            section {
+                scroll-margin-top: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            section {
+                padding: 15px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-photo {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+        }
+        
+        /* Liens éducation */
+        .edu-link {
+            font-size: 0.8em;
+            color: var(--primary-blue);
         }
     </style>
+    
+    <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
 </head>
 <body>
-
-<div class="header-content">
-    <div class="profile-header">
-
-    </div>
-
-    <div class="lang-switch">
-        <button onclick="switchLanguage('fr')">FR</button>
-        <button onclick="switchLanguage('en')">EN</button>
-    </div>
-</div>
-
-<!-- FRENCH VERSION -->
-<div id="fr" class="lang">
-    <div class="profile-header">
-        <!-- Ajout de l'image dans l'en-tête -->
-        <img src="julien.png" alt="Photo de Julien de Saint Angel" class="profile-img">
-        <div class="title-section">
-            <h1>
-                Julien de Saint Angel
-                <a href="cv_julien_de_saint_angel_2025.pdf" download class="cv-download"
-                   title="Télécharger le CV en PDF">
-                    <i class="fas fa-file-pdf"></i> Télécharger CV
-                </a>
-            </h1>
-            <p><strong>Ingénieur IA & Informatique appliquée</strong><br>
-                Docteur en informatique appliquée – spécialisé en réseaux neuronaux hypersphériques et détection
-                d'anomalies</p>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="lang-switch">
+            <button id="btn-fr" class="active" onclick="switchLanguage('fr')">FR</button>
+            <button id="btn-en" onclick="switchLanguage('en')">EN</button>
         </div>
-        <img src="im_n.jpg" alt="Photo supplémentaire de Julien de Saint Angel" class="header-image">
+        
+        <div class="hero-content">
+            <img src="julien.png" alt="Julien de Saint Angel" class="hero-photo">
+            <div class="hero-title-container">
+    <h1>
+        <span>Julien de Saint Angel</span>
+        <a href="cv_julien_de_saint_angel_2025.pdf" download class="cv-download" title="Télécharger le CV en PDF">
+            <i class="fas fa-file-pdf"></i> Télécharger CV
+        </a>
+    </h1>
+</div>
+<p class="hero-subtitle">
+    <strong>Ingénieur IA & Informatique appliquée</strong><br>
+    Docteur en informatique appliquée - spécialisé en réseaux de neurones hypersphériques et détection d'anomalies
+</p>
+        </div>
     </div>
+
+    <!-- Navigation Sticky -->
+    <nav class="nav-sticky">
+        <a href="#expertise">Expertise</a>
+        <a href="#competences">Compétences</a>
+        <a href="#projets">Projets</a>
+        <a href="#experience">Expérience</a>
+        <a href="#publications">Publications</a>
+        <a href="#contact-form">Contact</a>
+    </nav>
+
+    <!-- Container Principal -->
     <div class="container">
-        <!-- Colonne gauche -->
+        <!-- Colonne Gauche -->
         <div>
-            <section>
-                <h2>Contact</h2>
-                <p><i class="fab fa-linkedin icon"></i><a
-                        href="https://www.linkedin.com/in/julien-de-saint-angel-65aa0315a/?originalSubdomain=fr"
-                        target="_blank">LinkedIn</a></p>
-                <p><i class="fas fa-envelope icon"></i><a href="mailto:julien.desaintangel@gmail.com">julien.desaintangel@gmail.com</a>
-                </p>
-                <button class="contact-btn"
-                        onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">Me
-                    contacter
-                </button>
-            </section>
-            <!-- Ici toutes tes sections FR -->
-            <section>
-                <h2>Compétences</h2>
-                <ul class="skills">
-                    <li><i class="fas fa-brain"></i>IA & ML : CNN, RNN/LSTM, GAN, Transformers, autoencodeurs, modèles
-                        surrogate, optimisation
-                    </li>
-                    <li><i class="fas fa-cogs"></i>Frameworks : TensorFlow, PyTorch, Keras, Scikit-Learn, OpenCV,
-                        PyTorch Lightning
-                    </li>
-                    <li><i class="fas fa-wave-square"></i>Traitement du signal et des images : segmentation, filtrage,
-                        ondelettes, transformée de Fourier
-                    </li>
-                    <li><i class="fas fa-laptop-code"></i>Programmation & Outils : Python, C/C++, Java, MATLAB, Fortran,
-                        Scilab; Git, Docker, Jupyter, Linux
-                    </li>
-                    <li><i class="fas fa-square-root-alt"></i>Mathématiques & optimisation : optimisation avancée, EDP,
-                        géométrie conforme
-                    </li>
-                </ul>
-            </section>
+            <!-- FRENCH VERSION -->
+            <div id="fr" class="lang">
+                <section id="contact-info">
+                    <h2><i class="fas fa-address-card icon"></i>Contact</h2>
+                    <p><i class="fab fa-linkedin icon"></i><a href="https://www.linkedin.com/in/julien-de-saint-angel-65aa0315a/?originalSubdomain=fr" target="_blank">LinkedIn</a></p>
+                    <p><i class="fas fa-envelope icon"></i><a href="#contact-form">julien.desaintangel@gmail.com</a></p>
+                    <button class="contact-btn" onclick="smoothScroll('contact-form')">Me contacter</button>
+                </section>
+
+                <section id="competences">
+                    <h2><i class="fas fa-tools icon"></i>Compétences</h2>
+                    
+                    <div class="tags-container">
+                        <span class="tag" data-tag="ia">IA</span>
+                        <span class="tag" data-tag="deeplearning">Deep Learning</span>
+                        <span class="tag" data-tag="hyperspherique">Hypersphérique</span>
+                        <span class="tag" data-tag="anomalies">Détection d'anomalies</span>
+                        <span class="tag" data-tag="vision">Vision par ordinateur</span>
+                        <span class="tag" data-tag="signal">Traitement du signal</span>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-brain"></i> IA & Machine Learning</h3>
+                        <div class="skill-details">
+                            <p>Expertise en réseaux de neurones profonds : CNN, RNN/LSTM, GAN, Transformers, autoencodeurs, modèles surrogate, optimisation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-cogs"></i> Frameworks & Outils</h3>
+                        <div class="skill-details">
+                            <p>TensorFlow, PyTorch, Keras, Scikit-Learn, OpenCV, PyTorch Lightning, Git, Docker, Jupyter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-wave-square"></i> Traitement du signal & images</h3>
+                        <div class="skill-details">
+                            <p>Segmentation, filtrage, ondelettes, transformée de Fourier, analyse d'images.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-laptop-code"></i> Programmation</h3>
+                        <div class="skill-details">
+                            <p>Python, C/C++, Java, MATLAB, Fortran, Scilab, Linux.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-square-root-alt"></i> Mathématiques & Optimisation</h3>
+                        <div class="skill-details">
+                            <p>Optimisation avancée, EDP, géométrie conforme, algèbre géométrique.</p>
+                        </div>
+                    </div>
+                    
+
+                </section>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div id="en" class="lang" style="display:none">
+                <section id="contact-info-en">
+                    <h2><i class="fas fa-address-card icon"></i>Contact</h2>
+                    <p><i class="fab fa-linkedin icon"></i><a href="https://www.linkedin.com/in/julien-de-saint-angel-65aa0315a/?originalSubdomain=fr" target="_blank">LinkedIn</a></p>
+                    <p><i class="fas fa-envelope icon"></i><a href="#contact-form">julien.desaintangel@gmail.com</a></p>
+                    <button class="contact-btn" onclick="smoothScroll('contact-form')">Contact me</button>
+                </section>
+
+                <section id="skills-en">
+                    <h2><i class="fas fa-tools icon"></i>Skills</h2>
+                    
+                    <div class="tags-container">
+                        <span class="tag" data-tag="ia">AI</span>
+                        <span class="tag" data-tag="deeplearning">Deep Learning</span>
+                        <span class="tag" data-tag="hyperspherique">Hyperspherical</span>
+                        <span class="tag" data-tag="anomalies">Anomaly Detection</span>
+                        <span class="tag" data-tag="vision">Computer Vision</span>
+                        <span class="tag" data-tag="signal">Signal Processing</span>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                        <div class="skill-details">
+                            <p>Expertise in deep neural networks: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-cogs"></i> Frameworks & Tools</h3>
+                        <div class="skill-details">
+                            <p>TensorFlow, PyTorch, Keras, Scikit-Learn, OpenCV, PyTorch Lightning, Git, Docker, Jupyter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-wave-square"></i> Signal & Image Processing</h3>
+                        <div class="skill-details">
+                            <p>Segmentation, filtering, wavelets, Fourier transform, image analysis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-laptop-code"></i> Programming</h3>
+                        <div class="skill-details">
+                            <p>Python, C/C++, Java, MATLAB, Fortran, Scilab, Linux.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-square-root-alt"></i> Mathematics & Optimization</h3>
+                        <div class="skill-details">
+                            <p>Advanced optimization, PDEs, conformal geometry, geometric algebra.</p>
+                        </div>
+                    </div>
+                    
+
+                </section>
+            </div>
         </div>
-        <!-- Ici toutes tes sections FR côté droit -->
+
+        <!-- Colonne Droite -->
         <div>
-            <section>
-                <h2>Résumé professionnel</h2>
-                <p>Docteur en informatique appliquée à l’intelligence artificielle, je suis spécialisé dans les réseaux
-                    neuronaux pour la détection d’anomalies. J’ai une solide expérience dans le développement,
-                    l’optimisation et la mise en production de systèmes IA, capables de fonctionner efficacement dans
-                    des environnements réels, avec des compétences en deep learning, traitement du signal et traitement
-                    d’images. Fort d’une expérience à l’interface de plusieurs disciplines et disposant d’un large
-                    spectre de compétences, je suis capable de livrer des résultats concrets sur des projets
-                    ambitieux.</p>
-
-                <button class="contact-btn" onclick="showMoreInfo()">
-                    + d’infos
-                </button>
-            </section>
-            <section>
-                <h2>Contributions & Projets</h2>
-                <ul>
-                    <li><strong>Deep M-SPH SVDD :</strong> méthode multi-sphères hypersphériques pour la détection
-                        d’anomalies
-                    </li>
-                    <li><strong>Méthode d’initialisation :</strong> amélioration de la convergence et de la stabilité
-                        des réseaux neuronaux hypersphériques
-                    </li>
-                    <li><strong>Applications :</strong> marégraphe visuel automatisé, suivi du geste sportif, détection
-                        d’anomalies
-                    </li>
-                    <li><strong>Vidéo de soutenance de thèse:</strong></li>
-                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true"
-                            allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Expérience professionnelle</h2>
-                <ul>
-                    <li>
-                        <strong>Fév.–Mai 2019 :</strong> Stage aux laboratoires XLIM (UMR 7252) et MIA (EA 3165)<br>
-                        <em>Encadrants :</em> B. Tremblais et R. Pétéri<br>
-                        Caractérisation du geste sportif par caméras rapides utilisant l’analyse trajectographique de
-                        points critiques.
-                    </li>
-                    <li>
-                        <strong>Mai 2018 :</strong> Stage au laboratoire LIENSs (UMR 7266)<br>
-                        <em>Encadrants :</em> E. Poirier (IGR) et L. Testud<br>
-                        Réalisation d’un marégraphe visuel : lecture automatisée de l’image d’une échelle de marée.
-                    </li>
-                    <li>
-                        <strong>Mar.–Juin 2015 :</strong> Stage au laboratoire SYRTE (UMR 8630), Observatoire de
-                        Paris<br>
-                        <em>Encadrant :</em> J.-Y. Richard<br>
-                        Développement d’algorithmes d’interpolation pour les orbites de satellites artificiels
-                        (équations différentielles, simulation numérique).
-                    </li>
-                    <li>
-                        <strong>2015–2017 :</strong> Enseignant fonctionnaire second degré, Lycées Saint-Exupéry, La
-                        Rochelle<br>
-                        Professeur de mathématiques. Développement de compétences en communication, vulgarisation
-                        scientifique et travail en équipe.
-                    </li>
-                </ul>
-            </section>
+            <!-- FRENCH VERSION -->
+            <div id="fr-content" class="lang">
+                <section id="resume" class="fade-in">
+                    <h2><i class="fas fa-user-tie icon"></i>Résumé professionnel</h2>
+                    <p>Docteur en informatique appliquée à l'intelligence artificielle, je suis spécialisé dans les réseaux neuronaux pour la détection d'anomalies. J'ai une solide expérience dans le développement, l'optimisation et la mise en production de systèmes IA, capables de fonctionner efficacement dans des environnements réels, avec des compétences en deep learning, traitement du signal et traitement d'images. Fort d'une expérience à l'interface de plusieurs disciplines et disposant d'un large spectre de compétences, je suis capable de livrer des résultats concrets sur des projets ambitieux.</p>
+                    
+                    <button class="contact-btn" onclick="showMoreInfo()">
+                        + d'infos
+                    </button>
+                </section>
 
 
-            <section>
-                <h2>Formation</h2>
-                <ul>
-                    <li>2020–2025 : Doctorat en informatique appliquée,
-                        <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank"
-                           rel="noopener noreferrer">Laboratoire Mathématiques, Image et Applications (MIA)</a>,
-                        <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank"
-                           rel="noopener noreferrer">Université de La Rochelle</a>
-                    </li>
-                    <li>2017–2019 : Master Mathématiques et Applications MIX,
-                        <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank"
-                           rel="noopener noreferrer">Laboratoire Mathématiques, Image et Applications (MIA)</a>,
-                        <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank"
-                           rel="noopener noreferrer">Université de La Rochelle</a>
-                    </li>
-                    <li>2014–2015 : Master Astronomie & Physique,
-                        <a class="edu-link" href="https://observatoiredeparis.psl.eu/-master-231-.html" target="_blank"
-                           rel="noopener noreferrer">Observatoire de Paris-Meudon</a>
-                    </li>
-                </ul>
-            </section>
-
-            <style>
-                .edu-link {
-                    font-size: 0.7em; /* Réduit légèrement la taille des liens */
-                    color: blue; /* Hyperliens en bleu */
-                    text-decoration: underline;
-                }
-            </style>
-
-            <section>
-                <h2>Publications sélectionnées</h2>
-                <ul>
-                    <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, C. Choquet, <em>Improving Learning for Deep
-                        Multi-Sphere Anomaly Detection with Conformal Geometric Algebra</em>, Recent Applications in
-                        Deep Learning, 2025. (Accepté, en cours de publication).
-                        [<a href="https://scholar.google.com/citations?user=90hNJmgAAAAJ&hl=en" target="_blank">Google
-                            Scholar</a>]
-                    </li>
-                    <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Couches Dense et Conv2d sphériques via
-                        l’algèbre géométrique conforme</em>, ORASIS, 2021.
-                        [<a href="https://hal.science/hal-03339630v1/file/Neurones_couches_geom_orasis2021.pdf"
-                            target="_blank">PDF</a>]
-                        [<a href="https://hal.science/hal-03339630/" target="_blank">HAL</a>]
-                    </li>
-                    <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Théorème d’approximation pour neurones
-                        hypersphériques</em>, GRETSI, 2023.
-                        [<a href="https://hal.science/hal-04195820/" target="_blank">HAL</a>]
-                        [<a href="https://hal.science/hal-04195820v1/document" target="_blank">PDF</a>]
-                    </li>
-                    <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Multi-Spheres Anomaly Detection with
-                        Hyperspherical Layers</em>, ICMLA, 2024.
-                        [<a href="https://ieeexplore.ieee.org/abstract/document/10903378" target="_blank">IEEE</a>]
-                    </li>
-                    <li><a href="https://theses.fr/s395345" target="_blank">Manuscrit complet de thèse – Université de
-                        La Rochelle, 2025</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Langues & Centres d’intérêt</h2>
-                <p>Français (natif), Anglais (B2 – courant), Espagnol & Roumain (B1)</p>
-                <p>Vulgarisation scientifique, astrophotographie, ornithophotographie, modélisation 3D, animation
-                    vidéo</p>
-            </section>
-
-            <section>
-                <h2>Mots-clés</h2>
-                <p>
-                    Intelligence artificielle, détection d’anomalies, Traitement d’images, Traitement du signal, Analyse
-                    d’images,
-                    Segmentation, CNN, RNN, LSTM, LLM, GAN, Autoencodeurs, Transformers, Optimisation, Python, Pandas,
-                    Docker, Git, Jupyter, LaTeX,
-                    Analyse de données, Agents IA, MLOps, Vision par ordinateur, Modélisation, Validation expérimentale,
-                    Réseaux neuronaux hypersphériques, Mathématiques appliquées
-                </p>
-            </section>
-        </div>
-    </div>
-</div>
-
-<!-- ENGLISH VERSION -->
-<div id="en" class="lang" style="display:none">
-    <div class="profile-header">
-        <!-- Ajout de l'image dans l'en-tête -->
-        <img src="julien.png" alt="Photo de Julien de Saint Angel" class="profile-img">
-        <div class="title-section">
-            <h1>
-                Julien de Saint Angel
-                <a href="cv_julien_de_saint_angel_2025_en.pdf" download class="cv-download" title="Download CV in PDF">
-                    <i class="fas fa-file-pdf"></i> Download CV
+            <section id="expertise" class="fade-in" data-tags="hyperspherique ia">
+                <h2><i class="fas fa-star icon"></i>Expertise</h2>
+                <p>Ma thèse a consisté à utiliser des réseaux de neurones à couches hyperphérique avec une approche basée sur l'algèbre conforme pour proposer de nouvelles méthodes de détection d'anomalies. L'objectif est d'exploiter les propriétés géométriques de ces réseaux pour améliorer la capacité à repérer des anomalies dans les données.</p>
+                
+                <img src="im_n.jpg" alt="Expertise en réseaux neurones hypersphériques" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin: 20px auto; display: block;">
+                
+                <a href="https://theses.fr/s395345" target="_blank" class="btn-thesis">
+                    <i class="fas fa-book"></i> Consulter la thèse complète
                 </a>
-            </h1>
-            <p><strong>AI & Applied Computer Science</strong><br>
-                PhD in Applied Computer Science – specialized in hyperspherical neural networks and anomaly detection
-            </p>
-
-        </div>
-        <img src="im_n.jpg" alt="Photo supplémentaire de Julien de Saint Angel" class="header-image">
-    </div>
-
-    <div class="container">
-        <!-- Left column -->
-        <div>
-            <section>
-                <h2>Contact</h2>
-                <p><i class="fab fa-linkedin icon"></i><a
-                        href="https://www.linkedin.com/in/julien-de-saint-angel-65aa0315a/?originalSubdomain=fr"
-                        target="_blank">LinkedIn</a></p>
-                <p><i class="fas fa-envelope icon"></i><a href="mailto:julien.desaintangel@gmail.com">julien.desaintangel@gmail.com</a>
-                </p>
-                <button class="contact-btn"
-                        onclick="document.getElementById('contact-form').scrollIntoView({ behavior: 'smooth' })">Contact
-                    me
-                </button>
-            </section>
-            <!-- Ici toutes tes sections EN -->
-            <section>
-                <h2>Skills</h2>
-                <ul class="skills">
-                    <li><i class="fas fa-brain"></i>AI & ML: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate
-                        models, optimization
-                    </li>
-                    <li><i class="fas fa-cogs"></i>Frameworks: TensorFlow, PyTorch, Keras, Scikit-Learn, OpenCV, PyTorch
-                        Lightning
-                    </li>
-                    <li><i class="fas fa-wave-square"></i>Signal & Image Processing: segmentation, filtering, wavelets,
-                        Fourier transform
-                    </li>
-                    <li><i class="fas fa-laptop-code"></i>Programming & Tools: Python, C/C++, Java, MATLAB, Fortran,
-                        Scilab; Git, Docker, Jupyter, Linux
-                    </li>
-                    <li><i class="fas fa-square-root-alt"></i>Mathematics & Optimization: advanced optimization, PDEs,
-                        conformal geometry
-                    </li>
-                </ul>
-            </section>
-        </div>
-        <!-- Ici toutes tes sections EN côté droit -->
-        <div>
-            <section>
-                <h2>Professional Summary</h2>
-                <p>With a PhD in computer science applied to artificial intelligence, I specialize in neural networks
-                    for anomaly detection. I have solid experience in the development, optimization, and production of
-                    AI systems capable of operating effectively in real-world environments, with skills in deep
-                    learning, signal processing, and image processing. With experience at the interface of several
-                    disciplines and a wide range of skills, I am able to deliver concrete results on ambitious
-                    projects.</p>
-
-                <button class="contact-btn" onclick="showMoreInfoEN()">
-                    + more info
-                </button>
-            </section>
-            <section>
-                <h2>Contributions & Projects</h2>
-                <ul>
-                    <li><strong>Deep M-SPH SVDD:</strong> Multi-sphere hyperspherical method for anomaly detection in
-                        time series and industrial datasets
-                    </li>
-                    <li><strong>Initialization method:</strong> Improved convergence and stability of hyperspherical
-                        neural networks
-                    </li>
-                    <li><strong>Applications:</strong> Visual tide gauge automation, sports motion tracking, anomaly
-                        detection
-                    </li>
-                    <li><strong>Thesis defense video:</strong></li>
-                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true"
-                            allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
-                </ul>
             </section>
 
-            <section>
-                <h2>Professional Experience</h2>
-                <ul>
-                    <li>
-                        <strong>Feb–May 2019:</strong> Internship at XLIM (UMR 7252) and MIA (EA 3165)<br>
-                        <em>Supervisors:</em> B. Tremblais and R. Pétéri<br>
-                        Characterization of sports gestures using high-speed cameras with trajectographic analysis of
-                        critical points.
-                    </li>
-                    <li>
-                        <strong>May 2018:</strong> Internship at LIENSs Laboratory (UMR 7266)<br>
-                        <em>Supervisors:</em> E. Poirier (IGR) and L. Testud<br>
-                        Development of an automated visual tide gauge: automatic reading of images from a tidal scale.
-                    </li>
-                    <li>
-                        <strong>Mar–Jun 2015:</strong> Internship at SYRTE Laboratory (UMR 8630), Observatoire de
-                        Paris<br>
-                        <em>Supervisor:</em> J.-Y. Richard<br>
-                        Development of algorithms for interpolating artificial satellite orbits (differential equations,
-                        numerical simulation).
-                    </li>
-                    <li>
-                        <strong>2015–2017:</strong> High school teacher, Lycées Saint-Exupéry, La Rochelle<br>
-                        Mathematics teacher. Development of communication skills, scientific outreach, and teamwork.
-                    </li>
-                </ul>
+                <section id="projets" class="fade-in" data-tags="ia vision signal">
+                    <h2><i class="fas fa-project-diagram icon"></i>Contributions & Projets</h2>
+                    <ul>
+                        <li><strong>Deep M-SPH SVDD :</strong> méthode multi-sphères hypersphériques pour la détection d'anomalies</li>
+                        <li><strong>Méthode d'initialisation :</strong> amélioration de la convergence et de la stabilité des réseaux neuronaux hypersphériques</li>
+                        <li><strong>Applications :</strong> marégraphe visuel automatisé, suivi du geste sportif, détection d'anomalies</li>
+                    </ul>
+                    
+                    <h3>Vidéo de soutenance de thèse:</h3>
+                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true" allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
+                </section>
+
+                <section id="experience" class="fade-in">
+                    <h2><i class="fas fa-briefcase icon"></i>Expérience professionnelle</h2>
+                    <ul>
+                        <li>
+                            <strong>Fév.–Mai 2019 :</strong> Stage aux laboratoires XLIM (UMR 7252) et MIA (EA 3165)<br>
+                            <em>Encadrants :</em> B. Tremblais et R. Pétéri<br>
+                            Caractérisation du geste sportif par caméras rapides utilisant l'analyse trajectographique de points critiques.
+                        </li>
+                        <li>
+                            <strong>Mai 2018 :</strong> Stage au laboratoire LIENSs (UMR 7266)<br>
+                            <em>Encadrants :</em> E. Poirier (IGR) et L. Testud<br>
+                            Réalisation d'un marégraphe visuel : lecture automatisée de l'image d'une échelle de marée.
+                        </li>
+                        <li>
+                            <strong>Mar.–Juin 2015 :</strong> Stage au laboratoire SYRTE (UMR 8630), Observatoire de Paris<br>
+                            <em>Encadrant :</em> J.-Y. Richard<br>
+                            Développement d'algorithmes d'interpolation pour les orbites de satellites artificiels (équations différentielles, simulation numérique).
+                        </li>
+                        <li>
+                            <strong>2015–2017 :</strong> Enseignant fonctionnaire second degré, Lycées Saint-Exupéry, La Rochelle<br>
+                            Professeur de mathématiques. Développement de compétences en communication, vulgarisation scientifique et travail en équipe.
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="formation" class="fade-in">
+                    <h2><i class="fas fa-graduation-cap icon"></i>Formation</h2>
+                    <ul>
+                        <li>2020–2025 : Doctorat en informatique appliquée,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Laboratoire Mathématiques, Image et Applications (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Université de La Rochelle</a>
+                        </li>
+                        <li>2017–2019 : Master Mathématiques et Applications MIX,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Laboratoire Mathématiques, Image et Applications (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Université de La Rochelle</a>
+                        </li>
+                        <li>2014–2015 : Master Astronomie & Physique,
+                            <a class="edu-link" href="https://observatoiredeparis.psl.eu/-master-231-.html" target="_blank" rel="noopener noreferrer">Observatoire de Paris-Meudon</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="publications" class="fade-in" data-tags="ia hyperspherique">
+                    <h2><i class="fas fa-file-alt icon"></i>Publications sélectionnées</h2>
+                    <ul>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, C. Choquet, <em>Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra</em>, Recent Applications in Deep Learning, 2025. (Accepté, en cours de publication).
+                            [<a href="https://scholar.google.com/citations?user=90hNJmgAAAAJ&hl=en" target="_blank">Google Scholar</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme</em>, ORASIS, 2021.
+                            [<a href="https://hal.science/hal-03339630v1/file/Neurones_couches_geom_orasis2021.pdf" target="_blank">PDF</a>]
+                            [<a href="https://hal.science/hal-03339630/" target="_blank">HAL</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Théorème d'approximation pour neurones hypersphériques</em>, GRETSI, 2023.
+                            [<a href="https://hal.science/hal-04195820/" target="_blank">HAL</a>]
+                            [<a href="https://hal.science/hal-04195820v1/document" target="_blank">PDF</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Multi-Spheres Anomaly Detection with Hyperspherical Layers</em>, ICMLA, 2024.
+                            [<a href="https://ieeexplore.ieee.org/abstract/document/10903378" target="_blank">IEEE</a>]
+                        </li>
+                        <li><a href="https://theses.fr/s395345" target="_blank">Manuscrit complet de thèse – Université de La Rochelle, 2025</a></li>
+                    </ul>
+                </section>
+
+                <section id="langues-interets" class="fade-in">
+                    <h2><i class="fas fa-globe icon"></i>Langues & Centres d'intérêt</h2>
+                    <p>Français (natif), Anglais (B2 – courant), Espagnol & Roumain (B1)</p>
+                    <p>Vulgarisation scientifique, astrophotographie, ornithophotographie, modélisation 3D, animation vidéo</p>
+                </section>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div id="en-content" class="lang" style="display:none">
+                <section id="summary-en" class="fade-in">
+                    <h2><i class="fas fa-user-tie icon"></i>Professional Summary</h2>
+                    <p>With a PhD in computer science applied to artificial intelligence, I specialize in neural networks for anomaly detection. I have solid experience in the development, optimization, and production of AI systems capable of operating effectively in real-world environments, with skills in deep learning, signal processing, and image processing. With experience at the interface of several disciplines and a wide range of skills, I am able to deliver concrete results on ambitious projects.</p>
+                    
+                    <button class="contact-btn" onclick="showMoreInfoEN()">
+                        + more info
+                    </button>
+                </section>
+
+            <section id="expertise-en" class="fade-in" data-tags="hyperspherique ia">
+                <h2><i class="fas fa-star icon"></i>Expertise</h2>
+                <p>My thesis involved using neural networks with hyperspherical layers and a conformal algebra-based approach to propose new anomaly detection methods. The goal is to exploit the geometric properties of these networks to improve the ability to detect anomalies in data.</p>
+                
+                <img src="im_n.jpg" alt="Expertise in hyperspherical neural networks" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin: 20px auto; display: block;">
+                
+                <a href="https://theses.fr/s395345" target="_blank" class="btn-thesis">
+                    <i class="fas fa-book"></i> View full thesis
+                </a>
             </section>
 
+                <section id="projects-en" class="fade-in" data-tags="ia vision signal">
+                    <h2><i class="fas fa-project-diagram icon"></i>Contributions & Projects</h2>
+                    <ul>
+                        <li><strong>Deep M-SPH SVDD:</strong> Multi-sphere hyperspherical method for anomaly detection in time series and industrial datasets</li>
+                        <li><strong>Initialization method:</strong> Improved convergence and stability of hyperspherical neural networks</li>
+                        <li><strong>Applications:</strong> Visual tide gauge automation, sports motion tracking, anomaly detection</li>
+                    </ul>
+                    
+                    <h3>Thesis defense video:</h3>
+                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true" allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
+                </section>
 
-            <section>
-                <h2>Education</h2>
-                <ul>
-                    <li>2020–2025: PhD in Applied Computer Science,
-                        <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank"
-                           rel="noopener noreferrer">Mathematics, Image and Applications Laboratory (MIA)</a>,
-                        <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank"
-                           rel="noopener noreferrer">University of La Rochelle</a>
-                    </li>
-                    <li>2017–2019: Master in Mathematics and Applications MIX,
-                        <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank"
-                           rel="noopener noreferrer">Mathematics, Image and Applications Laboratory (MIA)</a>,
-                        <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank"
-                           rel="noopener noreferrer">University of La Rochelle</a>
-                    </li>
-                    <li>2014–2015: Master in Astronomy & Physics,
-                        <a class="edu-link" href="https://observatoiredeparis.psl.eu/-master-231-.html" target="_blank"
-                           rel="noopener noreferrer">Paris-Meudon Observatory</a>
-                    </li>
-                </ul>
-            </section>
+                <section id="experience-en" class="fade-in">
+                    <h2><i class="fas fa-briefcase icon"></i>Professional Experience</h2>
+                    <ul>
+                        <li>
+                            <strong>Feb–May 2019:</strong> Internship at XLIM (UMR 7252) and MIA (EA 3165)<br>
+                            <em>Supervisors:</em> B. Tremblais and R. Pétéri<br>
+                            Characterization of sports gestures using high-speed cameras with trajectographic analysis of critical points.
+                        </li>
+                        <li>
+                            <strong>May 2018:</strong> Internship at LIENSs Laboratory (UMR 7266)<br>
+                            <em>Supervisors:</em> E. Poirier (IGR) and L. Testud<br>
+                            Development of an automated visual tide gauge: automatic reading of images from a tidal scale.
+                        </li>
+                        <li>
+                            <strong>Mar–Jun 2015:</strong> Internship at SYRTE Laboratory (UMR 8630), Observatoire de Paris<br>
+                            <em>Supervisor:</em> J.-Y. Richard<br>
+                            Development of algorithms for interpolating artificial satellite orbits (differential equations, numerical simulation).
+                        </li>
+                        <li>
+                            <strong>2015–2017:</strong> High school teacher, Lycées Saint-Exupéry, La Rochelle<br>
+                            Mathematics teacher. Development of communication skills, scientific outreach, and teamwork.
+                        </li>
+                    </ul>
+                </section>
 
-            <style>
-                .edu-link {
-                    font-size: 0.7em; /* Réduit légèrement la taille des liens */
-                    color: blue; /* Hyperliens en bleu */
-                    text-decoration: underline;
-                }
-            </style>
+                <section id="education-en" class="fade-in">
+                    <h2><i class="fas fa-graduation-cap icon"></i>Education</h2>
+                    <ul>
+                        <li>2020–2025: PhD in Applied Computer Science,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Mathematics, Image and Applications Laboratory (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">University of La Rochelle</a>
+                        </li>
+                        <li>2017–2019: Master in Mathematics and Applications MIX,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Mathematics, Image and Applications Laboratory (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">University of La Rochelle</a>
+                        </li>
+                        <li>2014–2015: Master in Astronomy & Physics,
+                            <a class="edu-link" href="https://observatoiredeparis.psl.eu/-master-231-.html" target="_blank" rel="noopener noreferrer">Paris-Meudon Observatory</a>
+                        </li>
+                    </ul>
+                </section>
 
-            <style>
-                a {
-                    color: blue; /* Couleur du lien en bleu */
-                    text-decoration: underline; /* Souligné pour ressembler à un lien classique */
-                }
-            </style>
+                <section id="publications-en" class="fade-in" data-tags="ia hyperspherique">
+                    <h2><i class="fas fa-file-alt icon"></i>Selected publications</h2>
+                    <ul>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, C. Choquet, <em>Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra</em>, Recent Applications in Deep Learning, 2025. (Accepted, in press).
+                            [<a href="https://scholar.google.com/citations?user=90hNJmgAAAAJ&hl=en" target="_blank">Google Scholar</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme</em>, ORASIS, 2021.
+                            [<a href="https://hal.science/hal-03339630v1/file/Neurones_couches_geom_orasis2021.pdf" target="_blank">PDF</a>]
+                            [<a href="https://hal.science/hal-03339630/" target="_blank">HAL</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Théorème d'approximation pour neurones hypersphériques</em>, GRETSI, 2023.
+                            [<a href="https://hal.science/hal-04195820/" target="_blank">HAL</a>]
+                            [<a href="https://hal.science/hal-04195820v1/document" target="_blank">PDF</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Multi-Spheres Anomaly Detection with Hyperspherical Layers</em>, ICMLA, 2024.
+                            [<a href="https://ieeexplore.ieee.org/abstract/document/10903378" target="_blank">IEEE</a>]
+                        </li>
+                        <li><a href="https://theses.fr/s395345" target="_blank">Complete thesis manuscript – University of La Rochelle, 2025</a></li>
+                    </ul>
+                </section>
 
-            <section>
-                <h2>Selected publications</h2>
-                <ul>
-                    <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, C. Choquet, <em>Improving Learning for Deep
-                        Multi-Sphere Anomaly Detection with Conformal Geometric Algebra</em>, Recent Applications in
-                        Deep Learning, 2025. (Accepted, in press).
-                        [<a href="https://scholar.google.com/citations?user=90hNJmgAAAAJ&hl=en" target="_blank">Google
-                            Scholar</a>]
-                    </li>
-                    <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Couches Dense et Conv2d sphériques via
-                        l’algèbre géométrique conforme</em>, ORASIS, 2021.
-                        [<a href="https://hal.science/hal-03339630v1/file/Neurones_couches_geom_orasis2021.pdf"
-                            target="_blank">PDF</a>]
-                        [<a href="https://hal.science/hal-03339630/" target="_blank">HAL</a>]
-                    </li>
-                    <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Théorème d’approximation pour neurones
-                        hypersphériques</em>, GRETSI, 2023.
-                        [<a href="https://hal.science/hal-04195820/" target="_blank">HAL</a>]
-                        [<a href="https://hal.science/hal-04195820v1/document" target="_blank">PDF</a>]
-                    </li>
-                    <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Multi-Spheres Anomaly Detection with
-                        Hyperspherical Layers</em>, ICMLA, 2024.
-                        [<a href="https://ieeexplore.ieee.org/abstract/document/10903378" target="_blank">IEEE</a>]
-                    </li>
-                    <li><a href="https://theses.fr/s395345" target="_blank">Manuscrit complet de thèse – Université de
-                        La Rochelle, 2025</a></li>
-                </ul>
-            </section>
-
-            <section>
-                <h2>Languages & Interests</h2>
-                <p>French (native), English (B2 – fluent), Spanish & Romanian (B1)</p>
-                <p>Science outreach, astrophotography, bird photography, 3D modeling, video animation</p>
-            </section>
-
-            <section>
-                <h2>Keywords</h2>
-                <p>
-                    Artificial intelligence, anomaly detection, image processing, signal processing, image analysis,
-                    segmentation,
-                    CNN, RNN, LSTM, LLM, GAN, autoencoders, Transformers, optimization, Python, Pandas, Docker, Git,
-                    Jupyter, LaTeX,
-                    data analysis, AI agents, MLOps, computer vision, modeling, experimental validation, hyperspherical
-                    neural networks, applied mathematics
-                </p>
-            </section>
+                <section id="languages-interests-en" class="fade-in">
+                    <h2><i class="fas fa-globe icon"></i>Languages & Interests</h2>
+                    <p>French (native), English (B2 – fluent), Spanish & Romanian (B1)</p>
+                    <p>Science outreach, astrophotography, bird photography, 3D modeling, video animation</p>
+                </section>
+            </div>
         </div>
     </div>
-</div>
 
-<!-- FORMULAIRE DE CONTACT -->
-<section id="contact-form">
-    <h2>Contact Form / Formulaire de contact</h2>
-    <p style="font-size: 0.9em; color: #555;">* Champs obligatoires / * Required fields</p>
-    <form id="js-contact-form">
-        <input type="text" name="firstname" placeholder="Prénom * / First Name *" required>
-        <input type="text" name="name" placeholder="Nom * / Name *" required>
-        <input type="text" name="company" placeholder="Société * / Company *" required>
-        <input type="tel" name="phone" placeholder="Téléphone / Phone">
-        <input type="email" name="email" placeholder="Email *" required>
-        <textarea name="message" placeholder="Message *" rows="6" required></textarea>
-        <button type="submit">Envoyer / Send</button>
-    </form>
-</section>
+    <!-- Formulaire de Contact -->
+    <section id="contact-form" class="fade-in">
+        <h2><i class="fas fa-envelope icon"></i>Contact Form / Formulaire de contact</h2>
+        <p style="font-size: 0.9em; color: #555;">* Champs obligatoires / * Required fields</p>
+        <form id="js-contact-form">
+            <input type="text" name="firstname" placeholder="Prénom * / First Name *" required>
+            <input type="text" name="name" placeholder="Nom * / Name *" required>
+            <input type="text" name="company" placeholder="Société * / Company *" required>
+            <input type="tel" name="phone" placeholder="Téléphone / Phone">
+            <input type="email" name="email" placeholder="Email *" required>
+            <textarea name="message" placeholder="Message *" rows="6" required></textarea>
+            <button type="submit">Envoyer / Send</button>
+        </form>
+    </section>
 
-<!-- MODAL POPUP -->
-<div id="modal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.5); justify-content:center; align-items:center;">
-    <div style="background:white; padding:20px; border-radius:8px; max-width:400px; text-align:center;">
-        <p id="modal-message" style="font-size:1em; margin-bottom:15px;"></p>
-        <button onclick="closeModal()"
-                style="padding:8px 15px; border:none; background:#0d47a1; color:white; border-radius:5px; cursor:pointer;">
-            OK
-        </button>
+    <!-- Modales -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <p id="modal-message"></p>
+            <button onclick="closeModal()" class="contact-btn">OK</button>
+        </div>
     </div>
-</div>
 
-<!-- MODAL + D'INFOS -->
-<div id="modal-info" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.5); justify-content:center; align-items:center; overflow:auto;">
-    <div style="background:white; padding:20px; border-radius:8px; max-width:600px; max-height:90%; overflow-y:auto;">
-        <h3>Secteur d’activité recherché</h3>
-        <ul>
-            <li>R&D et laboratoires d’innovation</li>
-            <li>Start-up / entreprises tech en croissance</li>
-            <li>Santé et biotech</li>
-            <li>Industrie (automobile, énergie, aéronautique, manufacturing, Industrie 4.0 / IoT)</li>
-            <li>Finance & FinTech (détection de fraude, analyse de risques, trading algorithmique)</li>
-            <li>Cybersécurité (détection d’intrusions, anomalies et comportements suspects)</li>
-            <li>Multimédia, jeux vidéo, créativité assistée par IA</li>
-            <li>Services numériques (ESN, conseil, cloud, SaaS)</li>
-            <li>Ingénierie des données, analyse de données, Big Data, intelligence décisionnelle</li>
-        </ul>
+    <div id="modal-info" class="modal">
+        <div class="modal-content modal-info">
+            <button class="close-modal" onclick="closeMoreInfo()">&times;</button>
+            <h3>Secteur d'activité recherché</h3>
+            <ul>
+                <li>R&D et laboratoires d'innovation</li>
+                <li>Start-up / entreprises tech en croissance</li>
+                <li>Santé et biotech</li>
+                <li>Industrie (automobile, énergie, aéronautique, manufacturing, Industrie 4.0 / IoT)</li>
+                <li>Finance & FinTech (détection de fraude, analyse de risques, trading algorithmique)</li>
+                <li>Cybersécurité (détection d'intrusions, anomalies et comportements suspects)</li>
+                <li>Multimédia, jeux vidéo, créativité assistée par IA</li>
+                <li>Services numériques (ESN, conseil, cloud, SaaS)</li>
+                <li>Ingénierie des données, analyse de données, Big Data, intelligence décisionnelle</li>
+            </ul>
 
-        <h3>Taille de boîte</h3>
-        <p>Ouvert aussi bien aux petites structures qu’aux grands groupes.</p>
+            <h3>Taille de boîte</h3>
+            <p>Ouvert aussi bien aux petites structures qu'aux grands groupes.</p>
 
-        <h3>Domaines IA & Data</h3>
-        <ul>
-            <li>Traitement d’images (vision par ordinateur, ...)</li>
-            <li>Traitement du signal</li>
-            <li>NLP (traitement du langage naturel)</li>
-            <li>Data science & machine learning (analyse, modèles prédictifs, optimisation, MLOps)</li>
-            <li>Applications santé, innovation et agents IA</li>
-            <li>Détection d’anomalies (finance, cybersécurité, ...)</li>
-        </ul>
+            <h3>Domaines IA & Data</h3>
+            <ul>
+                <li>Traitement d'images (vision par ordinateur, ...)</li>
+                <li>Traitement du signal</li>
+                <li>NLP (traitement du langage naturel)</li>
+                <li>Data science & machine learning (analyse, modèles prédictifs, optimisation, MLOps)</li>
+                <li>Applications santé, innovation et agents IA</li>
+                <li>Détection d'anomalies (finance, cybersécurité, ...)</li>
+            </ul>
 
-        <h3>Types de postes ciblés</h3>
-        <ul>
-            <li>Chercheur / Ingénieur de recherche (R&D industrielle)</li>
-            <li>Post-Doctorant / Chargé de Recherche (académique ou public)</li>
-            <li>Ingénieur Machine Learning / Scientifique IA / Ingénieur ML (industrialisation et MLOps)</li>
-            <li>Data Scientist / Responsable Data Scientist</li>
-            <li>Ingénieur Vision par Ordinateur / Expert en Vision par Ordinateur</li>
-        </ul>
-
-        <button onclick="closeMoreInfo()"
-                style="padding:8px 15px; border:none; background:#0d47a1; color:white; border-radius:5px; cursor:pointer;">
-            Fermer
-        </button>
+            <h3>Types de postes ciblés</h3>
+            <ul>
+                <li>Chercheur / Ingénieur de recherche (R&D industrielle)</li>
+                <li>Post-Doctorant / Chargé de Recherche (académique ou public)</li>
+                <li>Ingénieur Machine Learning / Scientifique IA / Ingénieur ML (industrialisation et MLOps)</li>
+                <li>Data Scientist / Responsable Data Scientist</li>
+                <li>Ingénieur Vision par Ordinateur / Expert en Vision par Ordinateur</li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<!-- MODAL + MORE INFO (EN) -->
-<div id="modal-info-en" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
-  background:rgba(0,0,0,0.5); justify-content:center; align-items:center; overflow:auto;">
-    <div style="background:white; padding:20px; border-radius:8px; max-width:600px; max-height:90%; overflow-y:auto;">
-        <h3>Target Industry Sectors</h3>
-        <ul>
-            <li>R&D and innovation labs</li>
-            <li>Start-ups / growing tech companies</li>
-            <li>Health & biotech</li>
-            <li>Industry (automotive, energy, aerospace, manufacturing, Industry 4.0 / IoT)</li>
-            <li>Finance & FinTech (fraud detection, risk analysis, algorithmic trading)</li>
-            <li>Cybersecurity (intrusion detection, anomalies, suspicious behaviors)</li>
-            <li>Multimedia, video games, AI agents</li>
-            <li>Digital services (consulting, cloud, SaaS)</li>
-            <li>Data engineering, analytics, big data, business intelligence</li>
-        </ul>
+    <div id="modal-info-en" class="modal">
+        <div class="modal-content modal-info">
+            <button class="close-modal" onclick="closeMoreInfoEN()">&times;</button>
+            <h3>Target Industry Sectors</h3>
+            <ul>
+                <li>R&D and innovation labs</li>
+                <li>Start-ups / growing tech companies</li>
+                <li>Health & biotech</li>
+                <li>Industry (automotive, energy, aerospace, manufacturing, Industry 4.0 / IoT)</li>
+                <li>Finance & FinTech (fraud detection, risk analysis, algorithmic trading)</li>
+                <li>Cybersecurity (intrusion detection, anomalies, suspicious behaviors)</li>
+                <li>Multimedia, video games, AI-assisted creativity</li>
+                <li>Digital services (consulting, cloud, SaaS)</li>
+                <li>Data engineering, analytics, big data, business intelligence</li>
+            </ul>
 
-        <h3>Company Size</h3>
-        <p>Open to both small companies and large corporations.</p>
+            <h3>Company Size</h3>
+            <p>Open to both small companies and large corporations.</p>
 
-        <h3>AI & Data Domains</h3>
-        <ul>
-            <li>Image processing (computer vision, sports motion analysis, visual tide gauge)</li>
-            <li>Signal processing (audio, biomedical, trajectory)</li>
-            <li>NLP (natural language processing)</li>
-            <li>Data science & machine learning (analysis, predictive models, optimization, MLOps)</li>
-            <li>Health applications, innovation, AI-assisted creativity</li>
-            <li>Anomaly detection (finance, cybersecurity, predictive maintenance)</li>
-        </ul>
+            <h3>AI & Data Domains</h3>
+            <ul>
+                <li>Image processing (computer vision, sports motion analysis, visual tide gauge)</li>
+                <li>Signal processing (audio, biomedical, trajectory)</li>
+                <li>NLP (natural language processing)</li>
+                <li>Data science & machine learning (analysis, predictive models, optimization, MLOps)</li>
+                <li>Health applications, innovation, AI-assisted creativity</li>
+                <li>Anomaly detection (finance, cybersecurity, predictive maintenance)</li>
+            </ul>
 
-        <h3>Target Positions</h3>
-        <ul>
-            <li>Research Scientist / Research Engineer (industrial R&D)</li>
-            <li>Postdoctoral / Research Fellow (academic or public)</li>
-            <li>Machine Learning Engineer / AI Scientist / ML Engineer (industrialization & MLOps)</li>
-            <li>Data Scientist / Lead Data Scientist</li>
-            <li>Computer Vision Engineer / Expert in Computer Vision</li>
-        </ul>
-
-        <button onclick="closeMoreInfoEN()"
-                style="padding:8px 15px; border:none; background:#0d47a1; color:white; border-radius:5px; cursor:pointer;">
-            Close
-        </button>
+            <h3>Target Positions</h3>
+            <ul>
+                <li>Research Scientist / Research Engineer (industrial R&D)</li>
+                <li>Postdoctoral / Research Fellow (academic or public)</li>
+                <li>Machine Learning Engineer / AI Scientist / ML Engineer (industrialization & MLOps)</li>
+                <li>Data Scientist / Lead Data Scientist</li>
+                <li>Computer Vision Engineer / Expert in Computer Vision</li>
+            </ul>
+        </div>
     </div>
-</div>
 
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-    (function () {
-        emailjs.init("qpozyITgrI4QhqrQR"); // Public Key
-    })();
-
-    const messages = {
-        fr: {
-            success: "Merci ! Votre message a bien été envoyé.",
-            error: "Erreur lors de l'envoi. Veuillez réessayer."
-        },
-        en: {
-            success: "Thank you! Your message has been sent successfully.",
-            error: "Error sending message. Please try again."
+    <!-- Scripts -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        // Initialisation EmailJS
+        (function() {
+            emailjs.init("qpozyITgrI4QhqrQR"); // Public Key - À remplacer par votre clé
+        })();
+        
+        // Messages de confirmation
+        const messages = {
+            fr: {
+                success: "Merci ! Votre message a bien été envoyé.",
+                error: "Erreur lors de l'envoi. Veuillez réessayer."
+            },
+            en: {
+                success: "Thank you! Your message has been sent successfully.",
+                error: "Error sending message. Please try again."
+            }
+        };
+        
+        // Gestion du formulaire de contact
+        document.getElementById('js-contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const currentLang = document.getElementById('fr').style.display !== 'none' ? 'fr' : 'en';
+            
+            // Afficher un indicateur de chargement
+            const submitBtn = this.querySelector('button[type="submit"]');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
+            submitBtn.disabled = true;
+            
+            emailjs.sendForm('service_l0nkbjv', 'template_12nlhlq', this)
+                .then(function() {
+                    showModal(messages[currentLang].success);
+                    document.getElementById('js-contact-form').reset();
+                }, function(error) {
+                    showModal(messages[currentLang].error);
+                    console.error('EmailJS Error:', error);
+                })
+                .finally(function() {
+                    submitBtn.textContent = originalText;
+                    submitBtn.disabled = false;
+                });
+        });
+        
+        // Fonctions pour les modales
+        function showModal(msg) {
+            document.getElementById('modal-message').textContent = msg;
+            document.getElementById('modal').style.display = 'flex';
         }
-    };
-
-    function showModal(msg) {
-        document.getElementById('modal-message').textContent = msg;
-        document.getElementById('modal').style.display = 'flex';
-    }
-
-    function closeModal() {
-        document.getElementById('modal').style.display = 'none';
-    }
-
-    document.getElementById('js-contact-form').addEventListener('submit', function (event) {
-        event.preventDefault();
-        const currentLang = document.getElementById('fr').style.display !== 'none' ? 'fr' : 'en';
-
-        emailjs.sendForm('service_l0nkbjv', 'template_12nlhlq', this)
-            .then(function () {
-                showModal(messages[currentLang].success);
-                document.getElementById('js-contact-form').reset();
-            }, function (error) {
-                showModal(messages[currentLang].error);
-                console.error(error);
+        
+        function closeModal() {
+            document.getElementById('modal').style.display = 'none';
+        }
+        
+        function showMoreInfo() {
+            document.getElementById('modal-info').style.display = 'flex';
+        }
+        
+        function closeMoreInfo() {
+            document.getElementById('modal-info').style.display = 'none';
+        }
+        
+        function showMoreInfoEN() {
+            document.getElementById('modal-info-en').style.display = 'flex';
+        }
+        
+        function closeMoreInfoEN() {
+            document.getElementById('modal-info-en').style.display = 'none';
+        }
+        
+        // Switch de langue
+        function switchLanguage(lang) {
+            // Mettre à jour les boutons de langue
+            document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
+            document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+            
+            // Mettre à jour le lien de téléchargement du CV
+            const cvLink = document.querySelector('.cv-download');
+            if (lang === 'fr') {
+                cvLink.href = 'cv_julien_de_saint_angel_2025.pdf';
+                cvLink.title = 'Télécharger le CV en PDF';
+                cvLink.innerHTML = '<i class="fas fa-file-pdf"></i> Télécharger CV';
+                
+                // Gérer l'affichage du contenu
+                document.getElementById('fr').style.display = 'block';
+                document.getElementById('en').style.display = 'none';
+                document.getElementById('fr-content').style.display = 'block';
+                document.getElementById('en-content').style.display = 'none';
+                document.querySelector('.hero-subtitle').textContent = 'Ingénieur IA & Informatique appliquée Docteur en informatique appliquée - spécialisé en réseaux neurones hypersphériques et détection d\'anomalies';
+            } else {
+                cvLink.href = 'cv_julien_de_saint_angel_2025_en.pdf';
+                cvLink.title = 'Download CV in PDF';
+                cvLink.innerHTML = '<i class="fas fa-file-pdf"></i> Download CV';
+                
+                // Gérer l'affichage du contenu
+                document.getElementById('fr').style.display = 'none';
+                document.getElementById('en').style.display = 'block';
+                document.getElementById('fr-content').style.display = 'none';
+                document.getElementById('en-content').style.display = 'block';
+                document.querySelector('.hero-subtitle').textContent = 'AI & Applied Computer Science Engineer PhD in Applied Computer Science - specialized in hyperspherical neural networks and anomaly detection';
+            }
+            
+            // Forcer le recalcul de MathJax après le changement de langue
+            if (window.MathJax) {
+                MathJax.typesetPromise();
+            }
+        }
+        
+        // Smooth scroll pour la navigation
+        function smoothScroll(targetId) {
+            const target = document.getElementById(targetId);
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        }
+        
+        // Initialiser le smooth scroll pour les liens de navigation
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.nav-sticky a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    smoothScroll(targetId);
+                });
             });
-    });
-</script>
-
-<script>
-    function showMoreInfo() {
-        document.getElementById('modal-info').style.display = 'flex';
-    }
-
-    function closeMoreInfo() {
-        document.getElementById('modal-info').style.display = 'none';
-    }
-</script>
-
-<script>
-    function showMoreInfoEN() {
-        document.getElementById('modal-info-en').style.display = 'flex';
-    }
-
-    function closeMoreInfoEN() {
-        document.getElementById('modal-info-en').style.display = 'none';
-    }
-</script>
-
-<!-- SWITCH LANGUE -->
-<script>
-    function switchLanguage(lang) {
-        const fr = document.getElementById('fr');
-        const en = document.getElementById('en');
-
-        if (lang === 'fr') {
-            fr.style.display = 'block';
-            en.style.display = 'none';
-        } else if (lang === 'en') {
-            fr.style.display = 'none';
-            en.style.display = 'block';
+            
+            // Lien email vers formulaire de contact
+            document.querySelectorAll('a[href="#contact-form"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    smoothScroll('contact-form');
+                });
+            });
+        });
+        
+        // Animation au défilement (Intersection Observer)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+        
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Cartes compétences cliquables
+        function toggleSkill(card) {
+            card.classList.toggle('expanded');
         }
-    }
-</script>
-
-
+        
+        // Tags cliquables pour filtrage
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.tag').forEach(tag => {
+                tag.addEventListener('click', function() {
+                    const tagValue = this.getAttribute('data-tag');
+                    
+                    // Activer/désactiver le tag
+                    document.querySelectorAll('.tag').forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Highlight sections avec ce tag
+                    document.querySelectorAll('[data-tags]').forEach(section => {
+                        if (section.getAttribute('data-tags').includes(tagValue)) {
+                            section.classList.add('highlight');
+                            setTimeout(() => section.classList.remove('highlight'), 2000);
+                            
+                            // Scroll vers la section
+                            smoothScroll(section.id);
+                        }
+                    });
+                });
+            });
+        });
+        
+        // Fermer les modales en cliquant à l'extérieur
+        window.addEventListener('click', function(event) {
+            const modals = document.querySelectorAll('.modal');
+            modals.forEach(modal => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>
-
