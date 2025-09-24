@@ -1,2 +1,3 @@
-# Julien-de-Saint-Angel-profile
-Web CV and professional profile of Julien de Saint Angel, PhD in computer science, AI expert, specialised in neural networks for anomaly detection.
+# Julien de Saint-Angel Profile
+
+You can view my full professional profile and web CV here: [Julien de Saint Angel - Web CV](https://desaintangel.github.io/Julien-de-Saint-Angel-profile/)
