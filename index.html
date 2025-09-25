@@ -508,6 +508,28 @@
             left: 20px;
             z-index: 1001;
         }
+
+	.handicap-switch button {
+	    margin-left: 5px;
+	    padding: 8px 15px;
+	    font-weight: bold;
+	    cursor: pointer;
+	    border-radius: 5px;
+	    border: none;
+	    background: rgba(255, 255, 255, 0.2);
+	    color: white;
+	    backdrop-filter: blur(10px);
+	    transition: all 0.3s;
+	}
+
+	.handicap-switch button:hover {
+	    background: rgba(255, 255, 255, 0.3);
+	}
+
+	.handicap-switch button.active {
+	    background: white;
+	    color: var(--primary-blue);
+	}
         
         .handicap-btn {
             margin-left: 5px;
@@ -1307,11 +1329,14 @@
 <body>
     <!-- Hero Section -->
     <div class="hero">
-        <div class="handicap-switch">
-            <button class="handicap-btn" onclick="openHandicapModal()" title="Options d'accessibilité">
-                <i class="fas fa-universal-access"></i> Accessibilité
-            </button>
-        </div>
+	<div class="handicap-switch">
+	    <button class="handicap-btn" onclick="openHandicapModal()" title="Options d'accessibilité" id="handicap-btn-fr">
+		<i class="fas fa-universal-access"></i> Accessibilité
+	    </button>
+	    <button class="handicap-btn" onclick="openHandicapModal()" title="Accessibility options" id="handicap-btn-en" style="display:none">
+		<i class="fas fa-universal-access"></i> Accessibility
+	    </button>
+	</div>
         
         <div class="lang-switch">
             <button id="btn-fr" class="active" onclick="switchLanguage('fr')">FR</button>
@@ -1787,46 +1812,87 @@
         </div>
     </div>
 
-    <!-- Modal Handicap -->
-    <div id="modal-handicap" class="modal-handicap">
-        <div class="modal-handicap-content">
-            <button class="close-modal" onclick="closeHandicapModal()">&times;</button>
-            <h2><i class="fas fa-universal-access"></i> Options d'accessibilité</h2>
-            <p>Choisissez les options qui vous aident à mieux naviguer sur le site :</p>
-            
-            <div class="handicap-options">
-                <div class="handicap-option" onclick="toggleHandicapOption('handicap-mode')">
-                    <i class="fas fa-text-height"></i>
-                    <div>
-                        <strong>Mode lecture facilitée</strong><br>
-                        <small>Agrandit le texte et améliore l'espacement</small>
-                    </div>
-                </div>
-                
-                <div class="handicap-option" onclick="toggleHandicapOption('high-contrast')">
-                    <i class="fas fa-adjust"></i>
-                    <div>
-                        <strong>Contraste élevé</strong><br>
-                        <small>Améliore la lisibilité pour les malvoyants</small>
-                    </div>
-                </div>
-                
-                <div class="handicap-option" onclick="toggleHandicapOption('dyslexia-friendly')">
-                    <i class="fas fa-font"></i>
-                    <div>
-                        <strong>Mode dyslexie</strong><br>
-                        <small>Utilise une police adaptée pour la dyslexie</small>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="handicap-buttons">
-                <button class="btn-handicap btn-cancel" onclick="closeHandicapModal()">Annuler</button>
-                <button class="btn-handicap btn-confirm" onclick="applyHandicapOptions()">Appliquer les options</button>
-                <button class="btn-handicap" onclick="resetHandicapOptions()" style="background: #ff5722; color: white;">Tout désactiver</button>
-            </div>
-        </div>
-    </div>
+	<!-- Modal Handicap FR -->
+	<div id="modal-handicap" class="modal-handicap lang">
+	    <div class="modal-handicap-content">
+		<button class="close-modal" onclick="closeHandicapModal()">&times;</button>
+		<h2><i class="fas fa-universal-access"></i> Options d'accessibilité</h2>
+		<p>Choisissez les options qui vous aident à mieux naviguer sur le site :</p>
+		
+		<div class="handicap-options">
+		    <div class="handicap-option" onclick="toggleHandicapOption('handicap-mode')">
+		        <i class="fas fa-text-height"></i>
+		        <div>
+		            <strong>Mode lecture facilitée</strong><br>
+		            <small>Agrandit le texte et améliore l'espacement</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('high-contrast')">
+		        <i class="fas fa-adjust"></i>
+		        <div>
+		            <strong>Contraste élevé</strong><br>
+		            <small>Améliore la lisibilité pour les malvoyants</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('dyslexia-friendly')">
+		        <i class="fas fa-font"></i>
+		        <div>
+		            <strong>Mode dyslexie</strong><br>
+		            <small>Utilise une police adaptée pour la dyslexie</small>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="handicap-buttons">
+		    <button class="btn-handicap btn-cancel" onclick="closeHandicapModal()">Annuler</button>
+		    <button class="btn-handicap btn-confirm" onclick="applyHandicapOptions()">Appliquer les options</button>
+		    <button class="btn-handicap" onclick="resetHandicapOptions()" style="background: #ff5722; color: white;">Tout désactiver</button>
+		</div>
+	    </div>
+	</div>
+
+	<!-- Modal Handicap EN -->
+	<div id="modal-handicap-en" class="modal-handicap lang" style="display:none">
+	    <div class="modal-handicap-content">
+		<button class="close-modal" onclick="closeHandicapModal()">&times;</button>
+		<h2><i class="fas fa-universal-access"></i> Accessibility Options</h2>
+		<p>Choose the options that help you navigate the site better:</p>
+		
+		<div class="handicap-options">
+		    <div class="handicap-option" onclick="toggleHandicapOption('handicap-mode')">
+		        <i class="fas fa-text-height"></i>
+		        <div>
+		            <strong>Easy Reading Mode</strong><br>
+		            <small>Enlarges text and improves spacing</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('high-contrast')">
+		        <i class="fas fa-adjust"></i>
+		        <div>
+		            <strong>High Contrast</strong><br>
+		            <small>Improves readability for visually impaired</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('dyslexia-friendly')">
+		        <i class="fas fa-font"></i>
+		        <div>
+		            <strong>Dyslexia Mode</strong><br>
+		            <small>Uses a dyslexia-friendly font</small>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="handicap-buttons">
+		    <button class="btn-handicap btn-cancel" onclick="closeHandicapModal()">Cancel</button>
+		    <button class="btn-handicap btn-confirm" onclick="applyHandicapOptions()">Apply Options</button>
+		    <button class="btn-handicap" onclick="resetHandicapOptions()" style="background: #ff5722; color: white;">Disable All</button>
+		</div>
+	    </div>
+	</div>
 
     <!-- Scripts -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
@@ -1965,6 +2031,10 @@
             // Mettre à jour les boutons de langue
             document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
             document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+
+	  // Mettre à jour le bouton d'accessibilité
+	    document.getElementById('handicap-btn-fr').style.display = lang === 'fr' ? 'block' : 'none';
+	    document.getElementById('handicap-btn-en').style.display = lang === 'fr' ? 'none' : 'block';
             
             // Mettre à jour le lien de téléchargement du CV
             const cvLink = document.querySelector('.cv-download');
@@ -1989,6 +2059,8 @@
                 document.getElementById('en').style.display = 'block';
                 document.getElementById('fr-content').style.display = 'none';
                 document.getElementById('en-content').style.display = 'block';
+		document.getElementById('modal-handicap').style.display = 'none';
+        	document.getElementById('modal-handicap-en').style.display = 'none';
                 document.querySelector('.hero-subtitle').innerHTML = '<strong>AI & Applied Computer Science Engineer</strong><br>PhD in Applied Computer Science - specialized in hyperspherical neural networks and anomaly detection';
             }
             
@@ -2072,116 +2144,137 @@
             });
         });
 
-        // Fonctions pour le mode handicap
-        function openHandicapModal() {
-            document.getElementById('modal-handicap').style.display = 'flex';
-            updateHandicapModalDisplay();
-        }
+	// Fonctions pour le mode handicap
+	function openHandicapModal() {
+	    const currentLang = document.getElementById('fr').style.display !== 'none' ? 'fr' : 'en';
+	    
+	    if (currentLang === 'fr') {
+		document.getElementById('modal-handicap').style.display = 'flex';
+	    } else {
+		document.getElementById('modal-handicap-en').style.display = 'flex';
+	    }
+	    updateHandicapModalDisplay();
+	}
 
-        function closeHandicapModal() {
-            document.getElementById('modal-handicap').style.display = 'none';
-        }
+	function closeHandicapModal() {
+	    document.getElementById('modal-handicap').style.display = 'none';
+	    document.getElementById('modal-handicap-en').style.display = 'none';
+	}
 
-        function updateHandicapModalDisplay() {
-            const options = document.querySelectorAll('.handicap-option');
-            options.forEach(opt => {
-                const optionText = opt.querySelector('strong').textContent;
-                let optionKey = '';
-                
-                if (optionText.includes('lecture')) optionKey = 'handicap-mode';
-                else if (optionText.includes('Contraste')) optionKey = 'high-contrast';
-                else if (optionText.includes('dyslexie')) optionKey = 'dyslexia-friendly';
-                
-                if (handicapOptions[optionKey]) {
-                    opt.style.background = '#e3f2fd';
-                    opt.style.border = '2px solid var(--primary-blue)';
-                } else {
-                    opt.style.background = '';
-                    opt.style.border = '1px solid #e0e0e0';
-                }
-            });
-        }
+	function updateHandicapModalDisplay() {
+	    const currentLang = document.getElementById('fr').style.display !== 'none' ? 'fr' : 'en';
+	    
+	    // Mettre à jour les deux modales
+	    const modals = ['modal-handicap', 'modal-handicap-en'];
+	    
+	    modals.forEach(modalId => {
+		const modal = document.getElementById(modalId);
+		if (!modal) return;
+		
+		const options = modal.querySelectorAll('.handicap-option');
+		
+		options.forEach((opt, index) => {
+		    let optionKey = '';
+		    
+		    // Identifier par position dans la liste
+		    switch(index) {
+		        case 0: optionKey = 'handicap-mode'; break;
+		        case 1: optionKey = 'high-contrast'; break;
+		        case 2: optionKey = 'dyslexia-friendly'; break;
+		    }
+		    
+		    if (handicapOptions[optionKey]) {
+		        opt.style.background = '#e3f2fd';
+		        opt.style.border = '2px solid var(--primary-blue)';
+		    } else {
+		        opt.style.background = '';
+		        opt.style.border = '1px solid #e0e0e0';
+		    }
+		});
+	    });
+	}
 
-        function toggleHandicapOption(option) {
-            handicapOptions[option] = !handicapOptions[option];
-            updateHandicapModalDisplay();
-        }
+	function toggleHandicapOption(option) {
+	    handicapOptions[option] = !handicapOptions[option];
+	    updateHandicapModalDisplay();
+	}
 
-        function applyHandicapOptions() {
-            // Réinitialiser toutes les classes
-            document.body.classList.remove('handicap-mode', 'high-contrast', 'dyslexia-friendly');
-            
-            // Appliquer les classes sélectionnées
-            for (const option in handicapOptions) {
-                if (handicapOptions[option]) {
-                    document.body.classList.add(option);
-                }
-            }
-            
-            // Afficher le bouton de réinitialisation si au moins une option est activée
-            const anyOptionActive = Object.values(handicapOptions).some(opt => opt);
-            document.querySelector('.reset-handicap').style.display = anyOptionActive ? 'block' : 'none';
-            
-            // Sauvegarder les préférences
-            localStorage.setItem('handicapOptions', JSON.stringify(handicapOptions));
-            
-            // Fermer la modal
-            closeHandicapModal();
-            
-            // Afficher message seulement si changement
-            if (anyOptionActive) {
-                const currentLang = document.getElementById('fr').style.display !== 'none' ? 'fr' : 'en';
-                const message = currentLang === 'fr' 
-                    ? 'Options d\'accessibilité appliquées.' 
-                    : 'Accessibility options applied.';
-                showModal(message);
-            }
-        }
+	function applyHandicapOptions() {
+	    // Réinitialiser toutes les classes
+	    document.body.classList.remove('handicap-mode', 'high-contrast', 'dyslexia-friendly');
+	    
+	    // Appliquer les classes sélectionnées
+	    for (const option in handicapOptions) {
+		if (handicapOptions[option]) {
+		    document.body.classList.add(option);
+		}
+	    }
+	    
+	    // Afficher le bouton de réinitialisation si au moins une option est activée
+	    const anyOptionActive = Object.values(handicapOptions).some(opt => opt);
+	    document.querySelector('.reset-handicap').style.display = anyOptionActive ? 'block' : 'none';
+	    
+	    // Sauvegarder les préférences
+	    localStorage.setItem('handicapOptions', JSON.stringify(handicapOptions));
+	    
+	    // Fermer la modal
+	    closeHandicapModal();
+	    
+	    // Afficher message seulement si changement
+	    if (anyOptionActive) {
+		const currentLang = document.getElementById('fr').style.display !== 'none' ? 'fr' : 'en';
+		const message = currentLang === 'fr' 
+		    ? 'Options d\'accessibilité appliquées.' 
+		    : 'Accessibility options applied.';
+		showModal(message);
+	    }
+	}
 
-        function resetHandicapOptions() {
-            // Réinitialiser les variables
-            handicapOptions = {
-                'handicap-mode': false,
-                'high-contrast': false,
-                'dyslexia-friendly': false
-            };
-            
-            // Retirer toutes les classes
-            document.body.classList.remove('handicap-mode', 'high-contrast', 'dyslexia-friendly');
-            
-            // Cacher le bouton de réinitialisation
-            document.querySelector('.reset-handicap').style.display = 'none';
-            
-            // Sauvegarder
-            localStorage.setItem('handicapOptions', JSON.stringify(handicapOptions));
-            
-            // Message de confirmation
-            const currentLang = document.getElementById('fr').style.display !== 'none' ? 'fr' : 'en';
-            const message = currentLang === 'fr' 
-                ? 'Options d\'accessibilité désactivées.' 
-                : 'Accessibility options disabled.';
-            showModal(message);
-        }
+	function resetHandicapOptions() {
+	    // Réinitialiser les variables
+	    handicapOptions = {
+		'handicap-mode': false,
+		'high-contrast': false,
+		'dyslexia-friendly': false
+	    };
+	    
+	    // Retirer toutes les classes
+	    document.body.classList.remove('handicap-mode', 'high-contrast', 'dyslexia-friendly');
+	    
+	    // Cacher le bouton de réinitialisation
+	    document.querySelector('.reset-handicap').style.display = 'none';
+	    
+	    // Sauvegarder
+	    localStorage.setItem('handicapOptions', JSON.stringify(handicapOptions));
+	    
+	    // Message de confirmation
+	    const currentLang = document.getElementById('fr').style.display !== 'none' ? 'fr' : 'en';
+	    const message = currentLang === 'fr' 
+		? 'Options d\'accessibilité désactivées.' 
+		: 'Accessibility options disabled.';
+	    showModal(message);
+	}
 
-        function loadHandicapPreferences() {
-            const savedOptions = localStorage.getItem('handicapOptions');
-            if (savedOptions) {
-                handicapOptions = JSON.parse(savedOptions);
-                
-                // Appliquer silencieusement les options
-                document.body.classList.remove('handicap-mode', 'high-contrast', 'dyslexia-friendly');
-                
-                for (const option in handicapOptions) {
-                    if (handicapOptions[option]) {
-                        document.body.classList.add(option);
-                    }
-                }
-                
-                // Afficher le bouton de réinitialisation si nécessaire
-                const anyOptionActive = Object.values(handicapOptions).some(opt => opt);
-                document.querySelector('.reset-handicap').style.display = anyOptionActive ? 'block' : 'none';
-            }
-        }
+	function loadHandicapPreferences() {
+	    const savedOptions = localStorage.getItem('handicapOptions');
+	    if (savedOptions) {
+		handicapOptions = JSON.parse(savedOptions);
+		
+		// Appliquer silencieusement les options
+		document.body.classList.remove('handicap-mode', 'high-contrast', 'dyslexia-friendly');
+		
+		for (const option in handicapOptions) {
+		    if (handicapOptions[option]) {
+		        document.body.classList.add(option);
+		    }
+		}
+		
+		// Afficher le bouton de réinitialisation si nécessaire
+		const anyOptionActive = Object.values(handicapOptions).some(opt => opt);
+		document.querySelector('.reset-handicap').style.display = anyOptionActive ? 'block' : 'none';
+	    }
+	}
+
 
         // Au chargement de la page
         document.addEventListener('DOMContentLoaded', function() {
