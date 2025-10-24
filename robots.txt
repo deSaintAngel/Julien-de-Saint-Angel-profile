@@ -1,2 +1,4 @@
+Allow: /
+
 User-agent: *
 Allow: /

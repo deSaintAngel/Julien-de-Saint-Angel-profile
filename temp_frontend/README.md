@@ -1,0 +1,1 @@
+# Frontend files moved to repo root for GitHub Pages
