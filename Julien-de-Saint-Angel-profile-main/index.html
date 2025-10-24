@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Julien de Saint Angel - Docteur en IA spécialisé en réseaux neuronaux hypersphériques et détection d'anomalies. Expertise en deep learning, traitement d'images et optimisation.">
+    <meta name="keywords" content="IA, intelligence artificielle, réseaux neuronaux hypersphériques, détection d'anomalies, deep learning, machine learning, PhD AI, computer vision, hyperspherical neural networks, anomaly detection">
+    <meta name="author" content="Julien de Saint Angel">
+    
+    <!-- Open Graph pour les réseaux sociaux -->
+    <meta property="og:title" content="Julien de Saint Angel - Expert en IA et réseaux neuronaux hypersphériques">
+    <meta property="og:description" content="Docteur en intelligence artificielle spécialisé dans les réseaux neuronaux hypersphériques et la détection d'anomalies.">
+    <meta property="og:image" content="assets/images/julien.png">
+    <meta property="og:url" content="https://votresite.com">
+
+    <!-- Google AdSense -->
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215342224838884"
+         crossorigin="anonymous"></script>
+    
+    <title>Julien de Saint Angel - Expert IA | Réseaux Neuronaux Hypersphériques</title>
+    
+    <!-- Polices et icônes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- MathJax pour formules LaTeX -->
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Widget Chat Mia -->
+    <link rel="stylesheet" href="chat-widget.css">
+
+     <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+	<div class="handicap-switch">
+	    <button class="handicap-btn" onclick="openHandicapModal()" title="Options d'accessibilité" id="handicap-btn-fr">
+		<i class="fas fa-universal-access"></i> Accessibilité
+	    </button>
+	    <button class="handicap-btn" onclick="openHandicapModal()" title="Accessibility options" id="handicap-btn-en" style="display:none">
+		<i class="fas fa-universal-access"></i> Accessibility
+	    </button>
+	</div>
+        
+        <div class="lang-switch">
+            <button id="btn-fr" class="active" onclick="switchLanguage('fr')">FR</button>
+            <button id="btn-en" onclick="switchLanguage('en')">EN</button>
+        </div>
+        
+        <div class="hero-content">
+            <img src="assets/images/julien.png" alt="Julien de Saint Angel" class="hero-photo">
+            <div class="hero-title-container">
+                <h1>
+                    <span>Julien de Saint Angel</span>
+                    <a href="assets/pdf/cv_julien_de_saint_angel_2025.pdf" download class="cv-download lang" title="Télécharger le CV en PDF" id="cv-fr" data-lang="fr">
+                        <i class="fas fa-file-pdf"></i> Télécharger CV
+                    </a>
+                    <a href="assets/pdf/cv_julien_de_saint_angel_2025_en.pdf" download class="cv-download lang" title="Download CV in PDF" id="cv-en" data-lang="en" style="display:none">
+                        <i class="fas fa-file-pdf"></i> Download CV
+                    </a>
+                </h1>
+            </div>
+            <p class="hero-subtitle">
+                <strong>Ingénieur IA & Informatique appliquée</strong><br>
+                Docteur en informatique appliquée - spécialisé en réseaux de neurones hypersphériques et détection d'anomalies
+            </p>
+        </div>
+    </div>
+
+    <!-- Navigation Sticky -->
+    <nav class="nav-sticky">
+        <a href="#expertise" data-section="expertise">Expertise</a>
+        <a href="#competences" data-section="competences">Compétences</a>
+        <a href="#projets" data-section="projets">Projets</a>
+        <a href="#experience" data-section="experience">Expérience</a>
+        <a href="#publications" data-section="publications">Publications</a>
+        <a href="#contact-form" data-section="contact-form">Contact</a>
+    </nav>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Colonne Gauche -->
+        <div>
+            <!-- FRENCH VERSION -->
+            <div id="fr" class="lang">
+                <section id="contact-info">
+                    <h2><i class="fas fa-address-card icon"></i>Contact</h2>
+                    <p><i class="fab fa-linkedin icon"></i><a href="https://www.linkedin.com/in/julien-de-saint-angel-65aa0315a/?originalSubdomain=fr" target="_blank">LinkedIn</a></p>
+                    <p><i class="fas fa-envelope icon"></i><a href="#contact-form">julien.desaintangel@gmail.com</a></p>
+                    <button class="contact-btn" onclick="smoothScroll('contact-form')">Me contacter</button>
+                </section>
+
+                <section id="competences">
+                    <h2><i class="fas fa-tools icon"></i>Compétences</h2>
+                    
+                    <div class="tags-container">
+                        <span class="tag" data-tag="ia" data-target="publications">IA</span>
+                        <span class="tag" data-tag="deeplearning" data-target="publications">Deep Learning</span>
+                        <span class="tag" data-tag="hyperspherique" data-target="expertise">Hypersphérique</span>
+                        <span class="tag" data-tag="anomalies" data-target="publications">Détection d'anomalies</span>
+                        <span class="tag" data-tag="vision" data-target="projets">Vision par ordinateur</span>
+                        <span class="tag" data-tag="signal" data-target="projets">Traitement du signal</span>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-brain"></i> IA & Machine Learning</h3>
+                        <div class="skill-details">
+                            <p>Expertise en réseaux de neurones profonds : CNN, RNN/LSTM, GAN, Transformers, autoencodeurs, modèles surrogate, optimisation.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-cogs"></i> Frameworks & Outils</h3>
+                        <div class="skill-details">
+                            <p>TensorFlow, PyTorch, Keras, Scikit-Learn, OpenCV, PyTorch Lightning, Git, Docker, Jupyter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-wave-square"></i> Traitement du signal & images</h3>
+                        <div class="skill-details">
+                            <p>Segmentation, filtrage, ondelettes, transformée de Fourier, analyse d'images.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-laptop-code"></i> Programmation</h3>
+                        <div class="skill-details">
+                            <p>Python, C/C++, Java, MATLAB, Fortran, Scilab, Linux.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-square-root-alt"></i> Mathématiques & Optimisation</h3>
+                        <div class="skill-details">
+                            <p>Optimisation avancée, EDP, géométrie conforme, algèbre géométrique.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div id="en" class="lang" style="display:none">
+                <section id="contact-info-en">
+                    <h2><i class="fas fa-address-card icon"></i>Contact</h2>
+                    <p><i class="fab fa-linkedin icon"></i><a href="https://www.linkedin.com/in/julien-de-saint-angel-65aa0315a/?originalSubdomain=fr" target="_blank">LinkedIn</a></p>
+                    <p><i class="fas fa-envelope icon"></i><a href="#contact-form">julien.desaintangel@gmail.com</a></p>
+                    <button class="contact-btn" onclick="smoothScroll('contact-form')">Contact me</button>
+                </section>
+
+                <section id="skills-en">
+                    <h2><i class="fas fa-tools icon"></i>Skills</h2>
+                    
+                    <div class="tags-container">
+                        <span class="tag" data-tag="ia" data-target="publications">AI</span>
+                        <span class="tag" data-tag="deeplearning" data-target="publications">Deep Learning</span>
+                        <span class="tag" data-tag="hyperspherique" data-target="expertise">Hyperspherical</span>
+                        <span class="tag" data-tag="anomalies" data-target="publications">Anomaly Detection</span>
+                        <span class="tag" data-tag="vision" data-target="projets">Computer Vision</span>
+                        <span class="tag" data-tag="signal" data-target="projets">Signal Processing</span>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                        <div class="skill-details">
+                            <p>Expertise in deep neural networks: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-cogs"></i> Frameworks & Tools</h3>
+                        <div class="skill-details">
+                            <p>TensorFlow, PyTorch, Keras, Scikit-Learn, OpenCV, PyTorch Lightning, Git, Docker, Jupyter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-wave-square"></i> Signal & Image Processing</h3>
+                        <div class="skill-details">
+                            <p>Segmentation, filtering, wavelets, Fourier transform, image analysis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-laptop-code"></i> Programming</h3>
+                        <div class="skill-details">
+                            <p>Python, C/C++, Java, MATLAB, Fortran, Scilab, Linux.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-square-root-alt"></i> Mathematics & Optimization</h3>
+                        <div class="skill-details">
+                            <p>Advanced optimization, PDEs, conformal geometry, geometric algebra.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Colonne Droite -->
+        <div>
+            <!-- FRENCH VERSION -->
+            <div id="fr-content" class="lang">
+                <section id="resume" class="fade-in">
+                    <h2><i class="fas fa-user-tie icon"></i>Résumé professionnel</h2>
+                    <p>Docteur en informatique appliquée à l'intelligence artificielle, je suis spécialisé dans les réseaux neuronaux pour la détection d'anomalies. J'ai une solide expérience dans le développement, l'optimisation et la mise en production de systèmes IA, capables de fonctionner efficacement dans des environnements réels, avec des compétences en deep learning, traitement du signal et traitement d'images. Fort d'une expérience à l'interface de plusieurs disciplines et disposant d'un large spectre de compétences, je suis capable de livrer des résultats concrets sur des projets ambitieux.</p>
+                    
+                    <button class="contact-btn" onclick="showMoreInfo()">
+                        + d'infos
+                    </button>
+                </section>
+
+                <section id="expertise" class="fade-in" data-tags="hyperspherique ia">
+                    <h2><i class="fas fa-star icon"></i>Expertise</h2>
+                    <p>Ma thèse a consisté à utiliser des réseaux de neurones à couches hyperphérique avec une approche basée sur l'algèbre conforme pour proposer de nouvelles méthodes de détection d'anomalies. L'objectif est d'exploiter les propriétés géométriques de ces réseaux pour améliorer la capacité à repérer des anomalies dans les données.</p>
+                    
+                    <img src="assets/images/im_n.jpg" alt="Expertise en réseaux neurones hypersphériques" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin: 20px auto; display: block;">
+                    
+                    <a href="https://theses.fr/s395345" target="_blank" class="btn-thesis">
+                        <i class="fas fa-book"></i> Consulter la thèse complète
+                    </a>
+                </section>
+
+                <section id="projets" class="fade-in" data-tags="ia vision signal">
+                    <h2><i class="fas fa-project-diagram icon"></i>Contributions & Projets</h2>
+                    <ul>
+                        <li><strong>Deep M-SPH SVDD :</strong> méthode multi-sphères hypersphériques pour la détection d'anomalies</li>
+                        <li><strong>Méthode d'initialisation :</strong> amélioration de la convergence et de la stabilité des réseaux neuronaux hypersphériques</li>
+                        <li><strong>Applications :</strong> marégraphe visuel automatisé, suivi du geste sportif, détection d'anomalies</li>
+                    </ul>
+                    
+                    <h3>Vidéo de soutenance de thèse:</h3>
+                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true" allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
+                </section>
+
+                <section id="experience" class="fade-in">
+                    <h2><i class="fas fa-briefcase icon"></i>Expérience professionnelle</h2>
+                    <ul>
+                        <li>
+                            <strong>Fév.–Mai 2019 :</strong> Stage aux laboratoires XLIM (UMR 7252) et MIA (EA 3165)<br>
+                            <em>Encadrants :</em> B. Tremblais et R. Pétéri<br>
+                            Caractérisation du geste sportif par caméras rapides utilisant l'analyse trajectographique de points critiques.
+                        </li>
+                        <li>
+                            <strong>Mai 2018 :</strong> Stage au laboratoire LIENSs (UMR 7266)<br>
+                            <em>Encadrants :</em> E. Poirier (IGR) et L. Testud<br>
+                            Réalisation d'un marégraphe visuel : lecture automatisée de l'image d'une échelle de marée.
+                        </li>
+                        <li>
+                            <strong>Mar.–Juin 2015 :</strong> Stage au laboratoire SYRTE (UMR 8630), Observatoire de Paris<br>
+                            <em>Encadrant :</em> J.-Y. Richard<br>
+                            Développement d'algorithmes d'interpolation pour les orbites de satellites artificiels (équations différentielles, simulation numérique).
+                        </li>
+                        <li>
+                            <strong>2015–2017 :</strong> Enseignant fonctionnaire second degré, Lycées Saint-Exupéry, La Rochelle<br>
+                            Professeur de mathématiques. Développement de compétences en communication, vulgarisation scientifique et travail en équipe.
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="formation" class="fade-in">
+                    <h2><i class="fas fa-graduation-cap icon"></i>Formation</h2>
+                    <ul>
+                        <li>2020–2025 : Doctorat en informatique appliquée,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Laboratoire Mathématiques, Image et Applications (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Université de La Rochelle</a>
+                        </li>
+                        <li>2017–2019 : Master Mathématiques et Applications MIX,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Laboratoire Mathématiques, Image et Applications (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Université de La Rochelle</a>
+                        </li>
+                        <li>2014–2015 : Master Astronomie & Physique,
+                            <a class="edu-link" href="https://observatoiredeparis.psl.eu/-master-231-.html" target="_blank" rel="noopener noreferrer">Observatoire de Paris-Meudon</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="publications" class="fade-in" data-tags="ia hyperspherique">
+                    <h2><i class="fas fa-file-alt icon"></i>Publications sélectionnées</h2>
+                    <ul>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, C. Choquet, <em>Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra</em>, Recent Applications in Deep Learning, 2025. (Accepté, en cours de publication).
+                            [<a href="https://scholar.google.com/citations?user=90hNJmgAAAAJ&hl=en" target="_blank">Google Scholar</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme</em>, ORASIS, 2021.
+                            [<a href="https://hal.science/hal-03339630v1/file/Neurones_couches_geom_orasis2021.pdf" target="_blank">PDF</a>]
+                            [<a href="https://hal.science/hal-03339630/" target="_blank">HAL</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Théorème d'approximation pour neurones hypersphériques</em>, GRETSI, 2023.
+                            [<a href="https://hal.science/hal-04195820/" target="_blank">HAL</a>]
+                            [<a href="https://hal.science/hal-04195820v1/document" target="_blank">PDF</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Multi-Spheres Anomaly Detection with Hyperspherical Layers</em>, ICMLA, 2024.
+                            [<a href="https://ieeexplore.ieee.org/abstract/document/10903378" target="_blank">IEEE</a>]
+                        </li>
+                        <li><a href="https://theses.fr/s395345" target="_blank">Manuscrit complet de thèse – Université de La Rochelle, 2025</a></li>
+                    </ul>
+                </section>
+
+                <section id="langues-interets" class="fade-in">
+                    <h2><i class="fas fa-globe icon"></i>Langues & Centres d'intérêt</h2>
+                    <p>Français (natif), Anglais (B2 – courant), Espagnol & Roumain (B1)</p>
+                    <p>Vulgarisation scientifique, astrophotographie, ornithophotographie, modélisation 3D, animation vidéo</p>
+                </section>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div id="en-content" class="lang" style="display:none">
+                <section id="summary-en" class="fade-in">
+                    <h2><i class="fas fa-user-tie icon"></i>Professional Summary</h2>
+                    <p>With a PhD in computer science applied to artificial intelligence, I specialize in neural networks for anomaly detection. I have solid experience in the development, optimization, and production of AI systems capable of operating effectively in real-world environments, with skills in deep learning, signal processing, and image processing. With experience at the interface of several disciplines and a wide range of skills, I am able to deliver concrete results on ambitious projects.</p>
+                    
+                    <button class="contact-btn" onclick="showMoreInfoEN()">
+                        + more info
+                    </button>
+                </section>
+
+                <section id="expertise-en" class="fade-in" data-tags="hyperspherique ia">
+                    <h2><i class="fas fa-star icon"></i>Expertise</h2>
+                    <p>My thesis involved using neural networks with hyperspherical layers and a conformal algebra-based approach to propose new anomaly detection methods. The goal is to exploit the geometric properties of these networks to improve the ability to detect anomalies in data.</p>
+                    
+                    <img src="assets/images/im_n.jpg" alt="Expertise in hyperspherical neural networks" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin: 20px auto; display: block;">
+                    
+                    <a href="https://theses.fr/s395345" target="_blank" class="btn-thesis">
+                        <i class="fas fa-book"></i> View full thesis
+                    </a>
+                </section>
+
+                <section id="projects-en" class="fade-in" data-tags="ia vision signal">
+                    <h2><i class="fas fa-project-diagram icon"></i>Contributions & Projects</h2>
+                    <ul>
+                        <li><strong>Deep M-SPH SVDD:</strong> Multi-sphere hyperspherical method for anomaly detection in time series and industrial datasets</li>
+                        <li><strong>Initialization method:</strong> Improved convergence and stability of hyperspherical neural networks</li>
+                        <li><strong>Applications:</strong> Visual tide gauge automation, sports motion tracking, anomaly detection</li>
+                    </ul>
+                    
+                    <h3>Thesis defense video:</h3>
+                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true" allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
+                </section>
+
+                <section id="experience-en" class="fade-in">
+                    <h2><i class="fas fa-briefcase icon"></i>Professional Experience</h2>
+                    <ul>
+                        <li>
+                            <strong>Feb–May 2019:</strong> Internship at XLIM (UMR 7252) and MIA (EA 3165)<br>
+                            <em>Supervisors:</em> B. Tremblais and R. Pétéri<br>
+                            Characterization of sports gestures using high-speed cameras with trajectographic analysis of critical points.
+                        </li>
+                        <li>
+                            <strong>May 2018:</strong> Internship at LIENSs Laboratory (UMR 7266)<br>
+                            <em>Supervisors:</em> E. Poirier (IGR) and L. Testud<br>
+                            Development of an automated visual tide gauge: automatic reading of images from a tidal scale.
+                        </li>
+                        <li>
+                            <strong>Mar–Jun 2015:</strong> Internship at SYRTE Laboratory (UMR 8630), Observatoire de Paris<br>
+                            <em>Supervisor:</em> J.-Y. Richard<br>
+                            Development of algorithms for interpolating artificial satellite orbits (differential equations, numerical simulation).
+                        </li>
+                        <li>
+                            <strong>2015–2017:</strong> High school teacher, Lycées Saint-Exupéry, La Rochelle<br>
+                            Mathematics teacher. Development of communication skills, scientific outreach, and teamwork.
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="education-en" class="fade-in">
+                    <h2><i class="fas fa-graduation-cap icon"></i>Education</h2>
+                    <ul>
+                        <li>2020–2025: PhD in Applied Computer Science,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Mathematics, Image and Applications Laboratory (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">University of La Rochelle</a>
+                        </li>
+                        <li>2017–2019: Master in Mathematics and Applications MIX,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Mathematics, Image and Applications Laboratory (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">University of La Rochelle</a>
+                        </li>
+                        <li>2014–2015: Master in Astronomy & Physics,
+                            <a class="edu-link" href="https://observatoiredeparis.psl.eu/-master-231-.html" target="_blank" rel="noopener noreferrer">Paris-Meudon Observatory</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="publications-en" class="fade-in" data-tags="ia hyperspherique">
+                    <h2><i class="fas fa-file-alt icon"></i>Selected publications</h2>
+                    <ul>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, C. Choquet, <em>Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra</em>, Recent Applications in Deep Learning, 2025. (Accepted, in press).
+                            [<a href="https://scholar.google.com/citations?user=90hNJmgAAAAJ&hl=en" target="_blank">Google Scholar</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme</em>, ORASIS, 2021.
+                            [<a href="https://hal.science/hal-03339630v1/file/Neurones_couches_geom_orasis2021.pdf" target="_blank">PDF</a>]
+                            [<a href="https://hal.science/hal-03339630/" target="_blank">HAL</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Théorème d'approximation pour neurones hypersphériques</em>, GRETSI, 2023.
+                            [<a href="https://hal.science/hal-04195820/" target="_blank">HAL</a>]
+                            [<a href="https://hal.science/hal-04195820v1/document" target="_blank">PDF</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Multi-Spheres Anomaly Detection with Hyperspherical Layers</em>, ICMLA, 2024.
+                            [<a href="https://ieeexplore.ieee.org/abstract/document/10903378" target="_blank">IEEE</a>]
+                        </li>
+                        <li><a href="https://theses.fr/s395345" target="_blank">Complete thesis manuscript – University of La Rochelle, 2025</a></li>
+                    </ul>
+                </section>
+
+                <section id="languages-interests-en" class="fade-in">
+                    <h2><i class="fas fa-globe icon"></i>Languages & Interests</h2>
+                    <p>French (native), English (B2 – fluent), Spanish & Romanian (B1)</p>
+                    <p>Science outreach, astrophotography, bird photography, 3D modeling, video animation</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulaire de Contact -->
+    <section id="contact-form" class="fade-in">
+        <h2><i class="fas fa-envelope icon"></i>Contact Form / Formulaire de contact</h2>
+        <p style="font-size: 0.9em; color: #555;">* Champs obligatoires / * Required fields</p>
+        <form id="js-contact-form">
+            <input type="text" name="firstname" placeholder="Prénom * / First Name *" required>
+            <input type="text" name="name" placeholder="Nom * / Name *" required>
+            <input type="text" name="company" placeholder="Société * / Company *" required>
+            <input type="tel" name="phone" placeholder="Téléphone / Phone">
+            <input type="email" name="email" placeholder="Email *" required>
+            <textarea name="message" placeholder="Message *" rows="6" required></textarea>
+            <button type="submit">Envoyer / Send</button>
+        </form>
+    </section>
+
+    <!-- Bouton de réinitialisation handicap -->
+    <button class="reset-handicap" onclick="resetHandicapOptions()" title="Réinitialiser l'accessibilité">
+        <i class="fas fa-undo"></i>
+    </button>
+
+    <!-- Modales -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <p id="modal-message"></p>
+            <button onclick="closeModal()" class="contact-btn">OK</button>
+        </div>
+    </div>
+
+    <div id="modal-info" class="modal">
+        <div class="modal-content modal-info">
+            <button class="close-modal" onclick="closeMoreInfo()">&times;</button>
+            <h3>Secteur d'activité recherché</h3>
+            <ul>
+                <li>R&D et laboratoires d'innovation</li>
+                <li>Start-up / entreprises tech en croissance</li>
+                <li>Santé et biotech</li>
+                <li>Industrie (automobile, énergie, aéronautique, manufacturing, Industrie 4.0 / IoT)</li>
+                <li>Finance & FinTech (détection de fraude, analyse de risques, trading algorithmique)</li>
+                <li>Cybersécurité (détection d'intrusions, anomalies et comportements suspects)</li>
+                <li>Multimédia, jeux vidéo, créativité assistée par IA</li>
+                <li>Services numériques (ESN, conseil, cloud, SaaS)</li>
+                <li>Ingénierie des données, analyse de données, Big Data, intelligence décisionnelle</li>
+            </ul>
+
+            <h3>Taille de boîte</h3>
+            <p>Ouvert aussi bien aux petites structures qu'aux grands groupes.</p>
+
+            <h3>Domaines IA & Data</h3>
+            <ul>
+                <li>Traitement d'images (vision par ordinateur, ...)</li>
+                <li>Traitement du signal</li>
+                <li>NLP (traitement du langage naturel)</li>
+                <li>Data science & machine learning (analyse, modèles prédictifs, optimisation, MLOps)</li>
+                <li>Applications santé, innovation et agents IA</li>
+                <li>Détection d'anomalies (finance, cybersécurité, ...)</li>
+            </ul>
+
+            <h3>Types de postes ciblés</h3>
+            <ul>
+                <li>Chercheur / Ingénieur de recherche (R&D industrielle)</li>
+                <li>Post-Doctorant / Chargé de Recherche (académique ou public)</li>
+                <li>Ingénieur Machine Learning / Scientifique IA / Ingénieur ML (industrialisation et MLOps)</li>
+                <li>Data Scientist / Responsable Data Scientist</li>
+                <li>Ingénieur Vision par Ordinateur / Expert en Vision par Ordinateur</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-info-en" class="modal">
+        <div class="modal-content modal-info">
+            <button class="close-modal" onclick="closeMoreInfoEN()">&times;</button>
+            <h3>Target Industry Sectors</h3>
+            <ul>
+                <li>R&D and innovation labs</li>
+                <li>Start-ups / growing tech companies</li>
+                <li>Health & biotech</li>
+                <li>Industry (automotive, energy, aerospace, manufacturing, Industry 4.0 / IoT)</li>
+                <li>Finance & FinTech (fraud detection, risk analysis, algorithmic trading)</li>
+                <li>Cybersecurity (intrusion detection, anomalies, suspicious behaviors)</li>
+                <li>Multimedia, video games, AI-assisted creativity</li>
+                <li>Digital services (consulting, cloud, SaaS)</li>
+                <li>Data engineering, analytics, big data, business intelligence</li>
+            </ul>
+
+            <h3>Company Size</h3>
+            <p>Open to both small companies and large corporations.</p>
+
+            <h3>AI & Data Domains</h3>
+            <ul>
+                <li>Image processing (computer vision, sports motion analysis, visual tide gauge)</li>
+                <li>Signal processing (audio, biomedical, trajectory)</li>
+                <li>NLP (natural language processing)</li>
+                <li>Data science & machine learning (analysis, predictive models, optimization, MLOps)</li>
+                <li>Health applications, innovation, AI-assisted creativity</li>
+                <li>Anomaly detection (finance, cybersecurity, predictive maintenance)</li>
+            </ul>
+
+            <h3>Target Positions</h3>
+            <ul>
+                <li>Research Scientist / Research Engineer (industrial R&D)</li>
+                <li>Postdoctoral / Research Fellow (academic or public)</li>
+                <li>Machine Learning Engineer / AI Scientist / ML Engineer (industrialization & MLOps)</li>
+                <li>Data Scientist / Lead Data Scientist</li>
+                <li>Computer Vision Engineer / Expert in Computer Vision</li>
+            </ul>
+        </div>
+    </div>
+
+	<!-- Modal Handicap FR -->
+	<div id="modal-handicap" class="modal-handicap lang">
+	    <div class="modal-handicap-content">
+		<button class="close-modal" onclick="closeHandicapModal()">&times;</button>
+		<h2><i class="fas fa-universal-access"></i> Options d'accessibilité</h2>
+		<p>Choisissez les options qui vous aident à mieux naviguer sur le site :</p>
+		
+		<div class="handicap-options">
+		    <div class="handicap-option" onclick="toggleHandicapOption('handicap-mode')">
+		        <i class="fas fa-text-height"></i>
+		        <div>
+		            <strong>Mode lecture facilitée</strong><br>
+		            <small>Agrandit le texte et améliore l'espacement</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('high-contrast')">
+		        <i class="fas fa-adjust"></i>
+		        <div>
+		            <strong>Contraste élevé</strong><br>
+		            <small>Améliore la lisibilité pour les malvoyants</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('dyslexia-friendly')">
+		        <i class="fas fa-font"></i>
+		        <div>
+		            <strong>Mode dyslexie</strong><br>
+		            <small>Utilise une police adaptée pour la dyslexie</small>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="handicap-buttons">
+		    <button class="btn-handicap btn-cancel" onclick="closeHandicapModal()">Annuler</button>
+		    <button class="btn-handicap btn-confirm" onclick="applyHandicapOptions()">Appliquer les options</button>
+		    <button class="btn-handicap" onclick="resetHandicapOptions()" style="background: #ff5722; color: white;">Tout désactiver</button>
+		</div>
+	    </div>
+	</div>
+
+	<!-- Modal Handicap EN -->
+	<div id="modal-handicap-en" class="modal-handicap lang" style="display:none">
+	    <div class="modal-handicap-content">
+		<button class="close-modal" onclick="closeHandicapModal()">&times;</button>
+		<h2><i class="fas fa-universal-access"></i> Accessibility Options</h2>
+		<p>Choose the options that help you navigate the site better:</p>
+		
+		<div class="handicap-options">
+		    <div class="handicap-option" onclick="toggleHandicapOption('handicap-mode')">
+		        <i class="fas fa-text-height"></i>
+		        <div>
+		            <strong>Easy Reading Mode</strong><br>
+		            <small>Enlarges text and improves spacing</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('high-contrast')">
+		        <i class="fas fa-adjust"></i>
+		        <div>
+		            <strong>High Contrast</strong><br>
+		            <small>Improves readability for visually impaired</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('dyslexia-friendly')">
+		        <i class="fas fa-font"></i>
+		        <div>
+		            <strong>Dyslexia Mode</strong><br>
+		            <small>Uses a dyslexia-friendly font</small>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="handicap-buttons">
+		    <button class="btn-handicap btn-cancel" onclick="closeHandicapModal()">Cancel</button>
+		    <button class="btn-handicap btn-confirm" onclick="applyHandicapOptions()">Apply Options</button>
+		    <button class="btn-handicap" onclick="resetHandicapOptions()" style="background: #ff5722; color: white;">Disable All</button>
+		</div>
+	    </div>
+	</div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Widget Chat Mia -->
+    <div id="mia-chat-button" class="mia-chat-button">
+        <span style="font-size: 30px;">💬</span>
+    </div>
+
+    <div id="mia-chat-window" class="mia-chat-window">
+        <div class="mia-chat-header">
+            <div>
+                <strong>🤖 Mia</strong>
+                <div style="font-size: 0.75rem; opacity: 0.8;">Assistante IA de Julien</div>
+            </div>
+            <div>
+                <span id="mia-quota" style="font-size: 0.8rem; margin-right: 10px;">0 questions</span>
+                <button id="mia-close-btn" class="mia-close-btn">✕</button>
+            </div>
+        </div>
+        
+        <div id="mia-chat-messages" class="mia-chat-messages"></div>
+        
+        <div id="mia-ad-section">
+            <button id="mia-watch-ad-btn">
+                📺 Regarder une pub (+50 questions)
+            </button>
+        </div>
+        
+        <div class="mia-chat-footer">
+            <div class="mia-chat-input-wrapper">
+                <input 
+                    type="text" 
+                    id="mia-chat-input" 
+                    class="mia-chat-input" 
+                    placeholder="Posez votre question..."
+                >
+                <button id="mia-send-btn" class="mia-send-btn">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="chat-widget.js"></script>
