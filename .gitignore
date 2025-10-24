@@ -1,0 +1,22 @@
+# Fichiers et dossiers à exclure du git
+
+# Secrets et config locales
+local_only/
+mia-backend/.env
+
+# Dépendances
+node_modules/
+
+# Fichiers temporaires et logs
+*.log
+*.tmp
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Export RAG généré (optionnel, si trop volumineux)
+mia-backend/data/rag_index.json
+
+# Autres fichiers sensibles ou temporaires
+# (ajoute ici si besoin)

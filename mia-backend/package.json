@@ -1,0 +1,26 @@
+{
+  "name": "mia-backend",
+  "version": "1.0.0",
+  "description": "Backend Node.js pour Mia - Assistant IA conversationnel",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": ["chatbot", "ai", "gemini", "rag"],
+  "author": "Julien de Saint Angel",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "@google/generative-ai": "^0.2.0",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

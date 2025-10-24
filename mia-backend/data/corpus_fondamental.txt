@@ -1,0 +1,130 @@
+# Corpus fondamental pour Mia — version thématique robuste
+
+## RH - Apport en entreprise
+Julien peut apporter un prototype fonctionnel, des solutions de détection d'anomalies, la validation de méthodes innovantes et contribuer à la mise en production de projets IA.
+
+## RH - Bénéfice produit/service
+Julien apporte la détection d'anomalies, la supervision intelligente et l'industrialisation de solutions IA pour améliorer la qualité des produits et services.
+
+## RH - Disponibilité
+La disponibilité de Julien est précisée dans son CV. Pour tout contact, veuillez utiliser l'email ou le formulaire de contact.
+
+## RH - Références
+Julien a travaillé dans des laboratoires comme MIA, XLIM, et a été encadré par des directeurs de thèse reconnus. Ses encadrants et laboratoires sont mentionnés dans son CV.
+
+## RH - Travail en équipe non-technique
+Julien pratique la vulgarisation scientifique, sait travailler en équipe et communiquer avec des profils non techniques.
+
+## RH - Management
+Julien préfère se concentrer sur la technique, la mission et la résolution de problèmes complexes plutôt que d'évoluer vers le management.
+
+## Technique - Qui est Julien ?
+Julien est docteur en informatique appliquée, spécialisé en réseaux neuronaux hypersphériques et détection d'anomalies.
+
+## Technique - Compétences IA
+Julien maîtrise la théorie, les CNN, RNN, GAN, Transformers, auto-encodeurs et l'optimisation bayésienne.
+
+## Technique - Publications
+Voici les principales publications de Julien :
+- J. de Saint Angel, C. Saint-Jean, C. Choquet – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, chapitre de livre, Recent Applications in Deep Learning, 2025.
+- J. de Saint Angel, C. Saint-Jean – Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme, ORASIS, 2021.
+- J. de Saint Angel, C. Saint-Jean – Théorème d'approximation pour neurones hypersphériques, GRETSI, 2023.
+- J. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.
+
+## Qualité - Fiabilité
+Oui, Julien est fiable et possède de solides compétences scientifiques et techniques.
+## RH - Encadrement
+Julien a été enseignant fonctionnaire au lycée (secondaire). Il n'a jamais encadré d'étudiants au niveau universitaire.
+
+## RH - Gestion de la pression et délais
+Julien est très organisé et anticipe les obstacles grâce à une planification rigoureuse. Son statut RQTH lui permet d'adapter son environnement de travail pour mieux gérer la pression et la fatigabilité.
+
+## RH - Collaboration internationale
+Julien n'a jamais collaboré à l'international.
+
+## Technique - Données sensibles
+Julien a travaillé sur des jeux de données publics (synthétiques, MNIST, CIFAR-10) pour valider ses méthodes, mais pas sur des données sensibles ou confidentielles.
+
+## Distinctions et prix
+Julien a publié à l'international (ICMLA 2024) et a contribué à un chapitre de livre (2025). Il n'a pas reçu de prix prestigieux, mais a été reconnu pour la qualité de ses travaux.
+
+## Hackathon
+Julien a participé et remporté un hackathon en deuxième année de thèse.
+
+## Ateliers/conférences
+Julien n'a jamais animé d'atelier ou de conférence scientifique.
+
+## Industrie
+Julien n'a pas d'expérience en industrie.
+
+## Anti-hallucination - Informations privées
+Cette information n'est pas disponible dans les sources. Les réponses sont limitées aux informations présentes dans le corpus ou le CV.
+
+## Parcours - Parcours académique
+Julien a un doctorat, un master, une licence en mathématiques à La Rochelle, et a enseigné les mathématiques.
+
+## Parcours - Expérience professionnelle
+Julien a effectué des stages en laboratoire, a été enseignant et professeur, et a travaillé sur des projets de recherche appliquée.
+
+## Parcours - Centres d'intérêt
+Julien s'intéresse à la vulgarisation scientifique, l'astrophotographie et la modélisation.
+
+## Parcours - Langues
+Julien parle anglais (niveau minimum requis pour le travail et les conférences), écrit maîtrisé.
+
+## Parcours - Contact
+Pour contacter Julien, utilisez l'email indiqué dans le CV ou le formulaire de contact sur son site web.
+
+
+
+# Corpus fondamental pour Mia — version 1:1 certification
+
+## Q4. Aménagements RQTH
+Julien est reconnu RQTH. Il a besoin d’un environnement sain, calme, stable, avec prise en compte de la fatigabilité. Pour plus de détails, il est possible de le contacter via le formulaire de contact sur son site web.
+
+## Q7. Management
+Julien ne souhaite pas évoluer vers le management. Il préfère se concentrer sur la mission, la résolution de problèmes techniques complexes et l’expertise technique.
+
+## Q9. Définition exacte de SVDD, SPH SVDD et Deep SPH SVDD
+La méthode Support Vector Data Description (SVDD) vise à trouver les paramètres de centre et de rayon (c, ρ) de la plus petite hypersphère englobante pour un ensemble de points. Appliquée à la détection d'anomalies, il s'agit de laisser les points normaux à l'intérieur de la sphère et les anomalies à l'extérieur. Il existe deux approches en machine learning : la Deep soft-boundary SVDD et la One Class Deep SVDD, toutes deux basées sur ce principe.
+Dans le cadre de la thèse de Julien, deux méthodes sont proposées : SPH SVDD et Deep SPH SVDD. L’idée de la méthode SPH SVDD est de reformuler le problème SVDD en utilisant une hypersphère dans l’espace géométrique conforme, c’est-à-dire d’utiliser une couche hypersphérique pour résoudre le problème d’optimisation avec l’algèbre géométrique conforme. Le réseau contient alors une couche hypersphérique à un seul neurone (une sphère) et les entrées x. La méthode Deep SPH SVDD est une extension au cas de plusieurs sphères. L’idée première est d’envelopper efficacement des groupes spécifiques de points normaux dans l’espace des caractéristiques par un groupe de sphères. Par ce choix, nous désirons améliorer la finesse de détection et l’interprétabilité du modèle notamment dans le cas de données multimodales.
+Mots-clés : SVDD, hypersphère, centre, rayon, anomalie, intérieur, extérieur, soft-boundary, one class, SPH SVDD, Deep SPH SVDD, algèbre géométrique conforme, multi-sphères, groupes de points, caractéristiques, interprétabilité, données multimodales.
+
+## Q16. Parcours académique
+Julien a étudié les mathématiques depuis le lycée, puis à l’université de La Rochelle (Licence, Master, CAPES). Il a enseigné les mathématiques au lycée Saint-Exupéry à La Rochelle. Il a effectué des stages en laboratoire (marégraphe automatique au LIENSs, analyse trajectographique à XLIM/MIA, interpolation d’orbites au SYRTE). Il a soutenu une thèse de doctorat en informatique appliquée à l’intelligence artificielle, où il a publié et exposé ses travaux dans différentes conférences.
+
+## Q19. Anglais
+Julien parle anglais au niveau minimum requis pour travailler et échanger lors de conférences internationales. L’écrit est maîtrisé.
+
+## Méthode d'initialisation
+Une bonne méthode d'initialisation des couches hypersphériques est essentielle pour garantir la convergence et la stabilité de l'apprentissage. La méthode proposée dans la thèse permet d'enchaîner plusieurs couches hypersphériques, ce qui n'est pas possible avec une initialisation standard (type Glorot). Elle repose sur des propriétés asymptotiques des lois de type Gamma généralisées et des calculs de covariance adaptés à la structure géométrique des sphères.
+
+## Jeux de données utilisés
+Les jeux de données principaux utilisés pour valider la méthode Deep M-SPH SVDD sont :
+- Jeux de points synthétiques (pour illustrer le comportement des couches hypersphériques)
+- MNIST
+- CIFAR-10
+
+## Composante exploratoire/théorique de la thèse
+La thèse comporte une part importante d'étude théorique, notamment :
+- Un théorème d'approximation pour les réseaux à couches hypersphériques
+- L'étude mathématique des propriétés de convergence et de stabilité
+- L'analyse du phénomène de collapse dans les modèles Deep SVDD
+
+## Personnes de référence
+- Pr. Catherine Choquet (directrice du laboratoire MIA)
+- Christophe Saint-Jean (directeur de thèse)
+
+
+## Besoins RQTH
+Julien est reconnu RQTH. Il a besoin d’un environnement sain, calme, stable, avec prise en compte de la fatigabilité. Pour plus de détails, il est possible de le contacter via le formulaire de contact sur son site web.
+
+
+## Préférence technique / Management
+Julien ne souhaite pas évoluer vers le management. Il préfère se concentrer sur la mission, la résolution de problèmes techniques complexes et l’expertise technique.
+
+## Parcours académique (structuré)
+Julien a étudié les mathématiques depuis le lycée, puis à l’université de La Rochelle (Licence, Master, CAPES). Il a enseigné les mathématiques au lycée Saint-Exupéry à La Rochelle. Il a effectué des stages en laboratoire (marégraphe automatique au LIENSs, analyse trajectographique à XLIM/MIA, interpolation d’orbites au SYRTE). Il a soutenu une thèse de doctorat en informatique appliquée à l’intelligence artificielle, où il a publié et exposé ses travaux dans différentes conférences.
+
+## Anglais
+Julien parle anglais au niveau minimum requis pour travailler et échanger lors de conférences internationales. L’écrit est maîtrisé.

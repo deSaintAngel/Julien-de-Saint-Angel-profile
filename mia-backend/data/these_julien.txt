@@ -1,0 +1,106 @@
+Thèse de Julien De Saint Angel
+Titre complet : Réseaux de neurones à couches hypersphériques – Application à la détection d’anomalies
+Université : La Rochelle Université
+École doctorale : Euclide
+Laboratoire : Mathématiques, Image et Applications (MIA)
+Soutenance : 4 juillet 2025
+
+Encadrement :
+
+Directeur de thèse : Christophe Saint-Jean
+
+Directrice de laboratoire : Catherine Choquet
+
+Rapporteurs : Yannick Berthoumieu (Université de Bordeaux), Hoel Le Capitaine (Université de Nantes)
+
+Examinateurs : Laetitia Chapel (IRISA), Catherine Choquet (MIA)
+
+Résumé :
+Cette thèse introduit une nouvelle architecture de réseaux de neurones à couches hypersphériques fondée sur le formalisme de l’algèbre géométrique conforme (CGA). Elle vise à améliorer la représentation des données dans des espaces de grande dimension et à renforcer la performance des modèles de détection d’anomalies dans des contextes complexes, tels que les séries temporelles, la vision par ordinateur et l’analyse de signaux non linéaires. Les couches hypersphériques remplacent les hyperplans classiques des réseaux de neurones par des hypersphères apprenables, permettant des séparations de classes non linéaires et une meilleure robustesse aux distributions non gaussiennes.
+
+Objectifs scientifiques :
+
+Proposer un formalisme géométrique unifié pour représenter hyperplans et hypersphères à l’aide de l’algèbre conforme.
+
+Développer des couches neuronales hypersphériques (denses et convolutives) adaptées à l’apprentissage profond.
+
+Définir une méthode d’initialisation spécifique assurant stabilité et convergence dans ces couches.
+
+Appliquer ces modèles à la détection d’anomalies en s’appuyant sur des variantes du Support Vector Data Description (SVDD) adaptées à la géométrie hypersphérique.
+
+Contributions principales :
+
+Développement du modèle Deep M-SPH SVDD, une approche multi-sphères pour la détection d’anomalies basée sur la géométrie conforme.
+
+Conception d’une méthode d’initialisation hypersphérique garantissant la stabilité numérique et une convergence efficace.
+
+Implémentation pratique de couches hypersphériques denses et convolutives dans PyTorch et TensorFlow.
+
+Établissement d’un théorème d’approximation universelle démontrant la capacité de ces réseaux à approximer toute fonction continue sur un compact.
+
+Validation expérimentale sur des données synthétiques et réelles (MNIST, CIFAR-10) montrant des gains en performance et en stabilité.
+
+Applications :
+Détection d’anomalies dans les séries temporelles, surveillance industrielle, analyse marégraphique visuelle, diagnostic sportif haute fréquence et reconnaissance d’images complexes.
+
+Extraits représentatifs :
+« Les couches hypersphériques permettent de projeter les données sur des surfaces sphériques, facilitant la séparation des classes et la détection des points atypiques. »
+« La méthode Deep M-SPH SVDD améliore la robustesse de la détection d’anomalies en exploitant la géométrie des hypersphères dans l’espace des caractéristiques. »
+« L’initialisation adaptée aux couches hypersphériques optimise la convergence et la stabilité des modèles. »
+
+Publications associées :
+
+J. de Saint Angel, C. Saint-Jean, C. Choquet (2025) – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, in Recent Applications in Deep Learning.
+
+J. de Saint Angel, C. Saint-Jean (2024) – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA.
+
+J. de Saint Angel, C. Saint-Jean (2023) – Théorème d’approximation pour neurones hypersphériques, GRETSI.
+
+J. de Saint Angel, C. Saint-Jean (2021) – Couches Dense et Conv2D sphériques via l’algèbre géométrique conforme, ORASIS.
+
+Mots-clés : réseaux de neurones, hypersphères, algèbre géométrique conforme, détection d’anomalies, séries temporelles, apprentissage profond, initialisation, SVDD, IA interprétable, optimisation, convergence.
+
+Détail par chapitre :
+
+Chapitre 1 : Réseaux inspirés du formalisme de l’algèbre géométrique conforme
+Ce chapitre présente les fondements mathématiques et conceptuels de l’approche. Il introduit le modèle conforme d’Hestenes, permettant de représenter hyperplans et hypersphères dans un espace vectoriel augmenté Rⁿ⁺¹,¹.
+Les couches hypersphériques y sont définies comme une extension naturelle des couches denses et convolutives classiques. Le texte décrit le produit interne conforme (x̃·is̃), les règles de calcul associées, et les contraintes de normalisation nécessaires (s̃² = ρ², e∞·is̃ = -1).
+L’auteur compare les performances entre couches denses classiques et couches hypersphériques sur des jeux de données synthétiques (Easy et Dif). Les résultats montrent une convergence plus rapide et une meilleure stabilité avec les couches hypersphériques. Le chapitre introduit également la notion de convolution hypersphérique et détaille sa mise en œuvre dans des architectures de type Conv2D.
+Enfin, une comparaison avec les réseaux RBF et les réseaux de neurones Clifford est réalisée, montrant que les couches hypersphériques constituent une généralisation géométriquement cohérente de ces modèles.
+
+Chapitre 2 : Réseaux de neurones à couches hypersphériques et théorème d’approximation
+Ce chapitre établit le cadre théorique garantissant la capacité d’approximation des réseaux hypersphériques. En s’appuyant sur le théorème de densité de Schwartz, l’auteur démontre qu’un réseau à une couche hypersphérique peut approximer toute fonction continue sur un compact de Rⁿ, à condition que la fonction d’activation soit régulière.
+Une comparaison est réalisée entre la structure des fonctions produites par des réseaux à couches classiques (linéaires) et celles produites par des couches hypersphériques (quadratiques). Des expérimentations sur des fonctions 1D illustrent les capacités d’approximation et la stabilité numérique des réseaux hypersphériques.
+Le chapitre conclut que ces réseaux disposent d’une expressivité au moins équivalente aux MLP classiques, tout en offrant une meilleure interprétation géométrique des frontières de décision.
+
+Chapitre 3 : Application à la détection d’anomalies
+Le troisième chapitre est consacré à l’application principale de la thèse : la détection d’anomalies.
+Il commence par un état de l’art complet des méthodes classiques (Elliptic Envelope, Isolation Forest, One-Class SVM, Support Vector Data Description et variantes profondes). L’auteur montre les limites de ces approches face à la non-linéarité et à la complexité géométrique des données.
+De nouveaux modèles sont ensuite introduits : SPH-Anomaly, SPH-SVDD, Deep SPH-SVDD et Deep M-SPH SVDD. Ces modèles exploitent la représentation conforme pour apprendre directement les centres et rayons des hypersphères englobantes des données normales.
+Le Deep M-SPH SVDD combine plusieurs hypersphères pour modéliser des sous-groupes de comportements normaux.
+Des expériences approfondies sont présentées sur données synthétiques 2D, MNIST et CIFAR-10, avec étude du paramètre ν, des métriques de performance (AUC-ROC, AUC-PR, F1-score), et de la stabilité face au phénomène de “collapse” observé dans le Deep SVDD classique.
+Les résultats montrent que les couches hypersphériques apportent une meilleure robustesse et un pouvoir de détection supérieur tout en restant interprétables.
+
+Annexes :
+Les annexes fournissent les détails mathématiques et techniques complémentaires :
+
+A : calcul des covariances et méthodes d’initialisation des couches hypersphériques.
+
+B : preuve complète du théorème d’approximation.
+
+C : analyse du phénomène de collapse et justification géométrique de sa prévention dans les architectures hypersphériques.
+
+Structure du manuscrit :
+
+Fondements théoriques : algèbre géométrique conforme et représentation vectorielle des hypersphères.
+
+Définition et implémentation des couches hypersphériques (denses et convolutives).
+
+Théorème d’approximation pour neurones hypersphériques.
+
+Application à la détection d’anomalies avec les modèles SPH-SVDD et M-SPH SVDD.
+
+Validation expérimentale et perspectives d’évolution.
+
+Résumé synthétique :
+La thèse de Julien de Saint Angel propose une approche innovante de l’apprentissage profond basée sur des couches hypersphériques intégrées au formalisme de l’algèbre géométrique conforme. Cette approche unifie hyperplans et hypersphères dans une même représentation, permet une meilleure compréhension géométrique des réseaux neuronaux et améliore la détection d’anomalies dans des environnements complexes. Grâce à l’introduction de modèles Deep SPH SVDD et Deep M-SPH SVDD, ainsi qu’à une méthode d’initialisation spécifique, l’auteur démontre des gains de performance significatifs, une convergence plus rapide et une interprétabilité accrue des modèles d’intelligence artificielle.
