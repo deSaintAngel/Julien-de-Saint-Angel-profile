@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -12,6 +12,7 @@
     <meta property="og:description" content="Docteur en intelligence artificielle spécialisé dans les réseaux neuronaux hypersphériques et la détection d'anomalies.">
     <meta property="og:image" content="assets/images/julien.png">
     <meta property="og:url" content="https://votresite.com">
+
     <!-- Google AdSense -->
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215342224838884"
          crossorigin="anonymous"></script>
@@ -27,6 +28,7 @@
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     
     <link rel="stylesheet" href="css/style.css">
+    
     <!-- Widget Chat Mia -->
     <link rel="stylesheet" href="chat-widget.css">
 
@@ -612,7 +614,44 @@
     <!-- Scripts -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script src="js/main.js"></script>
-</body>
-    <script src="js/main.js"></script>
-</body>
-</html>
+
+    <!-- Widget Chat Mia -->
+    <div id="mia-chat-button" class="mia-chat-button">
+        <span style="font-size: 30px;">💬</span>
+    </div>
+
+    <div id="mia-chat-window" class="mia-chat-window">
+        <div class="mia-chat-header">
+            <div>
+                <strong>🤖 Mia</strong>
+                <div style="font-size: 0.75rem; opacity: 0.8;">Assistante IA de Julien</div>
+            </div>
+            <div>
+                <span id="mia-quota" style="font-size: 0.8rem; margin-right: 10px;">0 questions</span>
+                <button id="mia-close-btn" class="mia-close-btn">✕</button>
+            </div>
+        </div>
+        
+        <div id="mia-chat-messages" class="mia-chat-messages"></div>
+        
+        <div id="mia-ad-section">
+            <button id="mia-watch-ad-btn">
+                📺 Regarder une pub (+50 questions)
+            </button>
+        </div>
+        
+        <div class="mia-chat-footer">
+            <div class="mia-chat-input-wrapper">
+                <input 
+                    type="text" 
+                    id="mia-chat-input" 
+                    class="mia-chat-input" 
+                    placeholder="Posez votre question..."
+                >
+                <button id="mia-send-btn" class="mia-send-btn">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="chat-widget.js"></script>
+
