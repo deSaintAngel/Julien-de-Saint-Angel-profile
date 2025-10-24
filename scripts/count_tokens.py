@@ -64,3 +64,5 @@ print(f"\n🎁 Offre gratuite Gemini")
 print(f"  - 1500 requêtes/jour GRATUITES")
 print(f"  - 45,000 requêtes/mois GRATUITES")
 print(f"  - Suffisant pour commencer sans coût !")
+
+

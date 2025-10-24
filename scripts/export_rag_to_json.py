@@ -55,3 +55,5 @@ def export_rag_to_json(output_file='mia-backend/data/rag_index.json'):
 
 if __name__ == '__main__':
     export_rag_to_json()
+
+

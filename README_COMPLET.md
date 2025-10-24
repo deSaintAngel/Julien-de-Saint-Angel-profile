@@ -292,3 +292,5 @@ npm start
 ## 📝 LICENCE
 
 MIT License - Utilisez et modifiez librement ce code.
+
+

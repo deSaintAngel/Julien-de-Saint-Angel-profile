@@ -104,3 +104,4 @@ Validation expérimentale et perspectives d’évolution.
 
 Résumé synthétique :
 La thèse de Julien de Saint Angel propose une approche innovante de l’apprentissage profond basée sur des couches hypersphériques intégrées au formalisme de l’algèbre géométrique conforme. Cette approche unifie hyperplans et hypersphères dans une même représentation, permet une meilleure compréhension géométrique des réseaux neuronaux et améliore la détection d’anomalies dans des environnements complexes. Grâce à l’introduction de modèles Deep SPH SVDD et Deep M-SPH SVDD, ainsi qu’à une méthode d’initialisation spécifique, l’auteur démontre des gains de performance significatifs, une convergence plus rapide et une interprétabilité accrue des modèles d’intelligence artificielle.
+

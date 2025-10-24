@@ -202,3 +202,5 @@ Pour toute question :
 ---
 
 🎉 **Backend prêt !** Prochaine étape : intégrer le widget frontend (voir `mia-frontend/README.md`)
+
+

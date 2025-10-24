@@ -21,3 +21,5 @@ if ($content -match '(<meta property="og:url" content="[^"]*">)') {
 } else {
     Write-Host "❌ Impossible de trouver la balise og:url" -ForegroundColor Red
 }
+
+
