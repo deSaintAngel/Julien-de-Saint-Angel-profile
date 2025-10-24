@@ -7,7 +7,7 @@
 const adSessions = new Map();
 
 // Configuration
-const AD_DURATION = 30000; // Durée minimale pub (30 secondes)
+const AD_DURATION = 1000; // Durée minimale pub (1 seconde)
 const AD_CREDITS = 50; // Nombre de crédits accordés après une pub
 
 /**

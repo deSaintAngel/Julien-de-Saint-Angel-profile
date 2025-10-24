@@ -10,21 +10,22 @@ const chatRoute = require('./routes/chat');
 const creditRoute = require('./routes/credit');
 const adRoute = require('./routes/ad');
 const ragService = require('./services/ragService');
-const geminiService = require('./services/geminiService');
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Configuration CORS
-const allowedOrigins = process.env.ALLOWED_ORIGINS 
-  ? process.env.ALLOWED_ORIGINS.split(',') 
-  : ['http://localhost:8080'];
+
+// Autorise toutes les origines en développement
+const allowedOrigins = ['*'];
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Autorise les requêtes sans origin (postman, curl, etc.)
-    if (!origin) return callback(null, true);
-    
+    // Autorise toutes les origines en développement
+    if (allowedOrigins.includes('*') || !origin) {
+      return callback(null, true);
+    }
     if (allowedOrigins.includes(origin)) {
       callback(null, true);
     } else {
@@ -121,9 +122,7 @@ app.listen(PORT, '127.0.0.1', () => {
   console.log(`🌍 Environnement: ${process.env.NODE_ENV || 'development'}`);
   
   // Vérifications au démarrage
-  if (!geminiService.checkApiKey()) {
-    console.error('⚠️  Attention: GEMINI_API_KEY non configurée');
-  }
+  // (Plus de vérification GEMINI_API_KEY, car Gemini n'est plus utilisé)
   
   // Pré-charge l'index RAG
   ragService.loadRagIndex();

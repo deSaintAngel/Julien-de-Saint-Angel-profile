@@ -355,6 +355,8 @@ document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.fade-in').forEach(el => {
         observer.observe(el);
     });
+
+    // ...existing code...
 });
 // Configuration MathJax (doit être définie avant le chargement de MathJax)
 window.MathJax = {
