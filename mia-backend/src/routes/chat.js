@@ -1,3 +1,14 @@
+// nodemailer and sendmail route will be defined after router initialization
+/**
+ * Route /api/chat - Endpoint principal pour les conversations avec Mia
+ */
+
+const express = require('express');
+const router = express.Router();
+const quotaService = require('../services/quotaService');
+const ragService = require('../services/ragService');
+const groqService = require('../services/groqService');
+
 const nodemailer = require('nodemailer');
 
 // Config nodemailer (exemple Gmail, à adapter avec vos identifiants)
@@ -46,15 +57,6 @@ router.post('/sendmail', async (req, res) => {
     res.status(500).json({ success: false, error: 'Erreur serveur envoi mail' });
   }
 });
-/**
- * Route /api/chat - Endpoint principal pour les conversations avec Mia
- */
-
-const express = require('express');
-const router = express.Router();
-const quotaService = require('../services/quotaService');
-const ragService = require('../services/ragService');
-const groqService = require('../services/groqService');
 
 router.post('/', async (req, res) => {
   try {
@@ -75,7 +77,7 @@ router.post('/', async (req, res) => {
     if (!quotaService.hasQuota(session.userId)) {
       return res.status(403).json({
         error: 'Quota épuisé',
-        message: 'Veuillez regarder une publicité pour débloquer 20 questions',
+        message: 'Veuillez regarder une publicité pour débloquer 50 questions',
         quota: 0,
         userId: session.userId
       });
