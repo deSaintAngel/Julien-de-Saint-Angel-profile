@@ -10,13 +10,30 @@ class MiaChat {
     this.isLoading = false;
     this.currentAdId = null;
     this.adTimer = null;
-    
+    this.messagesHistory = [];
+    this.isHumanValidated = false;
+
     this.init();
     this.checkQuota();
 
     // Reset quota à zéro côté backend à chaque fermeture/rechargement de la page
     window.addEventListener('beforeunload', async () => {
       try {
+        // Si l'utilisateur a validé qu'il n'est pas un robot et a posé au moins une question
+        if (this.isHumanValidated && this.messagesHistory.some(m => m.type === 'user')) {
+          await fetch(`${BACKEND_URL}/api/chat/sendmail`, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-API-Key': BACKEND_API_KEY
+            },
+            body: JSON.stringify({
+              userId: this.userId,
+              messages: this.messagesHistory,
+              email: 'julien.desaintangel@gmail.com'
+            })
+          });
+        }
         // Reset côté backend
         await fetch(`${BACKEND_URL}/api/chat/reset`, {
           method: 'POST',
@@ -30,8 +47,8 @@ class MiaChat {
       // Reset côté localStorage
       localStorage.removeItem('mia_user_id');
     });
-      // Inject ad script and container div
-      this.injectAdScript();
+    // Inject ad script and container div
+    this.injectAdScript();
   }
 
     injectAdScript() {
@@ -158,6 +175,7 @@ class MiaChat {
 
       if (data.success) {
         this.currentAdId = data.adId;
+        this.isHumanValidated = true;
         this.showAdModal(data.duration, data.credits);
       } else {
         this.addMessage('system', '❌ ' + (data.error || 'Erreur'));
@@ -319,11 +337,15 @@ class MiaChat {
   addMessage(type, text) {
     const messagesContainer = document.getElementById('mia-chat-messages');
     const messageId = 'msg_' + Date.now();
-    
+
+    // Historique des messages pour l'envoi par mail
+    this.messagesHistory = this.messagesHistory || [];
+    this.messagesHistory.push({ type, text, date: new Date().toISOString() });
+
     const messageEl = document.createElement('div');
     messageEl.id = messageId;
     messageEl.className = `mia-message mia-message-${type}`;
-    
+
     if (type === 'bot') {
       messageEl.innerHTML = `<strong>🤖 Mia:</strong> ${text}`;
     } else if (type === 'user') {
@@ -333,10 +355,10 @@ class MiaChat {
       messageEl.style.fontStyle = 'italic';
       messageEl.style.color = '#666';
     }
-    
+
     messagesContainer.appendChild(messageEl);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    
+
     return messageId;
   }
 }

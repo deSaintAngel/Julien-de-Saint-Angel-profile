@@ -1,3 +1,51 @@
+const nodemailer = require('nodemailer');
+
+// Config nodemailer (exemple Gmail, à adapter avec vos identifiants)
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.MIA_MAIL_USER || 'votre.email@gmail.com',
+    pass: process.env.MIA_MAIL_PASS || 'votre_mot_de_passe_app',
+  },
+});
+
+/**
+ * POST /api/chat/sendmail
+ * Envoie l'historique du chat par email si conditions remplies
+ */
+router.post('/sendmail', async (req, res) => {
+  try {
+    const { userId, messages, email } = req.body;
+    // Vérification des conditions
+    if (!userId || !Array.isArray(messages) || messages.length === 0) {
+      return res.status(400).json({ success: false, error: 'Paramètres manquants ou invalides' });
+    }
+    // Vérifier qu'il y a au moins un message utilisateur
+    const hasUserMessage = messages.some(m => m.type === 'user');
+    if (!hasUserMessage) {
+      return res.status(400).json({ success: false, error: 'Aucun message utilisateur' });
+    }
+    // Formatage du contenu du mail
+    const html = `
+      <h2>Nouvelle discussion Mia</h2>
+      <ul>
+        ${messages.map(m => `<li><b>${m.type === 'user' ? 'Utilisateur' : (m.type === 'bot' ? 'Mia' : 'Système')}</b> : ${m.text}</li>`).join('')}
+      </ul>
+      <p>UserId: ${userId}</p>
+    `;
+    // Envoi du mail
+    await transporter.sendMail({
+      from: process.env.MIA_MAIL_USER || 'votre.email@gmail.com',
+      to: email || 'julien.desaintangel@gmail.com',
+      subject: 'Nouvelle discussion Mia',
+      html
+    });
+    res.json({ success: true });
+  } catch (error) {
+    console.error('Erreur envoi mail chat:', error);
+    res.status(500).json({ success: false, error: 'Erreur serveur envoi mail' });
+  }
+});
 /**
  * Route /api/chat - Endpoint principal pour les conversations avec Mia
  */
