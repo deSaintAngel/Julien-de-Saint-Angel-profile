@@ -10,31 +10,13 @@ class MiaChat {
     this.isLoading = false;
     this.currentAdId = null;
     this.adTimer = null;
-    this.messagesHistory = [];
-    this.isHumanValidated = false;
-
+    
     this.init();
     this.checkQuota();
 
     // Reset quota à zéro côté backend à chaque fermeture/rechargement de la page
     window.addEventListener('beforeunload', async () => {
       try {
-        // Si l'utilisateur a validé qu'il n'est pas un robot et a posé au moins une question
-        if (this.isHumanValidated && this.messagesHistory.some(m => m.type === 'user')) {
-          await fetch(`${BACKEND_URL}/api/chat/sendmail`, {
-            method: 'POST',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-API-Key': BACKEND_API_KEY
-            },
-            body: JSON.stringify({
-              userId: this.userId,
-              messages: this.messagesHistory,
-              email: 'julien.desaintangel@gmail.com'
-            })
-          });
-        }
-        // Reset côté backend
         await fetch(`${BACKEND_URL}/api/chat/reset`, {
           method: 'POST',
           headers: {
@@ -44,12 +26,10 @@ class MiaChat {
           body: JSON.stringify({ userId: this.userId })
         });
       } catch (e) {}
-      // Reset côté localStorage
       localStorage.removeItem('mia_user_id');
     });
   }
 
-  
   getOrCreateUserId() {
     let userId = localStorage.getItem('mia_user_id');
     if (!userId) {
@@ -78,14 +58,13 @@ class MiaChat {
     });
     
     const adBtn = document.getElementById('mia-watch-ad-btn');
-      adBtn.textContent = 'Valider que je ne suis pas un robot';
-      adBtn.addEventListener('click', () => this.startAd());
+    adBtn.textContent = 'Valider que je ne suis pas un robot';
+    adBtn.addEventListener('click', () => this.startAd());
 
-      // Masquer le compteur de questions si quota=0 au chargement
-      const quotaEl = document.getElementById('mia-quota');
-      if (quotaEl && this.quota === 0) {
-        quotaEl.style.display = 'none';
-      }
+    const quotaEl = document.getElementById('mia-quota');
+    if (quotaEl && this.quota === 0) {
+      quotaEl.style.display = 'none';
+    }
     
     this.addMessage('bot', '👋 Bonjour ! Je suis Mia. Comment puis-je vous aider ?');
   }
@@ -125,7 +104,6 @@ class MiaChat {
   
   updateQuotaDisplay() {
     const quotaEl = document.getElementById('mia-quota');
-    // Ne pas afficher le quota si 0, mais ne pas retirer le code
     if (this.quota === 0) {
       quotaEl.style.display = 'none';
     } else {
@@ -133,29 +111,137 @@ class MiaChat {
       quotaEl.textContent = `${this.quota} question${this.quota > 1 ? 's' : ''}`;
     }
 
-    // Suppression de l'affichage de la section pub
     const adSection = document.getElementById('mia-ad-section');
-    if (adSection) adSection.style.display = 'none';
+    if (this.quota === 0) {
+      adSection.style.display = 'block';
+    } else {
+      adSection.style.display = 'none';
+    }
   }
   
   async startAd() {
-    // Désactivation totale de la pub : bouton inactif
-    const adBtn = document.getElementById('mia-watch-ad-btn');
-    if (adBtn) {
+    try {
+      const adBtn = document.getElementById('mia-watch-ad-btn');
       adBtn.disabled = true;
-      adBtn.style.display = 'none';
+      adBtn.textContent = 'Chargement...';
+
+      const response = await fetch(`${BACKEND_URL}/api/ad/start`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-Key': BACKEND_API_KEY
+        },
+        body: JSON.stringify({ userId: this.userId })
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        this.currentAdId = data.adId;
+        this.showAdModal(data.duration, data.credits);
+      } else {
+        this.addMessage('system', '❌ ' + (data.error || 'Erreur'));
+        adBtn.disabled = false;
+        adBtn.textContent = 'Valider que je ne suis pas un robot';
+      }
+
+    } catch (error) {
+      console.error('Erreur startAd:', error);
+      const adBtn = document.getElementById('mia-watch-ad-btn');
+      adBtn.disabled = false;
+      adBtn.textContent = 'Valider que je ne suis pas un robot';
     }
-    this.addMessage('system', 'La publicité a été désactivée pour des raisons de sécurité.');
   }
   
   showAdModal(duration, credits) {
-    // Suppression totale de la modale de pub
-    return;
+    const modal = document.createElement('div');
+    modal.id = 'mia-ad-modal';
+    modal.innerHTML = `
+      <div class="mia-ad-overlay"></div>
+      <div class="mia-ad-content">
+        <p style="margin:10px 0; text-align:center;">🔒 Validation en cours...</p>
+        <div class="mia-ad-timer">
+          <div class="mia-ad-progress"></div>
+          <span id="mia-ad-countdown">2s</span>
+        </div>
+        <button id="mia-ad-close-btn" disabled style="margin-top:10px;">Veuillez patienter...</button>
+        <p class="mia-ad-note" id="mia-ad-note">⏳ Veuillez patienter 2 secondes puis cliquez sur Fermer.</p>
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    let remaining = 2000;
+    const countdown = document.getElementById('mia-ad-countdown');
+    const progress = document.querySelector('.mia-ad-progress');
+    const closeBtn = document.getElementById('mia-ad-close-btn');
+    const note = document.getElementById('mia-ad-note');
+
+    closeBtn.style.background = '#4caf50';
+    closeBtn.style.color = '#fff';
+    closeBtn.style.border = 'none';
+    closeBtn.style.borderRadius = '8px';
+    closeBtn.style.padding = '10px 32px';
+    closeBtn.style.fontSize = '1.1em';
+    closeBtn.style.fontWeight = 'bold';
+    closeBtn.style.boxShadow = '0 2px 8px #0001';
+    closeBtn.style.transition = 'opacity 0.2s, background 0.2s';
+    
+    closeBtn.disabled = true;
+    closeBtn.textContent = 'Veuillez patienter...';
+
+    this.adTimer = setInterval(() => {
+      remaining -= 1000;
+      countdown.textContent = Math.ceil(remaining / 1000) + 's';
+      progress.style.width = ((2000 - remaining) / 2000 * 100) + '%';
+      if (remaining <= 0) {
+        clearInterval(this.adTimer);
+        closeBtn.disabled = false;
+        closeBtn.textContent = 'Fermer';
+        countdown.textContent = '0s';
+        if (note) note.style.display = 'none';
+      }
+    }, 1000);
+
+    closeBtn.addEventListener('click', () => {
+      this.completeAd();
+    });
   }
   
   async completeAd() {
-    // Suppression de la logique de validation pub
-    return;
+    try {
+      const response = await fetch(`${BACKEND_URL}/api/ad/complete`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-API-Key': BACKEND_API_KEY
+        },
+        body: JSON.stringify({ 
+          userId: this.userId,
+          adId: this.currentAdId
+        })
+      });
+
+      const data = await response.json();
+
+      const modal = document.getElementById('mia-ad-modal');
+      if (modal) modal.remove();
+
+      if (data.success) {
+        this.quota = data.totalQuota;
+        this.updateQuotaDisplay();
+      } else {
+        this.addMessage('system', '❌ ' + (data.error || 'Erreur'));
+      }
+
+      const adBtn = document.getElementById('mia-watch-ad-btn');
+      adBtn.disabled = false;
+      adBtn.textContent = 'Valider que je ne suis pas un robot';
+
+    } catch (error) {
+      console.error('Erreur completeAd:', error);
+      const modal = document.getElementById('mia-ad-modal');
+      if (modal) modal.remove();
+    }
   }
   
   async sendMessage() {
@@ -193,7 +279,7 @@ class MiaChat {
       document.getElementById(loaderId)?.remove();
       
       if (data.success) {
-        await new Promise(res => setTimeout(res, 1000)); // délai d'attente
+        await new Promise(res => setTimeout(res, 1000));
         this.addMessage('bot', data.response);
         this.quota = data.quota;
         this.updateQuotaDisplay();
@@ -213,15 +299,11 @@ class MiaChat {
   addMessage(type, text) {
     const messagesContainer = document.getElementById('mia-chat-messages');
     const messageId = 'msg_' + Date.now();
-
-    // Historique des messages pour l'envoi par mail
-    this.messagesHistory = this.messagesHistory || [];
-    this.messagesHistory.push({ type, text, date: new Date().toISOString() });
-
+    
     const messageEl = document.createElement('div');
     messageEl.id = messageId;
     messageEl.className = `mia-message mia-message-${type}`;
-
+    
     if (type === 'bot') {
       messageEl.innerHTML = `<strong>🤖 Mia:</strong> ${text}`;
     } else if (type === 'user') {
@@ -231,10 +313,10 @@ class MiaChat {
       messageEl.style.fontStyle = 'italic';
       messageEl.style.color = '#666';
     }
-
+    
     messagesContainer.appendChild(messageEl);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
-
+    
     return messageId;
   }
 }
@@ -242,5 +324,3 @@ class MiaChat {
 document.addEventListener('DOMContentLoaded', () => {
   new MiaChat();
 });
-
-

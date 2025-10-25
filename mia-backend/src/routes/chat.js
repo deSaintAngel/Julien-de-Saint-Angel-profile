@@ -160,6 +160,37 @@ router.post('/quota', (req, res) => {
   }
 });
 
+
+/**
+ * POST /api/chat/reset
+ * Ajoute 50 crédits uniquement si le quota est à 0 (validation humaine)
+ */
+router.post('/reset', (req, res) => {
+  try {
+    const { userId, forceZero } = req.body;
+    if (!userId) {
+      return res.status(400).json({ success: false, error: 'userId requis' });
+    }
+    const session = quotaService.getOrCreateSession(userId);
+    let added = false;
+    if (forceZero) {
+      session.remaining = 0;
+    } else if (quotaService.getRemainingQuota(session.userId) === 0) {
+      quotaService.addQuota(session.userId, quotaService.QUOTA_PER_AD);
+      added = true;
+    }
+    res.json({
+      success: true,
+      quota: quotaService.getRemainingQuota(session.userId),
+      added,
+      userId: session.userId
+    });
+  } catch (error) {
+    console.error('❌ Erreur route /api/chat/reset:', error);
+    res.status(500).json({ success: false, error: 'Erreur serveur' });
+  }
+});
+
 module.exports = router;
 
 
