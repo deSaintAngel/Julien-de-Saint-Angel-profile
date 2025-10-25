@@ -1,5 +1,5 @@
 // Configuration
-const BACKEND_URL = 'http://127.0.0.1:3001';
+const BACKEND_URL = 'https://julien-de-saint-angel-profile.onrender.com';
 const BACKEND_API_KEY = '6a6cd4efe172ac26a1af65b2038ea403f8be3f777ae56ebba5fae0fd27a0ae1f';
 
 class MiaChat {
