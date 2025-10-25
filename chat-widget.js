@@ -76,7 +76,14 @@ class MiaChat {
     });
     
     const adBtn = document.getElementById('mia-watch-ad-btn');
-    adBtn.addEventListener('click', () => this.startAd());
+      adBtn.textContent = 'Valider que je ne suis pas un robot';
+      adBtn.addEventListener('click', () => this.startAd());
+
+      // Masquer le compteur de questions si quota=0 au chargement
+      const quotaEl = document.getElementById('mia-quota');
+      if (quotaEl && this.quota === 0) {
+        quotaEl.style.display = 'none';
+      }
     
     this.addMessage('bot', '👋 Bonjour ! Je suis Mia. Comment puis-je vous aider ?');
   }
@@ -264,7 +271,7 @@ class MiaChat {
     if (!message || this.isLoading) return;
     
     if (this.quota === 0) {
-      this.addMessage('system', '❌ Plus d\'interactions. Regardez une publicité.');
+      this.addMessage('system', '❌ Plus d\'interactions. Veuillez valider que vous n\'êtes pas un robot.');
       return;
     }
     
