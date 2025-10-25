@@ -178,13 +178,19 @@ class MiaChat {
         <p class="mia-ad-note" id="mia-ad-note">⏳ Veuillez patienter 2 secondes puis cliquez sur Fermer.</p>
       </div>
     `;
-    // Ajout dynamique du script Adsterra après insertion du HTML
+    document.body.appendChild(modal);
+    // Ajout dynamique du script publicitaire dans la fenêtre pop-up
     const adScript = document.createElement('script');
     adScript.async = true;
     adScript.setAttribute('data-cfasync', 'false');
     adScript.src = '//pl27921008.effectivegatecpm.com/84ae41f42b5b700ad20f9bf6aba6a1c9/invoke.js';
-    modal.querySelector('.mia-ad-content').appendChild(adScript);
-    document.body.appendChild(modal);
+    // Insérer le script juste après le conteneur dans la modale
+    const adContainer = modal.querySelector('#container-84ae41f42b5b700ad20f9bf6aba6a1c9');
+    if (adContainer) {
+      adContainer.parentNode.insertBefore(adScript, adContainer.nextSibling);
+    } else {
+      modal.querySelector('.mia-ad-content').appendChild(adScript);
+    }
     let remaining = 2000;
     const countdown = document.getElementById('mia-ad-countdown');
     const progress = document.querySelector('.mia-ad-progress');
