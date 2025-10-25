@@ -74,6 +74,13 @@ class MiaChat {
     const chatWindow = document.getElementById('mia-chat-window');
     
     if (this.isOpen) {
+      // Réinitialise la validation et le quota à chaque ouverture du chat
+      localStorage.removeItem('mia_quota');
+      localStorage.removeItem('mia_validated');
+      sessionStorage.removeItem('mia_quota');
+      sessionStorage.removeItem('mia_validated');
+      this.quota = 0;
+      this.updateQuotaDisplay();
       chatWindow.classList.add('open');
       document.getElementById('mia-chat-input').focus();
     } else {
