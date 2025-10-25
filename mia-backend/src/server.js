@@ -116,13 +116,12 @@ app.use((err, req, res, next) => {
 });
 
 // Démarrage du serveur
-app.listen(PORT, '127.0.0.1', () => {
+app.listen(PORT, '0.0.0.0', () => {
   console.log('\n🚀 Mia Backend démarré !');
-  console.log(`📡 Serveur écoute sur http://127.0.0.1:${PORT}`);
+  console.log(`📡 Serveur écoute sur http://0.0.0.0:${PORT} (ou http://localhost:${PORT} en local)`);
   console.log(`🌍 Environnement: ${process.env.NODE_ENV || 'development'}`);
   
-  // Vérifications au démarrage
-  // (Plus de vérification GEMINI_API_KEY, car Gemini n'est plus utilisé)
+
   
   // Pré-charge l'index RAG
   ragService.loadRagIndex();
