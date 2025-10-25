@@ -116,8 +116,14 @@ class MiaChat {
   
   updateQuotaDisplay() {
     const quotaEl = document.getElementById('mia-quota');
-    quotaEl.textContent = `${this.quota} question${this.quota > 1 ? 's' : ''}`;
-    
+    // Ne pas afficher le quota si 0, mais ne pas retirer le code
+    if (this.quota === 0) {
+      quotaEl.style.display = 'none';
+    } else {
+      quotaEl.style.display = '';
+      quotaEl.textContent = `${this.quota} question${this.quota > 1 ? 's' : ''}`;
+    }
+
     const adSection = document.getElementById('mia-ad-section');
     if (this.quota === 0) {
       adSection.style.display = 'block';
@@ -131,7 +137,7 @@ class MiaChat {
       const adBtn = document.getElementById('mia-watch-ad-btn');
       adBtn.disabled = true;
       adBtn.textContent = 'Chargement...';
-      
+
       const response = await fetch(`${BACKEND_URL}/api/ad/start`, {
         method: 'POST',
         headers: {
@@ -140,23 +146,23 @@ class MiaChat {
         },
         body: JSON.stringify({ userId: this.userId })
       });
-      
+
       const data = await response.json();
-      
+
       if (data.success) {
-    this.currentAdId = data.adId;
-    this.showAdModal(data.duration, data.credits);
+        this.currentAdId = data.adId;
+        this.showAdModal(data.duration, data.credits);
       } else {
         this.addMessage('system', '❌ ' + (data.error || 'Erreur'));
         adBtn.disabled = false;
-  adBtn.textContent = '📺 Regarder une pub (+50 questions)';
+        adBtn.textContent = 'Valider que je ne suis pas un robot';
       }
-      
+
     } catch (error) {
       console.error('Erreur startAd:', error);
       const adBtn = document.getElementById('mia-watch-ad-btn');
       adBtn.disabled = false;
-  adBtn.textContent = '📺 Regarder une pub (+50 questions)';
+      adBtn.textContent = 'Valider que je ne suis pas un robot';
     }
   }
   
@@ -166,8 +172,6 @@ class MiaChat {
     modal.innerHTML = `
       <div class="mia-ad-overlay"></div>
       <div class="mia-ad-content">
-        <h3>📺 Publicité</h3>
-        <p>Regardez pour débloquer <strong>+${credits} interactions</strong></p>
         <!-- Bannière Adsterra -->
         <div id="container-84ae41f42b5b700ad20f9bf6aba6a1c9" style="margin: 10px 0; text-align:center;"></div>
         <div class="mia-ad-timer">
@@ -228,24 +232,24 @@ class MiaChat {
           adId: this.currentAdId
         })
       });
-      
+
       const data = await response.json();
-      
+
       const modal = document.getElementById('mia-ad-modal');
       if (modal) modal.remove();
-      
+
       if (data.success) {
         this.quota = data.totalQuota;
         this.updateQuotaDisplay();
-        this.addMessage('system', `✅ ${data.message}`);
+        // Ne plus afficher le message de succès d'interactions débloquées
       } else {
         this.addMessage('system', '❌ ' + (data.error || 'Erreur'));
       }
-      
+
       const adBtn = document.getElementById('mia-watch-ad-btn');
       adBtn.disabled = false;
-      adBtn.textContent = '📺 Regarder une pub (+20 questions)';
-      
+      adBtn.textContent = 'Valider que je ne suis pas un robot';
+
     } catch (error) {
       console.error('Erreur completeAd:', error);
       const modal = document.getElementById('mia-ad-modal');
