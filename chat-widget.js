@@ -135,38 +135,39 @@ class MiaChat {
       <div class="mia-ad-content">
         <h3>📺 Publicité</h3>
         <p>Regardez pour débloquer <strong>+${credits} interactions</strong></p>
-        <!-- Bloc AdSense à insérer ici une fois validé -->
-        <!-- Exemple à remplacer par ton vrai bloc après validation :
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="ca-pub-5215342224838884"
-             data-ad-slot="TON_AD_SLOT"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-        -->
+        <!-- Script Adsterra Social Bar -->
+        <script type='text/javascript' src='//pl27920867.effectivegatecpm.com/51/2f/16/512f163770f940d9d0d467c5be6d2245.js'></script>
         <div class="mia-ad-timer">
           <div class="mia-ad-progress"></div>
-          <span id="mia-ad-countdown">${Math.ceil(duration / 1000)}s</span>
+          <span id="mia-ad-countdown">2s</span>
         </div>
-        <p class="mia-ad-note">⏳ Veuillez patienter...</p>
+        <button id="mia-ad-close-btn" disabled style="margin-top:10px;">Veuillez patienter...</button>
+        <p class="mia-ad-note" id="mia-ad-note">⏳ Veuillez patienter 2 secondes puis cliquez sur Fermer.</p>
       </div>
     `;
     document.body.appendChild(modal);
-    // Quand tu auras ton vrai bloc AdSense, remplace le code ci-dessus et n'oublie pas d'insérer le script AdSense dans le <head> de ton index.html :
-    // <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5215342224838884" crossorigin="anonymous"></script>
-    let remaining = duration;
+    let remaining = 2000;
     const countdown = document.getElementById('mia-ad-countdown');
     const progress = document.querySelector('.mia-ad-progress');
+    const closeBtn = document.getElementById('mia-ad-close-btn');
+    const note = document.getElementById('mia-ad-note');
+  closeBtn.disabled = true;
+  closeBtn.textContent = 'Veuillez patienter...';
     this.adTimer = setInterval(() => {
       remaining -= 1000;
       countdown.textContent = Math.ceil(remaining / 1000) + 's';
-      progress.style.width = ((duration - remaining) / duration * 100) + '%';
+      progress.style.width = ((2000 - remaining) / 2000 * 100) + '%';
       if (remaining <= 0) {
         clearInterval(this.adTimer);
-        this.completeAd();
+        closeBtn.disabled = false;
+        closeBtn.textContent = 'Fermer';
+        countdown.textContent = '0s';
+        if (note) note.style.display = 'none';
       }
     }, 1000);
+    closeBtn.addEventListener('click', () => {
+      this.completeAd();
+    });
   }
   
   async completeAd() {
