@@ -30,7 +30,23 @@ class MiaChat {
       // Reset côté localStorage
       localStorage.removeItem('mia_user_id');
     });
+      // Inject ad script and container div
+      this.injectAdScript();
   }
+
+    injectAdScript() {
+      // Create the container div
+      var adDiv = document.createElement('div');
+      adDiv.id = 'container-84ae41f42b5b700ad20f9bf6aba6a1c9';
+      document.body.appendChild(adDiv);
+
+      // Create the script tag
+      var adScript = document.createElement('script');
+      adScript.async = true;
+      adScript.setAttribute('data-cfasync', 'false');
+      adScript.src = '//pl27921008.effectivegatecpm.com/84ae41f42b5b700ad20f9bf6aba6a1c9/invoke.js';
+      document.body.appendChild(adScript);
+    }
   
   getOrCreateUserId() {
     let userId = localStorage.getItem('mia_user_id');
@@ -152,8 +168,8 @@ class MiaChat {
       <div class="mia-ad-content">
         <h3>📺 Publicité</h3>
         <p>Regardez pour débloquer <strong>+${credits} interactions</strong></p>
-        <!-- Script Adsterra Social Bar -->
-        <script type='text/javascript' src='//pl27920867.effectivegatecpm.com/51/2f/16/512f163770f940d9d0d467c5be6d2245.js'></script>
+        <!-- Bannière Adsterra -->
+        <div id="container-84ae41f42b5b700ad20f9bf6aba6a1c9" style="margin: 10px 0; text-align:center;"></div>
         <div class="mia-ad-timer">
           <div class="mia-ad-progress"></div>
           <span id="mia-ad-countdown">2s</span>
@@ -162,6 +178,12 @@ class MiaChat {
         <p class="mia-ad-note" id="mia-ad-note">⏳ Veuillez patienter 2 secondes puis cliquez sur Fermer.</p>
       </div>
     `;
+    // Ajout dynamique du script Adsterra après insertion du HTML
+    const adScript = document.createElement('script');
+    adScript.async = true;
+    adScript.setAttribute('data-cfasync', 'false');
+    adScript.src = '//pl27921008.effectivegatecpm.com/84ae41f42b5b700ad20f9bf6aba6a1c9/invoke.js';
+    modal.querySelector('.mia-ad-content').appendChild(adScript);
     document.body.appendChild(modal);
     let remaining = 2000;
     const countdown = document.getElementById('mia-ad-countdown');
