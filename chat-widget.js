@@ -13,6 +13,23 @@ class MiaChat {
     
     this.init();
     this.checkQuota();
+
+    // Reset quota à zéro côté backend à chaque fermeture/rechargement de la page
+    window.addEventListener('beforeunload', async () => {
+      try {
+        // Reset côté backend
+        await fetch(`${BACKEND_URL}/api/chat/reset`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'X-API-Key': BACKEND_API_KEY
+          },
+          body: JSON.stringify({ userId: this.userId })
+        });
+      } catch (e) {}
+      // Reset côté localStorage
+      localStorage.removeItem('mia_user_id');
+    });
   }
   
   getOrCreateUserId() {
