@@ -47,23 +47,8 @@ class MiaChat {
       // Reset côté localStorage
       localStorage.removeItem('mia_user_id');
     });
-    // Inject ad script and container div
-    this.injectAdScript();
   }
 
-    injectAdScript() {
-      // Create the container div
-      var adDiv = document.createElement('div');
-      adDiv.id = 'container-84ae41f42b5b700ad20f9bf6aba6a1c9';
-      document.body.appendChild(adDiv);
-
-      // Create the script tag
-      var adScript = document.createElement('script');
-      adScript.async = true;
-      adScript.setAttribute('data-cfasync', 'false');
-      adScript.src = '//pl27921008.effectivegatecpm.com/84ae41f42b5b700ad20f9bf6aba6a1c9/invoke.js';
-      document.body.appendChild(adScript);
-    }
   
   getOrCreateUserId() {
     let userId = localStorage.getItem('mia_user_id');
@@ -148,138 +133,29 @@ class MiaChat {
       quotaEl.textContent = `${this.quota} question${this.quota > 1 ? 's' : ''}`;
     }
 
+    // Suppression de l'affichage de la section pub
     const adSection = document.getElementById('mia-ad-section');
-    if (this.quota === 0) {
-      adSection.style.display = 'block';
-    } else {
-      adSection.style.display = 'none';
-    }
+    if (adSection) adSection.style.display = 'none';
   }
   
   async startAd() {
-    try {
-      const adBtn = document.getElementById('mia-watch-ad-btn');
+    // Désactivation totale de la pub : bouton inactif
+    const adBtn = document.getElementById('mia-watch-ad-btn');
+    if (adBtn) {
       adBtn.disabled = true;
-      adBtn.textContent = 'Chargement...';
-
-      const response = await fetch(`${BACKEND_URL}/api/ad/start`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-API-Key': BACKEND_API_KEY
-        },
-        body: JSON.stringify({ userId: this.userId })
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        this.currentAdId = data.adId;
-        this.isHumanValidated = true;
-        this.showAdModal(data.duration, data.credits);
-      } else {
-        this.addMessage('system', '❌ ' + (data.error || 'Erreur'));
-        adBtn.disabled = false;
-        adBtn.textContent = 'Valider que je ne suis pas un robot';
-      }
-
-    } catch (error) {
-      console.error('Erreur startAd:', error);
-      const adBtn = document.getElementById('mia-watch-ad-btn');
-      adBtn.disabled = false;
-      adBtn.textContent = 'Valider que je ne suis pas un robot';
+      adBtn.style.display = 'none';
     }
+    this.addMessage('system', 'La publicité a été désactivée pour des raisons de sécurité.');
   }
   
   showAdModal(duration, credits) {
-    const modal = document.createElement('div');
-    modal.id = 'mia-ad-modal';
-    modal.innerHTML = `
-      <div class="mia-ad-overlay"></div>
-      <div class="mia-ad-content">
-        <!-- Bannière Adsterra -->
-        <div id="container-84ae41f42b5b700ad20f9bf6aba6a1c9" style="margin: 10px 0; text-align:center;"></div>
-        <div class="mia-ad-timer">
-          <div class="mia-ad-progress"></div>
-          <span id="mia-ad-countdown">2s</span>
-        </div>
-        <button id="mia-ad-close-btn" disabled style="margin-top:10px;">Veuillez patienter...</button>
-        <p class="mia-ad-note" id="mia-ad-note">⏳ Veuillez patienter 2 secondes puis cliquez sur Fermer.</p>
-      </div>
-    `;
-    document.body.appendChild(modal);
-    // Ajout dynamique du script publicitaire dans la fenêtre pop-up
-    const adScript = document.createElement('script');
-    adScript.async = true;
-    adScript.setAttribute('data-cfasync', 'false');
-    adScript.src = '//pl27921008.effectivegatecpm.com/84ae41f42b5b700ad20f9bf6aba6a1c9/invoke.js';
-    // Insérer le script juste après le conteneur dans la modale
-    const adContainer = modal.querySelector('#container-84ae41f42b5b700ad20f9bf6aba6a1c9');
-    if (adContainer) {
-      adContainer.parentNode.insertBefore(adScript, adContainer.nextSibling);
-    } else {
-      modal.querySelector('.mia-ad-content').appendChild(adScript);
-    }
-    let remaining = 2000;
-    const countdown = document.getElementById('mia-ad-countdown');
-    const progress = document.querySelector('.mia-ad-progress');
-    const closeBtn = document.getElementById('mia-ad-close-btn');
-    const note = document.getElementById('mia-ad-note');
-  closeBtn.disabled = true;
-  closeBtn.textContent = 'Veuillez patienter...';
-    this.adTimer = setInterval(() => {
-      remaining -= 1000;
-      countdown.textContent = Math.ceil(remaining / 1000) + 's';
-      progress.style.width = ((2000 - remaining) / 2000 * 100) + '%';
-      if (remaining <= 0) {
-        clearInterval(this.adTimer);
-        closeBtn.disabled = false;
-        closeBtn.textContent = 'Fermer';
-        countdown.textContent = '0s';
-        if (note) note.style.display = 'none';
-      }
-    }, 1000);
-    closeBtn.addEventListener('click', () => {
-      this.completeAd();
-    });
+    // Suppression totale de la modale de pub
+    return;
   }
   
   async completeAd() {
-    try {
-      const response = await fetch(`${BACKEND_URL}/api/ad/complete`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'X-API-Key': BACKEND_API_KEY
-        },
-        body: JSON.stringify({ 
-          userId: this.userId,
-          adId: this.currentAdId
-        })
-      });
-
-      const data = await response.json();
-
-      const modal = document.getElementById('mia-ad-modal');
-      if (modal) modal.remove();
-
-      if (data.success) {
-        this.quota = data.totalQuota;
-        this.updateQuotaDisplay();
-        // Ne plus afficher le message de succès d'interactions débloquées
-      } else {
-        this.addMessage('system', '❌ ' + (data.error || 'Erreur'));
-      }
-
-      const adBtn = document.getElementById('mia-watch-ad-btn');
-      adBtn.disabled = false;
-      adBtn.textContent = 'Valider que je ne suis pas un robot';
-
-    } catch (error) {
-      console.error('Erreur completeAd:', error);
-      const modal = document.getElementById('mia-ad-modal');
-      if (modal) modal.remove();
-    }
+    // Suppression de la logique de validation pub
+    return;
   }
   
   async sendMessage() {
