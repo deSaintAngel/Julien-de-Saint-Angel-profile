@@ -1,3 +1,17 @@
+// Fonction globale pour ouvrir la fenêtre Mia depuis le menu
+window.openMiaChat = function() {
+  // On cherche l'instance MiaChat existante
+  if (window.miaChatInstance && typeof window.miaChatInstance.toggleChat === 'function') {
+    // Si déjà ouvert, ne rien faire, sinon ouvrir
+    if (!window.miaChatInstance.isOpen) {
+      window.miaChatInstance.toggleChat();
+    }
+  } else {
+    // Sinon, créer une nouvelle instance et ouvrir
+    window.miaChatInstance = new MiaChat();
+    window.miaChatInstance.toggleChat();
+  }
+}
 // Configuration
 const BACKEND_URL = 'https://julien-de-saint-angel-profile.onrender.com';
 const BACKEND_API_KEY = '6a6cd4efe172ac26a1af65b2038ea403f8be3f777ae56ebba5fae0fd27a0ae1f';
@@ -329,5 +343,5 @@ class MiaChat {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  new MiaChat();
+  window.miaChatInstance = new MiaChat();
 });
