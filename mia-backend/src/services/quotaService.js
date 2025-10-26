@@ -65,6 +65,10 @@ function consumeQuota(userId) {
 function addQuota(userId, amount = QUOTA_PER_AD) {
   const session = getOrCreateSession(userId);
   session.remaining += amount;
+  // Limite le quota maximum à QUOTA_PER_AD (50)
+  if (session.remaining > QUOTA_PER_AD) {
+    session.remaining = QUOTA_PER_AD;
+  }
   session.lastActivity = Date.now();
   return session.remaining;
 }
