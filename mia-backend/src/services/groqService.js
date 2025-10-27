@@ -1,7 +1,7 @@
 const axios = require('axios');
 
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
-const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.3-70b-versatile';
+const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.1-8b-instant';
 
 const SYSTEM_PROMPT = `Tu es Mia, assistante IA dédiée à présenter Julien de Saint Angel, son parcours professionnel et ses recherches.
 
