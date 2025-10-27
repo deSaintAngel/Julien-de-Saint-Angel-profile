@@ -1,6 +1,70 @@
-PROFIL DE JULIEN DE SAINT ANGEL
+---
+Aspects humains et personnels :
 
-Qui est Julien De Saint Angel ?
+Valeurs et principes :
+- L’éthique dans la recherche, la rigueur et l’honnêteté scientifiques sont au cœur des engagements de Julien.
+
+Comment il est perçu :
+- Ses amis et connaissances le décrivent comme un « ovni de la science », passionné par la technologie et l’intelligence artificielle.
+
+Expériences marquantes :
+- Julien apprécie particulièrement chaque colloque scientifique, car c’est l’occasion de faire le point sur les grandes avancées de son domaine, de découvrir des projets innovants et d’échanger sur les idées de demain. Pour lui, c’est un véritable voyage dans le futur.
+
+Motivations :
+- Sa motivation profonde est de contribuer à enrichir la connaissance de l’humanité.
+
+Vision et ambitions :
+- Julien souhaite approfondir ses capacités en intelligence artificielle pour les appliquer à des questions importantes dans le domaine médical (amélioration du traitement d’images médicales) et dans l’environnement (étude du littoral, vision positive pour l’avenir du monde).
+
+Vulgarisation scientifique :
+- Il considère la vulgarisation comme essentielle pour faire comprendre l’intérêt des recherches au grand public.
+
+Gestion des difficultés :
+- Les difficultés font partie de son expérience de vie. Julien n’abandonne jamais : son opiniâtreté le guide jusqu’au bout.
+Nom : Julien de Saint Angel
+Titre : Chercheur en intelligence artificielle
+Docteur en informatique appliquée – spécialisé en réseaux neuronaux hypersphériques et détection d'anomalies
+
+Formation :
+2020–2025 – Doctorat en Informatique Appliquée, Université de La Rochelle, Laboratoire MIA
+Thèse : "Réseaux de neurones à couches hypersphériques pour la détection d'anomalies".
+2017–2019 – Master Mathématiques et Applications MIX (Mention AB), Université de La Rochelle
+Spécialité : mathématiques appliquées, optimisation, équations différentielles.
+2014–2015 – Maîtrise d'Astronomie et Physique, Observatoire de Paris-Meudon
+2012–2014 – Master Mathématiques et Métiers de l'Éducation + CAPES, Université de La Rochelle
+2009–2012 – Licence de Mathématiques, Université de La Rochelle
+
+
+Contributions Scientifiques (2021–2024) :
+Deep M-SPH SVDD : Méthode multi-sphères hypersphériques pour la détection d'anomalies.
+Initialisation : Méthode d'initialisation dédiée aux réseaux à couches hypersphériques (optimisation numérique).
+Applications : Détection d'anomalies en séries temporelles, marégraphe visuel, analyse sportive à haute fréquence.
+
+Expérience Professionnelle :
+Fév.–Mai 2019 – Stage aux laboratoires XLIM (UMR 7252) et MIA (EA 3165)
+Encadrants : B. Tremblais et R. Pétéri
+Caractérisation du geste sportif par caméras rapides utilisant l'analyse trajectographique de points critiques.
+Mai 2018 – Stage au laboratoire LIENSs (UMR 7266)
+Encadrants : E. Poirier (IGR) et L. Testud
+Réalisation d'un marégraphe visuel : lecture automatisée de l'image d'une échelle de marée.
+Mars–Juin 2015 – Stage au laboratoire SYRTE (UMR 8630), Observatoire de Paris
+Encadrant : J.-Y. Richard
+Développement d'algorithmes d'interpolation pour les orbites de satellites artificiels (équations différentielles, simulation numérique).
+2015–2017 – Enseignant fonctionnaire second degré, Lycées Saint-Exupéry, La Rochelle
+Professeur de mathématiques. Développement de compétences en communication, vulgarisation scientifique et travail en équipe.
+
+Compétences :
+- Détection d’anomalies
+- Modélisation mathématiques
+- Interprétabilité des modèles
+- IA ,Apprentissage profond: CNN, RNN/LSTM, GAN, Transformers, auto-encodeurs, modèles surrogate, optimisation.
+Frameworks : TensorFlow / PyTorch, Scikit-Learn, OpenCV, PyTorch Lightning, Keras.
+Traitement du signal : Segmentation, filtrage fréquentiel, ondelettes, transformée de Fourier, analyse temps-fréquence.
+Programmation : Python (Numpy, Pandas, SciPy, Matplotlib), Java, C, C++, Fortran, MATLAB, Scilab.
+Outils : Git, Docker, Jupyter, Linux, LaTeX, Suite Office (Excel, Word, PowerPoint).
+Maths avancées : Optimisation, EDP, géométrie conforme, approximation universelle.
+
+
 Julien De Saint Angel est Docteur en informatique appliquée, spécialisé en réseaux neuronaux hypersphériques et détection d'anomalies.
 
 Parcours académique et formation de Julien :
@@ -18,16 +82,19 @@ Expérience professionnelle de Julien :
 - 2015-2017 : Enseignant fonctionnaire, Lycées Saint-Exupéry La Rochelle. Professeur de mathématiques.
 
 Compétences techniques de Julien :
-IA : CNN, RNN/LSTM, GAN, Transformers, auto-encodeurs, modèles surrogate, optimisation bayésienne.
+IA : CNN, RNN/LSTM, GAN, Transformers, auto-encodeurs, modèles surrogate, optimisation.
 Frameworks : TensorFlow, PyTorch, Scikit-Learn, OpenCV, PyTorch Lightning, Keras.
 Programmation : Python (Numpy, Pandas, SciPy, Matplotlib), Java, C, C++, Fortran, MATLAB, Scilab.
 Outils : Git, Docker, Jupyter, Linux, LaTeX.
 
-Compétences de Julien :
+Qualités les plus importantes :
+- Rigueur scientifique, pédagogie, fiabilité, innovation.
+
+qualités de Julien :
 Conception et entraînement de réseaux de neurones.
 Maîtrise des mathématiques appliquées et des concepts avancés.
 il peut définir de nouvelles architectures de réseaux de neurones, il a proposé une extension des couches hypersphériques au cas convolutif.
-Développement de méthodes spécifiques d’initialisation des poids adaptées aux modèles proposés
+Il à également développé une méthodes spécifiques d’initialisation des poids adaptées aux modèles proposés
 Validation expérimentale rigoureuse des modèles et analyse critique de leurs performances
 Capacité à travailler à l’interface de l’informatique, de l’optimisation et des mathématiques appliquées
 Formulation de problématiques de recherche pertinentes et construction méthodique de modèles
@@ -36,21 +103,45 @@ Capacité à mener des travaux complexes et novateurs de manière autonome
 Rigueur scientifique et méthodologique dans la conception, l’expérimentation et l’analyse
 Mobilisation d’un large spectre de compétences pour résoudre des problèmes interdisciplinaires
 
-Publications principales de Julien :
-1. J. de Saint Angel, C. Saint-Jean, C. Choquet - Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, chapitre de livre, Recent Applications in Deep Learning, 2025.
-2. J. de Saint Angel, C. Saint-Jean - Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme, ORASIS, 2021.
-3. J. de Saint Angel, C. Saint-Jean - Théorème d'approximation pour neurones hypersphériques, GRETSI, 2023.
-4. J. de Saint Angel, C. Saint-Jean - Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.
+
+Publications, articles de Julien 
+J. de Saint Angel, C. Saint-Jean, C. Choquet – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, chapitre de livre, Recent Applications in Deep Learning, 2025.
+J. de Saint Angel, C. Saint-Jean – Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme, ORASIS, 2021.
+J. de Saint Angel, C. Saint-Jean – Théorème d'approximation pour neurones hypersphériques, GRETSI, 2023.
+J. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.
 
 Contact de Julien :
 Adresse : 17000 La Rochelle, France
-Téléphone : +33 6 61 94 16 99
 Email : julien.desaintangel@gmail.com
 
 Langues de Julien :
-Français (natif), Anglais (B2 courant), Espagnol et Roumain (B1)
+Français (natif), Anglais (B2 courant)  et Roumain (B1)
 
-Centres d'intérêt de Julien :
+Centres d'intérêt de Julien, loisirs :
 Vulgarisation scientifique, astrophotographie, ornithophotographie, modélisation 3D, animation vidéo.
 
+
+
+---
+Définitions et précisions scientifiques :
+
+Réseaux de neurones à couches hypersphériques (RCH) :
+Un réseau à couches hypersphériques est un réseau de neurones où chaque neurone définit une hypersphère dans l’espace des données, permettant une séparation non linéaire et compacte. Contrairement aux couches denses classiques, qui séparent l’espace par des hyperplans (décision linéaire), les couches hypersphériques séparent par des hypersphères, offrant une frontière de décision plus flexible et adaptée à des structures complexes.
+
+Distinction avec les couches denses :
+Les couches denses (ou fully connected) réalisent des séparations linéaires (hyperplans) dans l’espace des caractéristiques, alors que les couches hypersphériques réalisent des séparations non linéaires (hypersphères). Cela permet de mieux capturer des structures de données complexes et d’améliorer la détection d’anomalies.
+
+Importance de l’initialisation dans les RCH :
+L’initialisation des paramètres (centre et rayon des hypersphères) est cruciale pour garantir la propagation du signal à travers plusieurs couches cachées et la stabilité de l’apprentissage. Julien a proposé une méthode d’initialisation spécifique adaptée à ces architectures.
+
+Ambitions et perspectives :
+Julien aspire à poursuivre ses recherches en intelligence artificielle, notamment dans l’application de l’IA à l’analyse d’images médicales et aux problématiques environnementales.
+
+Rappel des publications principales (toutes citées) :
+- J. de Saint Angel, C. Saint-Jean – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, chapitre de livre, Recent Applications in Deep Learning, 2025.
+- J. de Saint Angel, C. Saint-Jean – Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme, ORASIS, 2021.
+- J. de Saint Angel, C. Saint-Jean – Théorème d'approximation pour neurones hypersphériques, GRETSI, 2023.
+- J. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.
+Directeur de thèse : Christophe Saint-Jean
+Directrice de laboratoire : Catherine Choquet
 

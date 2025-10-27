@@ -275,7 +275,11 @@ class MiaChat {
       this.addMessage('system', '❌ Plus d\'interactions. Veuillez valider que vous n\'êtes pas un robot.');
       return;
     }
-    
+    // Ajout du message utilisateur à l'historique
+    if (!this.messages) this.messages = [];
+    this.messages.push({ role: 'user', text: message });
+    // On limite à 10 messages (5 paires)
+    if (this.messages.length > 10) this.messages = this.messages.slice(-10);
     this.addMessage('user', message);
     input.value = '';
     
@@ -291,7 +295,8 @@ class MiaChat {
         },
         body: JSON.stringify({
           userId: this.userId,
-          message: message
+          message: message,
+          history: this.messages.slice(-10) // 5 dernières paires (10 messages)
         })
       });
       
@@ -302,6 +307,9 @@ class MiaChat {
       if (data.success) {
         await new Promise(res => setTimeout(res, 1000));
         this.addMessage('bot', data.response);
+        // Ajout de la réponse de Mia à l'historique
+        this.messages.push({ role: 'bot', text: data.response });
+        if (this.messages.length > 10) this.messages = this.messages.slice(-10);
         this.quota = data.quota;
         this.updateQuotaDisplay();
       } else {

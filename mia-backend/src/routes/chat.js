@@ -7,7 +7,9 @@ const express = require('express');
 const router = express.Router();
 const quotaService = require('../services/quotaService');
 const ragService = require('../services/ragService');
+
 const groqService = require('../services/groqService');
+const { readTextFileSync } = require('../services/fileUtil');
 
 const nodemailer = require('nodemailer');
 
@@ -60,8 +62,8 @@ router.post('/sendmail', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { userId, message } = req.body;
-    
+    const { userId, message, history } = req.body;
+
     // Validation
     if (!message || message.trim().length === 0) {
       return res.status(400).json({
@@ -69,28 +71,75 @@ router.post('/', async (req, res) => {
         message: 'Veuillez poser une question'
       });
     }
-    
+
     // Crée ou récupère la session
     const session = quotaService.getOrCreateSession(userId);
-    
+
     // Vérifie le quota
     if (!quotaService.hasQuota(session.userId)) {
       return res.status(403).json({
         error: 'Quota épuisé',
-        message: 'Veuillez regarder une publicité pour débloquer 50 questions',
+        message: 'Veuillez validez que vous n etes pas un robot',
         quota: 0,
         userId: session.userId
       });
     }
-    
-    // Recherche RAG
-    console.log(`🔍 Recherche RAG pour: "${message}"`);
-    const relevantChunks = ragService.searchRelevantChunks(message, 3);
-    const context = ragService.buildContext(relevantChunks);
-    
-    // Génère la réponse avec Groq
-    console.log(`🤖 Appel Groq...`);
-    const groqResult = await groqService.generateResponse(message, context);
+
+
+    // Lecture des fichiers contextuels (profil et thèse)
+    let profil = '';
+    let these = '';
+    try { 
+      profil = readTextFileSync('profil_julien.txt');
+    } catch (e) {
+      console.warn('Impossible de lire profil_julien.txt:', e.message);
+    }
+    try {
+      these = readTextFileSync('these_julien.txt');
+    } catch (e) {
+      console.warn('Impossible de lire these_julien.txt:', e.message);
+    }
+
+    // Appel du RAG pour obtenir des passages pertinents
+    let ragPassages = '';
+    try {
+      const ragResults = await ragService.getRelevantPassages(message);
+      if (Array.isArray(ragResults) && ragResults.length > 0) {
+        ragPassages = ragResults.map((p, i) => `Passage RAG ${i+1} :\n${p}`).join('\n\n');
+      }
+    } catch (e) {
+      console.warn('Impossible de récupérer les passages RAG:', e.message);
+    }
+
+    // Formatage de l'historique (5 dernières paires Q/R)
+    let formattedHistory = '';
+    if (Array.isArray(history) && history.length > 0) {
+      formattedHistory = history.map((msg, idx) => {
+        const role = msg.type === 'user' ? 'Utilisateur' : 'Mia';
+        return `${role} : ${msg.text}`;
+      }).join('\n');
+    }
+
+    // Construction du contexte complet pour le LLM (avec RAG)
+    const context = [
+      '--- Profil de Julien ---',
+      profil,
+      '--- Thèse de Julien ---',
+      these,
+      ragPassages ? '--- Passages pertinents trouvés par RAG ---\n' + ragPassages : '',
+      '--- Historique de la conversation ---',
+      formattedHistory
+    ].join('\n\n');
+
+  // Affiche le prompt complet pour debug
+  console.log('--- PROMPT ENVOYÉ AU LLM ---');
+  console.log(context);
+  console.log('Question courante :', message);
+  console.log('----------------------------');
+
+  // Génère la réponse avec Groq (prompt enrichi)
+  console.log('🤖 Appel Groq avec contexte enrichi...');
+  const groqResult = await groqService.generateResponse(message, context);
 
     if (!groqResult.success) {
       return res.status(500).json({
@@ -104,10 +153,14 @@ router.post('/', async (req, res) => {
     // Consomme le quota
     quotaService.consumeQuota(session.userId);
 
-    // Prépare les sources
-    const sources = relevantChunks.map(chunk => chunk.source);
-
-    // Réponse réussie
+    // Réponse réussie (sources non pertinentes ici)
+    res.json({
+      success: true,
+      response: groqResult.response,
+      sources: ['Profil et thèse de Julien'],
+      quota: quotaService.getRemainingQuota(session.userId),
+      userId: session.userId
+    });
     res.json({
       success: true,
       response: groqResult.response,

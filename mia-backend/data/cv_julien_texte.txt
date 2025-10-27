@@ -2,7 +2,6 @@ Julien de Saint Angel – Ingénieur IA & Mathématiques appliquées
 Docteur en informatique appliquée – spécialisé en réseaux neuronaux hypersphériques et détection d'anomalies
 
 📍 17000 La Rochelle, France
-📞 +33 6 61 94 16 99
 ✉️ julien.desaintangel@gmail.com
 
 🎓 Formation
@@ -49,14 +48,14 @@ Professeur de mathématiques. Développement de compétences en communication, v
 
 🧠 Compétences Techniques
 
-IA : CNN, RNN/LSTM, GAN, Transformers, auto-encodeurs, modèles surrogate, optimisation bayésienne.
+IA : CNN, RNN/LSTM, GAN, Transformers, auto-encodeurs, modèles surrogate, optimisation.
 Frameworks : TensorFlow / PyTorch, Scikit-Learn, OpenCV, PyTorch Lightning, Keras.
 Traitement du signal : Segmentation, filtrage fréquentiel, ondelettes, transformée de Fourier, analyse temps-fréquence.
 Programmation : Python (Numpy, Pandas, SciPy, Matplotlib), Java, C, C++, Fortran, MATLAB, Scilab.
 Outils : Git, Docker, Jupyter, Linux, LaTeX, Suite Office (Excel, Word, PowerPoint).
 Maths avancées : Optimisation, EDP, géométrie conforme, approximation universelle.
 
-📚 Publications Sélectionnées
+📚 Publications, articles
 
 J. de Saint Angel, C. Saint-Jean, C. Choquet – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, chapitre de livre, Recent Applications in Deep Learning, 2025.
 

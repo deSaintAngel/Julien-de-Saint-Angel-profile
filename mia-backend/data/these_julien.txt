@@ -1,3 +1,19 @@
+Titre : "Géométrie conforme et réseaux de neurones : nouvelles approches pour l’IA interprétable"
+
+Résumé :
+Cette thèse explore l’utilisation des algèbres géométriques conformes pour améliorer l’interprétabilité et la robustesse des réseaux de neurones. Elle propose de nouvelles méthodes d’initialisation et d’analyse des couches hypersphériques.
+
+Chapitres :
+1. Introduction à la géométrie conforme
+2. Modélisation des hypersphères en IA
+3. Méthodes d’initialisation pour réseaux hypersphériques
+4. Applications à la détection d’anomalies
+5. Perspectives et conclusions
+
+Résultats clés :
+- Nouvelle méthode d’initialisation des couches hypersphériques
+- Amélioration de la détection d’anomalies sur plusieurs jeux de données
+- Publication de 3 articles majeurs sur le sujet
 Thèse de Julien De Saint Angel
 Titre complet : Réseaux de neurones à couches hypersphériques – Application à la détection d’anomalies
 Université : La Rochelle Université
