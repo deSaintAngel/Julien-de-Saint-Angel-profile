@@ -72,18 +72,17 @@ router.post('/', async (req, res) => {
       });
     }
 
-    // Crée ou récupère la session
-    const session = quotaService.getOrCreateSession(userId);
 
-    // Vérifie le quota
-    if (!quotaService.hasQuota(session.userId)) {
-      return res.status(403).json({
-        error: 'Quota épuisé',
-        message: 'Veuillez validez que vous n etes pas un robot',
-        quota: 0,
-        userId: session.userId
-      });
-    }
+    // Crée ou récupère la session (désactivation temporaire du quota pour les tests)
+    // const session = quotaService.getOrCreateSession(userId);
+    // if (!quotaService.hasQuota(session.userId)) {
+    //   return res.status(403).json({
+    //     error: 'Quota épuisé',
+    //     message: 'Veuillez validez que vous n etes pas un robot',
+    //     quota: 0,
+    //     userId: session.userId
+    //   });
+    // }
 
 
     // Lecture des fichiers contextuels (profil et thèse)
@@ -102,10 +101,12 @@ router.post('/', async (req, res) => {
 
     // Appel du RAG pour obtenir des passages pertinents
     let ragPassages = '';
+    let ragResults = [];
     try {
-      const ragResults = await ragService.getRelevantPassages(message);
+      // Utilise la fonction exportée `searchRelevantChunks` du service RAG
+      ragResults = ragService.searchRelevantChunks(message);
       if (Array.isArray(ragResults) && ragResults.length > 0) {
-        ragPassages = ragResults.map((p, i) => `Passage RAG ${i+1} :\n${p}`).join('\n\n');
+        ragPassages = ragResults.map((p, i) => `Passage RAG ${i+1} :\nSource: ${p.source}\n${p.text}`).join('\n\n');
       }
     } catch (e) {
       console.warn('Impossible de récupérer les passages RAG:', e.message);
@@ -145,31 +146,28 @@ router.post('/', async (req, res) => {
       return res.status(500).json({
         error: 'Une erreur est survenue, veuillez renouveler votre question...',
         message: groqResult.response,
-        quota: quotaService.getRemainingQuota(session.userId),
-        userId: session.userId
+        quota: null,
+        userId: userId || null
       });
     }
 
-    // Consomme le quota
-    quotaService.consumeQuota(session.userId);
+    // (dans la version de test, on ne consomme pas de quota automatique)
 
-    // Réponse réussie (sources non pertinentes ici)
+    // Prépare les sources à renvoyer : soit les passages RAG, soit la connaissance générale
+    const sources = (Array.isArray(ragResults) && ragResults.length > 0)
+      ? ragResults.map(r => r.source)
+      : ['Connaissance générale'];
+
+    // Réponse réussie
     res.json({
       success: true,
       response: groqResult.response,
-      sources: ['Profil et thèse de Julien'],
-      quota: quotaService.getRemainingQuota(session.userId),
-      userId: session.userId
-    });
-    res.json({
-      success: true,
-      response: groqResult.response,
-      sources: sources.length > 0 ? sources : ['Connaissance générale'],
-      quota: quotaService.getRemainingQuota(session.userId),
-      userId: session.userId
+      sources: sources,
+      quota: null,
+      userId: userId || null
     });
 
-    console.log(`✅ Réponse envoyée. Quota restant: ${quotaService.getRemainingQuota(session.userId)}`);
+    console.log(`✅ Réponse envoyée pour user: ${userId || 'unknown'}`);
     
   } catch (error) {
     console.error('❌ Erreur route /api/chat:', error);
