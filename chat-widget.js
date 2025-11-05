@@ -90,6 +90,8 @@ class MiaChat {
       if (btnEn && btnEn.classList.contains('active')) lang = 'en';
     }
     
+    console.log('🌍 Langue d\'accueil détectée:', lang, '| html.lang:', html.lang, '| btn-en.active:', document.getElementById('btn-en')?.classList.contains('active'));
+    
     const welcomeMessage = lang === 'en' 
       ? '👋 Hello! I am Mia. How can I help you?'
       : '👋 Bonjour ! Je suis Mia. Comment puis-je vous aider ?';
