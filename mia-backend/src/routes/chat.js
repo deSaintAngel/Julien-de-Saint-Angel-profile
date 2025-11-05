@@ -62,7 +62,7 @@ router.post('/sendmail', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const { userId, message, history } = req.body;
+    const { userId, message, history, lang } = req.body;
 
     // Validation
     if (!message || message.trim().length === 0) {
