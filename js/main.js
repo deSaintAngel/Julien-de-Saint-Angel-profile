@@ -1,3 +1,21 @@
+// Gestion modale info projet
+function openProjectInfo(project) {
+    const modal = document.getElementById('modal-project-info');
+    const title = document.getElementById('project-info-title');
+    const text = document.getElementById('project-info-text');
+    if (project === 'mia') {
+        title.textContent = 'MIA : Agent conversationnel';
+        text.textContent = "MIA est un agent conversationnel intelligent que j’ai conçu et développé pour converser avec des recruteurs, chercheurs ou simples curieux. Sa mission est de dialoguer autour de mon parcours professionnel et de mes recherches. Basée sur des modèles de langage (LLM) avancés, MIA combine des techniques de traitement du langage naturel, d’automatisation et d’intégration, notamment la technologie RAG (Retrieval-Augmented Generation), pour offrir des réponses pertinentes, fluides et personnalisées à partir de sources documentaires variées. Ce projet illustre ma capacité à concevoir des solutions IA complètes, de l’architecture à la mise en production.";
+    } else if (project === 'jobscope') {
+        title.textContent = 'JobScope : Outil intelligent de gestion des annonces d’emploi';
+        text.textContent = "JobScope est un outil que j’ai développé pour optimiser la gestion et la recherche d’offres d’emploi. Il automatise l’extraction des mots-clés des annonces, lance des recherches ciblées, trie les résultats selon leur pertinence grâce à une analyse ATS (Applicant Tracking System) basée sur des modèles LLM, et intègre un agent conversationnel pour accompagner la rédaction de lettres de motivation personnalisées. Cryptoscope illustre ma capacité à combiner IA, automatisation et expérience utilisateur pour répondre à des besoins concrets.";
+    }
+    modal.style.display = 'block';
+}
+
+function closeProjectInfo() {
+    document.getElementById('modal-project-info').style.display = 'none';
+}
 // Rendre les fonctions accessibles globalement pour le HTML inline
 window.switchLanguage = switchLanguage;
 window.openHandicapModal = openHandicapModal;

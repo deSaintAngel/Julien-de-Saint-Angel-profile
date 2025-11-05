@@ -155,6 +155,14 @@ class MiaChat {
         body: JSON.stringify({ userId: this.userId })
       });
 
+      if (!response.ok) {
+        const text = await response.text();
+        this.addMessage('system', `❌ Erreur réseau ou serveur (${response.status}) : ${text}`);
+        adBtn.disabled = false;
+        adBtn.textContent = 'Valider que je ne suis pas un robot';
+        return;
+      }
+
       const data = await response.json();
 
       if (data.success) {
@@ -171,6 +179,7 @@ class MiaChat {
       const adBtn = document.getElementById('mia-watch-ad-btn');
       adBtn.disabled = false;
       adBtn.textContent = 'Valider que je ne suis pas un robot';
+      this.addMessage('system', '❌ Erreur technique lors de la validation robot : ' + (error.message || error));
     }
   }
   

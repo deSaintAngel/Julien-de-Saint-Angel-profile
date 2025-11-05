@@ -236,6 +236,20 @@
                 <section id="projets" class="fade-in" data-tags="ia vision signal">
                     <h2><i class="fas fa-project-diagram icon"></i>Contributions & Projets</h2>
                     <ul>
+                        <li><strong>MIA :</strong> agent conversationnel
+                            <button class="info-btn" onclick="openProjectInfo('mia')">+info</button>
+                        </li>
+                        <li><strong>JobScope :</strong> Outil intelligent de gestion des annonces d’emploi
+                            <button class="info-btn" onclick="openProjectInfo('jobscope')">+info</button>
+                        </li>
+    <!-- Modale Projet Info -->
+    <div id="modal-project-info" class="modal" style="display:none;">
+        <div class="modal-content modal-info">
+            <button class="close-modal" onclick="closeProjectInfo()">&times;</button>
+            <h3 id="project-info-title"></h3>
+            <p id="project-info-text"></p>
+        </div>
+    </div>
                         <li><strong>Deep M-SPH SVDD :</strong> méthode multi-sphères hypersphériques pour la détection d'anomalies</li>
                         <li><strong>Méthode d'initialisation :</strong> amélioration de la convergence et de la stabilité des réseaux neuronaux hypersphériques</li>
                         <li><strong>Applications :</strong> marégraphe visuel automatisé, suivi du geste sportif, détection d'anomalies</li>
