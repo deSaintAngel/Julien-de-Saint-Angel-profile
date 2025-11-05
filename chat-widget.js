@@ -299,6 +299,8 @@ class MiaChat {
     const isEnglish = htmlLang.toLowerCase().startsWith('en') || document.querySelector('.btn-en.active');
     const lang = isEnglish ? 'en' : 'fr';
     
+    console.log('🌍 Langue détectée:', lang, '| htmlLang:', htmlLang, '| btn-en.active:', !!document.querySelector('.btn-en.active'));
+    
     if (this.quota === 0) {
       const errorMsg = lang === 'en' 
         ? '❌ No more interactions. Please verify you are not a robot.'

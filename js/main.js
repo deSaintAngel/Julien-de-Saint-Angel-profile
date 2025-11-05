@@ -152,6 +152,9 @@ function smoothScroll(targetId) {
 
 // Switch de langue CORRIGÉ
 function switchLanguage(lang) {
+    // Mettre à jour l'attribut lang du HTML pour la détection
+    document.documentElement.lang = lang;
+    
     // Mettre à jour les boutons de langue
     document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
     document.getElementById('btn-en').classList.toggle('active', lang === 'en');
