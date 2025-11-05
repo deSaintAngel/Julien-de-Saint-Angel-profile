@@ -294,8 +294,16 @@ class MiaChat {
     
     if (!message || this.isLoading) return;
     
+    // Détection de la langue du site
+    const htmlLang = document.documentElement.lang || 'fr';
+    const isEnglish = htmlLang.toLowerCase().startsWith('en') || document.querySelector('.btn-en.active');
+    const lang = isEnglish ? 'en' : 'fr';
+    
     if (this.quota === 0) {
-      this.addMessage('system', '❌ Plus d\'interactions. Veuillez valider que vous n\'êtes pas un robot.');
+      const errorMsg = lang === 'en' 
+        ? '❌ No more interactions. Please verify you are not a robot.'
+        : '❌ Plus d\'interactions. Veuillez valider que vous n\'êtes pas un robot.';
+      this.addMessage('system', errorMsg);
       return;
     }
     // Ajout du message utilisateur à l'historique
@@ -307,7 +315,8 @@ class MiaChat {
     input.value = '';
     
     this.isLoading = true;
-    const loaderId = this.addMessage('bot', '💭 Mia réfléchit...');
+    const loadingMsg = lang === 'en' ? '💭 Mia is thinking...' : '💭 Mia réfléchit...';
+    const loaderId = this.addMessage('bot', loadingMsg);
     
     try {
       const response = await fetch(`${BACKEND_URL}/api/chat`, {
@@ -319,7 +328,8 @@ class MiaChat {
         body: JSON.stringify({
           userId: this.userId,
           message: message,
-          history: this.messages.slice(-10) // 5 dernières paires (10 messages)
+          history: this.messages.slice(-10), // 5 dernières paires (10 messages)
+          lang: lang // Envoi de la langue détectée
         })
       });
       
