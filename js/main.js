@@ -216,7 +216,7 @@ function switchLanguage(lang) {
     }, 100);
 
     // Forcer le recalcul de MathJax après le changement de langue
-    if (window.MathJax) {
+    if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
         MathJax.typesetPromise();
     }
 }
