@@ -136,11 +136,12 @@ router.post('/', async (req, res) => {
   console.log('--- PROMPT ENVOYÉ AU LLM ---');
   console.log(context);
   console.log('Question courante :', message);
+  console.log('Langue :', lang || 'fr');
   console.log('----------------------------');
 
   // Génère la réponse avec Groq (prompt enrichi)
   console.log('🤖 Appel Groq avec contexte enrichi...');
-  const groqResult = await groqService.generateResponse(message, context);
+  const groqResult = await groqService.generateResponse(message, context, lang || 'fr');
 
     if (!groqResult.success) {
       return res.status(500).json({

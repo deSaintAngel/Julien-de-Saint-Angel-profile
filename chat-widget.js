@@ -80,7 +80,21 @@ class MiaChat {
       quotaEl.style.display = 'none';
     }
     
-    this.addMessage('bot', '👋 Bonjour ! Je suis Mia. Comment puis-je vous aider ?');
+    // Message d'accueil selon la langue
+    let lang = 'fr';
+    const html = document.documentElement;
+    if (html && html.lang && html.lang.toLowerCase().startsWith('en')) {
+      lang = 'en';
+    } else {
+      const btnEn = document.getElementById('btn-en');
+      if (btnEn && btnEn.classList.contains('active')) lang = 'en';
+    }
+    
+    const welcomeMessage = lang === 'en' 
+      ? '👋 Hello! I am Mia. How can I help you?'
+      : '👋 Bonjour ! Je suis Mia. Comment puis-je vous aider ?';
+    
+    this.addMessage('bot', welcomeMessage);
   }
   
   toggleChat() {
