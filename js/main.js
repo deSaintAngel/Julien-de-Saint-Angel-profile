@@ -179,6 +179,11 @@ function switchLanguage(lang) {
         document.getElementById('fr-content').style.display = 'block';
         document.getElementById('en-content').style.display = 'none';
         document.querySelector('.hero-subtitle').innerHTML = '<strong>Ingénieur IA & Informatique appliquée</strong><br>Docteur en informatique appliquée - spécialisé en réseaux de neurones hypersphériques et détection d\'anomalies';
+        // Bouton Mia en français
+        const miaBtn = document.getElementById('open-mia-btn');
+        if (miaBtn) {
+            miaBtn.innerHTML = '<i class="fas fa-robot"></i> Parler à Mia';
+        }
     } else {
         document.getElementById('fr').style.display = 'none';
         document.getElementById('en').style.display = 'block';
@@ -187,6 +192,11 @@ function switchLanguage(lang) {
         document.getElementById('modal-handicap').style.display = 'none';
         document.getElementById('modal-handicap-en').style.display = 'none';
         document.querySelector('.hero-subtitle').innerHTML = '<strong>AI & Applied Computer Science Engineer</strong><br>PhD in Applied Computer Science - specialized in hyperspherical neural networks and anomaly detection';
+        // Bouton Mia en anglais
+        const miaBtn = document.getElementById('open-mia-btn');
+        if (miaBtn) {
+            miaBtn.innerHTML = '<i class="fas fa-robot"></i> Talk to Mia';
+        }
     }
 
     // Réappliquer les options handicap après changement de langue
