@@ -1,0 +1,127 @@
+# Fundamental Corpus for Mia — Robust Thematic Version
+
+## HR - Contribution to the Company
+Julien can deliver a functional prototype, anomaly detection solutions, validation of innovative methods, and contribute to the production deployment of AI projects.
+
+## HR - Product/Service Benefit
+Julien brings anomaly detection, intelligent monitoring, and the industrialization of AI solutions to improve product and service quality.
+
+## HR - Availability
+Julien's availability is specified in his CV. For any contact, please use the email or contact form.
+
+## HR - References
+Julien has worked in laboratories such as MIA and XLIM, and has been supervised by recognized thesis directors. His supervisors and labs are listed in his CV.
+
+## HR - Teamwork with Non-Technical Profiles
+Julien practices science outreach, knows how to work in a team, and can communicate with non-technical profiles.
+
+## HR - Management
+Julien prefers to focus on technical work, the mission, and solving complex problems rather than moving into management.
+
+## Technical - Who is Julien?
+Julien holds a PhD in applied computer science, specialized in hyperspherical neural networks and anomaly detection.
+
+## Technical - AI Skills
+Julien masters theory, CNNs, RNNs, GANs, Transformers, autoencoders, and Bayesian optimization.
+
+## Technical - Publications
+Here are Julien's main publications:
+- J. de Saint Angel, C. Saint-Jean, C. Choquet – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, book chapter, Recent Applications in Deep Learning, 2025.
+- J. de Saint Angel, C. Saint-Jean – Spherical Dense and Conv2d Layers via Conformal Geometric Algebra, ORASIS, 2021.
+- J. de Saint Angel, C. Saint-Jean – Approximation Theorem for Hyperspherical Neurons, GRETSI, 2023.
+- J. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.
+
+## Quality - Reliability
+Yes, Julien is reliable and has strong scientific and technical skills.
+
+## HR - Supervision
+Julien was a secondary school teacher. He has never supervised university-level students.
+
+## HR - Stress and Deadlines Management
+Julien is very organized and anticipates obstacles through rigorous planning. His RQTH status allows him to adapt his work environment to better manage stress and fatigue.
+
+## HR - International Collaboration
+Julien has never collaborated internationally.
+
+## Technical - Sensitive Data
+Julien has worked on public datasets (synthetic, MNIST, CIFAR-10) to validate his methods, but not on sensitive or confidential data.
+
+## Distinctions and Awards
+Julien has published internationally (ICMLA 2024) and contributed to a book chapter (2025). He has not received prestigious awards but has been recognized for the quality of his work.
+
+## Hackathon
+Julien participated in and won a hackathon in the second year of his PhD.
+
+## Workshops/Conferences
+Julien has never led a scientific workshop or conference.
+
+## Industry
+Julien has no industrial experience.
+
+## Anti-hallucination - Private Information
+This information is not available in the sources. Answers are limited to information present in the corpus or CV.
+
+## Background - Academic Background
+Julien holds a PhD, a master's, and a bachelor's degree in mathematics from La Rochelle, and has taught mathematics.
+
+## Background - Professional Experience
+Julien has completed laboratory internships, taught as a teacher and professor, and worked on applied research projects.
+
+## Background - Interests
+Julien is interested in science outreach, astrophotography, and modeling.
+
+## Background - Languages
+Julien speaks English (minimum required for work and conferences), with proficient writing skills.
+
+## Background - Contact
+To contact Julien, use the email provided in the CV or the contact form on his website.
+
+# Fundamental Corpus for Mia — 1:1 Certification Version
+
+## Q4. RQTH Accommodations
+Julien is recognized as RQTH. He needs a healthy, calm, stable environment, with consideration for fatigue. For more details, he can be contacted via the contact form on his website.
+
+## Q7. Management
+Julien does not wish to move into management. He prefers to focus on the mission, solving complex technical problems, and technical expertise.
+
+## Q9. Exact Definition of SVDD, SPH SVDD, and Deep SPH SVDD
+The Support Vector Data Description (SVDD) method aims to find the center and radius (c, ρ) parameters of the smallest enclosing hypersphere for a set of points. Applied to anomaly detection, the goal is to keep normal points inside the sphere and anomalies outside. There are two machine learning approaches: Deep soft-boundary SVDD and One Class Deep SVDD, both based on this principle.
+In Julien's thesis, two methods are proposed: SPH SVDD and Deep SPH SVDD. The idea of SPH SVDD is to reformulate the SVDD problem using a hypersphere in conformal geometric space, i.e., to use a hyperspherical layer to solve the optimization problem with conformal geometric algebra. The network then contains a hyperspherical layer with a single neuron (one sphere) and the inputs x. The Deep SPH SVDD method is an extension to the case of multiple spheres. The main idea is to efficiently enclose specific groups of normal points in feature space with a group of spheres. This aims to improve detection accuracy and model interpretability, especially for multimodal data.
+Keywords: SVDD, hypersphere, center, radius, anomaly, inside, outside, soft-boundary, one class, SPH SVDD, Deep SPH SVDD, conformal geometric algebra, multi-spheres, groups of points, features, interpretability, multimodal data.
+
+## Q16. Academic Background
+Julien studied mathematics from high school, then at the University of La Rochelle (Bachelor's, Master's, CAPES). He taught mathematics at Saint-Exupéry High School in La Rochelle. He completed laboratory internships (automatic tide gauge at LIENSs, trajectory analysis at XLIM/MIA, orbit interpolation at SYRTE). He defended a PhD in applied computer science for artificial intelligence, where he published and presented his work at various conferences.
+
+## Q19. English
+Julien speaks English at the minimum level required to work and communicate at international conferences. His writing is proficient.
+
+## Initialization Method
+A good initialization method for hyperspherical layers is essential to ensure convergence and learning stability. The method proposed in the thesis allows chaining several hyperspherical layers, which is not possible with standard initialization (like Glorot). It relies on asymptotic properties of generalized Gamma distributions and covariance calculations adapted to the geometric structure of spheres.
+
+## Datasets Used
+The main datasets used to validate the Deep M-SPH SVDD method are:
+- Synthetic point sets (to illustrate the behavior of hyperspherical layers)
+- MNIST
+- CIFAR-10
+
+## Exploratory/Theoretical Component of the Thesis
+The thesis includes a significant theoretical component, notably:
+- An approximation theorem for hyperspherical layer networks
+- Mathematical study of convergence and stability properties
+- Analysis of the collapse phenomenon in Deep SVDD models
+
+## Reference Persons
+- Prof. Catherine Choquet (MIA lab director)
+- Christophe Saint-Jean (thesis advisor)
+
+## RQTH Needs
+Julien is recognized as RQTH. He needs a healthy, calm, stable environment, with consideration for fatigue. For more details, he can be contacted via the contact form on his website.
+
+## Technical Preference / Management
+Julien does not wish to move into management. He prefers to focus on the mission, solving complex technical problems, and technical expertise.
+
+## Academic Background (Structured)
+Julien studied mathematics from high school, then at the University of La Rochelle (Bachelor's, Master's, CAPES). He taught mathematics at Saint-Exupéry High School in La Rochelle. He completed laboratory internships (automatic tide gauge at LIENSs, trajectory analysis at XLIM/MIA, orbit interpolation at SYRTE). He defended a PhD in applied computer science for artificial intelligence, where he published and presented his work at various conferences.
+
+## English
+Julien speaks English at the minimum level required to work and communicate at international conferences. His writing is proficient.

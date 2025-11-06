@@ -63,6 +63,7 @@ router.post('/sendmail', async (req, res) => {
 router.post('/', async (req, res) => {
   try {
     const { userId, message, history, lang } = req.body;
+    console.log('[API/chat] Langue reçue dans req.body.lang :', lang);
 
     // Validation
     if (!message || message.trim().length === 0) {
@@ -72,45 +73,41 @@ router.post('/', async (req, res) => {
       });
     }
 
-
-    // Crée ou récupère la session (désactivation temporaire du quota pour les tests)
-    // const session = quotaService.getOrCreateSession(userId);
-    // if (!quotaService.hasQuota(session.userId)) {
-    //   return res.status(403).json({
-    //     error: 'Quota épuisé',
-    //     message: 'Veuillez validez que vous n etes pas un robot',
-    //     quota: 0,
-    //     userId: session.userId
-    //   });
-    // }
-
-
-    // Lecture des fichiers contextuels (profil et thèse)
-    let profil = '';
-    let these = '';
-    try { 
-      profil = readTextFileSync('profil_julien.txt');
-    } catch (e) {
-      console.warn('Impossible de lire profil_julien.txt:', e.message);
-    }
-    try {
-      these = readTextFileSync('these_julien.txt');
-    } catch (e) {
-      console.warn('Impossible de lire these_julien.txt:', e.message);
+    // Lecture des fichiers contextuels (profil et thèse) selon la langue
+    function tryReadFile(base, lang) {
+      const file = lang === 'en' ? `${base}_en.txt` : `${base}.txt`;
+      try {
+        return readTextFileSync(file);
+      } catch (e) {
+        // Fallback sur FR si EN absent
+        if (lang === 'en') {
+          try {
+            return readTextFileSync(`${base}.txt`);
+          } catch (e2) {
+            console.warn(`Impossible de lire ${base}.txt (fallback):`, e2.message);
+            return '';
+          }
+        } else {
+          console.warn(`Impossible de lire ${file}:`, e.message);
+          return '';
+        }
+      }
     }
 
-    // Appel du RAG pour obtenir des passages pertinents
     let ragPassages = '';
     let ragResults = [];
     try {
-      // Utilise la fonction exportée `searchRelevantChunks` du service RAG
-      ragResults = ragService.searchRelevantChunks(message);
+      // Appel RAG avec paramètre lang pour filtrer les fichiers contextuels
+      ragResults = ragService.searchRelevantChunks({ text: message, lang });
       if (Array.isArray(ragResults) && ragResults.length > 0) {
         ragPassages = ragResults.map((p, i) => `Passage RAG ${i+1} :\nSource: ${p.source}\n${p.text}`).join('\n\n');
       }
     } catch (e) {
       console.warn('Impossible de récupérer les passages RAG:', e.message);
     }
+
+    let profil = tryReadFile('profil_julien', lang);
+    let these = tryReadFile('these_julien', lang);
 
     // Formatage de l'historique (5 dernières paires Q/R)
     let formattedHistory = '';
@@ -132,20 +129,23 @@ router.post('/', async (req, res) => {
       formattedHistory
     ].join('\n\n');
 
-  // Affiche le prompt complet pour debug
-  console.log('--- PROMPT ENVOYÉ AU LLM ---');
-  console.log(context);
-  console.log('Question courante :', message);
-  console.log('Langue :', lang || 'fr');
-  console.log('----------------------------');
+    // Affiche le prompt complet pour debug
+    console.log('--- PROMPT ENVOYÉ AU LLM ---');
+    console.log(context);
+    console.log('Question courante :', message);
+    console.log('Langue :', lang || 'fr');
+    console.log('----------------------------');
 
-  // Génère la réponse avec Groq (prompt enrichi)
-  console.log('🤖 Appel Groq avec contexte enrichi...');
-  const groqResult = await groqService.generateResponse(message, context, lang || 'fr');
+    // Génère la réponse avec Groq (prompt enrichi)
+    console.log('🤖 Appel Groq avec contexte enrichi...');
+    const groqResult = await groqService.generateResponse(message, context, lang || 'fr');
 
     if (!groqResult.success) {
+      const errorMsg = (lang === 'en')
+        ? 'An error occurred, please try your question again...'
+        : 'Une erreur est survenue, veuillez renouveler votre question...';
       return res.status(500).json({
-        error: 'Une erreur est survenue, veuillez renouveler votre question...',
+        error: errorMsg,
         message: groqResult.response,
         quota: null,
         userId: userId || null
@@ -169,7 +169,7 @@ router.post('/', async (req, res) => {
     });
 
     console.log(`✅ Réponse envoyée pour user: ${userId || 'unknown'}`);
-    
+
   } catch (error) {
     console.error('❌ Erreur route /api/chat:', error);
     res.status(500).json({

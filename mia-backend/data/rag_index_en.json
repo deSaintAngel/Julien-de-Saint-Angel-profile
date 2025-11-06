@@ -1,0 +1,417 @@
+{
+  "chunks": [
+    {
+      "id": "corpus_fondamental_en.txt_chunk_0",
+      "text": "# Fundamental Corpus for Mia — Robust Thematic Version",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 0,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_1",
+      "text": "## HR - Contribution to the Company\n\nJulien can deliver a functional prototype, anomaly detection solutions, validation of innovative methods, and contribute to the production deployment of AI projects.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 1,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_2",
+      "text": "## HR - Product/Service Benefit\n\nJulien brings anomaly detection, intelligent monitoring, and the industrialization of AI solutions to improve product and service quality.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 2,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_3",
+      "text": "## HR - Availability\n\nJulien's availability is specified in his CV. For any contact, please use the email or contact form.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 3,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_4",
+      "text": "## HR - References\n\nJulien has worked in laboratories such as MIA and XLIM, and has been supervised by recognized thesis directors. His supervisors and labs are listed in his CV.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 4,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_5",
+      "text": "## HR - Teamwork with Non-Technical Profiles\n\nJulien practices science outreach, knows how to work in a team, and can communicate with non-technical profiles.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 5,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_6",
+      "text": "## HR - Management\n\nJulien prefers to focus on technical work, the mission, and solving complex problems rather than moving into management.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 6,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_7",
+      "text": "## Technical - Who is Julien?\n\nJulien holds a PhD in applied computer science, specialized in hyperspherical neural networks and anomaly detection.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 7,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_8",
+      "text": "## Technical - AI Skills\n\nJulien masters theory, CNNs, RNNs, GANs, Transformers, autoencoders, and Bayesian optimization.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 8,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_9",
+      "text": "## Technical - Publications\n\nHere are Julien's main publications:\n- J. de Saint Angel, C. Saint-Jean, C. Choquet – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, book chapter, Recent Applications in Deep Learning, 2025.\n- J. de Saint Angel, C. Saint-Jean – Spherical Dense and Conv2d Layers via Conformal Geometric Algebra, ORASIS, 2021.\n- J. de Saint Angel, C. Saint-Jean – Approximation Theorem for Hyperspherical Neurons, GRETSI, 2023.\n- J. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 9,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_10",
+      "text": "## Quality - Reliability\n\nYes, Julien is reliable and has strong scientific and technical skills.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 10,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_11",
+      "text": "## HR - Supervision\n\nJulien was a secondary school teacher. He has never supervised university-level students.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 11,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_12",
+      "text": "## HR - Stress and Deadlines Management\n\nJulien is very organized and anticipates obstacles through rigorous planning. His RQTH status allows him to adapt his work environment to better manage stress and fatigue.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 12,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_13",
+      "text": "## HR - International Collaboration\n\nJulien has never collaborated internationally.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 13,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_14",
+      "text": "## Technical - Sensitive Data\n\nJulien has worked on public datasets (synthetic, MNIST, CIFAR-10) to validate his methods, but not on sensitive or confidential data.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 14,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_15",
+      "text": "## Distinctions and Awards\n\nJulien has published internationally (ICMLA 2024) and contributed to a book chapter (2025). He has not received prestigious awards but has been recognized for the quality of his work.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 15,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_16",
+      "text": "## Hackathon\n\nJulien participated in and won a hackathon in the second year of his PhD.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 16,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_17",
+      "text": "## Workshops/Conferences\n\nJulien has never led a scientific workshop or conference.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 17,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_18",
+      "text": "## Industry\n\nJulien has no industrial experience.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 18,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_19",
+      "text": "## Anti-hallucination - Private Information\n\nThis information is not available in the sources. Answers are limited to information present in the corpus or CV.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 19,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_20",
+      "text": "## Background - Academic Background\n\nJulien holds a PhD, a master's, and a bachelor's degree in mathematics from La Rochelle, and has taught mathematics.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 20,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_21",
+      "text": "## Background - Professional Experience\n\nJulien has completed laboratory internships, taught as a teacher and professor, and worked on applied research projects.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 21,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_22",
+      "text": "## Background - Interests\n\nJulien is interested in science outreach, astrophotography, and modeling.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 22,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_23",
+      "text": "## Background - Languages\n\nJulien speaks English (minimum required for work and conferences), with proficient writing skills.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 23,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_24",
+      "text": "## Background - Contact\n\nTo contact Julien, use the email provided in the CV or the contact form on his website.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 24,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_25",
+      "text": "# Fundamental Corpus for Mia — 1:1 Certification Version",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 25,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_26",
+      "text": "## Q4. RQTH Accommodations\n\nJulien is recognized as RQTH. He needs a healthy, calm, stable environment, with consideration for fatigue. For more details, he can be contacted via the contact form on his website.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 26,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_27",
+      "text": "## Q7. Management\n\nJulien does not wish to move into management. He prefers to focus on the mission, solving complex technical problems, and technical expertise.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 27,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_28",
+      "text": "## Q9. Exact Definition of SVDD, SPH SVDD, and Deep SPH SVDD\n\nThe Support Vector Data Description (SVDD) method aims to find the center and radius (c, ρ) parameters of the smallest enclosing hypersphere for a set of points. Applied to anomaly detection, the goal is to keep normal points inside the sphere and anomalies outside. There are two machine learning approaches: Deep soft-boundary SVDD and One Class Deep SVDD, both based on this principle.\nIn Julien's thesis, two methods are proposed: SPH SVDD and Deep SPH SVDD. The idea of SPH SVDD is to reformulate the SVDD problem using a hypersphere in conformal geometric space, i.e., to use a hyperspherical layer to solve the optimization problem with conformal geometric algebra. The network then contains a hyperspherical layer with a single neuron (one sphere) and the inputs x. The Deep SPH SVDD method is an extension to the case of multiple spheres. The main idea is to efficiently enclose specific groups of normal points in feature space with a group of spheres. This aims to improve detection accuracy and model interpretability, especially for multimodal data.\nKeywords: SVDD, hypersphere, center, radius, anomaly, inside, outside, soft",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 28,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_29",
+      "text": "-boundary, one class, SPH SVDD, Deep SPH SVDD, conformal geometric algebra, multi-spheres, groups of points, features, interpretability, multimodal data.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 29,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_30",
+      "text": "## Q16. Academic Background\n\nJulien studied mathematics from high school, then at the University of La Rochelle (Bachelor's, Master's, CAPES). He taught mathematics at Saint-Exupéry High School in La Rochelle. He completed laboratory internships (automatic tide gauge at LIENSs, trajectory analysis at XLIM/MIA, orbit interpolation at SYRTE). He defended a PhD in applied computer science for artificial intelligence, where he published and presented his work at various conferences.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 30,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_31",
+      "text": "## Q19. English\n\nJulien speaks English at the minimum level required to work and communicate at international conferences. His writing is proficient.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 31,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_32",
+      "text": "## Initialization Method\n\nA good initialization method for hyperspherical layers is essential to ensure convergence and learning stability. The method proposed in the thesis allows chaining several hyperspherical layers, which is not possible with standard initialization (like Glorot). It relies on asymptotic properties of generalized Gamma distributions and covariance calculations adapted to the geometric structure of spheres.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 32,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_33",
+      "text": "## Datasets Used\n\nThe main datasets used to validate the Deep M-SPH SVDD method are:\n- Synthetic point sets (to illustrate the behavior of hyperspherical layers)\n- MNIST\n- CIFAR-10",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 33,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_34",
+      "text": "## Exploratory/Theoretical Component of the Thesis\n\nThe thesis includes a significant theoretical component, notably:\n- An approximation theorem for hyperspherical layer networks\n- Mathematical study of convergence and stability properties\n- Analysis of the collapse phenomenon in Deep SVDD models",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 34,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_35",
+      "text": "## Reference Persons\n\n- Prof. Catherine Choquet (MIA lab director)\n- Christophe Saint-Jean (thesis advisor)",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 35,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_36",
+      "text": "## RQTH Needs\n\nJulien is recognized as RQTH. He needs a healthy, calm, stable environment, with consideration for fatigue. For more details, he can be contacted via the contact form on his website.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 36,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_37",
+      "text": "## Technical Preference / Management\n\nJulien does not wish to move into management. He prefers to focus on the mission, solving complex technical problems, and technical expertise.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 37,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_38",
+      "text": "## Academic Background (Structured)\n\nJulien studied mathematics from high school, then at the University of La Rochelle (Bachelor's, Master's, CAPES). He taught mathematics at Saint-Exupéry High School in La Rochelle. He completed laboratory internships (automatic tide gauge at LIENSs, trajectory analysis at XLIM/MIA, orbit interpolation at SYRTE). He defended a PhD in applied computer science for artificial intelligence, where he published and presented his work at various conferences.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 38,
+      "embedding": []
+    },
+    {
+      "id": "corpus_fondamental_en.txt_chunk_39",
+      "text": "## English\n\nJulien speaks English at the minimum level required to work and communicate at international conferences. His writing is proficient.",
+      "source_file": "corpus_fondamental_en.txt",
+      "chunk_index": 39,
+      "embedding": []
+    },
+    {
+      "id": "cv_julien_texte_en.txt_chunk_0",
+      "text": "Julien de Saint Angel – AI Engineer & Applied Mathematics\nPhD in Applied Computer Science – specialized in hyperspherical neural networks and anomaly detection\n\n📍 17000 La Rochelle, France\n✉️ julien.desaintangel@gmail.com\n\n🎓 Education\n\n2020–2025 – PhD in Applied Computer Science, University of La Rochelle, MIA Laboratory\nThesis: \"Hyperspherical Neural Networks for Anomaly Detection.\"\n\n2017–2019 – Master’s in Mathematics and Applications MIX (Honors: AB), University of La Rochelle\nSpecialization: applied mathematics, optimization, differential equations.\n\n2014–2015 – Master’s in Astronomy and Physics, Paris-Meudon Observatory\n\n2012–2014 – Master’s in Mathematics and Education + CAPES, University of La Rochelle\n\n2009–2012 – Bachelor’s in Mathematics, University of La Rochelle\n\n💼 Professional Experience\nScientific Contributions (2021–2024)\n\nDeep M-SPH SVDD: Multi-hypersphere method for anomaly detection.\n\nInitialization: Dedicated initialization method for hyperspherical neural networks (numerical optimization).\n\nApplications: Anomaly detection in time series, visual tide gauge, high-frequency sports analysis.\n\nFeb.–May 2019 – Internship at XLIM (UMR 7252) and MIA (EA 3165) laboratori",
+      "source_file": "cv_julien_texte_en.txt",
+      "chunk_index": 0,
+      "embedding": []
+    },
+    {
+      "id": "cv_julien_texte_en.txt_chunk_1",
+      "text": "es\n\nSupervisors: B. Tremblais and R. Pétéri\nCharacterization of sports gestures using high-speed cameras and trajectory analysis of critical points.\n\nMay 2018 – Internship at LIENSs laboratory (UMR 7266)\n\nSupervisors: E. Poirier (IGR) and L. Testud\nDevelopment of a visual tide gauge: automated reading of tide staff images.\n\nMar.–Jun. 2015 – Internship at SYRTE laboratory (UMR 8630), Paris Observatory\n\nSupervisor: J.-Y. Richard\nDevelopment of interpolation algorithms for artificial satellite orbits (differential equations, numerical simulation).\n\n2015–2017 – Secondary School Teacher, Lycées Saint-Exupéry, La Rochelle\n\nMathematics teacher. Developed skills in communication, science outreach, and teamwork.\n\n🧠 Technical Skills\n\nAI: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization.\nFrameworks: TensorFlow / PyTorch, Scikit-Learn, OpenCV, PyTorch Lightning, Keras.\nSignal Processing: Segmentation, frequency filtering, wavelets, Fourier transform, time-frequency analysis.\nProgramming: Python (Numpy, Pandas, SciPy, Matplotlib), Java, C, C++, Fortran, MATLAB, Scilab.\nTools: Git, Docker, Jupyter, Linux, LaTeX, Office Suite (Excel, Word, PowerPoint).\nAdvanced Math:",
+      "source_file": "cv_julien_texte_en.txt",
+      "chunk_index": 1,
+      "embedding": []
+    },
+    {
+      "id": "cv_julien_texte_en.txt_chunk_2",
+      "text": "Optimization, PDEs, conformal geometry, universal approximation.\n\n📚 Publications, Articles\n\nJ. de Saint Angel, C. Saint-Jean, C. Choquet – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, book chapter, Recent Applications in Deep Learning, 2025.\n\nJ. de Saint Angel, C. Saint-Jean – Spherical Dense and Conv2d Layers via Conformal Geometric Algebra, ORASIS, 2021.\n\nJ. de Saint Angel, C. Saint-Jean – Approximation Theorem for Hyperspherical Neurons, GRETSI, 2023.\n\nJ. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.\n\n🌍 Languages\n\nFrench: native\nEnglish: B2 – fluent\nSpanish & Romanian: B1\n\n🎨 Interests\n\nScience outreach, astrophotography, bird photography, 3D modeling, video animation.",
+      "source_file": "cv_julien_texte_en.txt",
+      "chunk_index": 2,
+      "embedding": []
+    },
+    {
+      "id": "profil_julien_en.txt_chunk_0",
+      "text": "---\nHuman and Personal Aspects:\n\nValues and Principles:\n- Ethics in research, scientific rigor, and honesty are at the heart of Julien's commitments.\n\nHow he is perceived:\n- Julien is passionate about technology and artificial intelligence.\n\nNotable Experiences:\n- Julien particularly enjoys every scientific conference, as it is an opportunity to take stock of major advances in his field, discover innovative projects, and exchange ideas about the future. For him, it is a true journey into the future.\n\nMotivations:\n- His deep motivation is to contribute to the enrichment of human knowledge.\n\nVision and Ambitions:\n- Julien wishes to deepen his skills in artificial intelligence to apply them to important questions in the medical field (improving medical image processing) and the environment (coastal studies, a positive vision for the future of the world).\n\nScience Outreach:\n- He considers outreach essential to help the general public understand the value of research.\n\nHandling Difficulties:\n- Difficulties are part of his life experience. Julien never gives up: his perseverance guides him to the end.\nName: Julien de Saint Angel\nTitle: Researcher in Artificial Intelligence\nPhD in Applied",
+      "source_file": "profil_julien_en.txt",
+      "chunk_index": 0,
+      "embedding": []
+    },
+    {
+      "id": "profil_julien_en.txt_chunk_1",
+      "text": "Computer Science – specialized in hyperspherical neural networks and anomaly detection\n\nEducation:\n2020–2025 – PhD in Applied Computer Science, University of La Rochelle, MIA Laboratory\nThesis: \"Hyperspherical Neural Networks for Anomaly Detection.\"\n2017–2019 – Master’s in Mathematics and Applications MIX (Honors: AB), University of La Rochelle\nSpecialization: applied mathematics, optimization, differential equations.\n2014–2015 – Master’s in Astronomy and Physics, Paris-Meudon Observatory\n2012–2014 – Master’s in Mathematics and Education + CAPES, University of La Rochelle\n2009–2012 – Bachelor’s in Mathematics, University of La Rochelle\n\nScientific Contributions (2021–2024):\nDeep M-SPH SVDD: Multi-hypersphere method for anomaly detection.\nInitialization: Dedicated initialization method for hyperspherical neural networks (numerical optimization).\nApplications: Anomaly detection in time series, visual tide gauge, high-frequency sports analysis.\n\nProfessional Experience:\nFeb.–May 2019 – Internship at XLIM (UMR 7252) and MIA (EA 3165) laboratories\nSupervisors: B. Tremblais and R. Pétéri\nCharacterization of sports gestures using high-speed cameras and trajectory analysis of critical poi",
+      "source_file": "profil_julien_en.txt",
+      "chunk_index": 1,
+      "embedding": []
+    },
+    {
+      "id": "profil_julien_en.txt_chunk_2",
+      "text": "nts.\nMay 2018 – Internship at LIENSs laboratory (UMR 7266)\nSupervisors: E. Poirier (IGR) and L. Testud\nDevelopment of a visual tide gauge: automated reading of tide staff images.\nMar.–Jun. 2015 – Internship at SYRTE laboratory (UMR 8630), Paris Observatory\nSupervisor: J.-Y. Richard\nDevelopment of interpolation algorithms for artificial satellite orbits (differential equations, numerical simulation).\n2015–2017 – Secondary School Teacher, Lycées Saint-Exupéry, La Rochelle\nMathematics teacher. Developed skills in communication, science outreach, and teamwork.\n\nSkills:\n- Anomaly detection\n- Mathematical modeling\n- Model interpretability\n- AI, Deep Learning: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization.\nFrameworks: TensorFlow / PyTorch, Scikit-Learn, OpenCV, PyTorch Lightning, Keras.\nSignal Processing: Segmentation, frequency filtering, wavelets, Fourier transform, time-frequency analysis.\nProgramming: Python (Numpy, Pandas, SciPy, Matplotlib), Java, C, C++, Fortran, MATLAB, Scilab.\nTools: Git, Docker, Jupyter, Linux, LaTeX, Office Suite (Excel, Word, PowerPoint).\nAdvanced Math: Optimization, PDEs, conformal geometry, universal approximation.\n\nJulien De",
+      "source_file": "profil_julien_en.txt",
+      "chunk_index": 2,
+      "embedding": []
+    },
+    {
+      "id": "profil_julien_en.txt_chunk_3",
+      "text": "Saint Angel holds a PhD in Applied Computer Science, specialized in hyperspherical neural networks and anomaly detection.\n\nAcademic Background and Training:\n- 2020–2025: PhD in Applied Computer Science, University of La Rochelle, MIA Laboratory. Thesis on hyperspherical neural networks for anomaly detection.\n- 2017–2019: Master’s in Mathematics and Applications MIX (Honors: AB), University of La Rochelle. Specialization in applied mathematics, optimization, differential equations.\n- 2014–2015: Master’s in Astronomy and Physics, Paris-Meudon Observatory\n- 2012–2014: Master’s in Mathematics and Education + CAPES, University of La Rochelle\n- 2009–2012: Bachelor’s in Mathematics, University of La Rochelle\n\nProfessional Experience:\n- 2021–2024: Scientific contributions – Deep M-SPH SVDD (multi-hypersphere method for anomaly detection), initialization method for hyperspherical neural networks, applications in time series, visual tide gauge, high-frequency sports analysis.\n- Feb.–May 2019: Internship at XLIM (UMR 7252) and MIA (EA 3165) laboratories. Supervisors: B. Tremblais and R. Pétéri. Characterization of sports gestures using high-speed cameras.\n- May 2018: Internship at LIENSs lab",
+      "source_file": "profil_julien_en.txt",
+      "chunk_index": 3,
+      "embedding": []
+    },
+    {
+      "id": "profil_julien_en.txt_chunk_4",
+      "text": "oratory (UMR 7266). Supervisors: E. Poirier and L. Testud. Development of a visual tide gauge.\n- Mar.–Jun. 2015: Internship at SYRTE laboratory (UMR 8630), Paris Observatory. Supervisor: J.-Y. Richard. Development of interpolation algorithms for artificial satellite orbits.\n- 2015–2017: Secondary school teacher, Lycées Saint-Exupéry, La Rochelle. Mathematics teacher.\n\nJulien's Technical Skills:\nAI: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization.\nFrameworks: TensorFlow, PyTorch, Scikit-Learn, OpenCV, PyTorch Lightning, Keras.\nProgramming: Python (Numpy, Pandas, SciPy, Matplotlib), Java, C, C++, Fortran, MATLAB, Scilab.\nTools: Git, Docker, Jupyter, Linux, LaTeX.\n\nMost Important Qualities:\n- Scientific rigor, pedagogy, reliability, innovation.\n\nJulien's Qualities:\nDesign and training of neural networks.\nMastery of applied mathematics and advanced concepts.\nHe can define new neural network architectures and has proposed an extension of hyperspherical layers to the convolutional case.\nHe has also developed specific weight initialization methods adapted to the proposed models.\nRigorous experimental validation of models and critical analysis of their perfor",
+      "source_file": "profil_julien_en.txt",
+      "chunk_index": 4,
+      "embedding": []
+    },
+    {
+      "id": "profil_julien_en.txt_chunk_5",
+      "text": "mance.\nAbility to work at the interface of computer science, optimization, and applied mathematics.\nFormulation of relevant research problems and methodical model construction.\nClear and structured presentation of scientific work.\nAbility to conduct complex and innovative work independently.\nScientific and methodological rigor in design, experimentation, and analysis.\nMobilization of a wide range of skills to solve interdisciplinary problems.\n\nJulien's Publications and Articles:\nJ. de Saint Angel, C. Saint-Jean, C. Choquet – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, book chapter, Recent Applications in Deep Learning, 2025.\nJ. de Saint Angel, C. Saint-Jean – Spherical Dense and Conv2d Layers via Conformal Geometric Algebra, ORASIS, 2021.\nJ. de Saint Angel, C. Saint-Jean – Approximation Theorem for Hyperspherical Neurons, GRETSI, 2023.\nJ. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.\n\nContact:\nAddress: 17000 La Rochelle, France\nEmail: julien.desaintangel@gmail.com\n\nLanguages:\nFrench (native), English (B2 fluent), and Romanian (B1)\n\nInterests and Hobbies:\nScience outreach, ast",
+      "source_file": "profil_julien_en.txt",
+      "chunk_index": 5,
+      "embedding": []
+    },
+    {
+      "id": "profil_julien_en.txt_chunk_6",
+      "text": "rophotography, bird photography, 3D modeling, video animation.\n\n---\nScientific Definitions and Clarifications:\n\nHyperspherical Neural Networks (HSN):\nA hyperspherical layer network is a neural network where each neuron defines a hypersphere in the data space, enabling nonlinear and compact separation. Unlike classical dense layers, which separate space with hyperplanes (linear decision), hyperspherical layers separate with hyperspheres, offering a more flexible decision boundary suited to complex structures.\n\nDistinction from Dense Layers:\nDense (fully connected) layers perform linear separations (hyperplanes) in feature space, while hyperspherical layers perform nonlinear separations (hyperspheres). This allows better capture of complex data structures and improves anomaly detection.\n\nImportance of Initialization in HSN:\nThe initialization of parameters (center and radius of hyperspheres) is crucial to ensure signal propagation through multiple hidden layers and learning stability. Julien has proposed a specific initialization method adapted to these architectures.\n\nAmbitions and Perspectives:\nJulien aims to continue his research in artificial intelligence, particularly in applyin",
+      "source_file": "profil_julien_en.txt",
+      "chunk_index": 6,
+      "embedding": []
+    },
+    {
+      "id": "profil_julien_en.txt_chunk_7",
+      "text": "g AI to medical image analysis and environmental issues.\n\nMain Publications (all cited):\n- J. de Saint Angel, C. Saint-Jean – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, book chapter, Recent Applications in Deep Learning, 2025.\n- J. de Saint Angel, C. Saint-Jean – Spherical Dense and Conv2d Layers via Conformal Geometric Algebra, ORASIS, 2021.\n- J. de Saint Angel, C. Saint-Jean – Approximation Theorem for Hyperspherical Neurons, GRETSI, 2023.\n- J. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.\nPhD Advisor: Christophe Saint-Jean\nLab Director: Catherine Choquet",
+      "source_file": "profil_julien_en.txt",
+      "chunk_index": 7,
+      "embedding": []
+    },
+    {
+      "id": "these_julien_en.txt_chunk_0",
+      "text": "Title: \"Conformal Geometry and Neural Networks: New Approaches for Interpretable AI\"\n\nAbstract:\nThis thesis explores the use of conformal geometric algebras to improve the interpretability and robustness of neural networks. It proposes new methods for initialization and analysis of hyperspherical layers.\n\nChapters:\n1. Introduction to Conformal Geometry\n2. Modeling Hyperspheres in AI\n3. Initialization Methods for Hyperspherical Networks\n4. Applications to Anomaly Detection\n5. Perspectives and Conclusions\n\nKey Results:\n- New initialization method for hyperspherical layers\n- Improved anomaly detection on several datasets\n- Publication of 3 major articles on the subject\n\nThesis by Julien De Saint Angel\nFull Title: Hyperspherical Neural Networks – Application to Anomaly Detection\nUniversity: La Rochelle University\nDoctoral School: Euclide\nLaboratory: Mathematics, Image and Applications (MIA)\nDefense: July 4, 2025\n\nSupervision:\nPhD Advisor: Christophe Saint-Jean\nLab Director: Catherine Choquet\n\nReviewers: Yannick Berthoumieu (University of Bordeaux), Hoel Le Capitaine (University of Nantes)\nExaminers: Laetitia Chapel (IRISA), Catherine Choquet (MIA)\n\nSummary:\nThis thesis introduces a new",
+      "source_file": "these_julien_en.txt",
+      "chunk_index": 0,
+      "embedding": []
+    },
+    {
+      "id": "these_julien_en.txt_chunk_1",
+      "text": "architecture of hyperspherical neural networks based on the formalism of conformal geometric algebra (CGA). It aims to improve data representation in high-dimensional spaces and enhance the performance of anomaly detection models in complex contexts such as time series, computer vision, and nonlinear signal analysis. Hyperspherical layers replace the classical hyperplanes of neural networks with learnable hyperspheres, enabling nonlinear class separation and greater robustness to non-Gaussian distributions.\n\nScientific Objectives:\n- Propose a unified geometric formalism to represent hyperplanes and hyperspheres using conformal algebra.\n- Develop hyperspherical neural layers (dense and convolutional) suitable for deep learning.\n- Define a specific initialization method ensuring stability and convergence in these layers.\n- Apply these models to anomaly detection using variants of Support Vector Data Description (SVDD) adapted to hyperspherical geometry.\n\nMain Contributions:\n- Development of the Deep M-SPH SVDD model, a multi-sphere approach for anomaly detection based on conformal geometry.\n- Design of a hyperspherical initialization method ensuring numerical stability and efficient",
+      "source_file": "these_julien_en.txt",
+      "chunk_index": 1,
+      "embedding": []
+    },
+    {
+      "id": "these_julien_en.txt_chunk_2",
+      "text": "convergence.\n- Practical implementation of dense and convolutional hyperspherical layers in PyTorch and TensorFlow.\n- Establishment of a universal approximation theorem demonstrating the ability of these networks to approximate any continuous function on a compact set.\n- Experimental validation on synthetic and real data (MNIST, CIFAR-10) showing performance and stability gains.\n\nApplications:\nAnomaly detection in time series, industrial monitoring, visual tide gauge analysis, high-frequency sports diagnostics, and complex image recognition.\n\nRepresentative Excerpts:\n\"Hyperspherical layers allow data to be projected onto spherical surfaces, facilitating class separation and the detection of outliers.\"\n\"The Deep M-SPH SVDD method improves the robustness of anomaly detection by leveraging the geometry of hyperspheres in feature space.\"\n\"Initialization adapted to hyperspherical layers optimizes model convergence and stability.\"\n\nAssociated Publications:\nJ. de Saint Angel, C. Saint-Jean, C. Choquet (2025) – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, in Recent Applications in Deep Learning.\nJ. de Saint Angel, C. Saint-Jean (2024) – Mult",
+      "source_file": "these_julien_en.txt",
+      "chunk_index": 2,
+      "embedding": []
+    },
+    {
+      "id": "these_julien_en.txt_chunk_3",
+      "text": "i-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA.\nJ. de Saint Angel, C. Saint-Jean (2023) – Approximation Theorem for Hyperspherical Neurons, GRETSI.\nJ. de Saint Angel, C. Saint-Jean (2021) – Spherical Dense and Conv2D Layers via Conformal Geometric Algebra, ORASIS.\n\nKeywords: neural networks, hyperspheres, conformal geometric algebra, anomaly detection, time series, deep learning, initialization, SVDD, interpretable AI, optimization, convergence.\n\nChapter Details:\n\nChapter 1: Networks Inspired by the Formalism of Conformal Geometric Algebra\nThis chapter presents the mathematical and conceptual foundations of the approach. It introduces Hestenes' conformal model, allowing the representation of hyperplanes and hyperspheres in an augmented vector space Rⁿ⁺¹,¹.\nHyperspherical layers are defined as a natural extension of classical dense and convolutional layers. The text describes the conformal inner product (x̃·is̃), associated calculation rules, and necessary normalization constraints (s̃² = ρ², e∞·is̃ = -1).\nThe author compares the performance of classical dense layers and hyperspherical layers on synthetic datasets (Easy and Dif). Results show faster convergence and be",
+      "source_file": "these_julien_en.txt",
+      "chunk_index": 3,
+      "embedding": []
+    },
+    {
+      "id": "these_julien_en.txt_chunk_4",
+      "text": "tter stability with hyperspherical layers. The chapter also introduces the notion of hyperspherical convolution and details its implementation in Conv2D-type architectures.\nFinally, a comparison with RBF networks and Clifford neural networks is made, showing that hyperspherical layers constitute a geometrically coherent generalization of these models.\n\nChapter 2: Hyperspherical Neural Networks and the Approximation Theorem\nThis chapter establishes the theoretical framework guaranteeing the approximation capacity of hyperspherical networks. Relying on Schwartz's density theorem, the author demonstrates that a single hyperspherical layer network can approximate any continuous function on a compact set in Rⁿ, provided the activation function is regular.\nA comparison is made between the structure of functions produced by classical (linear) layer networks and those produced by hyperspherical (quadratic) layers. Experiments on 1D functions illustrate the approximation capabilities and numerical stability of hyperspherical networks.\nThe chapter concludes that these networks have expressiveness at least equivalent to classical MLPs, while offering a better geometric interpretation of decis",
+      "source_file": "these_julien_en.txt",
+      "chunk_index": 4,
+      "embedding": []
+    },
+    {
+      "id": "these_julien_en.txt_chunk_5",
+      "text": "ion boundaries.\n\nChapter 3: Application to Anomaly Detection\nThe third chapter is devoted to the main application of the thesis: anomaly detection.\nIt begins with a comprehensive review of classical methods (Elliptic Envelope, Isolation Forest, One-Class SVM, Support Vector Data Description and deep variants). The author shows the limitations of these approaches in the face of nonlinearity and geometric complexity of data.\nNew models are then introduced: SPH-Anomaly, SPH-SVDD, Deep SPH-SVDD, and Deep M-SPH SVDD. These models use the conformal representation to directly learn the centers and radii of hyperspheres enclosing normal data.\nDeep M-SPH SVDD combines several hyperspheres to model subgroups of normal behaviors.\nExtensive experiments are presented on 2D synthetic data, MNIST, and CIFAR-10, with study of the parameter ν, performance metrics (AUC-ROC, AUC-PR, F1-score), and stability with respect to the “collapse” phenomenon observed in classical Deep SVDD.\nResults show that hyperspherical layers provide better robustness and superior detection power while remaining interpretable.\n\nAppendices:\nThe appendices provide additional mathematical and technical details:\nA: calculation",
+      "source_file": "these_julien_en.txt",
+      "chunk_index": 5,
+      "embedding": []
+    },
+    {
+      "id": "these_julien_en.txt_chunk_6",
+      "text": "of covariances and initialization methods for hyperspherical layers.\nB: complete proof of the approximation theorem.\nC: analysis of the collapse phenomenon and geometric justification of its prevention in hyperspherical architectures.\n\nManuscript Structure:\n- Theoretical foundations: conformal geometric algebra and vector representation of hyperspheres.\n- Definition and implementation of hyperspherical layers (dense and convolutional).\n- Approximation theorem for hyperspherical neurons.\n- Application to anomaly detection with SPH-SVDD and M-SPH SVDD models.\n- Experimental validation and future perspectives.\n\nSummary:\nJulien de Saint Angel's thesis proposes an innovative deep learning approach based on hyperspherical layers integrated into the formalism of conformal geometric algebra. This approach unifies hyperplanes and hyperspheres in a single representation, enables better geometric understanding of neural networks, and improves anomaly detection in complex environments. Thanks to the introduction of Deep SPH SVDD and Deep M-SPH SVDD models, as well as a specific initialization method, the author demonstrates significant performance gains, faster convergence, and increased inte",
+      "source_file": "these_julien_en.txt",
+      "chunk_index": 6,
+      "embedding": []
+    },
+    {
+      "id": "these_julien_en.txt_chunk_7",
+      "text": "rpretability of AI models.",
+      "source_file": "these_julien_en.txt",
+      "chunk_index": 7,
+      "embedding": []
+    }
+  ]
+}

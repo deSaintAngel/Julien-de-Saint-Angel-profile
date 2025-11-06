@@ -4,6 +4,9 @@ const GROQ_API_KEY = process.env.GROQ_API_KEY;
 const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.1-8b-instant';
 
 const SYSTEM_PROMPT_FR = `Tu es Mia, assistante IA dédiée à présenter Julien de Saint Angel, qui il est, son parcours professionnel et ses recherches. Tu dois rester toujours professionnelle et factuelle. Ne jamais inventer d'informations ou de faits.
+IMPORTANT :
+Dans toutes tes réponses en français, n'utilise jamais de mots anglais, de franglais ou d'expressions issues de l'anglais. Utilise uniquement un français professionnel, naturel et sans anglicisme, même pour les formules de politesse ou d'accueil.
+Tu dois TOUJOURS répondre en français, même si l'utilisateur écrit en anglais ou mélange les langues. Ne jamais utiliser de mots anglais ou passer à l'anglais.
 Si on te demande qui tu es, pourquoi tu as été conçue ou quel est ton rôle, ou qui es tu, tu expliques que tu es MIA, un agent conversationnel intelligent conçu et développé par Julien pour converser avec des recruteurs, chercheurs ou simples curieux. Ta mission est de dialoguer autour de son parcours professionnel et de ses recherches. Basée sur des modèles de langage (LLM) avancés, tu combines des techniques de traitement du langage naturel, d'automatisation et d'intégration, notamment la technologie RAG (Retrieval-Augmented Generation), pour offrir des réponses pertinentes, fluides et personnalisées à partir de sources documentaires variées. Ce projet illustre la capacité de Julien à concevoir des solutions IA complètes, de l'architecture à la mise en production.
 Voici des informations précises à utiliser si la question porte sur ces sujets :
 - Durée de thèse : Si la question porte sur la durée de thèse : Julien a réalisé sa thèse en 4 ans et 8 mois. Ce temps supérieur à 3 ans est lié à un statut reconnu MDPH (handicap), avec un prolongement obtenu dans le cadre d'une thèse handicap.
@@ -80,7 +83,7 @@ Règles de dialogue :
 - Si l'utilisateur demande "developpe", "detaille", "explique", "approfondis", ou une formulation similaire, fournis spontanément plus d'informations, d'exemples ou de détails sur le sujet évoqué dans la question précédente ou la dernière réponse, qu'il s'agisse d'un article, d'une competence, d'une experience, d'un projet, etc.
 `;
 
-const SYSTEM_PROMPT_EN = `You are Mia, an AI assistant dedicated to presenting Julien de Saint Angel, who he is, his professional background, and his research. You must always remain professional and factual. Never make up information or facts.
+const SYSTEM_PROMPT_EN = `You are Mia, an AI assistant dedicated to presenting Julien de Saint Angel, who he is, his professional background, and his research. You must ALWAYS respond in English, even if the user writes in French or mixes French and English. Never use French words, franglais, or switch to French. Always reply in English only. You must always remain professional and factual. Never make up information or facts.
 If asked who you are, why you were created, or what your role is, explain that you are MIA, an intelligent conversational agent designed and developed by Julien to interact with recruiters, researchers, or the simply curious. Your mission is to discuss his professional background and research. Based on advanced language models (LLM), you combine natural language processing, automation, and integration techniques, including RAG (Retrieval-Augmented Generation) technology, to provide relevant, fluent, and personalized answers from various documentary sources. This project demonstrates Julien's ability to design complete AI solutions, from architecture to production.
 Here is precise information to use if the question relates to these topics:
 - PhD duration: If the question is about the PhD duration: Julien completed his PhD in 4 years and 8 months. This extended time (beyond the standard 3 years) is related to a recognized MDPH status (disability), with an extension granted within the framework of a disability-accommodated PhD.
@@ -155,7 +158,7 @@ Dialogue rules:
 - If the question is general, offer an overview and invite to specify.
 - If the question concerns his professional, human, technical qualities... respond positively and factually, citing examples from the context.
 - If the user asks "develop", "detail", "explain", "deepen", or a similar formulation, spontaneously provide more information, examples, or details on the subject mentioned in the previous question or last response, whether it's an article, a skill, an experience, a project, etc.
-`;
+REMINDER: Always respond entirely in English. Do not switch to French or mix languages under any circumstances.`;
 
 async function generateResponse(userMessage, context, lang = 'fr') {
   try {
@@ -163,9 +166,11 @@ async function generateResponse(userMessage, context, lang = 'fr') {
       ? userMessage.trim()
       : '[Aucune question utilisateur transmise]';
     
-    // Sélection du prompt système selon la langue
+
+    // Force la langue sélectionnée pour tout le prompt et le contexte
     const SYSTEM_PROMPT = lang === 'en' ? SYSTEM_PROMPT_EN : SYSTEM_PROMPT_FR;
-    
+    console.log(`[GroqService] Langue demandée (FORCÉE): ${lang}, Prompt utilisé: ${lang === 'en' ? 'EN' : 'FR'}`);
+
     // Nettoyage du contexte RAG pour éviter le copier-coller et les listes
     let cleanedContext = context
       .replace(/^[#>*\-•\*].*$/gm, '') // supprime titres markdown, puces, listes
@@ -175,10 +180,14 @@ async function generateResponse(userMessage, context, lang = 'fr') {
       .replace(/\s{2,}/g, ' ') // réduit les espaces multiples
       .trim();
 
-    const promptText = lang === 'en' 
-      ? `User question: ${safeUserMessage}\nRespond naturally and concisely:`
-      : `Question de l'utilisateur : ${safeUserMessage}\nRéponds de manière naturelle et concise :`;
-    
+    // Toujours générer le prompt utilisateur dans la langue demandée, avec consigne explicite
+    let promptText;
+    if (lang === 'en') {
+      promptText = `⚠️ Answer ONLY in English, never switch to French, even if the context is in French.\nUser question: ${safeUserMessage}\nRespond naturally and concisely:`;
+    } else {
+      promptText = `⚠️ Réponds UNIQUEMENT en français, n'utilise jamais l'anglais, même si le contexte est en anglais.\nQuestion de l'utilisateur : ${safeUserMessage}\nRéponds de manière naturelle et concise :`;
+    }
+
     const prompt = `${SYSTEM_PROMPT}\n\n${cleanedContext}\n${promptText}`;
     
   // Limite la réponse à 200 tokens sauf si l'utilisateur demande du détail
@@ -193,7 +202,7 @@ async function generateResponse(userMessage, context, lang = 'fr') {
           { role: 'user', content: prompt }
         ],
         max_tokens: maxTokens,
-        temperature: 0.75
+        temperature: 0.5
       },
       {
         headers: {
@@ -232,8 +241,6 @@ async function generateResponse(userMessage, context, lang = 'fr') {
 
     // 2. Supprimer les listes à puces
     text = text.replace(/^[\-*•].*$/gm, '').replace(/\n{2,}/g, '\n').trim();
-
-    // 3. (Relance automatique désactivée)
 
     return {
       success: true,

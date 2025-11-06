@@ -24,7 +24,8 @@ class MiaChat {
     this.isLoading = false;
     this.currentAdId = null;
     this.adTimer = null;
-    
+    this.currentLang = (window.siteLang || document.documentElement.lang || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr';
+
     this.init();
     this.checkQuota();
 
@@ -42,6 +43,30 @@ class MiaChat {
       } catch (e) {}
       localStorage.removeItem('mia_user_id');
     });
+  }
+  /**
+   * Méthode appelée lors d'un changement de langue du site.
+   * Met à jour le message d'accueil si le chat est ouvert,
+   * met à jour le texte du bouton pub/robot,
+   * et stocke la langue pour la prochaine ouverture.
+   */
+  onSiteLanguageChange(lang) {
+    // Stocker la langue courante
+    this.currentLang = lang && lang.toLowerCase().startsWith('en') ? 'en' : 'fr';
+    // Mettre à jour le texte du bouton pub/robot
+    this.updateAdBtnText();
+    // Si le chat est ouvert, mettre à jour le message d'accueil (en haut)
+    if (this.isOpen) {
+      const messagesContainer = document.getElementById('mia-chat-messages');
+      if (messagesContainer) {
+        // Nettoyer les anciens messages et afficher le nouveau message d'accueil
+        messagesContainer.innerHTML = '';
+        const welcomeMessage = this.currentLang === 'en'
+          ? '👋 Hello! I am Mia. How can I help you?'
+          : '👋 Bonjour ! Je suis Mia. Comment puis-je vous aider ?';
+        this.addMessage('bot', welcomeMessage);
+      }
+    }
   }
 
   getOrCreateUserId() {
@@ -66,43 +91,35 @@ class MiaChat {
     const input = document.getElementById('mia-chat-input');
     input.addEventListener('keypress', (e) => {
       if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
+        this.updateAdBtnText();
         this.sendMessage();
       }
     });
     
     const adBtn = document.getElementById('mia-watch-ad-btn');
-    adBtn.textContent = 'Valider que je ne suis pas un robot';
+    this.updateAdBtnText();
     adBtn.addEventListener('click', () => this.startAd());
-
     const quotaEl = document.getElementById('mia-quota');
     if (quotaEl && this.quota === 0) {
       quotaEl.style.display = 'none';
     }
-    
-    // Message d'accueil selon la langue
-    let lang = 'fr';
-    const html = document.documentElement;
-    if (html && html.lang && html.lang.toLowerCase().startsWith('en')) {
-      lang = 'en';
-    } else {
-      const btnEn = document.getElementById('btn-en');
-      if (btnEn && btnEn.classList.contains('active')) lang = 'en';
-    }
-    
-    console.log('🌍 Langue d\'accueil détectée:', lang, '| html.lang:', html.lang, '| btn-en.active:', document.getElementById('btn-en')?.classList.contains('active'));
-    
-    const welcomeMessage = lang === 'en' 
-      ? '👋 Hello! I am Mia. How can I help you?'
-      : '👋 Bonjour ! Je suis Mia. Comment puis-je vous aider ?';
-    
-    this.addMessage('bot', welcomeMessage);
+    // Suppression du message d'accueil ici, il sera géré dans toggleChat
+  }
+
+  updateAdBtnText() {
+    const adBtn = document.getElementById('mia-watch-ad-btn');
+    if (!adBtn) return;
+    // Utilise la langue courante stockée
+    const lang = this.currentLang || ((window.siteLang || document.documentElement.lang || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr');
+    adBtn.textContent = lang === 'en'
+      ? "Verify you're not a robot"
+      : "Valider que je ne suis pas un robot";
   }
   
   toggleChat() {
     this.isOpen = !this.isOpen;
     const chatWindow = document.getElementById('mia-chat-window');
-    
+
     if (this.isOpen) {
       // Réinitialise la validation et le quota à chaque ouverture du chat
       localStorage.removeItem('mia_quota');
@@ -113,6 +130,16 @@ class MiaChat {
       this.updateQuotaDisplay();
       chatWindow.classList.add('open');
       document.getElementById('mia-chat-input').focus();
+
+      // Message d'accueil selon la langue courante stockée
+      const lang = this.currentLang || ((window.siteLang || document.documentElement.lang || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr');
+      const welcomeMessage = lang === 'en'
+        ? '👋 Hello! I am Mia. How can I help you?'
+        : '👋 Bonjour ! Je suis Mia. Comment puis-je vous aider ?';
+      // Nettoyer les anciens messages si besoin (optionnel)
+      const messagesContainer = document.getElementById('mia-chat-messages');
+      if (messagesContainer) messagesContainer.innerHTML = '';
+      this.addMessage('bot', welcomeMessage);
     } else {
       chatWindow.classList.remove('open');
     }
@@ -175,7 +202,7 @@ class MiaChat {
         const text = await response.text();
         this.addMessage('system', `❌ Erreur réseau ou serveur (${response.status}) : ${text}`);
         adBtn.disabled = false;
-        adBtn.textContent = 'Valider que je ne suis pas un robot';
+  this.updateAdBtnText();
         return;
       }
 
@@ -187,14 +214,14 @@ class MiaChat {
       } else {
         this.addMessage('system', '❌ ' + (data.error || 'Erreur'));
         adBtn.disabled = false;
-        adBtn.textContent = 'Valider que je ne suis pas un robot';
+  this.updateAdBtnText();
       }
 
     } catch (error) {
       console.error('Erreur startAd:', error);
       const adBtn = document.getElementById('mia-watch-ad-btn');
       adBtn.disabled = false;
-      adBtn.textContent = 'Valider que je ne suis pas un robot';
+  this.updateAdBtnText();
       this.addMessage('system', '❌ Erreur technique lors de la validation robot : ' + (error.message || error));
     }
   }
@@ -281,7 +308,7 @@ class MiaChat {
 
       const adBtn = document.getElementById('mia-watch-ad-btn');
       adBtn.disabled = false;
-      adBtn.textContent = 'Valider que je ne suis pas un robot';
+  this.updateAdBtnText();
 
     } catch (error) {
       console.error('Erreur completeAd:', error);
@@ -293,18 +320,14 @@ class MiaChat {
   async sendMessage() {
     const input = document.getElementById('mia-chat-input');
     const message = input.value.trim();
-    
+
     if (!message || this.isLoading) return;
-    
-    // Détection de la langue du site
-    const htmlLang = document.documentElement.lang || 'fr';
-    const isEnglish = htmlLang.toLowerCase().startsWith('en') || document.querySelector('.btn-en.active');
-    const lang = isEnglish ? 'en' : 'fr';
-    
-    console.log('🌍 Langue détectée:', lang, '| htmlLang:', htmlLang, '| btn-en.active:', !!document.querySelector('.btn-en.active'));
-    
+
+    // Synchronise la langue courante avec la langue globale du site
+    this.currentLang = (window.siteLang || document.documentElement.lang || 'fr').toLowerCase().startsWith('en') ? 'en' : 'fr';
+    const lang = this.currentLang;
     if (this.quota === 0) {
-      const errorMsg = lang === 'en' 
+      const errorMsg = lang === 'en'
         ? '❌ No more interactions. Please verify you are not a robot.'
         : '❌ Plus d\'interactions. Veuillez valider que vous n\'êtes pas un robot.';
       this.addMessage('system', errorMsg);

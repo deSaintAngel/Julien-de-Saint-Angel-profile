@@ -1,0 +1,99 @@
+Title: "Conformal Geometry and Neural Networks: New Approaches for Interpretable AI"
+
+Abstract:
+This thesis explores the use of conformal geometric algebras to improve the interpretability and robustness of neural networks. It proposes new methods for initialization and analysis of hyperspherical layers.
+
+Chapters:
+1. Introduction to Conformal Geometry
+2. Modeling Hyperspheres in AI
+3. Initialization Methods for Hyperspherical Networks
+4. Applications to Anomaly Detection
+5. Perspectives and Conclusions
+
+Key Results:
+- New initialization method for hyperspherical layers
+- Improved anomaly detection on several datasets
+- Publication of 3 major articles on the subject
+
+Thesis by Julien De Saint Angel
+Full Title: Hyperspherical Neural Networks – Application to Anomaly Detection
+University: La Rochelle University
+Doctoral School: Euclide
+Laboratory: Mathematics, Image and Applications (MIA)
+Defense: July 4, 2025
+
+Supervision:
+PhD Advisor: Christophe Saint-Jean
+Lab Director: Catherine Choquet
+
+Reviewers: Yannick Berthoumieu (University of Bordeaux), Hoel Le Capitaine (University of Nantes)
+Examiners: Laetitia Chapel (IRISA), Catherine Choquet (MIA)
+
+Summary:
+This thesis introduces a new architecture of hyperspherical neural networks based on the formalism of conformal geometric algebra (CGA). It aims to improve data representation in high-dimensional spaces and enhance the performance of anomaly detection models in complex contexts such as time series, computer vision, and nonlinear signal analysis. Hyperspherical layers replace the classical hyperplanes of neural networks with learnable hyperspheres, enabling nonlinear class separation and greater robustness to non-Gaussian distributions.
+
+Scientific Objectives:
+- Propose a unified geometric formalism to represent hyperplanes and hyperspheres using conformal algebra.
+- Develop hyperspherical neural layers (dense and convolutional) suitable for deep learning.
+- Define a specific initialization method ensuring stability and convergence in these layers.
+- Apply these models to anomaly detection using variants of Support Vector Data Description (SVDD) adapted to hyperspherical geometry.
+
+Main Contributions:
+- Development of the Deep M-SPH SVDD model, a multi-sphere approach for anomaly detection based on conformal geometry.
+- Design of a hyperspherical initialization method ensuring numerical stability and efficient convergence.
+- Practical implementation of dense and convolutional hyperspherical layers in PyTorch and TensorFlow.
+- Establishment of a universal approximation theorem demonstrating the ability of these networks to approximate any continuous function on a compact set.
+- Experimental validation on synthetic and real data (MNIST, CIFAR-10) showing performance and stability gains.
+
+Applications:
+Anomaly detection in time series, industrial monitoring, visual tide gauge analysis, high-frequency sports diagnostics, and complex image recognition.
+
+Representative Excerpts:
+"Hyperspherical layers allow data to be projected onto spherical surfaces, facilitating class separation and the detection of outliers."
+"The Deep M-SPH SVDD method improves the robustness of anomaly detection by leveraging the geometry of hyperspheres in feature space."
+"Initialization adapted to hyperspherical layers optimizes model convergence and stability."
+
+Associated Publications:
+J. de Saint Angel, C. Saint-Jean, C. Choquet (2025) – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, in Recent Applications in Deep Learning.
+J. de Saint Angel, C. Saint-Jean (2024) – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA.
+J. de Saint Angel, C. Saint-Jean (2023) – Approximation Theorem for Hyperspherical Neurons, GRETSI.
+J. de Saint Angel, C. Saint-Jean (2021) – Spherical Dense and Conv2D Layers via Conformal Geometric Algebra, ORASIS.
+
+Keywords: neural networks, hyperspheres, conformal geometric algebra, anomaly detection, time series, deep learning, initialization, SVDD, interpretable AI, optimization, convergence.
+
+Chapter Details:
+
+Chapter 1: Networks Inspired by the Formalism of Conformal Geometric Algebra
+This chapter presents the mathematical and conceptual foundations of the approach. It introduces Hestenes' conformal model, allowing the representation of hyperplanes and hyperspheres in an augmented vector space Rⁿ⁺¹,¹.
+Hyperspherical layers are defined as a natural extension of classical dense and convolutional layers. The text describes the conformal inner product (x̃·is̃), associated calculation rules, and necessary normalization constraints (s̃² = ρ², e∞·is̃ = -1).
+The author compares the performance of classical dense layers and hyperspherical layers on synthetic datasets (Easy and Dif). Results show faster convergence and better stability with hyperspherical layers. The chapter also introduces the notion of hyperspherical convolution and details its implementation in Conv2D-type architectures.
+Finally, a comparison with RBF networks and Clifford neural networks is made, showing that hyperspherical layers constitute a geometrically coherent generalization of these models.
+
+Chapter 2: Hyperspherical Neural Networks and the Approximation Theorem
+This chapter establishes the theoretical framework guaranteeing the approximation capacity of hyperspherical networks. Relying on Schwartz's density theorem, the author demonstrates that a single hyperspherical layer network can approximate any continuous function on a compact set in Rⁿ, provided the activation function is regular.
+A comparison is made between the structure of functions produced by classical (linear) layer networks and those produced by hyperspherical (quadratic) layers. Experiments on 1D functions illustrate the approximation capabilities and numerical stability of hyperspherical networks.
+The chapter concludes that these networks have expressiveness at least equivalent to classical MLPs, while offering a better geometric interpretation of decision boundaries.
+
+Chapter 3: Application to Anomaly Detection
+The third chapter is devoted to the main application of the thesis: anomaly detection.
+It begins with a comprehensive review of classical methods (Elliptic Envelope, Isolation Forest, One-Class SVM, Support Vector Data Description and deep variants). The author shows the limitations of these approaches in the face of nonlinearity and geometric complexity of data.
+New models are then introduced: SPH-Anomaly, SPH-SVDD, Deep SPH-SVDD, and Deep M-SPH SVDD. These models use the conformal representation to directly learn the centers and radii of hyperspheres enclosing normal data.
+Deep M-SPH SVDD combines several hyperspheres to model subgroups of normal behaviors.
+Extensive experiments are presented on 2D synthetic data, MNIST, and CIFAR-10, with study of the parameter ν, performance metrics (AUC-ROC, AUC-PR, F1-score), and stability with respect to the “collapse” phenomenon observed in classical Deep SVDD.
+Results show that hyperspherical layers provide better robustness and superior detection power while remaining interpretable.
+
+Appendices:
+The appendices provide additional mathematical and technical details:
+A: calculation of covariances and initialization methods for hyperspherical layers.
+B: complete proof of the approximation theorem.
+C: analysis of the collapse phenomenon and geometric justification of its prevention in hyperspherical architectures.
+
+Manuscript Structure:
+- Theoretical foundations: conformal geometric algebra and vector representation of hyperspheres.
+- Definition and implementation of hyperspherical layers (dense and convolutional).
+- Approximation theorem for hyperspherical neurons.
+- Application to anomaly detection with SPH-SVDD and M-SPH SVDD models.
+- Experimental validation and future perspectives.
+
+Summary:
+Julien de Saint Angel's thesis proposes an innovative deep learning approach based on hyperspherical layers integrated into the formalism of conformal geometric algebra. This approach unifies hyperplanes and hyperspheres in a single representation, enables better geometric understanding of neural networks, and improves anomaly detection in complex environments. Thanks to the introduction of Deep SPH SVDD and Deep M-SPH SVDD models, as well as a specific initialization method, the author demonstrates significant performance gains, faster convergence, and increased interpretability of AI models.

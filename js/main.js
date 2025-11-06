@@ -153,7 +153,10 @@ function smoothScroll(targetId) {
 // Switch de langue CORRIGÉ
 function switchLanguage(lang) {
     // Mettre à jour l'attribut lang du HTML pour la détection
+    console.log('[switchLanguage] Changement de langue demandé :', lang);
     document.documentElement.lang = lang;
+    // Expose the current site language globally so widgets can read it reliably
+    window.siteLang = lang;
     
     // Mettre à jour les boutons de langue
     document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
@@ -218,6 +221,17 @@ function switchLanguage(lang) {
     // Forcer le recalcul de MathJax après le changement de langue
     if (window.MathJax && typeof MathJax.typesetPromise === 'function') {
         MathJax.typesetPromise();
+    }
+
+    // Mettre à jour le texte du bouton robot dans le chat si ouvert
+    if (window.miaChatInstance) {
+        if (typeof window.miaChatInstance.updateAdBtnText === 'function') {
+            window.miaChatInstance.updateAdBtnText();
+        }
+        // Notify Mia about the site language change so she updates UI/welcome text when opened
+        if (typeof window.miaChatInstance.onSiteLanguageChange === 'function') {
+            window.miaChatInstance.onSiteLanguageChange(lang);
+        }
     }
 }
 

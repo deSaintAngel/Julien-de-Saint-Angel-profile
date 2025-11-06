@@ -1,0 +1,76 @@
+Julien de Saint Angel – AI Engineer & Applied Mathematics
+PhD in Applied Computer Science – specialized in hyperspherical neural networks and anomaly detection
+
+📍 17000 La Rochelle, France
+✉️ julien.desaintangel@gmail.com
+
+🎓 Education
+
+2020–2025 – PhD in Applied Computer Science, University of La Rochelle, MIA Laboratory
+Thesis: "Hyperspherical Neural Networks for Anomaly Detection."
+
+2017–2019 – Master’s in Mathematics and Applications MIX (Honors: AB), University of La Rochelle
+Specialization: applied mathematics, optimization, differential equations.
+
+2014–2015 – Master’s in Astronomy and Physics, Paris-Meudon Observatory
+
+2012–2014 – Master’s in Mathematics and Education + CAPES, University of La Rochelle
+
+2009–2012 – Bachelor’s in Mathematics, University of La Rochelle
+
+💼 Professional Experience
+Scientific Contributions (2021–2024)
+
+Deep M-SPH SVDD: Multi-hypersphere method for anomaly detection.
+
+Initialization: Dedicated initialization method for hyperspherical neural networks (numerical optimization).
+
+Applications: Anomaly detection in time series, visual tide gauge, high-frequency sports analysis.
+
+Feb.–May 2019 – Internship at XLIM (UMR 7252) and MIA (EA 3165) laboratories
+
+Supervisors: B. Tremblais and R. Pétéri
+Characterization of sports gestures using high-speed cameras and trajectory analysis of critical points.
+
+May 2018 – Internship at LIENSs laboratory (UMR 7266)
+
+Supervisors: E. Poirier (IGR) and L. Testud
+Development of a visual tide gauge: automated reading of tide staff images.
+
+Mar.–Jun. 2015 – Internship at SYRTE laboratory (UMR 8630), Paris Observatory
+
+Supervisor: J.-Y. Richard
+Development of interpolation algorithms for artificial satellite orbits (differential equations, numerical simulation).
+
+2015–2017 – Secondary School Teacher, Lycées Saint-Exupéry, La Rochelle
+
+Mathematics teacher. Developed skills in communication, science outreach, and teamwork.
+
+🧠 Technical Skills
+
+AI: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization.
+Frameworks: TensorFlow / PyTorch, Scikit-Learn, OpenCV, PyTorch Lightning, Keras.
+Signal Processing: Segmentation, frequency filtering, wavelets, Fourier transform, time-frequency analysis.
+Programming: Python (Numpy, Pandas, SciPy, Matplotlib), Java, C, C++, Fortran, MATLAB, Scilab.
+Tools: Git, Docker, Jupyter, Linux, LaTeX, Office Suite (Excel, Word, PowerPoint).
+Advanced Math: Optimization, PDEs, conformal geometry, universal approximation.
+
+📚 Publications, Articles
+
+J. de Saint Angel, C. Saint-Jean, C. Choquet – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, book chapter, Recent Applications in Deep Learning, 2025.
+
+J. de Saint Angel, C. Saint-Jean – Spherical Dense and Conv2d Layers via Conformal Geometric Algebra, ORASIS, 2021.
+
+J. de Saint Angel, C. Saint-Jean – Approximation Theorem for Hyperspherical Neurons, GRETSI, 2023.
+
+J. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.
+
+🌍 Languages
+
+French: native
+English: B2 – fluent
+Spanish & Romanian: B1
+
+🎨 Interests
+
+Science outreach, astrophotography, bird photography, 3D modeling, video animation.

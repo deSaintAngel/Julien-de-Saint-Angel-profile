@@ -1,0 +1,141 @@
+---
+Human and Personal Aspects:
+
+Values and Principles:
+- Ethics in research, scientific rigor, and honesty are at the heart of Julien's commitments.
+
+How he is perceived:
+- Julien is passionate about technology and artificial intelligence.
+
+Notable Experiences:
+- Julien particularly enjoys every scientific conference, as it is an opportunity to take stock of major advances in his field, discover innovative projects, and exchange ideas about the future. For him, it is a true journey into the future.
+
+Motivations:
+- His deep motivation is to contribute to the enrichment of human knowledge.
+
+Vision and Ambitions:
+- Julien wishes to deepen his skills in artificial intelligence to apply them to important questions in the medical field (improving medical image processing) and the environment (coastal studies, a positive vision for the future of the world).
+
+Science Outreach:
+- He considers outreach essential to help the general public understand the value of research.
+
+Handling Difficulties:
+- Difficulties are part of his life experience. Julien never gives up: his perseverance guides him to the end.
+Name: Julien de Saint Angel
+Title: Researcher in Artificial Intelligence
+PhD in Applied Computer Science – specialized in hyperspherical neural networks and anomaly detection
+
+Education:
+2020–2025 – PhD in Applied Computer Science, University of La Rochelle, MIA Laboratory
+Thesis: "Hyperspherical Neural Networks for Anomaly Detection."
+2017–2019 – Master’s in Mathematics and Applications MIX (Honors: AB), University of La Rochelle
+Specialization: applied mathematics, optimization, differential equations.
+2014–2015 – Master’s in Astronomy and Physics, Paris-Meudon Observatory
+2012–2014 – Master’s in Mathematics and Education + CAPES, University of La Rochelle
+2009–2012 – Bachelor’s in Mathematics, University of La Rochelle
+
+Scientific Contributions (2021–2024):
+Deep M-SPH SVDD: Multi-hypersphere method for anomaly detection.
+Initialization: Dedicated initialization method for hyperspherical neural networks (numerical optimization).
+Applications: Anomaly detection in time series, visual tide gauge, high-frequency sports analysis.
+
+Professional Experience:
+Feb.–May 2019 – Internship at XLIM (UMR 7252) and MIA (EA 3165) laboratories
+Supervisors: B. Tremblais and R. Pétéri
+Characterization of sports gestures using high-speed cameras and trajectory analysis of critical points.
+May 2018 – Internship at LIENSs laboratory (UMR 7266)
+Supervisors: E. Poirier (IGR) and L. Testud
+Development of a visual tide gauge: automated reading of tide staff images.
+Mar.–Jun. 2015 – Internship at SYRTE laboratory (UMR 8630), Paris Observatory
+Supervisor: J.-Y. Richard
+Development of interpolation algorithms for artificial satellite orbits (differential equations, numerical simulation).
+2015–2017 – Secondary School Teacher, Lycées Saint-Exupéry, La Rochelle
+Mathematics teacher. Developed skills in communication, science outreach, and teamwork.
+
+Skills:
+- Anomaly detection
+- Mathematical modeling
+- Model interpretability
+- AI, Deep Learning: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization.
+Frameworks: TensorFlow / PyTorch, Scikit-Learn, OpenCV, PyTorch Lightning, Keras.
+Signal Processing: Segmentation, frequency filtering, wavelets, Fourier transform, time-frequency analysis.
+Programming: Python (Numpy, Pandas, SciPy, Matplotlib), Java, C, C++, Fortran, MATLAB, Scilab.
+Tools: Git, Docker, Jupyter, Linux, LaTeX, Office Suite (Excel, Word, PowerPoint).
+Advanced Math: Optimization, PDEs, conformal geometry, universal approximation.
+
+Julien De Saint Angel holds a PhD in Applied Computer Science, specialized in hyperspherical neural networks and anomaly detection.
+
+Academic Background and Training:
+- 2020–2025: PhD in Applied Computer Science, University of La Rochelle, MIA Laboratory. Thesis on hyperspherical neural networks for anomaly detection.
+- 2017–2019: Master’s in Mathematics and Applications MIX (Honors: AB), University of La Rochelle. Specialization in applied mathematics, optimization, differential equations.
+- 2014–2015: Master’s in Astronomy and Physics, Paris-Meudon Observatory
+- 2012–2014: Master’s in Mathematics and Education + CAPES, University of La Rochelle
+- 2009–2012: Bachelor’s in Mathematics, University of La Rochelle
+
+Professional Experience:
+- 2021–2024: Scientific contributions – Deep M-SPH SVDD (multi-hypersphere method for anomaly detection), initialization method for hyperspherical neural networks, applications in time series, visual tide gauge, high-frequency sports analysis.
+- Feb.–May 2019: Internship at XLIM (UMR 7252) and MIA (EA 3165) laboratories. Supervisors: B. Tremblais and R. Pétéri. Characterization of sports gestures using high-speed cameras.
+- May 2018: Internship at LIENSs laboratory (UMR 7266). Supervisors: E. Poirier and L. Testud. Development of a visual tide gauge.
+- Mar.–Jun. 2015: Internship at SYRTE laboratory (UMR 8630), Paris Observatory. Supervisor: J.-Y. Richard. Development of interpolation algorithms for artificial satellite orbits.
+- 2015–2017: Secondary school teacher, Lycées Saint-Exupéry, La Rochelle. Mathematics teacher.
+
+Julien's Technical Skills:
+AI: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization.
+Frameworks: TensorFlow, PyTorch, Scikit-Learn, OpenCV, PyTorch Lightning, Keras.
+Programming: Python (Numpy, Pandas, SciPy, Matplotlib), Java, C, C++, Fortran, MATLAB, Scilab.
+Tools: Git, Docker, Jupyter, Linux, LaTeX.
+
+Most Important Qualities:
+- Scientific rigor, pedagogy, reliability, innovation.
+
+Julien's Qualities:
+Design and training of neural networks.
+Mastery of applied mathematics and advanced concepts.
+He can define new neural network architectures and has proposed an extension of hyperspherical layers to the convolutional case.
+He has also developed specific weight initialization methods adapted to the proposed models.
+Rigorous experimental validation of models and critical analysis of their performance.
+Ability to work at the interface of computer science, optimization, and applied mathematics.
+Formulation of relevant research problems and methodical model construction.
+Clear and structured presentation of scientific work.
+Ability to conduct complex and innovative work independently.
+Scientific and methodological rigor in design, experimentation, and analysis.
+Mobilization of a wide range of skills to solve interdisciplinary problems.
+
+Julien's Publications and Articles:
+J. de Saint Angel, C. Saint-Jean, C. Choquet – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, book chapter, Recent Applications in Deep Learning, 2025.
+J. de Saint Angel, C. Saint-Jean – Spherical Dense and Conv2d Layers via Conformal Geometric Algebra, ORASIS, 2021.
+J. de Saint Angel, C. Saint-Jean – Approximation Theorem for Hyperspherical Neurons, GRETSI, 2023.
+J. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.
+
+Contact:
+Address: 17000 La Rochelle, France
+Email: julien.desaintangel@gmail.com
+
+Languages:
+French (native), English (B2 fluent), and Romanian (B1)
+
+Interests and Hobbies:
+Science outreach, astrophotography, bird photography, 3D modeling, video animation.
+
+---
+Scientific Definitions and Clarifications:
+
+Hyperspherical Neural Networks (HSN):
+A hyperspherical layer network is a neural network where each neuron defines a hypersphere in the data space, enabling nonlinear and compact separation. Unlike classical dense layers, which separate space with hyperplanes (linear decision), hyperspherical layers separate with hyperspheres, offering a more flexible decision boundary suited to complex structures.
+
+Distinction from Dense Layers:
+Dense (fully connected) layers perform linear separations (hyperplanes) in feature space, while hyperspherical layers perform nonlinear separations (hyperspheres). This allows better capture of complex data structures and improves anomaly detection.
+
+Importance of Initialization in HSN:
+The initialization of parameters (center and radius of hyperspheres) is crucial to ensure signal propagation through multiple hidden layers and learning stability. Julien has proposed a specific initialization method adapted to these architectures.
+
+Ambitions and Perspectives:
+Julien aims to continue his research in artificial intelligence, particularly in applying AI to medical image analysis and environmental issues.
+
+Main Publications (all cited):
+- J. de Saint Angel, C. Saint-Jean – Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra, book chapter, Recent Applications in Deep Learning, 2025.
+- J. de Saint Angel, C. Saint-Jean – Spherical Dense and Conv2d Layers via Conformal Geometric Algebra, ORASIS, 2021.
+- J. de Saint Angel, C. Saint-Jean – Approximation Theorem for Hyperspherical Neurons, GRETSI, 2023.
+- J. de Saint Angel, C. Saint-Jean – Multi-Spheres Anomaly Detection with Hyperspherical Layers, ICMLA, 2024.
+PhD Advisor: Christophe Saint-Jean
+Lab Director: Catherine Choquet
