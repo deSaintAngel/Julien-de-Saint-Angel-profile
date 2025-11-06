@@ -5,6 +5,13 @@ class MiaChatEN {
     this.isOpen = false;
     this.isLoading = false;
     this.messages = [];
+    // Add welcome message in English
+    window.addEventListener('DOMContentLoaded', () => {
+      const messagesContainer = document.getElementById('mia-chat-messages-en');
+      if (messagesContainer && messagesContainer.children.length === 0) {
+        this.addMessage('bot', "👋 Hello! I'm Mia. How can I help you?");
+      }
+    });
   }
   async sendMessage() {
     const input = document.getElementById('mia-chat-input-en');
