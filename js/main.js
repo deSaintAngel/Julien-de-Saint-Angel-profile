@@ -166,18 +166,20 @@ function switchLanguage(lang) {
     document.getElementById('handicap-btn-fr').style.display = lang === 'fr' ? 'block' : 'none';
     document.getElementById('handicap-btn-en').style.display = lang === 'fr' ? 'none' : 'block';
 
-    // Afficher/masquer le bon bouton de téléchargement du CV
-    const cvFr = document.getElementById('cv-fr');
-    const cvEn = document.getElementById('cv-en');
-    if (cvFr && cvEn) {
+    // Gestion des boutons CV
+    const cvBtnFr = document.getElementById('cv-btn-fr');
+    const cvBtnEn = document.getElementById('cv-btn-en');
+    
+    if (cvBtnFr && cvBtnEn) {
         if (lang === 'fr') {
-            cvFr.style.display = '';
-            cvEn.style.display = 'none';
+            cvBtnFr.style.display = 'inline-block';
+            cvBtnEn.style.display = 'none';
         } else {
-            cvFr.style.display = 'none';
-            cvEn.style.display = '';
+            cvBtnFr.style.display = 'none';
+            cvBtnEn.style.display = 'inline-block';
         }
     }
+
     // Gérer l'affichage du contenu
     if (lang === 'fr') {
         document.getElementById('fr').style.display = 'block';
@@ -202,20 +204,6 @@ function switchLanguage(lang) {
         const miaBtn = document.getElementById('open-mia-btn');
         if (miaBtn) {
             miaBtn.innerHTML = '<i class="fas fa-robot"></i> Talk to Mia';
-        }
-    }
-
-    // Gestion des boutons CV
-    const cvBtnFr = document.getElementById('cv-btn-fr');
-    const cvBtnEn = document.getElementById('cv-btn-en');
-    
-    if (cvBtnFr && cvBtnEn) {
-        if (lang === 'fr') {
-            cvBtnFr.style.display = 'inline-block';
-            cvBtnEn.style.display = 'none';
-        } else {
-            cvBtnFr.style.display = 'none';
-            cvBtnEn.style.display = 'inline-block';
         }
     }
 
