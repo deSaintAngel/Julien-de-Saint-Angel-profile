@@ -205,6 +205,20 @@ function switchLanguage(lang) {
         }
     }
 
+    // Gestion des boutons CV
+    const cvBtnFr = document.getElementById('cv-btn-fr');
+    const cvBtnEn = document.getElementById('cv-btn-en');
+    
+    if (cvBtnFr && cvBtnEn) {
+        if (lang === 'fr') {
+            cvBtnFr.style.display = 'inline-block';
+            cvBtnEn.style.display = 'none';
+        } else {
+            cvBtnFr.style.display = 'none';
+            cvBtnEn.style.display = 'inline-block';
+        }
+    }
+
     // Réappliquer les options handicap après changement de langue
     setTimeout(() => {
         document.body.classList.remove('handicap-mode', 'high-contrast', 'dyslexia-friendly');
