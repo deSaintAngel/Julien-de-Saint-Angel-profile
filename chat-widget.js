@@ -14,7 +14,7 @@ window.openMiaChat = function() {
 }
 // Configuration
 const BACKEND_URL = 'https://julien-de-saint-angel-profile.onrender.com';
-const BACKEND_API_KEY = '6a6cd4efe172ac26a1af65b2038ea403f8be3f777ae56ebba5fae0fd27a0ae1f';
+const BACKEND_API_KEY = '06a00f4747f76e162a0e88a90c78ab853ed4a409fb190e2c442d25dad9b8cbae';
 
 class MiaChat {
   constructor() {

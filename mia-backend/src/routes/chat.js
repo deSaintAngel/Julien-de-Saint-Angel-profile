@@ -9,9 +9,21 @@ const quotaService = require('../services/quotaService');
 const ragService = require('../services/ragService');
 
 const groqService = require('../services/groqService');
+const budgetService = require('../services/budgetService');
+const { chatLimiter, mailLimiter } = require('../middleware/rateLimit');
 const { readTextFileSync } = require('../services/fileUtil');
 
 const nodemailer = require('nodemailer');
+
+// Échappe le HTML pour éviter toute injection dans le corps des e-mails.
+function escapeHtml(str) {
+  return String(str == null ? '' : str)
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
 
 // Config nodemailer (exemple Gmail, à adapter avec vos identifiants)
 const transporter = nodemailer.createTransport({
@@ -26,30 +38,35 @@ const transporter = nodemailer.createTransport({
  * POST /api/chat/sendmail
  * Envoie l'historique du chat par email si conditions remplies
  */
-router.post('/sendmail', async (req, res) => {
+router.post('/sendmail', mailLimiter, async (req, res) => {
   try {
-    const { userId, messages, email } = req.body;
+    const { userId, messages } = req.body;
     // Vérification des conditions
     if (!userId || !Array.isArray(messages) || messages.length === 0) {
       return res.status(400).json({ success: false, error: 'Paramètres manquants ou invalides' });
+    }
+    // Garde-fou anti-abus : limite la taille de l'historique traité.
+    if (messages.length > 100) {
+      return res.status(400).json({ success: false, error: 'Historique trop volumineux' });
     }
     // Vérifier qu'il y a au moins un message utilisateur
     const hasUserMessage = messages.some(m => m.type === 'user');
     if (!hasUserMessage) {
       return res.status(400).json({ success: false, error: 'Aucun message utilisateur' });
     }
-    // Formatage du contenu du mail
+    // Formatage du contenu du mail (contenu utilisateur échappé).
     const html = `
       <h2>Nouvelle discussion Mia</h2>
       <ul>
-        ${messages.map(m => `<li><b>${m.type === 'user' ? 'Utilisateur' : (m.type === 'bot' ? 'Mia' : 'Système')}</b> : ${m.text}</li>`).join('')}
+        ${messages.map(m => `<li><b>${m.type === 'user' ? 'Utilisateur' : (m.type === 'bot' ? 'Mia' : 'Système')}</b> : ${escapeHtml(m.text)}</li>`).join('')}
       </ul>
-      <p>UserId: ${userId}</p>
+      <p>UserId: ${escapeHtml(userId)}</p>
     `;
-    // Envoi du mail
+    // Destinataire CODÉ EN DUR (jamais fourni par le client) pour éviter tout
+    // détournement du serveur en relais d'e-mails (spam via le compte Gmail).
     await transporter.sendMail({
       from: process.env.MIA_MAIL_USER || 'votre.email@gmail.com',
-      to: email || 'julien.desaintangel@gmail.com',
+      to: process.env.MIA_MAIL_TO || 'julien.desaintangel@gmail.com',
       subject: 'Nouvelle discussion Mia',
       html
     });
@@ -60,16 +77,38 @@ router.post('/sendmail', async (req, res) => {
   }
 });
 
-router.post('/', async (req, res) => {
+router.post('/', chatLimiter, async (req, res) => {
   try {
     const { userId, message, history, lang } = req.body;
     console.log('[API/chat] Langue reçue dans req.body.lang :', lang);
 
     // Validation
-    if (!message || message.trim().length === 0) {
+    if (!message || typeof message !== 'string' || message.trim().length === 0) {
       return res.status(400).json({
         error: 'Message vide',
         message: 'Veuillez poser une question'
+      });
+    }
+
+    // Garde-fou : borne la longueur du message (évite les prompts géants coûteux).
+    if (message.length > 2000) {
+      return res.status(400).json({
+        error: 'Message trop long',
+        message: 'Votre message est trop long. Merci de le raccourcir.'
+      });
+    }
+
+    // Circuit-breaker global : plafond quotidien d'appels LLM (coût borné).
+    if (!budgetService.tryConsume()) {
+      const overMsg = (lang === 'en')
+        ? 'The assistant has reached its daily usage limit. Please try again tomorrow.'
+        : "L'assistante a atteint sa limite d'utilisation quotidienne. Merci de réessayer demain.";
+      console.warn('⛔ Plafond LLM quotidien atteint:', budgetService.stats());
+      return res.status(429).json({
+        error: overMsg,
+        message: overMsg,
+        quota: null,
+        userId: userId || null
       });
     }
 

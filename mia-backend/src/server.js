@@ -6,6 +6,7 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const { verifyApiKey } = require('./middleware/auth');
+const { apiLimiter } = require('./middleware/rateLimit');
 const chatRoute = require('./routes/chat');
 const creditRoute = require('./routes/credit');
 const adRoute = require('./routes/ad');
@@ -15,28 +16,34 @@ const ragService = require('./services/ragService');
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-// Configuration CORS
+// Derrière le proxy Render : nécessaire pour que req.ip soit la vraie IP client
+// (sinon le rate-limit par IP est inefficace).
+app.set('trust proxy', 1);
 
-// Autorise toutes les origines en développement
-const allowedOrigins = ['*'];
+// Configuration CORS — liste blanche d'origines autorisées.
+// Surchargeable via ALLOWED_ORIGINS (domaines séparés par des virgules).
+const allowedOrigins = (process.env.ALLOWED_ORIGINS ||
+  'https://desaintangel.github.io,http://localhost:8080,http://127.0.0.1:8080')
+  .split(',')
+  .map((o) => o.trim())
+  .filter(Boolean);
 
 app.use(cors({
   origin: (origin, callback) => {
-    // Autorise toutes les origines en développement
-    if (allowedOrigins.includes('*') || !origin) {
+    // Requêtes sans origine (curl, health-checks, appels serveur-à-serveur) : tolérées.
+    if (!origin) {
       return callback(null, true);
     }
     if (allowedOrigins.includes(origin)) {
-      callback(null, true);
-    } else {
-      callback(new Error('Origin non autorisée par CORS'));
+      return callback(null, true);
     }
+    return callback(new Error('Origin non autorisée par CORS'));
   },
   credentials: true
 }));
 
 // Middleware
-app.use(express.json());
+app.use(express.json({ limit: '32kb' }));
 
 // Route racine (publique)
 app.get('/', (req, res) => {
@@ -93,7 +100,10 @@ app.get('/health', (req, res) => {
   });
 });
 
-// Routes API (sécurisées par API key)
+// Rate-limit global sur toutes les routes /api/* (première ligne de défense anti-abus)
+app.use('/api', apiLimiter);
+
+// Routes API (clé API = filtre basique ; la vraie protection = rate-limit + budget)
 app.use('/api/chat', verifyApiKey, chatRoute);
 app.use('/api/credit', verifyApiKey, creditRoute);
 app.use('/api/ad', verifyApiKey, adRoute);
