@@ -1,5 +1,5 @@
 /* Service Worker — Julien de Saint Angel (PWA) */
-const CACHE = 'jdsa-cache-v2';
+const CACHE = 'jdsa-cache-v3';
 const CORE = [
   './',
   './index.html',

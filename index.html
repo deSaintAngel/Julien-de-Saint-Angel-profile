@@ -981,7 +981,7 @@
     for(let g=0;g<stations.length-1;g++){ const pool=edges.filter(e=>e.g===g);
       for(let k=0;k<7&&pool.length;k++) conductors.push(pool[(Math.random()*pool.length)|0]); }
     const allNodes=stations.filter(s=>s.type==='layer').flatMap(s=>s.nodes);
-    const net={ ry:0.296706, rx:0.244346, rz:0.069813, sx:1.74, sy:1.30, sz:1.13, tx:54, ty:56, showBox:false };
+    const net={ ry:0.296706, rx:0.244346, rz:0.069813, sx:1.74, sy:2.70, sz:1.13, tx:54, ty:120, showBox:false };
     function proj(p){ let x=p.x*net.sx, y=p.y*net.sy, z=p.z*net.sz;
       let c=Math.cos(net.ry),s=Math.sin(net.ry); let X=x*c-z*s, Z1=x*s+z*c;
       c=Math.cos(net.rx);s=Math.sin(net.rx); let Y=y*c-Z1*s, Z=y*s+Z1*c;
