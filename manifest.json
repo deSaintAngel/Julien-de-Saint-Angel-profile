@@ -12,8 +12,8 @@
   "dir": "ltr",
   "categories": ["portfolio", "education", "business"],
   "icons": [
-    { "src": "ico/favicon_io/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "ico/favicon_io/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "ico/favicon_io/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    { "src": "ico/neural-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "ico/neural-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "ico/neural-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
   ]
 }
