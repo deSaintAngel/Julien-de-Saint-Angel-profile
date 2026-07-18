@@ -62,7 +62,7 @@ document.getElementById('js-contact-form').addEventListener('submit', function(e
     const originalText = submitBtn.textContent;
     submitBtn.textContent = currentLang === 'fr' ? 'Envoi en cours...' : 'Sending...';
     submitBtn.disabled = true;
-    emailjs.sendForm('service_l0nkbjv', 'template_12nlhlq', this)
+    emailjs.sendForm('service_druzbnk', 'template_12nlhlq', this)
         .then(function() {
             showModal(messages[currentLang].success);
             document.getElementById('js-contact-form').reset();
