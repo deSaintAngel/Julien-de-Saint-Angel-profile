@@ -125,14 +125,14 @@
       --shadow:0 12px 40px -18px rgba(0,0,0,.7);
       --shadow-hover:0 18px 50px -16px rgba(60,150,255,.35);
     }
-    body{ background:#14315e; color:#e2ecfb; }
-    /* ambiance : base bleu roi lumineux + halos colorés, fixe derrière la page */
+    body{ background:#04060e; color:#e2ecfb; }
+    /* ambiance : fond noir + halos très discrets (cohérent avec le hero) */
     body::before{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
       background:
-        radial-gradient(75% 60% at 12% -8%, rgba(80,150,255,.16), transparent 62%),
-        radial-gradient(65% 55% at 92% 2%, rgba(150,110,255,.11), transparent 62%),
-        radial-gradient(90% 70% at 50% 112%, rgba(35,190,220,.10), transparent 62%),
-        #14315e; }
+        radial-gradient(70% 55% at 12% -8%, rgba(60,130,255,.09), transparent 60%),
+        radial-gradient(60% 50% at 92% 3%, rgba(150,110,255,.08), transparent 60%),
+        radial-gradient(85% 65% at 50% 112%, rgba(30,190,220,.06), transparent 60%),
+        #04060e; }
     h1,h2,h3,h4{ color:#EAF2FF !important; }
     strong{ color:#ffffff; }
     p,li,td,label,.container div{ color:#dbe6fa; }
@@ -157,7 +157,7 @@
 
     /* menu collant en verre */
     .nav-sticky{
-      background:rgba(18,44,84,.78) !important;
+      background:rgba(6,9,16,.74) !important;
       -webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);
       border-bottom:1px solid rgba(150,200,255,.16);
     }
