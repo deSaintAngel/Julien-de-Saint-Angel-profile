@@ -976,8 +976,8 @@
     LAYERS.forEach((L,li)=>{ const nodes=[]; const x=(li-(LAYERS.length-1)/2)*GAPX;
       for(let r=0;r<L.r;r++)for(let c=0;c<CD;c++){ nodes.push({id:idc++, x, y:(r-(L.r-1)/2)*SY, z:(c-(CD-1)/2)*SZ, li, b:0}); }
       stations.push({type:'layer',li,nodes}); });
-    const fmLi=LAYERS.length, fmx=(fmLi-(LAYERS.length-1)/2)*GAPX + 230;
-    stations.push({type:'fmap',li:fmLi,nodes:[{x:fmx,y:-150,z:0,li:fmLi,b:0},{x:fmx,y:0,z:0,li:fmLi,b:0},{x:fmx,y:150,z:0,li:fmLi,b:0}]});
+    const fmLi=LAYERS.length, fmx=(fmLi-(LAYERS.length-1)/2)*GAPX + 700;
+    stations.push({type:'fmap',li:fmLi,nodes:[{x:fmx,y:-220,z:0,li:fmLi,b:0},{x:fmx,y:0,z:0,li:fmLi,b:0},{x:fmx,y:220,z:0,li:fmLi,b:0}]});
     const edges=[];
     for(let s=0;s<stations.length-1;s++){ const isF=stations[s+1].type==='fmap';
       for(const a of stations[s].nodes)for(const b of stations[s+1].nodes){ if(Math.random()<(isF?0.5:0.68)) edges.push({a,b,g:s}); } }
@@ -1045,7 +1045,7 @@
         ctx.fillRect(p.x-sz/2,p.y-sz/2,sz,sz);
         ctx.fillStyle=`hsla(${h},100%,90%,.85)`; ctx.fillRect(p.x-sz/2,p.y-sz/2,sz,sz*0.3); ctx.globalAlpha=e; }
       const fm=stations.find(s=>s.type==='fmap');
-      for(const f of fm.nodes){ const p=proj(f); drawFM(p.x,p.y,Math.max(40,p.f*132*VS),hue(fmLi),f.b,e*Math.min(1,p.f)); }
+      for(const f of fm.nodes){ const p=proj(f); drawFM(p.x,p.y,Math.max(50,p.f*320*VS),hue(fmLi),f.b,e*Math.min(1,p.f)); }
       ctx.restore();
       if(!reduce) requestAnimationFrame(frame);
     }
