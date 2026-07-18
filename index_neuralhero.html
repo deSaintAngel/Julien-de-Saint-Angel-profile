@@ -125,28 +125,28 @@
       --shadow:0 12px 40px -18px rgba(0,0,0,.7);
       --shadow-hover:0 18px 50px -16px rgba(60,150,255,.35);
     }
-    body{ background:#0a1324; color:#ccd8ee; }
-    /* ambiance : dégradés colorés + halos, fixe derrière la page */
+    body{ background:#14315e; color:#e2ecfb; }
+    /* ambiance : base bleu roi lumineux + halos colorés, fixe derrière la page */
     body::before{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
       background:
-        radial-gradient(65% 55% at 10% 0%, rgba(56,130,255,.22), transparent 60%),
-        radial-gradient(60% 55% at 92% 8%, rgba(160,95,255,.18), transparent 60%),
-        radial-gradient(70% 60% at 50% 105%, rgba(0,205,225,.13), transparent 60%),
-        radial-gradient(50% 45% at 78% 60%, rgba(120,90,255,.10), transparent 62%),
-        #070d1a; }
+        radial-gradient(70% 60% at 12% -5%, rgba(90,160,255,.30), transparent 60%),
+        radial-gradient(62% 55% at 90% 4%, rgba(150,110,255,.20), transparent 60%),
+        radial-gradient(85% 70% at 50% 110%, rgba(35,190,220,.18), transparent 60%),
+        radial-gradient(55% 50% at 80% 62%, rgba(120,100,255,.12), transparent 62%),
+        #14315e; }
     h1,h2,h3,h4{ color:#EAF2FF !important; }
-    strong{ color:#f0f5ff; }
-    p,li,td,label,.container div{ color:#c3d0e6; }
-    a{ color:#6bc5ff; }
+    strong{ color:#ffffff; }
+    p,li,td,label,.container div{ color:#dbe6fa; }
+    a{ color:#7fd0ff; }
     a:hover{ color:#a9e0ff; }
 
     /* cartes / sections en verre sombre */
     section{
-      background:linear-gradient(160deg,rgba(160,205,255,.11),rgba(160,205,255,.035)) !important;
-      border:1px solid rgba(160,210,255,.2);
-      -webkit-backdrop-filter:blur(16px) saturate(135%);backdrop-filter:blur(16px) saturate(135%);
-      box-shadow:0 16px 48px -20px rgba(0,0,0,.7);
-      color:#ccd8ee;
+      background:linear-gradient(160deg,rgba(190,220,255,.15),rgba(190,220,255,.05)) !important;
+      border:1px solid rgba(180,215,255,.26);
+      -webkit-backdrop-filter:blur(16px) saturate(140%);backdrop-filter:blur(16px) saturate(140%);
+      box-shadow:0 16px 48px -20px rgba(4,16,40,.55);
+      color:#dbe6fa;
     }
     section:hover{ box-shadow:0 22px 58px -18px rgba(70,160,255,.35); border-color:rgba(120,200,255,.32); }
     /* surlignage quand on navigue vers une section (clic tag/menu) */
@@ -158,11 +158,11 @@
 
     /* menu collant en verre */
     .nav-sticky{
-      background:rgba(8,12,22,.72) !important;
-      -webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);
-      border-bottom:1px solid rgba(150,200,255,.12);
+      background:rgba(18,44,84,.78) !important;
+      -webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);
+      border-bottom:1px solid rgba(150,200,255,.16);
     }
-    .nav-sticky a{ color:#c3d0e6; }
+    .nav-sticky a{ color:#dbe6fa; }
     .nav-sticky a:hover{ background:rgba(90,184,255,.18); color:#fff; }
 
     /* boutons cristal */
