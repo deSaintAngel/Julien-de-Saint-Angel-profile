@@ -1,5 +1,5 @@
 /* Service Worker — Julien de Saint Angel (PWA) */
-const CACHE = 'jdsa-cache-v1';
+const CACHE = 'jdsa-cache-v2';
 const CORE = [
   './',
   './index.html',
@@ -9,8 +9,8 @@ const CORE = [
   './chat-widget.js',
   './manifest.json',
   './assets/images/julien.png',
-  './ico/favicon_io/android-chrome-192x192.png',
-  './ico/favicon_io/android-chrome-512x512.png'
+  './ico/icon-192.png',
+  './ico/icon-512.png'
 ];
 
 self.addEventListener('install', (e) => {
