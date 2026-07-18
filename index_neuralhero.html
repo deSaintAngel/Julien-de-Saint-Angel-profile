@@ -205,6 +205,34 @@
     .icon{ color:#6bc5ff; }
     hr{ border-color:rgba(150,200,255,.14); }
 
+    /* ===== Widget de chat Mia : thème MATRIX (fond noir, texte vert, cadres verts) ===== */
+    .mia-chat-window{
+      background:#02080a !important; color:#4dff98 !important;
+      border:1px solid rgba(0,255,140,.4) !important;
+      box-shadow:0 24px 70px -20px rgba(0,0,0,.85), 0 0 44px rgba(0,255,120,.14) !important;
+      font-family:ui-monospace,"SF Mono","JetBrains Mono","Courier New",monospace !important;
+    }
+    .mia-chat-header{ background:linear-gradient(135deg,#04140d,#03231a) !important; border-bottom:1px solid rgba(0,255,140,.35) !important; }
+    .mia-chat-header h3,.mia-chat-header *{ color:#8dffc0 !important; text-shadow:0 0 8px rgba(0,255,120,.4) !important; }
+    .mia-chat-quota,.mia-close-btn{ color:#8dffc0 !important; }
+    .mia-chat-messages{ background:repeating-linear-gradient(rgba(0,255,120,.028) 0 1px, transparent 1px 4px), #02080a !important; }
+    .mia-message,.mia-message *{ color:#4dff98 !important; font-family:inherit !important; }
+    .mia-message-bubble{
+      background:rgba(0,255,120,.06) !important; color:#67ffa8 !important;
+      border:1px solid rgba(0,255,140,.45) !important; border-radius:6px !important;
+      box-shadow:0 0 16px rgba(0,255,120,.16), inset 0 0 12px rgba(0,255,120,.05) !important;
+      text-shadow:0 0 6px rgba(0,255,120,.28) !important;
+    }
+    .mia-message.user .mia-message-bubble{ background:rgba(120,255,180,.14) !important; border-color:rgba(150,255,190,.6) !important; color:#c2ffdd !important; }
+    .mia-message-sources,.mia-message-sources *{ color:#3fdd88 !important; }
+    .mia-loading{ color:#4dff98 !important; }
+    .mia-chat-input-area,.mia-chat-footer,.mia-chat-input-wrapper{ background:#02080a !important; border-color:rgba(0,255,140,.25) !important; }
+    .mia-chat-input{ background:rgba(0,255,120,.06) !important; color:#9dffc8 !important; border:1px solid rgba(0,255,140,.45) !important; font-family:inherit !important; }
+    .mia-chat-input::placeholder{ color:rgba(100,255,170,.55) !important; }
+    .mia-send-btn{ background:linear-gradient(135deg,#00c866,#00ff9c) !important; color:#021208 !important; box-shadow:0 0 16px rgba(0,255,120,.4) !important; }
+    .mia-chat-button{ background:linear-gradient(135deg,#04160e,#073322) !important; border:1px solid rgba(0,255,140,.55) !important; box-shadow:0 0 24px rgba(0,255,120,.35) !important; }
+    .mia-chat-button svg{ color:#8dffc0 !important; fill:#8dffc0 !important; }
+
     /* modales (info, formulaire, accessibilité) en sombre */
     .modal-content,.modal-info,.modal-handicap-content{
       background:linear-gradient(160deg,#0c1226,#080b18) !important; color:#c3d0e6 !important;
@@ -1041,8 +1069,8 @@
       var N=Math.max(28, Math.min(72, Math.round(W*H/28000)));
       var P=[]; for(var i=0;i<N;i++){ P.push({
         x:Math.random()*W, y:Math.random()*H,
-        vx:(Math.random()-.5)*0.20, vy:-0.12-Math.random()*0.28,   // dérive lente vers le haut
-        r:0.7+Math.random()*1.5, hue:186+Math.random()*80, a:0.10+Math.random()*0.20 }); }
+        vx:(Math.random()-.5)*0.08, vy:0.35+Math.random()*0.7,   // pluie « matrix » qui tombe
+        r:0.7+Math.random()*1.4, hue:130+Math.random()*55, a:0.10+Math.random()*0.20 }); }
       function frame(){
         ctx.clearRect(0,0,W,H);
         // liens ténus entre particules proches (effet réseau d'énergie)
