@@ -126,8 +126,10 @@
       --shadow-hover:0 18px 50px -16px rgba(60,150,255,.35);
     }
     body{ background:#04060e; color:#e2ecfb; }
+    /* canvas de particules énergétiques (fixe, derrière le contenu) */
+    #bgfx{ position:fixed; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none; }
     /* ambiance : fond noir + halos très discrets (cohérent avec le hero) */
-    body::before{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+    body::before{ content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
       background:
         radial-gradient(70% 55% at 12% -8%, rgba(60,130,255,.09), transparent 60%),
         radial-gradient(60% 50% at 92% 3%, rgba(150,110,255,.08), transparent 60%),
@@ -150,9 +152,14 @@
     section:hover{ box-shadow:0 24px 60px -20px rgba(70,160,255,.32),inset 0 1px 0 rgba(255,255,255,.35); border-color:rgba(160,215,255,.4); }
     /* surlignage quand on navigue vers une section (clic tag/menu) */
     .highlight{
-      background:linear-gradient(160deg,rgba(90,190,255,.30),rgba(120,90,255,.12)) !important;
-      box-shadow:0 0 0 1px rgba(130,220,255,.55), 0 0 46px rgba(90,190,255,.42) !important;
-      transition:background .5s, box-shadow .5s !important;
+      background:linear-gradient(160deg,rgba(90,190,255,.14),rgba(120,90,255,.05)) !important;
+      border-color:rgba(140,225,255,.85) !important;
+      box-shadow:
+        0 0 0 1.5px rgba(140,228,255,.8),
+        0 0 26px rgba(90,195,255,.6),
+        0 0 66px rgba(90,195,255,.4),
+        inset 0 0 34px rgba(120,210,255,.16) !important;
+      transition:background .45s, box-shadow .45s, border-color .45s !important;
     }
 
     /* menu collant en verre */
@@ -215,6 +222,7 @@
     </style>
 </head>
 <body>
+    <canvas id="bgfx" aria-hidden="true"></canvas>
     <!-- Hero Section -->
     <!-- ===== Nouveau hero : réseau de neurones 3D animé ===== -->
     <header id="neuralhero">
@@ -1018,5 +1026,45 @@
     computeBounds(); fitNet();
     requestAnimationFrame(frame);
     if(reduce){ setTimeout(()=>{resize(); frame(performance.now());},80); }
+    })();
+    </script>
+
+<!-- ===== Particules énergétiques de fond (subtiles, derrière le contenu) ===== -->
+    <script>
+    (function(){
+      var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var c=document.getElementById('bgfx'); if(!c) return;
+      var ctx=c.getContext('2d'), W=0,H=0,DPR=1;
+      function resize(){ DPR=Math.min(devicePixelRatio||1,2); W=innerWidth; H=innerHeight;
+        c.width=W*DPR; c.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
+      resize(); addEventListener('resize',resize);
+      var N=Math.max(28, Math.min(72, Math.round(W*H/28000)));
+      var P=[]; for(var i=0;i<N;i++){ P.push({
+        x:Math.random()*W, y:Math.random()*H,
+        vx:(Math.random()-.5)*0.20, vy:-0.12-Math.random()*0.28,   // dérive lente vers le haut
+        r:0.7+Math.random()*1.5, hue:186+Math.random()*80, a:0.10+Math.random()*0.20 }); }
+      function frame(){
+        ctx.clearRect(0,0,W,H);
+        // liens ténus entre particules proches (effet réseau d'énergie)
+        for(var i=0;i<P.length;i++){ for(var j=i+1;j<P.length;j++){
+          var dx=P[i].x-P[j].x, dy=P[i].y-P[j].y, d2=dx*dx+dy*dy;
+          if(d2<12000){ var o=(1-d2/12000)*0.05;
+            ctx.strokeStyle='rgba(120,200,255,'+o.toFixed(3)+')'; ctx.lineWidth=0.6;
+            ctx.beginPath(); ctx.moveTo(P[i].x,P[i].y); ctx.lineTo(P[j].x,P[j].y); ctx.stroke(); } } }
+        for(var k=0;k<P.length;k++){ var p=P[k];
+          p.x+=p.vx; p.y+=p.vy;
+          if(p.y<-12)p.y=H+12; else if(p.y>H+12)p.y=-12;
+          if(p.x<-12)p.x=W+12; else if(p.x>W+12)p.x=-12;
+          var rr=p.r*3.6;
+          var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,rr);
+          g.addColorStop(0,'hsla('+p.hue+',95%,72%,'+p.a+')');
+          g.addColorStop(1,'hsla('+p.hue+',95%,72%,0)');
+          ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,rr,0,7); ctx.fill();
+          ctx.fillStyle='hsla('+p.hue+',100%,88%,'+(p.a*0.85).toFixed(3)+')';
+          ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7); ctx.fill();
+        }
+        if(!reduce) requestAnimationFrame(frame);
+      }
+      if(reduce){ frame(); } else requestAnimationFrame(frame);
     })();
     </script>
