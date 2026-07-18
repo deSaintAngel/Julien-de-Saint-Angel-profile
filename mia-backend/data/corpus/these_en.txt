@@ -1,0 +1,78 @@
+# PhD thesis of Julien de Saint Angel — multi-level knowledge base
+
+## [Overview] The thesis subject in one sentence
+Julien de Saint Angel's PhD is about a new kind of neural network — "hyperspherical layers" — built from conformal geometric algebra, and their application to anomaly detection. In one sentence: he invented a geometric way of doing AI, where neurons use spheres instead of straight lines, to better spot abnormal data.
+Full title: "Neural networks with hyperspherical layers — Application to anomaly detection". Defended on 4 July 2025 at La Rochelle University (MIA laboratory, Euclide doctoral school).
+Keywords: thesis, subject, summary, PhD, neural networks, hyperspheres, hyperspherical, conformal geometric algebra, anomaly detection, one sentence, what is it about.
+
+## [Plain language] The thesis explained simply
+Imagine a machine that must tell what is "normal" and flag what is "abnormal": a defective part on a production line, a suspicious bank transaction, an irregular heartbeat. Most classical neural networks draw "straight lines" (flat boundaries) to separate cases. Julien proposed using "bubbles" instead — spheres — that surround the normal data. Anything inside the bubble is normal; anything outside is an anomaly. This idea, formalized with an elegant branch of mathematics (conformal geometric algebra), makes the model more accurate on complex data, more stable, and above all easier to understand: you can literally "see" why it made a decision.
+Keywords: plain language, explain simply, general public, what is it, bubble, sphere, ball, normal, abnormal, anomaly, example, understand, image, simple, easy.
+
+## [Plain language] What is anomaly detection?
+Detecting an anomaly means spotting an element that stands out, that does not look like the others. Everyday examples: an unusual charge on your bank card, a machine overheating abnormally, a suspicious cell on a medical image, a defect on a product. The difficulty: we mostly know "normal" examples and very few anomalies (they are rare and varied). Julien's work learns to finely describe what is "normal" so that any deviation becomes detectable, even when the data is complex and does not follow a simple shape.
+Keywords: anomaly detection, anomaly, outlier, abnormal, fraud, defect, failure, rare, spot, detect, concrete example, what is it for.
+
+## [Overview] The scientific problem of anomaly detection
+Anomaly detection identifies points that deviate from the distribution of "normal" data. Classical methods (Elliptic Envelope, Isolation Forest, One-Class SVM, Support Vector Data Description) reach their limits with the non-linearity and geometric complexity of real data: non-Gaussian, multimodal, high-dimensional distributions. The thesis proposes models that directly learn the enveloping geometry of normal data using hyperspheres, gaining robustness and interpretability.
+Keywords: anomaly detection, one-class, distribution, non-linear, multimodal, high-dimensional, isolation forest, one-class svm, svdd, state of the art, problem, robustness, interpretability.
+
+## [Plain language] What are "hyperspherical layers"?
+In an ordinary neural network, each neuron draws a flat boundary (like a sheet of paper cutting space in two). Julien replaced these flat boundaries with spheres: each "hyperspherical" neuron defines a bubble in space. This is more natural for surrounding a group of data, and a sphere can hug shapes that straight lines miss. You keep all the advantages of deep networks, but with a richer, more readable geometry.
+Keywords: hyperspherical layers, hypersphere, sphere, bubble, neuron, boundary, hyperplane, straight line, flat, curved, explain, simple, plain language.
+
+## [Technical] Definition of hyperspherical layers
+Hyperspherical layers replace the classical separating hyperplanes of neural networks with learnable hyperspheres (center and radius learned by gradient descent). They come in dense and convolutional (hyperspherical Conv2D) variants. Formally, they rely on Hestenes' conformal model, which embeds R^n into an augmented vector space R^{n+1,1}, where a hypersphere is represented by a single vector. The conformal inner product (x̃ · is̃) measures whether a point belongs to the sphere; normalization constraints apply (s̃² = ρ², e∞ · is̃ = −1). These layers geometrically generalize RBF networks and Clifford networks, and allow non-linear quadratic separations.
+Keywords: hyperspherical layer, hyperplane, learnable hypersphere, center, radius, dense, convolutional, Conv2D, conformal model, Hestenes, conformal inner product, normalization, RBF, Clifford, quadratic, technical, definition.
+
+## [Plain language] Conformal geometric algebra, explained simply
+It is a mathematical language that lets you manipulate geometric objects — points, lines, planes, spheres — as simple "bricks" combined with unified rules. Its advantage: a sphere and a plane are described the same way, which makes calculations elegant and consistent. Julien uses it to give neurons a spherical geometry while keeping computations clean and interpretable.
+Keywords: conformal geometric algebra, CGA, geometry, mathematical language, sphere, plane, point, unified, explain simply, plain language, what is it for.
+
+## [Technical] Conformal geometric algebra (CGA) — formal framework
+The formalism rests on the conformal model of geometry (Hestenes): Euclidean space R^n is embedded into R^{n+1,1} by adding two isotropic basis vectors (origin e0 and infinity e∞). In this algebra, hyperplanes and hyperspheres are represented uniformly by vectors; incidence (does a point lie on the sphere?) is read via the inner product. This unified hyperplane/hypersphere representation is the theoretical foundation of the thesis: it allows defining geometrically consistent neural layers and reasoning about decision boundaries.
+Keywords: conformal geometric algebra, conformal, Hestenes, R^{n+1,1}, e0, e_infinity, isotropic, vector, incidence, inner product, unified, hyperplane, hypersphere, formalism, theoretical framework.
+
+## [Technical] SVDD, SPH-SVDD, Deep SPH-SVDD and Deep M-SPH SVDD
+Support Vector Data Description (SVDD) seeks the center c and radius ρ of the smallest hypersphere enclosing a set of points: normal points stay inside, anomalies fall outside. In deep learning, the known variants are Deep soft-boundary SVDD and One-Class Deep SVDD. The thesis proposes: (1) SPH-SVDD, which reformulates SVDD with a single-neuron hyperspherical layer in conformal geometric space; (2) Deep SPH-SVDD, an extension to several spheres; (3) Deep M-SPH SVDD (multi-sphere), which envelops subgroups of normal points with several hyperspheres to handle multimodal data, improving detection precision and interpretability.
+Keywords: SVDD, Support Vector Data Description, enclosing hypersphere, center, radius, inside, outside, soft-boundary, one-class, Deep SVDD, SPH-SVDD, Deep SPH-SVDD, Deep M-SPH SVDD, multi-sphere, multimodal, contribution.
+
+## [Plain language] Deep M-SPH SVDD, explained simply
+Instead of a single big bubble to enclose all normal data, Deep M-SPH SVDD uses several small bubbles, each for a "type" of normal behavior. Example: if "normal" covers several different families of cases, a single bubble would be too big and let anomalies slip through; several bubbles fit reality better. Result: finer, more interpretable detection.
+Keywords: Deep M-SPH SVDD, multi-sphere, several bubbles, groups, multimodal, explain simply, plain language, precision, interpretable, example.
+
+## [Technical] Initialization method for hyperspherical layers
+A key contribution is a dedicated initialization method for hyperspherical layers, guaranteeing numerical stability and convergence. It makes it possible to stack several hyperspherical layers, which a standard initialization (Glorot/Xavier) does not allow. It relies on asymptotic properties of generalized Gamma-type distributions and on covariance computations adapted to the geometric structure of spheres, to control the variance of activations across layers.
+Keywords: initialization, convergence, stability, stacking, deep layers, Glorot, Xavier, Gamma distribution, covariance, variance, asymptotic, method, contribution.
+
+## [Technical] Universal approximation theorem for hyperspherical neurons
+The thesis establishes an approximation theorem: a network with a single hyperspherical layer can approximate any continuous function on a compact set of R^n, provided the activation function is regular. The proof relies on Schwartz's density theorem. Where classical layers produce linear boundaries, hyperspherical layers produce quadratic ones; the resulting expressiveness is at least equivalent to that of multilayer perceptrons (MLP), with better geometric interpretation.
+Keywords: approximation theorem, universal approximation, continuous function, compact, Schwartz density, activation, quadratic, MLP, expressiveness, proof, theoretical, GRETSI.
+
+## [Technical] The collapse phenomenon and its prevention
+"Collapse" is a known pitfall of classical Deep SVDD: the network can learn a trivial solution where all representations shrink to a point, making detection useless. The thesis analyzes this phenomenon and shows, geometrically, how hyperspherical architectures and their adapted initialization prevent it by maintaining a non-degenerate structure of representations. Appendix C details the geometric justification.
+Keywords: collapse, trivial solution, Deep SVDD, degeneracy, representation, prevention, stability, appendix C, geometric.
+
+## [Overview] Experimental results
+The models are validated on 2D synthetic data (illustrating behavior), then on MNIST and CIFAR-10. The study covers the ν parameter, the AUC-ROC, AUC-PR and F1-score metrics, and stability against collapse. Conclusion: hyperspherical layers bring superior robustness and detection power compared to classical Deep SVDD approaches, while remaining interpretable, with faster and more stable convergence.
+Keywords: results, experiments, MNIST, CIFAR-10, synthetic, AUC-ROC, AUC-PR, F1-score, nu parameter, performance, robustness, convergence, benchmarks, validation.
+
+## [Overview] Main contributions of the thesis
+1) A unified geometric formalism (conformal algebra) representing hyperplanes and hyperspheres. 2) Dense and convolutional hyperspherical neural layers (implemented in PyTorch and TensorFlow). 3) An initialization method guaranteeing stability and convergence. 4) A universal approximation theorem for these networks. 5) The anomaly-detection models SPH-SVDD, Deep SPH-SVDD and Deep M-SPH SVDD. 6) Experimental validation showing gains in performance, stability and interpretability.
+Keywords: contributions, novelty, formalism, layers, initialization, theorem, SPH-SVDD, Deep M-SPH SVDD, PyTorch, TensorFlow, summary of contributions.
+
+## [Plain language] What are these results useful for?
+These methods apply wherever you must spot the abnormal: industrial monitoring (detecting a failing machine or part), time series (sensors, signals), high-frequency sports diagnostics, image analysis (including medical), cybersecurity and finance (fraud). The extra strength of Julien's approach is interpretability: you can explain why a case was judged abnormal, which is crucial in sensitive domains.
+Keywords: applications, what is it for, industry, time series, sensors, medical, sport, cybersecurity, finance, fraud, maintenance, interpretability, concrete, useful.
+
+## [Overview] Why interpretability is at the heart of the thesis
+Many AI models are "black boxes": powerful but impossible to explain. By giving neurons an explicit spherical geometry, Julien's approach makes decision boundaries readable: each decision relates to a position with respect to learned spheres. This geometric interpretability is a guiding thread of the thesis, motivated by the need for trust in real-world applications.
+Keywords: interpretability, explainability, black box, trustworthy AI, decision boundary, geometry, transparent, understandable, why.
+
+## [Info] Academic context and supervision
+PhD in computer science applied to artificial intelligence, La Rochelle University, Mathematics Image and Applications (MIA) laboratory, Euclide doctoral school. Defended on 4 July 2025. PhD supervisor: Christophe Saint-Jean. Laboratory director: Catherine Choquet. Reviewers: Yannick Berthoumieu (University of Bordeaux) and Hoel Le Capitaine (University of Nantes). Examiners: Laetitia Chapel (IRISA) and Catherine Choquet (MIA). Duration: 4 years and 8 months, within a disability-accommodated PhD (RQTH/MDPH status) with a granted extension.
+Keywords: context, university, La Rochelle, MIA laboratory, Euclide doctoral school, defense, 4 July 2025, supervisor, Saint-Jean, Choquet, reviewers, jury, RQTH, supervision.
+
+## [Info] Publications from the thesis
+1) J. de Saint Angel, C. Saint-Jean, C. Choquet — "Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra", book chapter, Recent Applications in Deep Learning, 2025 (the core of the Deep M-SPH SVDD model). 2) J. de Saint Angel, C. Saint-Jean — "Multi-Spheres Anomaly Detection with Hyperspherical Layers", ICMLA, 2024 (international conference). 3) J. de Saint Angel, C. Saint-Jean — "Approximation theorem for hyperspherical neurons", GRETSI, 2023 (the theoretical result). 4) J. de Saint Angel, C. Saint-Jean — "Spherical Dense and Conv2D layers via conformal geometric algebra", ORASIS, 2021 (the first hyperspherical layers).
+Keywords: publications, papers, articles, ICMLA, GRETSI, ORASIS, book chapter, 2021, 2023, 2024, 2025, which ones, list, where published.

@@ -1,0 +1,33 @@
+# Projects and achievements of Julien de Saint Angel
+
+## [Project] Agentic AI platform for HR — Unapei 17 (current role)
+Since April 2026, Julien has been AI Project Lead at Unapei 17 (La Rochelle, France). He leads and builds an agentic-AI platform serving HR and accounting data. Core of the project: an autonomous AI agent that answers HR teams' questions in natural language by querying the databases itself (text-to-SQL / NL2DB), with no technical skills required. It is a true agent that reasons and decides (Reason-Act-Observe loop, sub-goal decomposition, schema linking), not a scripted interface. He also designed and developed a multi-database semantic-matching algorithm that links heterogeneous databases (HR, accounting, activity) into a unified, auditable, explainable foundation (code computes the facts, the LLM reasons over them: no hallucination, reproducible results, traceable reasoning). The whole system is fully local (Ollama, SQLite, LangGraph, MCP): no data leaves the organization, with GDPR being fundamental since Unapei handles sensitive data.
+Keywords: Unapei 17, AI project lead, current role, agentic AI, autonomous agent, NL2DB, text-to-SQL, semantic matching, GDPR, HR, accounting, LangGraph, MCP, Ollama, local, company, concrete, LLM.
+
+## [Project] MIA — Julien's conversational agent
+MIA is the conversational AI assistant designed and built by Julien (she is the one answering here). She presents his background and research to recruiters, researchers and the curious. Technically, she combines a large language model (LLM) with RAG (Retrieval-Augmented Generation) technology to draw on a documentary corpus (profile, thesis, publications, projects) and provide relevant, personalized answers. The project shows Julien's ability to design a complete AI solution, from architecture (Node.js backend, RAG, security) to production.
+Keywords: MIA, Mia, chatbot, conversational agent, AI assistant, LLM, RAG, Retrieval-Augmented Generation, who are you, how do you work, backend, AI project.
+
+## [Project] Orbitalis — dynamic astronomy journal (orbitalis.fr)
+Orbitalis (orbitalis.fr) is a personal project of Julien: a dynamic astronomy journal that automatically extracts, from sources and media, information about observable astronomical events (eclipses, conjunctions, meteor showers, transits…) for amateur astronomers. It combines his passions — astronomy and astrophotography — with his expertise in information processing and AI. It is also the platform hosting his other web projects (orbitalis.fr subdomains).
+Keywords: Orbitalis, orbitalis.fr, astronomy, journal, observable events, astrophotography, amateurs, eclipse, sky, personal project, information extraction, website.
+
+## [Project] Singapore 360° — immersive gallery (singapore360.orbitalis.fr)
+Singapore 360° (singapore360.orbitalis.fr) is a personal site by Julien that relives a trip to Singapore in full immersion: more than 90 interactive 360° panoramas across 21 locations, a cinematic 360° video of about 5 minutes covering the must-see spots (temples, Sentosa beaches, nature reserves), and a gallery of more than 260 photographs sorted by theme (aviation, wildlife, temples, urban scenes). All photos are Julien's own. Interface in French, English and Chinese; no tracking cookies, no personal data collected. The project demonstrates his skills in web development, photography and immersive experience.
+Keywords: Singapore360, Singapore, 360, panorama, VR, immersive, travel, photography, gallery, 360 video, web development, personal project, orbitalis.
+
+## [Project] JobScope / Jobora — AI-powered job search (jobscope.orbitalis.fr)
+JobScope (also called Jobora, jobscope.orbitalis.fr) is an AI-assisted job-search platform built by Julien. It helps candidates optimize their applications: ATS analysis with a compatibility score (0-100%) between a CV and a job offer, detailed report, AI-generated cover letters, real-time analysis and PDF export. It also offers a "swipe" job-discovery mode (like a dating app), a centralized dashboard, automatic job scraping (France Travail) and AI keyword extraction from the CV. Payments via Stripe. The project shows Julien's ability to build a complete AI product, from user need to monetization.
+Keywords: JobScope, Jobora, job, job search, ATS, compatibility score, cover letter, CV, swipe, France Travail, scraping, Stripe, product, SaaS, AI, project.
+
+## [Project] Bozkiewicz Art — website for an artist (bozkiewicz-art.fr)
+Julien built the website bozkiewicz-art.fr, the online art gallery of artist Éric Bozkiewicz (Charente-Maritime, France), who specializes in dry-pastel representations of birds (robin, great spotted woodpecker, kingfisher, hoopoe, European bee-eater…). The site serves as a portfolio and showcase (unique, signed and dated works), with custom commissions and contact. This project illustrates Julien's web skills applied for a client, and echoes his passion for nature and bird photography.
+Keywords: Bozkiewicz, bozkiewicz-art.fr, website, artist, art gallery, pastel, birds, portfolio, client, freelance, web development, nature, project.
+
+## [Project] Research contributions: Deep M-SPH SVDD and initialization method
+Beyond the thesis, Julien's two flagship research contributions are: (1) the Deep M-SPH SVDD model, a multi-sphere hyperspherical approach to anomaly detection based on conformal geometric algebra; (2) a dedicated initialization method for hyperspherical-layer networks, improving convergence and stability and enabling layer stacking. See the thesis knowledge base for details.
+Keywords: Deep M-SPH SVDD, multi-sphere, initialization, anomaly detection, contribution, research, hyperspherical, convergence, stability.
+
+## [Project] Concrete applications developed
+Julien developed several concrete computer-vision and signal-processing applications: an automated visual tide gauge (automatic reading of a tide-scale image, LIENSs laboratory), the characterization of sports gestures using high-speed cameras via trajectographic analysis of critical points (XLIM/MIA), and interpolation algorithms for artificial-satellite orbits (Paris Observatory, SYRTE). These achievements show his ability to move from theory to systems that work under real conditions.
+Keywords: tide gauge, sports gesture, high-speed cameras, trajectography, orbits, satellites, interpolation, computer vision, signal processing, concrete application, internship, laboratory.

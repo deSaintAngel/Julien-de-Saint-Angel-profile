@@ -1,0 +1,29 @@
+# Passions, centres d'intérêt et personnalité de Julien de Saint Angel
+
+## [Passion] Astronomie et astrophotographie
+L'astronomie est une passion centrale de Julien. Il pratique l'astrophotographie (photographie du ciel, des astres et des événements célestes) et a d'ailleurs bâti autour de cette passion son projet Orbitalis (orbitalis.fr), un journal d'astronomie qui recense les événements observables. Son master en Astronomie & Physique à l'Observatoire de Paris-Meudon et son stage au SYRTE (orbites de satellites) témoignent d'un intérêt de longue date pour le ciel. Il souhaite à terme rapprocher son expertise IA du domaine de l'astronomie.
+Mots-clés : astronomie, astrophotographie, ciel, astres, étoiles, observatoire, Orbitalis, télescope, espace, passion, centre d'intérêt, Observatoire de Paris.
+
+## [Passion] Photographie de nature et ornithophotographie
+Julien aime la photographie de nature, en particulier l'ornithophotographie (photographie d'oiseaux). Cette sensibilité à la nature se retrouve dans ses projets (le site d'art animalier bozkiewicz-art.fr) et dans sa vision d'appliquer l'IA à l'environnement et à l'étude du littoral.
+Mots-clés : photographie, nature, oiseaux, ornithophotographie, animalier, faune, littoral, environnement, passion, centre d'intérêt.
+
+## [Passion] Modélisation 3D et animation vidéo
+Parmi ses centres d'intérêt créatifs, Julien pratique la modélisation 3D et l'animation vidéo. Ces compétences visuelles nourrissent ses projets web et immersifs (comme Singapore 360°) et sa pratique de la vulgarisation.
+Mots-clés : modélisation 3D, 3D, animation, vidéo, création, visuel, immersif, centre d'intérêt, passion.
+
+## [Passion] Vulgarisation scientifique
+La vulgarisation scientifique tient une place importante pour Julien : il considère qu'expliquer clairement l'intérêt des recherches au grand public est essentiel. Son passé d'enseignant de mathématiques et sa capacité à rendre accessibles des concepts complexes (comme sa propre thèse) en sont l'illustration. Il aime transmettre et rendre la science compréhensible.
+Mots-clés : vulgarisation, transmission, enseignement, pédagogie, expliquer, grand public, communication scientifique, accessible, passion.
+
+## [Info] Voyages et ouverture internationale
+Julien a voyagé, notamment à Singapour, expérience qui a donné naissance à son projet Singapore 360°. Il parle français (natif), anglais (B2, courant), espagnol et roumain (niveau intermédiaire B1). Cette ouverture nourrit sa curiosité et ses projets.
+Mots-clés : voyage, Singapour, international, langues, français, anglais, espagnol, roumain, ouverture, curiosité.
+
+## [Personnalité] Valeurs et manière de travailler
+Julien place l'éthique, la rigueur et l'honnêteté scientifiques au cœur de ses engagements. Passionné de technologie et d'IA, il est opiniâtre : il n'abandonne jamais et va au bout de ses projets. Son principal défaut, assumé, est un certain perfectionnisme — il aime comprendre et optimiser chaque détail, et apprend à mieux prioriser en contexte d'équipe et de délais. Reconnu RQTH, il a besoin d'un environnement de travail sain, calme et stable, tenant compte de la fatigabilité.
+Mots-clés : valeurs, éthique, rigueur, honnêteté, passion, opiniâtreté, persévérance, perfectionnisme, défaut, qualités, RQTH, manière de travailler, personnalité.
+
+## [Info] Vision et ambitions
+À long terme, Julien souhaite continuer à innover et contribuer à la recherche et à la diffusion scientifique, avec une ouverture vers les domaines médical (imagerie médicale), environnemental (littoral) et l'astronomie. À moyen terme, mettre son expertise en IA agentique, deep learning et traitement du signal au service de problématiques concrètes en entreprise. À court terme, contribuer immédiatement à des projets d'IA appliquée, d'analyse de données ou de traitement d'images.
+Mots-clés : vision, ambitions, avenir, objectifs, médical, imagerie médicale, environnement, astronomie, IA agentique, projets, motivation, long terme.

@@ -1,0 +1,29 @@
+# Passions, interests and personality of Julien de Saint Angel
+
+## [Passion] Astronomy and astrophotography
+Astronomy is a central passion of Julien. He practices astrophotography (photographing the sky, celestial bodies and events) and built his Orbitalis project (orbitalis.fr) around this passion — an astronomy journal listing observable events. His master's in Astronomy & Physics at the Paris-Meudon Observatory and his internship at SYRTE (satellite orbits) reflect a long-standing interest in the sky. He ultimately wishes to bring his AI expertise closer to astronomy.
+Keywords: hobby, hobbies, pastimes, interests, astronomy, astrophotography, sky, stars, observatory, Orbitalis, telescope, space, passion, interest, Paris Observatory.
+
+## [Passion] Nature and bird photography
+Julien loves nature photography, especially bird photography (ornithophotography). This sensitivity to nature appears in his projects (the wildlife-art site bozkiewicz-art.fr) and in his vision of applying AI to the environment and coastal studies.
+Keywords: hobby, hobbies, pastimes, interests, photography, nature, birds, bird photography, wildlife, fauna, coast, environment, passion, interest.
+
+## [Passion] 3D modeling and video animation
+Among his creative interests, Julien practices 3D modeling and video animation. These visual skills feed his web and immersive projects (such as Singapore 360°) and his outreach practice.
+Keywords: hobby, hobbies, pastimes, interests, 3D modeling, 3D, animation, video, creation, visual, immersive, interest, passion.
+
+## [Passion] Scientific outreach
+Scientific outreach matters a lot to Julien: he believes clearly explaining the value of research to the general public is essential. His past as a mathematics teacher and his ability to make complex concepts accessible (like his own thesis) illustrate this. He enjoys sharing and making science understandable.
+Keywords: hobby, hobbies, pastimes, interests, outreach, popularization, teaching, pedagogy, explain, general public, science communication, accessible, passion.
+
+## [Info] Travel and international openness
+Julien has travelled, notably to Singapore, an experience that gave rise to his Singapore 360° project. He speaks French (native), English (B2, fluent), Spanish and Romanian (intermediate B1). This openness feeds his curiosity and his projects.
+Keywords: travel, Singapore, international, languages, French, English, Spanish, Romanian, openness, curiosity.
+
+## [Personality] Values and way of working
+Julien places scientific ethics, rigor and honesty at the heart of his commitments. Passionate about technology and AI, he is tenacious: he never gives up and sees his projects through. His main, acknowledged flaw is a certain perfectionism — he likes to understand and optimize every detail, and is learning to prioritize better in team and deadline contexts. Recognized as RQTH (disabled worker status), he needs a healthy, calm and stable work environment that accounts for fatigability.
+Keywords: values, ethics, rigor, honesty, passion, tenacity, perseverance, perfectionism, flaw, qualities, RQTH, way of working, personality.
+
+## [Info] Vision and ambitions
+In the long term, Julien wishes to keep innovating and contributing to research and scientific dissemination, with openness toward the medical (medical imaging), environmental (coastline) and astronomy fields. In the medium term, to put his expertise in agentic AI, deep learning and signal processing at the service of concrete business problems. In the short term, to contribute immediately to applied AI, data-analysis or image-processing projects.
+Keywords: vision, ambitions, future, goals, medical, medical imaging, environment, astronomy, agentic AI, projects, motivation, long term.
