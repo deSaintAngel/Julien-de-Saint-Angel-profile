@@ -985,7 +985,7 @@
     for(let g=0;g<stations.length-1;g++){ const pool=edges.filter(e=>e.g===g);
       for(let k=0;k<7&&pool.length;k++) conductors.push(pool[(Math.random()*pool.length)|0]); }
     const allNodes=stations.filter(s=>s.type==='layer').flatMap(s=>s.nodes);
-    const net={ ry:0.296706, rx:0.244346, rz:0.069813, sx:1.74, sy:2.70, sz:1.13, tx:54, ty:120, showBox:false }; try{window.NET=net;}catch(e){}
+    const net={ ry:0.4887, rx:0.1047, rz:0.069813, sx:1.75, sy:2.05, sz:1.05, tx:54, ty:98, showBox:false }; try{window.NET=net;}catch(e){}
     function proj(p){ let x=p.x*net.sx, y=p.y*net.sy, z=p.z*net.sz;
       let c=Math.cos(net.ry),s=Math.sin(net.ry); let X=x*c-z*s, Z1=x*s+z*c;
       c=Math.cos(net.rx);s=Math.sin(net.rx); let Y=y*c-Z1*s, Z=y*s+Z1*c;
@@ -1130,7 +1130,6 @@
     <script>
     if('serviceWorker' in navigator){ window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); }); }
     </script>
-
     <div id="reglage" style="position:fixed;top:150px;right:14px;z-index:99999;background:rgba(6,10,20,.94);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border:1px solid rgba(120,200,255,.35);border-radius:14px;padding:14px 16px;width:262px;font-family:system-ui,sans-serif;color:#dbe6fa;font-size:13px;box-shadow:0 24px 60px -20px #000">
       <b style="color:#7fd0ff;font-size:14px">🎛️ Reglage du reseau</b>
       <div style="font-size:11px;color:#9fb0cc;margin:5px 0 10px;line-height:1.4">Ajuste, clique <b>Copier</b>, colle-moi les valeurs.</div>
