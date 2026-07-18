@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <!-- Script Google AdSense pour validation -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Julien de Saint Angel - Docteur en IA spécialisé en réseaux neuronaux hypersphériques et détection d'anomalies. Expertise en deep learning, traitement d'images et optimisation.">
+    <meta name="keywords" content="IA, intelligence artificielle, réseaux neuronaux hypersphériques, détection d'anomalies, deep learning, machine learning, PhD AI, computer vision, hyperspherical neural networks, anomaly detection">
+    <meta name="author" content="Julien de Saint Angel">
+    
+    <!-- Open Graph pour les réseaux sociaux -->
+    <meta property="og:title" content="Julien de Saint Angel - Expert en IA et réseaux neuronaux hypersphériques">
+    <meta property="og:description" content="Docteur en intelligence artificielle spécialisé dans les réseaux neuronaux hypersphériques et la détection d'anomalies.">
+    <meta property="og:image" content="assets/images/julien.png">
+    <meta property="og:url" content="https://desaintangel.github.io/Julien-de-Saint-Angel-profile/">
+
+    
+    <title>Julien de Saint Angel - Expert IA | Réseaux Neuronaux Hypersphériques</title>
+    
+    <!-- Polices et icônes -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    
+    <!-- MathJax pour formules LaTeX -->
+    <script src="https://cdn.jsdelivr.net/npm/core-js-bundle/minified.js"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Widget Chat Mia -->
+    <link rel="stylesheet" href="chat-widget.css">
+
+     <script>
+        window.MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']]
+            }
+        };
+    </script>
+<!-- ===== Styles du hero réseau de neurones (isolés sous #neuralhero) ===== -->
+    <style id="neuralhero-css">
+    #neuralhero{--nh-bg:#010109;--nh-txt:#EAF2FF;--nh-muted:#93A3C2;--nh-cyan:#4FD2FF;--nh-violet:#B98BFF;
+      --nh-mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,monospace;--nh-sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      position:relative;min-height:100svh;overflow:hidden;background:var(--nh-bg);color:var(--nh-txt);
+      font-family:var(--nh-sans);font-size:16px;-webkit-font-smoothing:antialiased}
+    #neuralhero *{box-sizing:border-box}
+    #neuralhero #net{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+    #neuralhero .vignette{position:absolute;inset:0;z-index:1;pointer-events:none;
+      background:radial-gradient(150% 120% at 50% 50%,transparent 62%,rgba(0,3,8,.5) 88%,var(--nh-bg) 100%)}
+    #neuralhero .el{position:absolute;z-index:3;width:var(--w,auto);
+      transform:perspective(1500px) rotateY(-14deg) rotateX(4deg) rotateZ(var(--etz,-11deg));transform-origin:left center;
+      opacity:0;animation:nh-fadein .9s forwards cubic-bezier(.16,1,.3,1)}
+    @keyframes nh-fadein{to{opacity:1}}
+    #neuralhero .eyebrowbox{top:16.69%;left:21.22%;animation-delay:.5s}
+    #neuralhero .title{top:2.58%;left:21.29%;animation-delay:.15s}
+    #neuralhero .sub{top:90.29%;left:10.87%;animation-delay:.6s}
+    #neuralhero .actions{top:91.2%;left:77.6%;display:flex;gap:12px;flex-wrap:wrap;animation-delay:.75s}
+    #neuralhero .access{top:3.19%;left:1.37%;animation-delay:.3s}
+    #neuralhero .lang{top:1.82%;left:92.71%;display:flex;gap:8px;animation-delay:.3s}
+    #neuralhero .cv{top:21.7%;left:76.37%;animation-delay:.7s}
+    #neuralhero .photo{position:absolute;z-index:4;top:3%;left:80%;transform:none;
+      opacity:0;animation:nh-fadein 1s .55s forwards cubic-bezier(.16,1,.3,1)}
+    #neuralhero .eyebrow{font-family:var(--nh-mono);font-size:var(--fs,.72em);letter-spacing:.24em;text-transform:uppercase;color:var(--col,var(--nh-cyan));font-weight:600}
+    #neuralhero .title h1{margin:.25em 0 0;font-size:var(--fs,2.4em);font-weight:850;letter-spacing:-.04em;line-height:1.02;white-space:nowrap;color:var(--col,#EAF2FF);
+      text-shadow:0 6px 46px rgba(0,6,14,.98),0 2px 10px rgba(0,6,14,.95)}
+    #neuralhero .title h1 .g{background:linear-gradient(100deg,var(--nh-cyan),var(--nh-violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+    #neuralhero .sub p{margin:0;color:var(--col,var(--nh-muted));font-size:var(--fs,1.05em);text-shadow:0 3px 16px rgba(0,6,14,.98)}
+    #neuralhero .access .chip{font-family:var(--nh-sans);font-size:var(--fs,.85em);color:var(--col,#EAF2FF);
+      background:linear-gradient(135deg,rgba(255,255,255,.15),rgba(150,215,255,.04));
+      -webkit-backdrop-filter:blur(13px) saturate(150%);backdrop-filter:blur(13px) saturate(150%);
+      border:1px solid rgba(160,220,255,.32);padding:8px 15px;border-radius:100px;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;
+      text-decoration:none;cursor:pointer;box-shadow:inset 0 1px 0 rgba(255,255,255,.28);transition:background .2s,border-color .2s}
+    #neuralhero .access .chip:hover{background:linear-gradient(135deg,rgba(140,225,255,.26),rgba(255,255,255,.08));border-color:rgba(120,220,255,.6)}
+    #neuralhero .langbtn{font-family:var(--nh-mono);font-size:var(--fs,.82em);color:var(--col,#EAF2FF);border:1px solid rgba(160,220,255,.3);
+      padding:6px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.03));
+      -webkit-backdrop-filter:blur(11px) saturate(140%);backdrop-filter:blur(11px) saturate(140%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.24);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s}
+    #neuralhero .langbtn:hover{background:linear-gradient(135deg,rgba(140,225,255,.24),rgba(255,255,255,.07));border-color:rgba(120,220,255,.55)}
+    #neuralhero .langbtn.off{opacity:.55}
+    #neuralhero .photo img{width:118px;height:118px;border-radius:50%;object-fit:cover;object-position:48% 22%;display:block;
+      border:2px solid rgba(120,200,255,.55);box-shadow:0 14px 46px -12px rgba(0,10,30,.85),0 0 0 7px rgba(79,210,255,.07)}
+    #neuralhero .btn{font-family:var(--nh-sans);font-weight:600;font-size:var(--fs,.95em);color:#EAF2FF;cursor:pointer;text-decoration:none;display:inline-block;
+      padding:13px 26px;border-radius:100px;border:1px solid rgba(160,220,255,.35);
+      background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(150,215,255,.05));
+      -webkit-backdrop-filter:blur(13px) saturate(150%);backdrop-filter:blur(13px) saturate(150%);
+      box-shadow:0 10px 34px -12px rgba(0,12,34,.7),inset 0 1px 0 rgba(255,255,255,.32),inset 0 0 24px rgba(120,210,255,.08);
+      transition:transform .25s,background .25s,box-shadow .25s,border-color .25s}
+    #neuralhero .btn:hover{transform:translateY(-2px);border-color:rgba(120,220,255,.65);
+      background:linear-gradient(135deg,rgba(140,225,255,.30),rgba(255,255,255,.09));
+      box-shadow:0 14px 44px -12px rgba(79,210,255,.55),inset 0 1px 0 rgba(255,255,255,.45)}
+    #neuralhero .btn.ghost{background:linear-gradient(135deg,rgba(255,255,255,.10),rgba(255,255,255,.03));border-color:rgba(255,255,255,.24)}
+    #neuralhero .btn.ghost:hover{background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(160,220,255,.07));border-color:rgba(160,220,255,.55)}
+    @media (prefers-reduced-motion:reduce){#neuralhero .el{animation:none;opacity:1}}
+    @media (max-width:820px){
+      #neuralhero{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+        gap:14px;padding:72px 20px 48px;text-align:center;min-height:100svh}
+      #neuralhero #net{position:static!important;inset:auto!important;order:5;width:100%!important;height:176px;opacity:1;margin:8px 0;border-radius:14px}
+      #neuralhero .vignette{display:none}
+      #neuralhero .el,#neuralhero .photo{position:static!important;transform:none!important;inset:auto!important;
+        margin:0;opacity:1;animation:none;text-align:center;max-width:94vw;width:auto!important}
+      #neuralhero .photo{order:1;margin:2px auto 4px}
+      #neuralhero .title{order:2}
+      #neuralhero .eyebrowbox{order:3}
+      #neuralhero .sub{order:4}
+      #neuralhero .cv{order:6}
+      #neuralhero .actions{order:7;flex-direction:column;align-items:stretch;width:100%!important;max-width:300px;gap:10px}
+      #neuralhero .actions .btn{width:100%}
+      #neuralhero .access{position:absolute!important;inset:12px auto auto 12px!important}
+      #neuralhero .lang{position:absolute!important;inset:14px 12px auto auto!important;gap:6px}
+      #neuralhero .title h1{font-size:clamp(1.85em,8.5vw,2.5em);white-space:normal;line-height:1.05}
+      #neuralhero .eyebrow{font-size:.62em;letter-spacing:.16em;line-height:1.55}
+      #neuralhero .sub p{font-size:1em;line-height:1.5}
+      #neuralhero .access .chip{font-size:.8em;padding:7px 12px}
+      #neuralhero .langbtn{font-size:.8em;padding:5px 10px}
+      #neuralhero .cv .btn,#neuralhero .actions .btn{font-size:.98em;padding:13px 22px}
+      #neuralhero .photo img{width:118px;height:118px;box-shadow:0 10px 34px -12px rgba(0,10,30,.85),0 0 0 6px rgba(79,210,255,.08)}
+    }
+    </style>
+<!-- ===== THÈME SOMBRE / CRISTAL pour toute la page (hors hero) ===== -->
+    <style id="dark-theme">
+    :root{
+      --primary-blue:#5ab8ff;
+      --light-bg:#05060e;
+      --white:rgba(150,190,255,.05);
+      --shadow:0 12px 40px -18px rgba(0,0,0,.7);
+      --shadow-hover:0 18px 50px -16px rgba(60,150,255,.35);
+    }
+    body{ background:#05060e; color:#c3d0e6; }
+    /* ambiance : dégradé profond + halos discrets, fixe derrière la page */
+    body::before{ content:""; position:fixed; inset:0; z-index:-1; pointer-events:none;
+      background:
+        radial-gradient(60% 55% at 12% 0%, rgba(46,120,255,.12), transparent 62%),
+        radial-gradient(55% 50% at 92% 10%, rgba(150,90,255,.10), transparent 62%),
+        radial-gradient(60% 60% at 50% 100%, rgba(0,200,220,.06), transparent 60%),
+        #04050c; }
+    h1,h2,h3,h4{ color:#EAF2FF !important; }
+    strong{ color:#f0f5ff; }
+    p,li,td,label,.container div{ color:#c3d0e6; }
+    a{ color:#6bc5ff; }
+    a:hover{ color:#a9e0ff; }
+
+    /* cartes / sections en verre sombre */
+    section{
+      background:linear-gradient(160deg,rgba(150,195,255,.075),rgba(150,195,255,.02)) !important;
+      border:1px solid rgba(150,200,255,.14);
+      -webkit-backdrop-filter:blur(14px) saturate(130%);backdrop-filter:blur(14px) saturate(130%);
+      box-shadow:0 14px 44px -20px rgba(0,0,0,.75);
+      color:#c3d0e6;
+    }
+    section:hover{ box-shadow:0 20px 54px -18px rgba(60,150,255,.32); }
+
+    /* menu collant en verre */
+    .nav-sticky{
+      background:rgba(8,12,22,.72) !important;
+      -webkit-backdrop-filter:blur(18px) saturate(140%);backdrop-filter:blur(18px) saturate(140%);
+      border-bottom:1px solid rgba(150,200,255,.12);
+    }
+    .nav-sticky a{ color:#c3d0e6; }
+    .nav-sticky a:hover{ background:rgba(90,184,255,.18); color:#fff; }
+
+    /* boutons cristal */
+    .contact-btn,.btn-thesis,.btn-cv,.btn-confirm,.info-btn,button.contact-btn{
+      background:linear-gradient(135deg,rgba(255,255,255,.14),rgba(150,215,255,.05)) !important;
+      -webkit-backdrop-filter:blur(12px) saturate(150%);backdrop-filter:blur(12px) saturate(150%);
+      border:1px solid rgba(160,220,255,.35) !important; color:#EAF2FF !important;
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.28);
+    }
+    .contact-btn:hover,.btn-thesis:hover,.btn-cv:hover,.info-btn:hover{ background:linear-gradient(135deg,rgba(140,225,255,.28),rgba(255,255,255,.08)) !important; color:#fff !important; }
+    /* détails des compétences : hérite du verre de la carte */
+    .skill-details{ background:transparent !important; color:#c3d0e6 !important; }
+    .skill-details p,.skill-details li,.skill-details span{ color:#c3d0e6 !important; }
+
+    /* tags cristal */
+    .tag{ background:rgba(150,200,255,.10) !important; color:#cfe0ff !important; border:1px solid rgba(150,200,255,.2); }
+    .tag:hover,.tag.active{ background:rgba(90,184,255,.32) !important; color:#fff !important; }
+
+    /* cartes de compétences */
+    .skill-card{ background:rgba(150,200,255,.045) !important; border-left:4px solid #5ab8ff !important; border-radius:10px; }
+    .skill-card:hover,.skill-card.expanded{ background:rgba(90,184,255,.13) !important; border-left-color:#00dfd8 !important; }
+    /* carte "spécialité" agentique (style inline vert) -> verre vert sombre */
+    .skill-card[style]{ background:linear-gradient(160deg,rgba(15,190,110,.16),rgba(15,190,110,.04)) !important; }
+    .skill-card .skill-details p{ color:#c3d0e6; }
+
+    /* champs de formulaire sombres */
+    input,textarea,select{
+      background:rgba(150,200,255,.06) !important; color:#EAF2FF !important;
+      border:1px solid rgba(150,200,255,.22) !important; border-radius:8px;
+    }
+    input::placeholder,textarea::placeholder{ color:#8494b0 !important; }
+
+    /* liens icônes / listes */
+    .icon{ color:#6bc5ff; }
+    hr{ border-color:rgba(150,200,255,.14); }
+
+    /* modales (info, formulaire, accessibilité) en sombre */
+    .modal-content,.modal-info,.modal-handicap-content{
+      background:linear-gradient(160deg,#0c1226,#080b18) !important; color:#c3d0e6 !important;
+      border:1px solid rgba(150,200,255,.18) !important;
+      -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+      box-shadow:0 24px 70px -20px rgba(0,0,0,.8) !important;
+    }
+    .modal-content h1,.modal-content h2,.modal-content h3,.modal-content h4,.modal-info h1,.modal-info h2,.modal-info h3,.modal-handicap-content h1,.modal-handicap-content h2,.modal-handicap-content h3{ color:#EAF2FF !important; }
+    .modal-content p,.modal-content li,.modal-content span,.modal-content label,.modal-info p,.modal-info li,.modal-handicap-content p,.modal-handicap-content span,.modal-handicap-content label{ color:#c3d0e6 !important; }
+    .btn-handicap,.btn-cancel{
+      background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(150,215,255,.04)) !important;
+      border:1px solid rgba(160,220,255,.3) !important; color:#EAF2FF !important;
+      -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px); }
+    .btn-cancel{ background:rgba(255,255,255,.06) !important; color:#aab6cc !important; }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <!-- ===== Nouveau hero : réseau de neurones 3D animé ===== -->
+    <header id="neuralhero">
+      <canvas id="net"></canvas>
+      <div class="vignette"></div>
+
+      <div class="el eyebrowbox" style="--etz:3deg;--fs:1.3em;--col:#4FD2FF">
+        <div class="eyebrow">Docteur en informatique appliquée · Réseaux de neurones</div>
+      </div>
+
+      <div class="el title" style="--etz:0deg;--fs:2.95em;--col:#EAF2FF">
+        <h1>Julien de <span class="g">Saint&nbsp;Angel</span></h1>
+      </div>
+
+      <div class="el sub" style="--etz:-6deg;--fs:1.35em;--col:#93A3C2;--w:1048px">
+        <p>Je transforme les données brutes en leviers de décision stratégiques pour répondre à des problématiques métiers concrètes.</p>
+      </div>
+
+      <div class="el actions" style="--etz:0deg;--fs:.95em;--col:#EAF2FF">
+        <a class="btn" href="#" onclick="document.querySelector('.container').scrollIntoView({behavior:'smooth'});return false;">Découvrir mes travaux</a>
+      </div>
+
+      <div class="el access" style="--etz:0deg;--fs:2em;--col:#EAF2FF">
+        <a class="chip" href="#" onclick="openHandicapModal();return false;">&#9855; Accessibilité</a>
+      </div>
+
+      <div class="el lang" style="--etz:0deg;--fs:1.45em;--col:#EAF2FF">
+        <a class="langbtn" href="#" onclick="switchLanguage('fr');return false;">FR</a>
+        <a class="langbtn off" href="#" onclick="switchLanguage('en');return false;">EN</a>
+      </div>
+
+      <div class="el cv" style="--etz:3deg;--fs:.95em;--col:#EAF2FF">
+        <a class="btn ghost" href="assets/pdf/cv_julien_de_saint_angel_2025.pdf" download>&#8681; Télécharger le CV</a>
+      </div>
+
+      <div class="photo">
+        <img src="assets/images/julien.png" alt="Julien de Saint Angel">
+      </div>
+    </header>
+
+    <!-- Navigation Sticky -->
+    <nav class="nav-sticky">
+    <a href="#expertise" data-section="expertise">Expertise</a>
+    <a href="#competences" data-section="competences">Compétences</a>
+    <a href="#projets" data-section="projets">Projets</a>
+    <a href="#experience" data-section="experience">Expérience</a>
+    <a href="#publications" data-section="publications">Publications</a>
+    <a href="#contact-form" data-section="contact-form">Contact</a>
+        <button id="open-mia-btn" class="mia-menu-btn" onclick="openMiaChat()">
+            <i class="fas fa-robot"></i> Parler à Mia
+        </button>
+    </nav>
+
+    <!-- Container Principal -->
+    <div class="container">
+        <!-- Colonne Gauche -->
+        <div>
+            <!-- FRENCH VERSION -->
+            <div id="fr" class="lang">
+                <section id="contact-info">
+                    <h2><i class="fas fa-address-card icon"></i>Contact</h2>
+                    <p><i class="fab fa-linkedin icon"></i><a href="https://www.linkedin.com/in/julien-de-saint-angel-65aa0315a/?originalSubdomain=fr" target="_blank">LinkedIn</a></p>
+                    <p><i class="fas fa-envelope icon"></i><a href="mailto:julien.desaintangel@gmail.com">julien.desaintangel@gmail.com</a></p>
+                    <button class="contact-btn" onclick="smoothScroll('contact-form')">Me contacter</button>
+                </section>
+
+                <section id="competences">
+                    <h2><i class="fas fa-tools icon"></i>Compétences</h2>
+                    
+                    <div class="tags-container">
+                        <span class="tag" data-tag="ia" data-target="publications">IA</span>
+                        <span class="tag" data-tag="deeplearning" data-target="publications">Deep Learning</span>
+                        <span class="tag" data-tag="hyperspherique" data-target="expertise">Hypersphérique</span>
+                        <span class="tag" data-tag="anomalies" data-target="publications">Détection d'anomalies</span>
+                        <span class="tag" data-tag="agentique" data-target="experience">IA agentique</span>
+                        <span class="tag" data-tag="llmrag" data-target="projets">LLM + RAG</span>
+                        <span class="tag" data-tag="vision" data-target="projets">Vision par ordinateur</span>
+                        <span class="tag" data-tag="signal" data-target="projets">Traitement du signal</span>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-brain"></i> IA & Machine Learning</h3>
+                        <div class="skill-details">
+                            <p>Expertise en réseaux de neurones profonds : CNN, RNN/LSTM, GAN, Transformers, autoencodeurs, modèles surrogate, optimisation. <strong>LLM, RAG, workflow pour l'automatisation.</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card expanded" onclick="toggleSkill(this)" style="border-left:5px solid #0f9d58;background:#f0fbf4;">
+                        <h3><i class="fas fa-robot"></i> IA agentique & agents LLM <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.58em;font-weight:700;padding:2px 7px;border-radius:10px;vertical-align:middle;">SPÉCIALITÉ</span></h3>
+                        <div class="skill-details">
+                            <p>Conception d'agents IA autonomes : orchestration (LangGraph, MCP), boucle ReAct, schema linking, RAG agentique, text-to-SQL / NL2DB, matching sémantique, RGPD.</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-cogs"></i> Frameworks & Outils</h3>
+                        <div class="skill-details">
+                            <p>TensorFlow, PyTorch, Keras, Scikit-Learn, OpenCV, PyTorch Lightning, Git, Docker, Jupyter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-wave-square"></i> Traitement du signal & images</h3>
+                        <div class="skill-details">
+                            <p>Segmentation, filtrage, ondelettes, transformée de Fourier, analyse d'images.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-laptop-code"></i> Programmation</h3>
+                        <div class="skill-details">
+                            <p>Python, C/C++, Java, MATLAB, Fortran, Scilab, Linux.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-square-root-alt"></i> Mathématiques & Optimisation</h3>
+                        <div class="skill-details">
+                            <p>Optimisation avancée, EDP, géométrie conforme, algèbre géométrique.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div id="en" class="lang" style="display:none">
+                <section id="contact-info-en">
+                    <h2><i class="fas fa-address-card icon"></i>Contact</h2>
+                    <p><i class="fab fa-linkedin icon"></i><a href="https://www.linkedin.com/in/julien-de-saint-angel-65aa0315a/?originalSubdomain=fr" target="_blank">LinkedIn</a></p>
+                    <p><i class="fas fa-envelope icon"></i><a href="mailto:julien.desaintangel@gmail.com">julien.desaintangel@gmail.com</a></p>
+                    <button class="contact-btn" onclick="smoothScroll('contact-form')">Contact me</button>
+                </section>
+
+                <section id="skills-en">
+                    <h2><i class="fas fa-tools icon"></i>Skills</h2>
+                    
+                    <div class="tags-container">
+                        <span class="tag" data-tag="ia" data-target="publications">AI</span>
+                        <span class="tag" data-tag="deeplearning" data-target="publications">Deep Learning</span>
+                        <span class="tag" data-tag="hyperspherique" data-target="expertise">Hyperspherical</span>
+                        <span class="tag" data-tag="anomalies" data-target="publications">Anomaly Detection</span>
+                        <span class="tag" data-tag="agentique" data-target="experience">Agentic AI</span>
+                        <span class="tag" data-tag="vision" data-target="projets">Computer Vision</span>
+                        <span class="tag" data-tag="signal" data-target="projets">Signal Processing</span>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-brain"></i> AI & Machine Learning</h3>
+                        <div class="skill-details">
+                            <p>Expertise in deep neural networks: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization. <strong>LLM, RAG, workflow automation.</strong></p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card expanded" onclick="toggleSkill(this)" style="border-left:5px solid #0f9d58;background:#f0fbf4;">
+                        <h3><i class="fas fa-robot"></i> Agentic AI & LLM agents <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.58em;font-weight:700;padding:2px 7px;border-radius:10px;vertical-align:middle;">SPECIALTY</span></h3>
+                        <div class="skill-details">
+                            <p>Building autonomous AI agents: orchestration (LangGraph, MCP), ReAct loop, schema linking, agentic RAG, text-to-SQL / NL2DB, semantic matching, GDPR.</p>
+                        </div>
+                    </div>
+
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-cogs"></i> Frameworks & Tools</h3>
+                        <div class="skill-details">
+                            <p>TensorFlow, PyTorch, Keras, Scikit-Learn, OpenCV, PyTorch Lightning, Git, Docker, Jupyter.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-wave-square"></i> Signal & Image Processing</h3>
+                        <div class="skill-details">
+                            <p>Segmentation, filtering, wavelets, Fourier transform, image analysis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-laptop-code"></i> Programming</h3>
+                        <div class="skill-details">
+                            <p>Python, C/C++, Java, MATLAB, Fortran, Scilab, Linux.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-square-root-alt"></i> Mathematics & Optimization</h3>
+                        <div class="skill-details">
+                            <p>Advanced optimization, PDEs, conformal geometry, geometric algebra.</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <!-- Colonne Droite -->
+        <div>
+            <!-- FRENCH VERSION -->
+            <div id="fr-content" class="lang">
+                <section id="resume" class="fade-in">
+                    <h2><i class="fas fa-user-tie icon"></i>Résumé professionnel</h2>
+                    <p>Docteur en informatique appliquée à l'intelligence artificielle, je conçois aujourd'hui des solutions d'IA <strong>concrètes et directement utiles en entreprise</strong> — en particulier de l'<strong>IA agentique de haut niveau</strong> : des agents autonomes qui raisonnent, décident et interrogent des bases de données en langage naturel (RAG, matching sémantique, text-to-SQL). Fort d'un solide bagage en recherche (réseaux de neurones, détection d'anomalies, deep learning, traitement du signal et d'images), je transforme des problématiques complexes en systèmes fiables, explicables et déployés dans des environnements réels. De l'architecture à la mise en production, je livre des résultats concrets et mesurables sur des projets ambitieux.</p>
+                    
+                    <button class="contact-btn" onclick="showMoreInfo()">
+                        + d'infos
+                    </button>
+                </section>
+
+                <section id="expertise" class="fade-in" data-tags="hyperspherique ia">
+                    <h2><i class="fas fa-star icon"></i>Expertise</h2>
+                    <p>Ma thèse a consisté à utiliser des réseaux de neurones à couches hyperphérique avec une approche basée sur l'algèbre conforme pour proposer de nouvelles méthodes de détection d'anomalies. L'objectif est d'exploiter les propriétés géométriques de ces réseaux pour améliorer la capacité à repérer des anomalies dans les données.</p>
+                    
+                    <img src="assets/images/im_n.jpg" alt="Expertise en réseaux neurones hypersphériques" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin: 20px auto; display: block;">
+                    
+                    <a href="https://theses.fr/s395345" target="_blank" class="btn-thesis">
+                        <i class="fas fa-book"></i> Consulter la thèse complète
+                    </a>
+                </section>
+
+                <section id="projets" class="fade-in" data-tags="ia vision signal">
+                    <h2><i class="fas fa-project-diagram icon"></i>Contributions & Projets</h2>
+                    <ul>
+                        <li><strong>MIA :</strong> agent conversationnel
+                            <button class="info-btn" onclick="openProjectInfo('mia')">+info</button>
+                        </li>
+                        <li><strong>JobScope :</strong> Outil intelligent de gestion des annonces d’emploi
+                            <button class="info-btn" onclick="openProjectInfo('jobscope')">+info</button>
+                            (projet en construction)
+                        </li>
+                        <li><strong>Orbitalis :</strong> journal dynamique astro extrayant des médias les informations sur les événements observables pour les amateurs — <a href="https://orbitalis.fr" target="_blank" rel="noopener">orbitalis.fr</a></li>
+                        <li><strong>Singapore360 :</strong> site personnel de visualisation VR 360° de photos de Singapour — <a href="https://singapore360.orbitalis.fr" target="_blank" rel="noopener">singapore360.orbitalis.fr</a></li>
+    <!-- Modale Projet Info -->
+    <div id="modal-project-info" class="modal" style="display:none;">
+        <div class="modal-content modal-info">
+            <button class="close-modal" onclick="closeProjectInfo()">&times;</button>
+            <h3 id="project-info-title"></h3>
+            <p id="project-info-text"></p>
+        </div>
+    </div>
+                        <li><strong>Deep M-SPH SVDD :</strong> méthode multi-sphères hypersphériques pour la détection d'anomalies</li>
+                        <li><strong>Méthode d'initialisation :</strong> amélioration de la convergence et de la stabilité des réseaux neuronaux hypersphériques</li>
+                        <li><strong>Applications :</strong> marégraphe visuel automatisé, suivi du geste sportif, détection d'anomalies</li>
+                    </ul>
+                    
+                    <h3>Vidéo de soutenance de thèse:</h3>
+                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true" allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
+                </section>
+
+                <section id="experience" class="fade-in">
+                    <h2><i class="fas fa-briefcase icon"></i>Expérience professionnelle</h2>
+                    <ul>
+                        <li>
+                            <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.72em;font-weight:700;padding:2px 8px;border-radius:10px;vertical-align:middle;">POSTE ACTUEL</span>
+                            <strong>Avr. 2026 – aujourd'hui : Chargé de Projet IA — Unapei 17</strong> (La Rochelle, CDD)<br>
+                            <em>Pilotage et développement d'une plateforme d'IA agentique au service des données RH et comptables.</em>
+                            <ul>
+                                <li><strong>Agent IA autonome (langage naturel → base de données) :</strong> conception d'un agent qui répond en français aux questions des équipes RH en interrogeant lui-même les bases, sans aucune compétence technique requise. Un véritable agent qui <em>raisonne et décide</em> (boucle Raisonnement → Action → Observation, décomposition en sous-objectifs, schema linking) — pas une simple interface scriptée.</li>
+                                <li><strong>Confidentialité & conformité RGPD :</strong> l'architecture est <strong>100 % locale</strong> (Ollama, SQLite, LangGraph) — aucune donnée ne quitte l'organisation. C'est un enjeu fondamental : l'Unapei 17 traite des données particulièrement sensibles, et le respect du RGPD a été placé au cœur de la conception.</li>
+                                <li><strong>Matching sémantique multi-bases :</strong> un algorithme que j'ai conçu et développé, reliant automatiquement des bases hétérogènes et non structurées (RH, comptabilité, activité) en un socle unifié, fiable et exploitable. Architecture <em>auditable et explicable</em> : le code calcule les faits, le LLM raisonne sur ces faits — pas d'hallucination, résultats reproductibles, et <strong>traçabilité complète du processus de raisonnement</strong>.</li>
+                                <li><strong>Visualisation & aide à la décision :</strong> tableaux de bord clairs, en temps réel et conformes RGPD, pour guider la prise de décision RH.</li>
+                                <li><em>Technologies :</em> Python, LLM, RAG agentique, LangGraph, MCP, text-to-SQL / NL2DB, matching sémantique, SQLite.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Fév.–Mai 2019 :</strong> Stage aux laboratoires XLIM (UMR 7252) et MIA (EA 3165)<br>
+                            <em>Encadrants :</em> B. Tremblais et R. Pétéri<br>
+                            Caractérisation du geste sportif par caméras rapides utilisant l'analyse trajectographique de points critiques.
+                        </li>
+                        <li>
+                            <strong>Mai 2018 :</strong> Stage au laboratoire LIENSs (UMR 7266)<br>
+                            <em>Encadrants :</em> E. Poirier (IGR) et L. Testud<br>
+                            Réalisation d'un marégraphe visuel : lecture automatisée de l'image d'une échelle de marée.
+                        </li>
+                        <li>
+                            <strong>Mar.–Juin 2015 :</strong> Stage au laboratoire SYRTE (UMR 8630), Observatoire de Paris<br>
+                            <em>Encadrant :</em> J.-Y. Richard<br>
+                            Développement d'algorithmes d'interpolation pour les orbites de satellites artificiels (équations différentielles, simulation numérique).
+                        </li>
+                        <li>
+                            <strong>2015–2017 :</strong> Enseignant fonctionnaire second degré, Lycées Saint-Exupéry, La Rochelle<br>
+                            Professeur de mathématiques. Développement de compétences en communication, vulgarisation scientifique et travail en équipe.
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="formation" class="fade-in">
+                    <h2><i class="fas fa-graduation-cap icon"></i>Formation</h2>
+                    <ul>
+                        <li>2020–2025 : Doctorat en informatique appliquée,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Laboratoire Mathématiques, Image et Applications (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Université de La Rochelle</a>
+                        </li>
+                        <li>2017–2019 : Master Mathématiques et Applications MIX,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Laboratoire Mathématiques, Image et Applications (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Université de La Rochelle</a>
+                        </li>
+                        <li>2014–2015 : Master Astronomie & Physique,
+                            <a class="edu-link" href="https://observatoiredeparis.psl.eu/-master-231-.html" target="_blank" rel="noopener noreferrer">Observatoire de Paris-Meudon</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="publications" class="fade-in" data-tags="ia hyperspherique">
+                    <h2><i class="fas fa-file-alt icon"></i>Publications sélectionnées</h2>
+                    <ul>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, C. Choquet, <em>Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra</em>, Recent Applications in Deep Learning, 2025. (Accepté, en cours de publication).
+                            [<a href="https://scholar.google.com/citations?user=90hNJmgAAAAJ&hl=en" target="_blank">Google Scholar</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme</em>, ORASIS, 2021.
+                            [<a href="https://hal.science/hal-03339630v1/file/Neurones_couches_geom_orasis2021.pdf" target="_blank">PDF</a>]
+                            [<a href="https://hal.science/hal-03339630/" target="_blank">HAL</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Théorème d'approximation pour neurones hypersphériques</em>, GRETSI, 2023.
+                            [<a href="https://hal.science/hal-04195820/" target="_blank">HAL</a>]
+                            [<a href="https://hal.science/hal-04195820v1/document" target="_blank">PDF</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Multi-Spheres Anomaly Detection with Hyperspherical Layers</em>, ICMLA, 2024.
+                            [<a href="https://ieeexplore.ieee.org/abstract/document/10903378" target="_blank">IEEE</a>]
+                        </li>
+                        <li><a href="https://theses.fr/s395345" target="_blank">Manuscrit complet de thèse – Université de La Rochelle, 2025</a></li>
+                    </ul>
+                </section>
+
+                <section id="langues-interets" class="fade-in">
+                    <h2><i class="fas fa-globe icon"></i>Langues & Centres d'intérêt</h2>
+                    <p>Français (natif), Anglais (B2 – courant), Espagnol & Roumain (B1)</p>
+                    <p>Vulgarisation scientifique, astrophotographie, ornithophotographie, modélisation 3D, animation vidéo</p>
+                </section>
+            </div>
+
+            <!-- ENGLISH VERSION -->
+            <div id="en-content" class="lang" style="display:none">
+                <section id="summary-en" class="fade-in">
+                    <h2><i class="fas fa-user-tie icon"></i>Professional Summary</h2>
+                    <p>With a PhD in computer science applied to artificial intelligence, I now design <strong>concrete, directly useful AI solutions for business</strong> — in particular <strong>high-level agentic AI</strong>: autonomous agents that reason, decide, and query databases in natural language (RAG, semantic matching, text-to-SQL). Backed by a strong research foundation (neural networks, anomaly detection, deep learning, signal and image processing), I turn complex problems into reliable, explainable systems deployed in real-world environments. From architecture to production, I deliver concrete, measurable results on ambitious projects.</p>
+                    
+                    <button class="contact-btn" onclick="showMoreInfoEN()">
+                        + more info
+                    </button>
+                </section>
+
+                <section id="expertise-en" class="fade-in" data-tags="hyperspherique ia">
+                    <h2><i class="fas fa-star icon"></i>Expertise</h2>
+                    <p>My thesis involved using neural networks with hyperspherical layers and a conformal algebra-based approach to propose new anomaly detection methods. The goal is to exploit the geometric properties of these networks to improve the ability to detect anomalies in data.</p>
+                    
+                    <img src="assets/images/im_n.jpg" alt="Expertise in hyperspherical neural networks" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin: 20px auto; display: block;">
+                    
+                    <a href="https://theses.fr/s395345" target="_blank" class="btn-thesis">
+                        <i class="fas fa-book"></i> View full thesis
+                    </a>
+                </section>
+
+                <section id="projects-en" class="fade-in" data-tags="ia vision signal">
+                    <h2><i class="fas fa-project-diagram icon"></i>Contributions & Projects</h2>
+                    <ul>
+                        <li><strong>Deep M-SPH SVDD:</strong> Multi-sphere hyperspherical method for anomaly detection in time series and industrial datasets</li>
+                        <li><strong>Initialization method:</strong> Improved convergence and stability of hyperspherical neural networks</li>
+                        <li><strong>Applications:</strong> Visual tide gauge automation, sports motion tracking, anomaly detection</li>
+                    </ul>
+                    
+                    <h3>Thesis defense video:</h3>
+                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true" allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
+                </section>
+
+                <section id="experience-en" class="fade-in">
+                    <h2><i class="fas fa-briefcase icon"></i>Professional Experience</h2>
+                    <ul>
+                        <li>
+                            <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.72em;font-weight:700;padding:2px 8px;border-radius:10px;vertical-align:middle;">CURRENT ROLE</span>
+                            <strong>Apr. 2026 – present: AI Project Lead — Unapei 17</strong> (La Rochelle, France)<br>
+                            <em>Leading and building an agentic-AI platform serving HR and accounting data.</em>
+                            <ul>
+                                <li><strong>Autonomous AI agent (natural language → database):</strong> designing an agent that answers HR teams' questions in plain language by querying the databases itself, with no technical skills required. A true agent that <em>reasons and decides</em> (Reason → Act → Observe loop, sub-goal decomposition, schema linking) — not a scripted interface.</li>
+                                <li><strong>Privacy & GDPR compliance:</strong> the architecture is <strong>fully local</strong> (Ollama, SQLite, LangGraph) — no data ever leaves the organization. This is a fundamental concern: Unapei 17 handles highly sensitive data, and GDPR compliance was placed at the very heart of the design.</li>
+                                <li><strong>Multi-database semantic matching:</strong> an algorithm I designed and developed, automatically linking heterogeneous, unstructured databases (HR, accounting, activity) into a unified, reliable, usable foundation. An <em>auditable, explainable</em> architecture: code computes the facts, the LLM reasons over those facts — no hallucination, reproducible results, and <strong>full traceability of the reasoning process</strong>.</li>
+                                <li><strong>Visualization & decision support:</strong> clear, real-time, GDPR-compliant dashboards to guide HR decision-making.</li>
+                                <li><em>Technologies:</em> Python, LLM, agentic RAG, LangGraph, MCP, text-to-SQL / NL2DB, semantic matching, SQLite.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Feb–May 2019:</strong> Internship at XLIM (UMR 7252) and MIA (EA 3165)<br>
+                            <em>Supervisors:</em> B. Tremblais and R. Pétéri<br>
+                            Characterization of sports gestures using high-speed cameras with trajectographic analysis of critical points.
+                        </li>
+                        <li>
+                            <strong>May 2018:</strong> Internship at LIENSs Laboratory (UMR 7266)<br>
+                            <em>Supervisors:</em> E. Poirier (IGR) and L. Testud<br>
+                            Development of an automated visual tide gauge: automatic reading of images from a tidal scale.
+                        </li>
+                        <li>
+                            <strong>Mar–Jun 2015:</strong> Internship at SYRTE Laboratory (UMR 8630), Observatoire de Paris<br>
+                            <em>Supervisor:</em> J.-Y. Richard<br>
+                            Development of algorithms for interpolating artificial satellite orbits (differential equations, numerical simulation).
+                        </li>
+                        <li>
+                            <strong>2015–2017:</strong> High school teacher, Lycées Saint-Exupéry, La Rochelle<br>
+                            Mathematics teacher. Development of communication skills, scientific outreach, and teamwork.
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="education-en" class="fade-in">
+                    <h2><i class="fas fa-graduation-cap icon"></i>Education</h2>
+                    <ul>
+                        <li>2020–2025: PhD in Applied Computer Science,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Mathematics, Image and Applications Laboratory (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">University of La Rochelle</a>
+                        </li>
+                        <li>2017–2019: Master in Mathematics and Applications MIX,
+                            <a class="edu-link" href="http://mia.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">Mathematics, Image and Applications Laboratory (MIA)</a>,
+                            <a class="edu-link" href="https://www.univ-larochelle.fr/" target="_blank" rel="noopener noreferrer">University of La Rochelle</a>
+                        </li>
+                        <li>2014–2015: Master in Astronomy & Physics,
+                            <a class="edu-link" href="https://observatoiredeparis.psl.eu/-master-231-.html" target="_blank" rel="noopener noreferrer">Paris-Meudon Observatory</a>
+                        </li>
+                    </ul>
+                </section>
+
+                <section id="publications-en" class="fade-in" data-tags="ia hyperspherique">
+                    <h2><i class="fas fa-file-alt icon"></i>Selected publications</h2>
+                    <ul>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, C. Choquet, <em>Improving Learning for Deep Multi-Sphere Anomaly Detection with Conformal Geometric Algebra</em>, Recent Applications in Deep Learning, 2025. (Accepted, in press).
+                            [<a href="https://scholar.google.com/citations?user=90hNJmgAAAAJ&hl=en" target="_blank">Google Scholar</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Couches Dense et Conv2d sphériques via l'algèbre géométrique conforme</em>, ORASIS, 2021.
+                            [<a href="https://hal.science/hal-03339630v1/file/Neurones_couches_geom_orasis2021.pdf" target="_blank">PDF</a>]
+                            [<a href="https://hal.science/hal-03339630/" target="_blank">HAL</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Théorème d'approximation pour neurones hypersphériques</em>, GRETSI, 2023.
+                            [<a href="https://hal.science/hal-04195820/" target="_blank">HAL</a>]
+                            [<a href="https://hal.science/hal-04195820v1/document" target="_blank">PDF</a>]
+                        </li>
+                        <li><strong>J. de Saint Angel</strong>, C. Saint-Jean, <em>Multi-Spheres Anomaly Detection with Hyperspherical Layers</em>, ICMLA, 2024.
+                            [<a href="https://ieeexplore.ieee.org/abstract/document/10903378" target="_blank">IEEE</a>]
+                        </li>
+                        <li><a href="https://theses.fr/s395345" target="_blank">Complete thesis manuscript – University of La Rochelle, 2025</a></li>
+                    </ul>
+                </section>
+
+                <section id="languages-interests-en" class="fade-in">
+                    <h2><i class="fas fa-globe icon"></i>Languages & Interests</h2>
+                    <p>French (native), English (B2 – fluent), Spanish & Romanian (B1)</p>
+                    <p>Science outreach, astrophotography, bird photography, 3D modeling, video animation</p>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- Formulaire de Contact -->
+    <section id="contact-form" class="fade-in">
+        <h2><i class="fas fa-envelope icon"></i>Contact Form / Formulaire de contact</h2>
+        <p style="font-size: 0.9em; color: #555;">* Champs obligatoires / * Required fields</p>
+        <form id="js-contact-form">
+            <input type="text" name="firstname" placeholder="Prénom * / First Name *" required>
+            <input type="text" name="name" placeholder="Nom * / Name *" required>
+            <input type="text" name="company" placeholder="Société * / Company *" required>
+            <input type="tel" name="phone" placeholder="Téléphone / Phone">
+            <input type="email" name="email" placeholder="Email *" required>
+            <textarea name="message" placeholder="Message *" rows="6" required></textarea>
+            <button type="submit">Envoyer / Send</button>
+        </form>
+    </section>
+
+    <!-- Bouton de réinitialisation handicap -->
+    <button class="reset-handicap" onclick="resetHandicapOptions()" title="Réinitialiser l'accessibilité">
+        <i class="fas fa-undo"></i>
+    </button>
+
+    <!-- Modales -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <button class="close-modal" onclick="closeModal()">&times;</button>
+            <p id="modal-message"></p>
+            <button onclick="closeModal()" class="contact-btn">OK</button>
+        </div>
+    </div>
+
+    <div id="modal-info" class="modal">
+        <div class="modal-content modal-info">
+            <button class="close-modal" onclick="closeMoreInfo()">&times;</button>
+            <h3>Secteur d'activité recherché</h3>
+            <ul>
+                <li>R&D et laboratoires d'innovation</li>
+                <li>Start-up / entreprises tech en croissance</li>
+                <li>Santé et biotech</li>
+                <li>Industrie (automobile, énergie, aéronautique, manufacturing, Industrie 4.0 / IoT)</li>
+                <li>Finance & FinTech (détection de fraude, analyse de risques, trading algorithmique)</li>
+                <li>Cybersécurité (détection d'intrusions, anomalies et comportements suspects)</li>
+                <li>Multimédia, jeux vidéo, créativité assistée par IA</li>
+                <li>Services numériques (ESN, conseil, cloud, SaaS)</li>
+                <li>Ingénierie des données, analyse de données, Big Data, intelligence décisionnelle</li>
+            </ul>
+
+            <h3>Taille de boîte</h3>
+            <p>Ouvert aussi bien aux petites structures qu'aux grands groupes.</p>
+
+            <h3>Domaines IA & Data</h3>
+            <ul>
+                <li>Traitement d'images (vision par ordinateur, ...)</li>
+                <li>Traitement du signal</li>
+                <li>NLP (traitement du langage naturel)</li>
+                <li>Data science & machine learning (analyse, modèles prédictifs, optimisation, MLOps)</li>
+                <li>IA agentique & agents autonomes (interrogation de bases en langage naturel / NL2DB, RAG, orchestration LLM)</li>
+                <li>Applications santé, innovation et agents IA</li>
+                <li>Détection d'anomalies (finance, cybersécurité, ...)</li>
+            </ul>
+
+            <h3>Types de postes ciblés</h3>
+            <ul>
+                <li>Chef de Projet IA / Chargé de Projet IA</li>
+                <li>Consultant IA / Consultant en IA agentique</li>
+                <li>Ingénieur IA / Ingénieur LLM (agents, RAG, NL2DB)</li>
+                <li>Architecte IA / Architecte de solutions IA</li>
+                <li>Lead IA / Responsable IA</li>
+                <li>Chercheur / Ingénieur de recherche (R&D industrielle)</li>
+                <li>Post-Doctorant / Chargé de Recherche (académique ou public)</li>
+                <li>Ingénieur Machine Learning / Scientifique IA / Ingénieur ML (industrialisation et MLOps)</li>
+                <li>Data Scientist / Responsable Data Scientist</li>
+                <li>Ingénieur Vision par Ordinateur / Expert en Vision par Ordinateur</li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="modal-info-en" class="modal">
+        <div class="modal-content modal-info">
+            <button class="close-modal" onclick="closeMoreInfoEN()">&times;</button>
+            <h3>Target Industry Sectors</h3>
+            <ul>
+                <li>R&D and innovation labs</li>
+                <li>Start-ups / growing tech companies</li>
+                <li>Health & biotech</li>
+                <li>Industry (automotive, energy, aerospace, manufacturing, Industry 4.0 / IoT)</li>
+                <li>Finance & FinTech (fraud detection, risk analysis, algorithmic trading)</li>
+                <li>Cybersecurity (intrusion detection, anomalies, suspicious behaviors)</li>
+                <li>Multimedia, video games, AI-assisted creativity</li>
+                <li>Digital services (consulting, cloud, SaaS)</li>
+                <li>Data engineering, analytics, big data, business intelligence</li>
+            </ul>
+
+            <h3>Company Size</h3>
+            <p>Open to both small companies and large corporations.</p>
+
+            <h3>AI & Data Domains</h3>
+            <ul>
+                <li>Image processing (computer vision, sports motion analysis, visual tide gauge)</li>
+                <li>Signal processing (audio, biomedical, trajectory)</li>
+                <li>NLP (natural language processing)</li>
+                <li>Data science & machine learning (analysis, predictive models, optimization, MLOps)</li>
+                <li>Agentic AI & autonomous agents (natural-language database querying / NL2DB, RAG, LLM orchestration)</li>
+                <li>Health applications, innovation, AI-assisted creativity</li>
+                <li>Anomaly detection (finance, cybersecurity, predictive maintenance)</li>
+            </ul>
+
+            <h3>Target Positions</h3>
+            <ul>
+                <li>AI Project Lead / AI Project Manager</li>
+                <li>AI Consultant / Agentic AI Consultant</li>
+                <li>AI Engineer / LLM Engineer (agents, RAG, NL2DB)</li>
+                <li>AI Architect / AI Solutions Architect</li>
+                <li>AI Lead / Head of AI</li>
+                <li>Research Scientist / Research Engineer (industrial R&D)</li>
+                <li>Postdoctoral / Research Fellow (academic or public)</li>
+                <li>Machine Learning Engineer / AI Scientist / ML Engineer (industrialization & MLOps)</li>
+                <li>Data Scientist / Lead Data Scientist</li>
+                <li>Computer Vision Engineer / Expert in Computer Vision</li>
+            </ul>
+        </div>
+    </div>
+
+	<!-- Modal Handicap FR -->
+	<div id="modal-handicap" class="modal-handicap lang">
+	    <div class="modal-handicap-content">
+		<button class="close-modal" onclick="closeHandicapModal()">&times;</button>
+		<h2><i class="fas fa-universal-access"></i> Options d'accessibilité</h2>
+		<p>Choisissez les options qui vous aident à mieux naviguer sur le site :</p>
+		
+		<div class="handicap-options">
+		    <div class="handicap-option" onclick="toggleHandicapOption('handicap-mode')">
+		        <i class="fas fa-text-height"></i>
+		        <div>
+		            <strong>Mode lecture facilitée</strong><br>
+		            <small>Agrandit le texte et améliore l'espacement</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('high-contrast')">
+		        <i class="fas fa-adjust"></i>
+		        <div>
+		            <strong>Contraste élevé</strong><br>
+		            <small>Améliore la lisibilité pour les malvoyants</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('dyslexia-friendly')">
+		        <i class="fas fa-font"></i>
+		        <div>
+		            <strong>Mode dyslexie</strong><br>
+		            <small>Utilise une police adaptée pour la dyslexie</small>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="handicap-buttons">
+		    <button class="btn-handicap btn-cancel" onclick="closeHandicapModal()">Annuler</button>
+		    <button class="btn-handicap btn-confirm" onclick="applyHandicapOptions()">Appliquer les options</button>
+		    <button class="btn-handicap" onclick="resetHandicapOptions()" style="background: #ff5722; color: white;">Tout désactiver</button>
+		</div>
+	    </div>
+	</div>
+
+	<!-- Modal Handicap EN -->
+	<div id="modal-handicap-en" class="modal-handicap lang" style="display:none">
+	    <div class="modal-handicap-content">
+		<button class="close-modal" onclick="closeHandicapModal()">&times;</button>
+		<h2><i class="fas fa-universal-access"></i> Accessibility Options</h2>
+		<p>Choose the options that help you navigate the site better:</p>
+		
+		<div class="handicap-options">
+		    <div class="handicap-option" onclick="toggleHandicapOption('handicap-mode')">
+		        <i class="fas fa-text-height"></i>
+		        <div>
+		            <strong>Easy Reading Mode</strong><br>
+		            <small>Enlarges text and improves spacing</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('high-contrast')">
+		        <i class="fas fa-adjust"></i>
+		        <div>
+		            <strong>High Contrast</strong><br>
+		            <small>Improves readability for visually impaired</small>
+		        </div>
+		    </div>
+		    
+		    <div class="handicap-option" onclick="toggleHandicapOption('dyslexia-friendly')">
+		        <i class="fas fa-font"></i>
+		        <div>
+		            <strong>Dyslexia Mode</strong><br>
+		            <small>Uses a dyslexia-friendly font</small>
+		        </div>
+		    </div>
+		</div>
+		
+		<div class="handicap-buttons">
+		    <button class="btn-handicap btn-cancel" onclick="closeHandicapModal()">Cancel</button>
+		    <button class="btn-handicap btn-confirm" onclick="applyHandicapOptions()">Apply Options</button>
+		    <button class="btn-handicap" onclick="resetHandicapOptions()" style="background: #ff5722; color: white;">Disable All</button>
+		</div>
+	    </div>
+	</div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- Widget Chat Mia -->
+    <div id="mia-chat-button" class="mia-chat-button">
+        <span style="font-size: 30px;">💬</span>
+    </div>
+
+    <div id="mia-chat-window" class="mia-chat-window">
+        <div class="mia-chat-header">
+            <div>
+                <strong>🤖 Mia</strong>
+                <div style="font-size: 0.75rem; opacity: 0.8;">Assistante IA de Julien</div>
+            </div>
+            <div>
+                <span id="mia-quota" style="font-size: 0.8rem; margin-right: 10px;">0 questions</span>
+                <button id="mia-close-btn" class="mia-close-btn">✕</button>
+            </div>
+        </div>
+        
+        <div id="mia-chat-messages" class="mia-chat-messages"></div>
+        
+        <div id="mia-ad-section">
+            <button id="mia-watch-ad-btn">
+                Validez que vous n'êtes pas un robot
+            </button>
+        </div>
+        
+        <div class="mia-chat-footer">
+            <div class="mia-chat-input-wrapper">
+                <input 
+                    type="text" 
+                    id="mia-chat-input" 
+                    class="mia-chat-input" 
+                    placeholder="Posez votre question..."
+                >
+                <button id="mia-send-btn" class="mia-send-btn">➤</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="chat-widget.js"></script>
+
+<!-- ===== Script du hero réseau de neurones (isolé dans une IIFE) ===== -->
+    <script>
+    (function(){
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cv=document.getElementById('net'), ctx=cv.getContext('2d');
+    const nhRoot=document.getElementById('neuralhero');
+    let W,H,DPR,VS,netShiftX=0,netShiftY=0;
+    function resize(){ DPR=Math.min(devicePixelRatio||1,2); W=cv.clientWidth; H=cv.clientHeight;
+      cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+      var mob=innerWidth<820; VS=mob?Math.min(1,W/1600):Math.max(.5,Math.min(1.5,W/1900));
+      nhRoot.style.fontSize=(mob?16:(16*VS)).toFixed(2)+'px'; }
+    resize(); addEventListener('resize',()=>{resize(); fitNet(); if(reduce) frame(performance.now());});
+
+    const LAYERS=[{r:6},{r:7},{r:8},{r:8},{r:8},{r:7},{r:6}]; const CD=3; const GAPX=150, SY=40, SZ=185;
+    const stations=[]; let idc=0;
+    LAYERS.forEach((L,li)=>{ const nodes=[]; const x=(li-(LAYERS.length-1)/2)*GAPX;
+      for(let r=0;r<L.r;r++)for(let c=0;c<CD;c++){ nodes.push({id:idc++, x, y:(r-(L.r-1)/2)*SY, z:(c-(CD-1)/2)*SZ, li, b:0}); }
+      stations.push({type:'layer',li,nodes}); });
+    const fmLi=LAYERS.length, fmx=(fmLi-(LAYERS.length-1)/2)*GAPX + 230;
+    stations.push({type:'fmap',li:fmLi,nodes:[{x:fmx,y:-150,z:0,li:fmLi,b:0},{x:fmx,y:0,z:0,li:fmLi,b:0},{x:fmx,y:150,z:0,li:fmLi,b:0}]});
+    const edges=[];
+    for(let s=0;s<stations.length-1;s++){ const isF=stations[s+1].type==='fmap';
+      for(const a of stations[s].nodes)for(const b of stations[s+1].nodes){ if(Math.random()<(isF?0.5:0.68)) edges.push({a,b,g:s}); } }
+    const conductors=[];
+    for(let g=0;g<stations.length-1;g++){ const pool=edges.filter(e=>e.g===g);
+      for(let k=0;k<7&&pool.length;k++) conductors.push(pool[(Math.random()*pool.length)|0]); }
+    const allNodes=stations.filter(s=>s.type==='layer').flatMap(s=>s.nodes);
+    const net={ ry:0.296706, rx:0.244346, rz:0.069813, sx:1.74, sy:1.63, sz:1.13, tx:54, ty:50, showBox:true };
+    function proj(p){ let x=p.x*net.sx, y=p.y*net.sy, z=p.z*net.sz;
+      let c=Math.cos(net.ry),s=Math.sin(net.ry); let X=x*c-z*s, Z1=x*s+z*c;
+      c=Math.cos(net.rx);s=Math.sin(net.rx); let Y=y*c-Z1*s, Z=y*s+Z1*c;
+      c=Math.cos(net.rz);s=Math.sin(net.rz); let X2=X*c-Y*s, Y2=X*s+Y*c;
+      const f=620/(620+Z+330); return {x:W*0.5+net.tx*VS+X2*f*VS+netShiftX, y:H*0.42+net.ty*VS+Y2*f*VS+netShiftY, f, z:Z}; }
+    let BB=null; function computeBounds(){ let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9,z0=1e9,z1=-1e9;
+      stations.forEach(st=>st.nodes.forEach(n=>{ if(n.x<x0)x0=n.x;if(n.x>x1)x1=n.x;if(n.y<y0)y0=n.y;if(n.y>y1)y1=n.y;if(n.z<z0)z0=n.z;if(n.z>z1)z1=n.z; }));
+      const m=22; BB={x0:x0-m,x1:x1+m,y0:y0-m,y1:y1+m,z0:z0-m,z1:z1+m}; }
+    function drawBox(){ if(!net.showBox||!BB) return; const b=BB;
+      const C=[[b.x0,b.y0,b.z0],[b.x1,b.y0,b.z0],[b.x1,b.y1,b.z0],[b.x0,b.y1,b.z0],[b.x0,b.y0,b.z1],[b.x1,b.y0,b.z1],[b.x1,b.y1,b.z1],[b.x0,b.y1,b.z1]].map(c=>proj({x:c[0],y:c[1],z:c[2]}));
+      const faces=[[0,1,2,3],[4,5,6,7],[0,1,5,4],[3,2,6,7],[1,2,6,5],[0,3,7,4]];
+      ctx.save();
+      faces.forEach(f=>{ ctx.beginPath(); f.forEach((idx,i)=>{const p=C[idx]; i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y);}); ctx.closePath(); ctx.fillStyle='rgba(90,150,255,0.05)'; ctx.fill(); });
+      /* arêtes du parallélépipède retirées */
+      ctx.restore(); }
+    function hue(li){ return 188 + (li/(LAYERS.length))*82; }
+    const PERIOD=stations.length+1.8; const WAVES=[0,PERIOD/2.6,2*PERIOD/2.6];
+    const smooth=d=>{const x=Math.max(0,1-Math.abs(d)/0.62);return x*x*(3-2*x);};
+    /* ---- flux d'énergie ambiant : nappes lumineuses qui dérivent au hasard ---- */
+    const flux=[]; for(let i=0;i<7;i++){ flux.push({ x:Math.random(), y:Math.random(),
+      vx:(Math.random()-.5)*0.00065, vy:(Math.random()-.5)*0.00065,
+      r:0.14+Math.random()*0.2, hue:180+Math.random()*100, a:0.012+Math.random()*0.016 }); }
+    function drawFlux(){ ctx.save();
+      for(const f of flux){ f.x+=f.vx; f.y+=f.vy;
+        if(f.x<-.35)f.x=1.35; else if(f.x>1.35)f.x=-.35; if(f.y<-.35)f.y=1.35; else if(f.y>1.35)f.y=-.35;
+        const px=f.x*W, py=f.y*H, rr=f.r*Math.min(W,H);
+        const g=ctx.createRadialGradient(px,py,0,px,py,rr);
+        g.addColorStop(0,`hsla(${f.hue},95%,62%,${f.a})`); g.addColorStop(1,`hsla(${f.hue},95%,62%,0)`);
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(px,py,rr,0,7); ctx.fill(); }
+      ctx.restore(); }
+    let t0=performance.now();
+    function frame(now){
+      const t=(now-t0)/1000; const e=1;
+      ctx.save(); ctx.clearRect(0,0,W,H); ctx.globalAlpha=1;
+      drawFlux();
+      drawBox();
+      const wp = WAVES.map(o=> reduce ? 1.6 : ((t*0.6+o)%PERIOD));
+      for(const st of stations)for(const n of st.nodes){ let b=0; for(const w of wp) b+=smooth(w-n.li); n.b=Math.min(1,b); }
+      for(const ed of edges){ const pa=proj(ed.a), pb=proj(ed.b);
+        let act=0; for(const w of wp) act+=smooth(w-(ed.g+0.5)); act=Math.min(1,act);
+        const fade=Math.max(.5,Math.min(1,(pa.f+pb.f)/2*1.2)); const h=hue((ed.a.li+ed.b.li)/2);
+        ctx.strokeStyle=`hsla(${h},100%,${60+act*22}%,${((0.22+act*0.6)*fade).toFixed(3)})`;
+        ctx.lineWidth=Math.max(.5,pa.f*(0.7+act*1.3)*VS);
+        ctx.beginPath(); ctx.moveTo(pa.x,pa.y); ctx.lineTo(pb.x,pb.y); ctx.stroke(); }
+      for(const ed of conductors)for(const w of wp){ const d=w-ed.g; if(d<0||d>1) continue;
+        const pa=proj(ed.a), pb=proj(ed.b), pf=(pa.f+pb.f)/2;
+        const x=pa.x+(pb.x-pa.x)*d, y=pa.y+(pb.y-pa.y)*d, rr=Math.max(2,pf*3.2*VS);
+        const g=ctx.createRadialGradient(x,y,0,x,y,rr*2.6);
+        g.addColorStop(0,'rgba(235,252,255,1)'); g.addColorStop(.4,`hsla(${hue(ed.a.li)},100%,72%,.85)`); g.addColorStop(1,'rgba(120,220,255,0)');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,rr*2.6,0,7); ctx.fill(); }
+      const proj2=allNodes.map(n=>({n,p:proj(n)})).sort((u,v)=>u.p.z-v.p.z);
+      for(const {n,p} of proj2){ const sz=Math.max(2,p.f*4.4*VS)*(1+n.b*0.4), h=hue(n.li);
+        const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,sz*2.6);
+        g.addColorStop(0,`hsla(${h},100%,72%,${(0.4+n.b*0.6)*Math.min(1,p.f)})`); g.addColorStop(1,'hsla(200,100%,60%,0)');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,sz*2.6,0,7); ctx.fill();
+        ctx.globalAlpha=e*Math.min(1,p.f); ctx.fillStyle=n.b>0.5?'#eefcff':`hsl(${h},100%,${70+n.b*16}%)`;
+        ctx.fillRect(p.x-sz/2,p.y-sz/2,sz,sz);
+        ctx.fillStyle=`hsla(${h},100%,90%,.85)`; ctx.fillRect(p.x-sz/2,p.y-sz/2,sz,sz*0.3); ctx.globalAlpha=e; }
+      const fm=stations.find(s=>s.type==='fmap');
+      for(const f of fm.nodes){ const p=proj(f); drawFM(p.x,p.y,Math.max(40,p.f*132*VS),hue(fmLi),f.b,e*Math.min(1,p.f)); }
+      ctx.restore();
+      if(!reduce) requestAnimationFrame(frame);
+    }
+    function drawFM(x,y,s,h,b,alpha){ const N=5,cell=s/N; ctx.save(); ctx.globalAlpha=alpha; ctx.translate(x-s/2,y-s/2);
+      const g=ctx.createRadialGradient(s/2,s/2,0,s/2,s/2,s*1.1); g.addColorStop(0,`hsla(${h},100%,70%,${0.25+b*0.5})`); g.addColorStop(1,'hsla(270,100%,65%,0)');
+      ctx.fillStyle=g; ctx.fillRect(-s*0.4,-s*0.4,s*1.8,s*1.8);
+      for(let i=0;i<N;i++)for(let j=0;j<N;j++){ const v=(Math.sin(i*1.7+j*0.9+b*6)*0.5+0.5);
+        ctx.fillStyle=`hsla(${h},100%,${42+v*44}%,${0.28+v*0.5*(0.4+b)})`; ctx.fillRect(i*cell+0.6,j*cell+0.6,cell-1.2,cell-1.2); }
+      ctx.strokeStyle=`hsla(${h},100%,82%,${0.3+b*0.5})`; ctx.lineWidth=1; ctx.strokeRect(0,0,s,s); ctx.restore(); }
+    function netBounds(){ var b={mnx:1e9,mxx:-1e9,mny:1e9,mxy:-1e9};
+      stations.forEach(function(s){ s.nodes.forEach(function(n){ var p=proj(n);
+        if(p.x<b.mnx)b.mnx=p.x; if(p.x>b.mxx)b.mxx=p.x; if(p.y<b.mny)b.mny=p.y; if(p.y>b.mxy)b.mxy=p.y; }); }); return b; }
+    function fitNet(){ netShiftX=0; netShiftY=0; if(innerWidth>=820) return;
+      var cw=cv.clientWidth, ch=cv.clientHeight;
+      var b=netBounds(), wNet=b.mxx-b.mnx, hNet=b.mxy-b.mny;
+      var k=Math.min((cw*0.90)/wNet,(ch*0.80)/hNet,1);
+      if(k<1) VS*=k;
+      b=netBounds();
+      netShiftX = cw/2-(b.mnx+b.mxx)/2;
+      netShiftY = ch/2-(b.mny+b.mxy)/2;
+    }
+    computeBounds(); fitNet();
+    requestAnimationFrame(frame);
+    if(reduce){ setTimeout(()=>{resize(); frame(performance.now());},80); }
+    })();
+    </script>
