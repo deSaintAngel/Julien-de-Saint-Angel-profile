@@ -37,43 +37,259 @@
             }
         };
     </script>
+<!-- ===== Styles du hero réseau de neurones (isolés sous #neuralhero) ===== -->
+    <style id="neuralhero-css">
+    #neuralhero{--nh-bg:#010109;--nh-txt:#EAF2FF;--nh-muted:#93A3C2;--nh-cyan:#4FD2FF;--nh-violet:#B98BFF;
+      --nh-mono:ui-monospace,"SF Mono","JetBrains Mono",Menlo,monospace;--nh-sans:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+      position:relative;min-height:100svh;overflow:hidden;background:var(--nh-bg);color:var(--nh-txt);
+      font-family:var(--nh-sans);font-size:16px;-webkit-font-smoothing:antialiased}
+    #neuralhero *{box-sizing:border-box}
+    #neuralhero #net{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+    #neuralhero .vignette{position:absolute;inset:0;z-index:1;pointer-events:none;
+      background:radial-gradient(150% 120% at 50% 50%,transparent 62%,rgba(0,3,8,.5) 88%,var(--nh-bg) 100%)}
+    #neuralhero .el{position:absolute;z-index:3;width:var(--w,auto);
+      transform:perspective(1500px) rotateY(-14deg) rotateX(4deg) rotateZ(var(--etz,-11deg));transform-origin:left center;
+      opacity:0;animation:nh-fadein .9s forwards cubic-bezier(.16,1,.3,1)}
+    @keyframes nh-fadein{to{opacity:1}}
+    #neuralhero .eyebrowbox{top:16.69%;left:21.22%;animation-delay:.5s}
+    #neuralhero .title{top:2.58%;left:21.29%;animation-delay:.15s}
+    #neuralhero .sub{top:90.29%;left:10.87%;animation-delay:.6s}
+    #neuralhero .actions{top:91.2%;left:77.6%;display:flex;gap:12px;flex-wrap:wrap;animation-delay:.75s}
+    #neuralhero .access{top:3.19%;left:1.37%;animation-delay:.3s}
+    #neuralhero .lang{top:1.82%;left:92.71%;display:flex;gap:8px;animation-delay:.3s}
+    #neuralhero .cv{top:21.7%;left:76.37%;animation-delay:.7s}
+    #neuralhero .photo{position:absolute;z-index:4;top:3%;left:80%;transform:none;
+      opacity:0;animation:nh-fadein 1s .55s forwards cubic-bezier(.16,1,.3,1)}
+    #neuralhero .eyebrow{font-family:var(--nh-mono);font-size:var(--fs,.72em);letter-spacing:.24em;text-transform:uppercase;color:var(--col,var(--nh-cyan));font-weight:600}
+    #neuralhero .title h1{margin:.25em 0 0;font-size:var(--fs,2.4em);font-weight:850;letter-spacing:-.04em;line-height:1.02;white-space:nowrap;color:var(--col,#EAF2FF);
+      text-shadow:0 6px 46px rgba(0,6,14,.98),0 2px 10px rgba(0,6,14,.95)}
+    #neuralhero .title h1 .g{background:linear-gradient(100deg,var(--nh-cyan),var(--nh-violet));-webkit-background-clip:text;background-clip:text;color:transparent}
+    #neuralhero .sub p{margin:0;color:var(--col,var(--nh-muted));font-size:var(--fs,1.05em);text-shadow:0 3px 16px rgba(0,6,14,.98)}
+    #neuralhero .access .chip{font-family:var(--nh-sans);font-size:var(--fs,.85em);color:var(--col,#F2F8FF);
+      background:linear-gradient(135deg,rgba(255,255,255,.24),rgba(150,215,255,.08));
+      -webkit-backdrop-filter:blur(15px) saturate(160%);backdrop-filter:blur(15px) saturate(160%);
+      border:1px solid rgba(185,228,255,.46);padding:8px 15px;border-radius:100px;white-space:nowrap;display:inline-flex;align-items:center;gap:7px;
+      text-decoration:none;cursor:pointer;box-shadow:0 6px 20px -10px rgba(0,15,40,.6),inset 0 1px 0 rgba(255,255,255,.5);transition:background .2s,border-color .2s}
+    #neuralhero .access .chip:hover{background:linear-gradient(135deg,rgba(150,230,255,.36),rgba(255,255,255,.12));border-color:rgba(150,230,255,.72)}
+    #neuralhero .langbtn{font-family:var(--nh-mono);font-size:var(--fs,.82em);color:var(--col,#F2F8FF);border:1px solid rgba(185,228,255,.42);
+      padding:6px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,.06));
+      -webkit-backdrop-filter:blur(13px) saturate(150%);backdrop-filter:blur(13px) saturate(150%);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.42);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s}
+    #neuralhero .langbtn:hover{background:linear-gradient(135deg,rgba(150,230,255,.32),rgba(255,255,255,.1));border-color:rgba(150,230,255,.68)}
+    #neuralhero .langbtn.off{opacity:.55}
+    #neuralhero .photo img{width:118px;height:118px;border-radius:50%;object-fit:cover;object-position:48% 22%;display:block;
+      border:2px solid rgba(120,200,255,.55);box-shadow:0 14px 46px -12px rgba(0,10,30,.85),0 0 0 7px rgba(79,210,255,.07)}
+    #neuralhero .btn{font-family:var(--nh-sans);font-weight:600;font-size:var(--fs,.95em);color:#F2F8FF;cursor:pointer;text-decoration:none;display:inline-block;
+      padding:13px 26px;border-radius:100px;border:1px solid rgba(185,228,255,.5);
+      background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(150,215,255,.09));
+      -webkit-backdrop-filter:blur(15px) saturate(165%);backdrop-filter:blur(15px) saturate(165%);
+      box-shadow:0 10px 34px -12px rgba(0,12,34,.7),inset 0 1px 0 rgba(255,255,255,.6),inset 0 -10px 22px rgba(110,195,255,.12);
+      transition:transform .25s,background .25s,box-shadow .25s,border-color .25s}
+    #neuralhero .btn:hover{transform:translateY(-2px);border-color:rgba(150,230,255,.8);
+      background:linear-gradient(135deg,rgba(150,232,255,.4),rgba(255,255,255,.15));
+      box-shadow:0 14px 44px -12px rgba(79,210,255,.6),inset 0 1px 0 rgba(255,255,255,.7)}
+    #neuralhero .btn.ghost{background:linear-gradient(135deg,rgba(255,255,255,.16),rgba(255,255,255,.05));border-color:rgba(190,228,255,.42)}
+    #neuralhero .btn.ghost:hover{background:linear-gradient(135deg,rgba(255,255,255,.26),rgba(160,220,255,.1));border-color:rgba(160,220,255,.7)}
+    @media (prefers-reduced-motion:reduce){#neuralhero .el{animation:none;opacity:1}}
+    @media (max-width:820px){
+      #neuralhero{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;
+        gap:14px;padding:72px 20px 48px;text-align:center;min-height:100svh}
+      #neuralhero #net{position:static!important;inset:auto!important;order:5;width:100%!important;height:176px;opacity:1;margin:8px 0;border-radius:14px}
+      #neuralhero .vignette{display:none}
+      #neuralhero .el,#neuralhero .photo{position:static!important;transform:none!important;inset:auto!important;
+        margin:0;opacity:1;animation:none;text-align:center;max-width:94vw;width:auto!important}
+      #neuralhero .photo{order:1;margin:2px auto 4px}
+      #neuralhero .title{order:2}
+      #neuralhero .eyebrowbox{order:3}
+      #neuralhero .sub{order:4}
+      #neuralhero .cv{order:6}
+      #neuralhero .actions{order:7;flex-direction:column;align-items:stretch;width:100%!important;max-width:300px;gap:10px}
+      #neuralhero .actions .btn{width:100%}
+      #neuralhero .access{position:absolute!important;inset:12px auto auto 12px!important}
+      #neuralhero .lang{position:absolute!important;inset:14px 12px auto auto!important;gap:6px}
+      #neuralhero .title h1{font-size:clamp(1.85em,8.5vw,2.5em);white-space:normal;line-height:1.05}
+      #neuralhero .eyebrow{font-size:.62em;letter-spacing:.16em;line-height:1.55}
+      #neuralhero .sub p{font-size:1em;line-height:1.5}
+      #neuralhero .access .chip{font-size:.8em;padding:7px 12px}
+      #neuralhero .langbtn{font-size:.8em;padding:5px 10px}
+      #neuralhero .cv .btn,#neuralhero .actions .btn{font-size:.98em;padding:13px 22px}
+      #neuralhero .photo img{width:118px;height:118px;box-shadow:0 10px 34px -12px rgba(0,10,30,.85),0 0 0 6px rgba(79,210,255,.08)}
+    }
+    </style>
+<!-- ===== THÈME SOMBRE / CRISTAL pour toute la page (hors hero) ===== -->
+    <style id="dark-theme">
+    :root{
+      --primary-blue:#5ab8ff;
+      --light-bg:#05060e;
+      --white:rgba(150,190,255,.05);
+      --shadow:0 12px 40px -18px rgba(0,0,0,.7);
+      --shadow-hover:0 18px 50px -16px rgba(60,150,255,.35);
+    }
+    body{ background:#04060e; color:#e2ecfb; }
+    /* canvas de particules énergétiques (fixe, derrière le contenu) */
+    #bgfx{ position:fixed; inset:0; width:100%; height:100%; z-index:-1; pointer-events:none; }
+    /* ambiance : fond noir + halos très discrets (cohérent avec le hero) */
+    body::before{ content:""; position:fixed; inset:0; z-index:-2; pointer-events:none;
+      background:
+        radial-gradient(70% 55% at 12% -8%, rgba(60,130,255,.09), transparent 60%),
+        radial-gradient(60% 50% at 92% 3%, rgba(150,110,255,.08), transparent 60%),
+        radial-gradient(85% 65% at 50% 112%, rgba(30,190,220,.06), transparent 60%),
+        #04060e; }
+    h1,h2,h3,h4{ color:#EAF2FF !important; }
+    strong{ color:#ffffff; }
+    p,li,td,label,.container div{ color:#dbe6fa; }
+    a{ color:#7fd0ff; }
+    a:hover{ color:#a9e0ff; }
+
+    /* cartes / sections en verre sombre */
+    section{
+      background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.025)) !important;
+      border:1px solid rgba(255,255,255,.22);
+      -webkit-backdrop-filter:blur(22px) saturate(150%);backdrop-filter:blur(22px) saturate(150%);
+      box-shadow:0 18px 50px -22px rgba(4,14,36,.6),inset 0 1px 0 rgba(255,255,255,.28);
+      color:#e6eefb;
+    }
+    section:hover{ box-shadow:0 24px 60px -20px rgba(70,160,255,.32),inset 0 1px 0 rgba(255,255,255,.35); border-color:rgba(160,215,255,.4); }
+    /* surlignage quand on navigue vers une section (clic tag/menu) */
+    .highlight{
+      background:linear-gradient(160deg,rgba(90,190,255,.14),rgba(120,90,255,.05)) !important;
+      border-color:rgba(140,225,255,.85) !important;
+      box-shadow:
+        0 0 0 1.5px rgba(140,228,255,.8),
+        0 0 26px rgba(90,195,255,.6),
+        0 0 66px rgba(90,195,255,.4),
+        inset 0 0 34px rgba(120,210,255,.16) !important;
+      transition:background .45s, box-shadow .45s, border-color .45s !important;
+    }
+
+    /* menu collant en verre */
+    .nav-sticky{
+      background:rgba(6,9,16,.74) !important;
+      -webkit-backdrop-filter:blur(18px) saturate(150%);backdrop-filter:blur(18px) saturate(150%);
+      border-bottom:1px solid rgba(150,200,255,.16);
+    }
+    .nav-sticky a{ color:#dbe6fa; }
+    .nav-sticky a:hover{ background:rgba(90,184,255,.18); color:#fff; }
+
+    /* boutons cristal */
+    .contact-btn,.btn-thesis,.btn-cv,.btn-confirm,.info-btn,button.contact-btn{
+      background:linear-gradient(135deg,rgba(255,255,255,.24),rgba(150,215,255,.09)) !important;
+      -webkit-backdrop-filter:blur(14px) saturate(160%);backdrop-filter:blur(14px) saturate(160%);
+      border:1px solid rgba(185,228,255,.5) !important; color:#EAF2FF !important;
+      box-shadow:0 8px 26px -10px rgba(0,15,40,.6), inset 0 1px 0 rgba(255,255,255,.55), inset 0 -10px 22px rgba(90,180,255,.10) !important;
+    }
+    .contact-btn:hover,.btn-thesis:hover,.btn-cv:hover,.info-btn:hover{ background:linear-gradient(135deg,rgba(150,230,255,.4),rgba(255,255,255,.14)) !important; color:#fff !important; border-color:rgba(150,230,255,.75) !important; }
+    /* détails des compétences : hérite du verre de la carte */
+    .skill-details{ background:transparent !important; color:#c3d0e6 !important; }
+    .skill-details p,.skill-details li,.skill-details span{ color:#c3d0e6 !important; }
+
+    /* tags cristal */
+    .tag{ background:linear-gradient(135deg,rgba(160,210,255,.18),rgba(160,210,255,.06)) !important; color:#dce8ff !important; border:1px solid rgba(160,210,255,.3); -webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px); box-shadow:inset 0 1px 0 rgba(255,255,255,.22); }
+    .tag:hover,.tag.active{ background:linear-gradient(135deg,rgba(100,195,255,.42),rgba(150,110,255,.22)) !important; color:#fff !important; border-color:rgba(130,220,255,.6); }
+
+    /* cartes de compétences */
+    .skill-card{ background:linear-gradient(160deg,rgba(255,255,255,.07),rgba(255,255,255,.02)) !important; border:1px solid rgba(255,255,255,.16) !important; border-left:4px solid #5ab8ff !important; border-radius:12px; -webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px); box-shadow:inset 0 1px 0 rgba(255,255,255,.2); }
+    .skill-card:hover,.skill-card.expanded{ background:linear-gradient(160deg,rgba(130,200,255,.16),rgba(255,255,255,.05)) !important; border-left-color:#00dfd8 !important; }
+    /* carte "spécialité" agentique (style inline vert) -> verre vert sombre */
+    .skill-card[style]{ background:linear-gradient(160deg,rgba(15,190,110,.16),rgba(15,190,110,.04)) !important; }
+    .skill-card .skill-details p{ color:#c3d0e6; }
+
+    /* champs de formulaire sombres */
+    input,textarea,select{
+      background:rgba(150,200,255,.06) !important; color:#EAF2FF !important;
+      border:1px solid rgba(150,200,255,.22) !important; border-radius:8px;
+    }
+    input::placeholder,textarea::placeholder{ color:#8494b0 !important; }
+
+    /* liens icônes / listes */
+    .icon{ color:#6bc5ff; }
+    hr{ border-color:rgba(150,200,255,.14); }
+
+    /* ===== Widget de chat Mia : thème MATRIX (fond noir, texte vert, cadres verts) ===== */
+    .mia-chat-window{
+      background:#02080a !important; color:#4dff98 !important;
+      border:1px solid rgba(0,255,140,.4) !important;
+      box-shadow:0 24px 70px -20px rgba(0,0,0,.85), 0 0 44px rgba(0,255,120,.14) !important;
+      font-family:ui-monospace,"SF Mono","JetBrains Mono","Courier New",monospace !important;
+    }
+    .mia-chat-header{ background:linear-gradient(135deg,#04140d,#03231a) !important; border-bottom:1px solid rgba(0,255,140,.35) !important; }
+    .mia-chat-header h3,.mia-chat-header *{ color:#8dffc0 !important; text-shadow:0 0 8px rgba(0,255,120,.4) !important; }
+    .mia-chat-quota,.mia-close-btn{ color:#8dffc0 !important; }
+    .mia-chat-messages{ background:repeating-linear-gradient(rgba(0,255,120,.028) 0 1px, transparent 1px 4px), #02080a !important; }
+    .mia-message,.mia-message *{ color:#4dff98 !important; font-family:inherit !important; }
+    .mia-message-bubble{
+      background:rgba(0,255,120,.06) !important; color:#67ffa8 !important;
+      border:1px solid rgba(0,255,140,.45) !important; border-radius:6px !important;
+      box-shadow:0 0 16px rgba(0,255,120,.16), inset 0 0 12px rgba(0,255,120,.05) !important;
+      text-shadow:0 0 6px rgba(0,255,120,.28) !important;
+    }
+    .mia-message.user .mia-message-bubble{ background:rgba(120,255,180,.14) !important; border-color:rgba(150,255,190,.6) !important; color:#c2ffdd !important; }
+    .mia-message-sources,.mia-message-sources *{ color:#3fdd88 !important; }
+    .mia-loading{ color:#4dff98 !important; }
+    .mia-chat-input-area,.mia-chat-footer,.mia-chat-input-wrapper{ background:#02080a !important; border-color:rgba(0,255,140,.25) !important; }
+    .mia-chat-input{ background:rgba(0,255,120,.06) !important; color:#9dffc8 !important; border:1px solid rgba(0,255,140,.45) !important; font-family:inherit !important; }
+    .mia-chat-input::placeholder{ color:rgba(100,255,170,.55) !important; }
+    .mia-send-btn{ background:linear-gradient(135deg,#00c866,#00ff9c) !important; color:#021208 !important; box-shadow:0 0 16px rgba(0,255,120,.4) !important; }
+    .mia-chat-button{ background:linear-gradient(135deg,#04160e,#073322) !important; border:1px solid rgba(0,255,140,.55) !important; box-shadow:0 0 24px rgba(0,255,120,.35) !important; }
+    .mia-chat-button svg{ color:#8dffc0 !important; fill:#8dffc0 !important; }
+
+    /* modales (info, formulaire, accessibilité) en sombre */
+    .modal-content,.modal-info,.modal-handicap-content{
+      background:linear-gradient(160deg,#0c1226,#080b18) !important; color:#c3d0e6 !important;
+      border:1px solid rgba(150,200,255,.18) !important;
+      -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
+      box-shadow:0 24px 70px -20px rgba(0,0,0,.8) !important;
+    }
+    .modal-content h1,.modal-content h2,.modal-content h3,.modal-content h4,.modal-info h1,.modal-info h2,.modal-info h3,.modal-handicap-content h1,.modal-handicap-content h2,.modal-handicap-content h3{ color:#EAF2FF !important; }
+    .modal-content p,.modal-content li,.modal-content span,.modal-content label,.modal-info p,.modal-info li,.modal-handicap-content p,.modal-handicap-content span,.modal-handicap-content label{ color:#c3d0e6 !important; }
+    .btn-handicap,.btn-cancel{
+      background:linear-gradient(135deg,rgba(255,255,255,.12),rgba(150,215,255,.04)) !important;
+      border:1px solid rgba(160,220,255,.3) !important; color:#EAF2FF !important;
+      -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px); }
+    .btn-cancel{ background:rgba(255,255,255,.06) !important; color:#aab6cc !important; }
+    </style>
 </head>
 <body>
+    <canvas id="bgfx" aria-hidden="true"></canvas>
     <!-- Hero Section -->
-    <div class="hero">
-	<div class="handicap-switch">
-	    <button class="handicap-btn" onclick="openHandicapModal()" title="Options d'accessibilité" id="handicap-btn-fr">
-		<i class="fas fa-universal-access"></i> Accessibilité
-	    </button>
-	    <button class="handicap-btn" onclick="openHandicapModal()" title="Accessibility options" id="handicap-btn-en" style="display:none">
-		<i class="fas fa-universal-access"></i> Accessibility
-	    </button>
-	</div>
-        
-        <div class="lang-switch">
-            <button id="btn-fr" class="active" onclick="switchLanguage('fr')">FR</button>
-            <button id="btn-en" onclick="switchLanguage('en')">EN</button>
-        </div>
-        
-        <div class="hero-content">
-            <img src="assets/images/julien.png" alt="Julien de Saint Angel" class="hero-photo">
-            <div class="hero-title-container">
-                <h1>
-                    <span>Julien de Saint Angel</span>
-                    <a href="assets/pdf/cv_julien_de_saint_angel_2025.pdf" download class="btn-cv" id="cv-btn-fr">
-                        <i class="fa fa-download"></i> Télécharger CV
-                    </a>
-                    <a href="assets/pdf/cv_julien_de_saint_angel_2025_en.pdf" download class="btn-cv" id="cv-btn-en" style="display:none;">
-                        <i class="fa fa-download"></i> Download CV
-                    </a>
-                </h1>
-            </div>
-            <p class="hero-subtitle">
-                <strong>Ingénieur IA & Informatique appliquée</strong><br>
-                Docteur en informatique appliquée - spécialisé en réseaux de neurones hypersphériques et détection d'anomalies
-            </p>
-        </div>
-    </div>
+    <!-- ===== Nouveau hero : réseau de neurones 3D animé ===== -->
+    <header id="neuralhero">
+      <canvas id="net"></canvas>
+      <div class="vignette"></div>
+
+      <div class="el eyebrowbox" style="--etz:3deg;--fs:1.3em;--col:#4FD2FF">
+        <div class="eyebrow">Docteur en informatique appliquée · Réseaux de neurones</div>
+      </div>
+
+      <div class="el title" style="--etz:0deg;--fs:2.95em;--col:#EAF2FF">
+        <h1>Julien de <span class="g">Saint&nbsp;Angel</span></h1>
+      </div>
+
+      <div class="el sub" style="--etz:-6deg;--fs:1.35em;--col:#93A3C2;--w:1048px">
+        <p>Je transforme les données brutes en leviers de décision stratégiques pour répondre à des problématiques métiers concrètes.</p>
+      </div>
+
+      <div class="el actions" style="--etz:0deg;--fs:.95em;--col:#EAF2FF">
+        <a class="btn" href="#" onclick="document.querySelector('.container').scrollIntoView({behavior:'smooth'});return false;">Découvrir mes travaux</a>
+      </div>
+
+      <div class="el access" style="--etz:0deg;--fs:2em;--col:#EAF2FF">
+        <a class="chip" href="#" onclick="openHandicapModal();return false;">&#9855; Accessibilité</a>
+      </div>
+
+      <div class="el lang" style="--etz:0deg;--fs:1.45em;--col:#EAF2FF">
+        <a class="langbtn" href="#" onclick="switchLanguage('fr');return false;">FR</a>
+        <a class="langbtn off" href="#" onclick="switchLanguage('en');return false;">EN</a>
+      </div>
+
+      <div class="el cv" style="--etz:3deg;--fs:.95em;--col:#EAF2FF">
+        <a class="btn ghost" href="assets/pdf/cv_julien_de_saint_angel_2025.pdf" download>&#8681; Télécharger le CV</a>
+      </div>
+
+      <div class="photo">
+        <img src="assets/images/julien.png" alt="Julien de Saint Angel">
+      </div>
+    </header>
 
     <!-- Navigation Sticky -->
     <nav class="nav-sticky">
@@ -726,5 +942,157 @@
 
     <script src="chat-widget.js"></script>
 
+<!-- ===== Script du hero réseau de neurones (isolé dans une IIFE) ===== -->
+    <script>
+    (function(){
+    const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const cv=document.getElementById('net'), ctx=cv.getContext('2d');
+    const nhRoot=document.getElementById('neuralhero');
+    let W,H,DPR,VS,netShiftX=0,netShiftY=0;
+    function resize(){ DPR=Math.min(devicePixelRatio||1,2); W=cv.clientWidth; H=cv.clientHeight;
+      cv.width=W*DPR; cv.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0);
+      var mob=innerWidth<820; VS=mob?Math.min(1,W/1600):Math.max(.5,Math.min(1.5,W/1900));
+      nhRoot.style.fontSize=(mob?16:(16*VS)).toFixed(2)+'px'; }
+    resize(); addEventListener('resize',()=>{resize(); fitNet(); if(reduce) frame(performance.now());});
 
+    const LAYERS=[{r:6},{r:7},{r:8},{r:8},{r:8},{r:7},{r:6}]; const CD=3; const GAPX=150, SY=40, SZ=185;
+    const stations=[]; let idc=0;
+    LAYERS.forEach((L,li)=>{ const nodes=[]; const x=(li-(LAYERS.length-1)/2)*GAPX;
+      for(let r=0;r<L.r;r++)for(let c=0;c<CD;c++){ nodes.push({id:idc++, x, y:(r-(L.r-1)/2)*SY, z:(c-(CD-1)/2)*SZ, li, b:0}); }
+      stations.push({type:'layer',li,nodes}); });
+    const fmLi=LAYERS.length, fmx=(fmLi-(LAYERS.length-1)/2)*GAPX + 230;
+    stations.push({type:'fmap',li:fmLi,nodes:[{x:fmx,y:-150,z:0,li:fmLi,b:0},{x:fmx,y:0,z:0,li:fmLi,b:0},{x:fmx,y:150,z:0,li:fmLi,b:0}]});
+    const edges=[];
+    for(let s=0;s<stations.length-1;s++){ const isF=stations[s+1].type==='fmap';
+      for(const a of stations[s].nodes)for(const b of stations[s+1].nodes){ if(Math.random()<(isF?0.5:0.68)) edges.push({a,b,g:s}); } }
+    const conductors=[];
+    for(let g=0;g<stations.length-1;g++){ const pool=edges.filter(e=>e.g===g);
+      for(let k=0;k<7&&pool.length;k++) conductors.push(pool[(Math.random()*pool.length)|0]); }
+    const allNodes=stations.filter(s=>s.type==='layer').flatMap(s=>s.nodes);
+    const net={ ry:0.296706, rx:0.244346, rz:0.069813, sx:1.74, sy:1.63, sz:1.13, tx:54, ty:50, showBox:true };
+    function proj(p){ let x=p.x*net.sx, y=p.y*net.sy, z=p.z*net.sz;
+      let c=Math.cos(net.ry),s=Math.sin(net.ry); let X=x*c-z*s, Z1=x*s+z*c;
+      c=Math.cos(net.rx);s=Math.sin(net.rx); let Y=y*c-Z1*s, Z=y*s+Z1*c;
+      c=Math.cos(net.rz);s=Math.sin(net.rz); let X2=X*c-Y*s, Y2=X*s+Y*c;
+      const f=620/(620+Z+330); return {x:W*0.5+net.tx*VS+X2*f*VS+netShiftX, y:H*0.42+net.ty*VS+Y2*f*VS+netShiftY, f, z:Z}; }
+    let BB=null; function computeBounds(){ let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9,z0=1e9,z1=-1e9;
+      stations.forEach(st=>st.nodes.forEach(n=>{ if(n.x<x0)x0=n.x;if(n.x>x1)x1=n.x;if(n.y<y0)y0=n.y;if(n.y>y1)y1=n.y;if(n.z<z0)z0=n.z;if(n.z>z1)z1=n.z; }));
+      const m=22; BB={x0:x0-m,x1:x1+m,y0:y0-m,y1:y1+m,z0:z0-m,z1:z1+m}; }
+    function drawBox(){ if(!net.showBox||!BB) return; const b=BB;
+      const C=[[b.x0,b.y0,b.z0],[b.x1,b.y0,b.z0],[b.x1,b.y1,b.z0],[b.x0,b.y1,b.z0],[b.x0,b.y0,b.z1],[b.x1,b.y0,b.z1],[b.x1,b.y1,b.z1],[b.x0,b.y1,b.z1]].map(c=>proj({x:c[0],y:c[1],z:c[2]}));
+      const faces=[[0,1,2,3],[4,5,6,7],[0,1,5,4],[3,2,6,7],[1,2,6,5],[0,3,7,4]];
+      ctx.save();
+      faces.forEach(f=>{ ctx.beginPath(); f.forEach((idx,i)=>{const p=C[idx]; i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y);}); ctx.closePath(); ctx.fillStyle='rgba(90,150,255,0.05)'; ctx.fill(); });
+      /* arêtes du parallélépipède retirées */
+      ctx.restore(); }
+    function hue(li){ return 188 + (li/(LAYERS.length))*82; }
+    const PERIOD=stations.length+1.8; const WAVES=[0,PERIOD/2.6,2*PERIOD/2.6];
+    const smooth=d=>{const x=Math.max(0,1-Math.abs(d)/0.62);return x*x*(3-2*x);};
+    /* ---- flux d'énergie ambiant : nappes lumineuses qui dérivent au hasard ---- */
+    const flux=[]; for(let i=0;i<7;i++){ flux.push({ x:Math.random(), y:Math.random(),
+      vx:(Math.random()-.5)*0.00065, vy:(Math.random()-.5)*0.00065,
+      r:0.14+Math.random()*0.2, hue:180+Math.random()*100, a:0.012+Math.random()*0.016 }); }
+    function drawFlux(){ ctx.save();
+      for(const f of flux){ f.x+=f.vx; f.y+=f.vy;
+        if(f.x<-.35)f.x=1.35; else if(f.x>1.35)f.x=-.35; if(f.y<-.35)f.y=1.35; else if(f.y>1.35)f.y=-.35;
+        const px=f.x*W, py=f.y*H, rr=f.r*Math.min(W,H);
+        const g=ctx.createRadialGradient(px,py,0,px,py,rr);
+        g.addColorStop(0,`hsla(${f.hue},95%,62%,${f.a})`); g.addColorStop(1,`hsla(${f.hue},95%,62%,0)`);
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(px,py,rr,0,7); ctx.fill(); }
+      ctx.restore(); }
+    let t0=performance.now();
+    function frame(now){
+      const t=(now-t0)/1000; const e=1;
+      ctx.save(); ctx.clearRect(0,0,W,H); ctx.globalAlpha=1;
+      drawFlux();
+      drawBox();
+      const wp = WAVES.map(o=> reduce ? 1.6 : ((t*0.6+o)%PERIOD));
+      for(const st of stations)for(const n of st.nodes){ let b=0; for(const w of wp) b+=smooth(w-n.li); n.b=Math.min(1,b); }
+      for(const ed of edges){ const pa=proj(ed.a), pb=proj(ed.b);
+        let act=0; for(const w of wp) act+=smooth(w-(ed.g+0.5)); act=Math.min(1,act);
+        const fade=Math.max(.5,Math.min(1,(pa.f+pb.f)/2*1.2)); const h=hue((ed.a.li+ed.b.li)/2);
+        ctx.strokeStyle=`hsla(${h},100%,${60+act*22}%,${((0.22+act*0.6)*fade).toFixed(3)})`;
+        ctx.lineWidth=Math.max(.5,pa.f*(0.7+act*1.3)*VS);
+        ctx.beginPath(); ctx.moveTo(pa.x,pa.y); ctx.lineTo(pb.x,pb.y); ctx.stroke(); }
+      for(const ed of conductors)for(const w of wp){ const d=w-ed.g; if(d<0||d>1) continue;
+        const pa=proj(ed.a), pb=proj(ed.b), pf=(pa.f+pb.f)/2;
+        const x=pa.x+(pb.x-pa.x)*d, y=pa.y+(pb.y-pa.y)*d, rr=Math.max(2,pf*3.2*VS);
+        const g=ctx.createRadialGradient(x,y,0,x,y,rr*2.6);
+        g.addColorStop(0,'rgba(235,252,255,1)'); g.addColorStop(.4,`hsla(${hue(ed.a.li)},100%,72%,.85)`); g.addColorStop(1,'rgba(120,220,255,0)');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(x,y,rr*2.6,0,7); ctx.fill(); }
+      const proj2=allNodes.map(n=>({n,p:proj(n)})).sort((u,v)=>u.p.z-v.p.z);
+      for(const {n,p} of proj2){ const sz=Math.max(2,p.f*4.4*VS)*(1+n.b*0.4), h=hue(n.li);
+        const g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,sz*2.6);
+        g.addColorStop(0,`hsla(${h},100%,72%,${(0.4+n.b*0.6)*Math.min(1,p.f)})`); g.addColorStop(1,'hsla(200,100%,60%,0)');
+        ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,sz*2.6,0,7); ctx.fill();
+        ctx.globalAlpha=e*Math.min(1,p.f); ctx.fillStyle=n.b>0.5?'#eefcff':`hsl(${h},100%,${70+n.b*16}%)`;
+        ctx.fillRect(p.x-sz/2,p.y-sz/2,sz,sz);
+        ctx.fillStyle=`hsla(${h},100%,90%,.85)`; ctx.fillRect(p.x-sz/2,p.y-sz/2,sz,sz*0.3); ctx.globalAlpha=e; }
+      const fm=stations.find(s=>s.type==='fmap');
+      for(const f of fm.nodes){ const p=proj(f); drawFM(p.x,p.y,Math.max(40,p.f*132*VS),hue(fmLi),f.b,e*Math.min(1,p.f)); }
+      ctx.restore();
+      if(!reduce) requestAnimationFrame(frame);
+    }
+    function drawFM(x,y,s,h,b,alpha){ const N=5,cell=s/N; ctx.save(); ctx.globalAlpha=alpha; ctx.translate(x-s/2,y-s/2);
+      const g=ctx.createRadialGradient(s/2,s/2,0,s/2,s/2,s*1.1); g.addColorStop(0,`hsla(${h},100%,70%,${0.25+b*0.5})`); g.addColorStop(1,'hsla(270,100%,65%,0)');
+      ctx.fillStyle=g; ctx.fillRect(-s*0.4,-s*0.4,s*1.8,s*1.8);
+      for(let i=0;i<N;i++)for(let j=0;j<N;j++){ const v=(Math.sin(i*1.7+j*0.9+b*6)*0.5+0.5);
+        ctx.fillStyle=`hsla(${h},100%,${42+v*44}%,${0.28+v*0.5*(0.4+b)})`; ctx.fillRect(i*cell+0.6,j*cell+0.6,cell-1.2,cell-1.2); }
+      ctx.strokeStyle=`hsla(${h},100%,82%,${0.3+b*0.5})`; ctx.lineWidth=1; ctx.strokeRect(0,0,s,s); ctx.restore(); }
+    function netBounds(){ var b={mnx:1e9,mxx:-1e9,mny:1e9,mxy:-1e9};
+      stations.forEach(function(s){ s.nodes.forEach(function(n){ var p=proj(n);
+        if(p.x<b.mnx)b.mnx=p.x; if(p.x>b.mxx)b.mxx=p.x; if(p.y<b.mny)b.mny=p.y; if(p.y>b.mxy)b.mxy=p.y; }); }); return b; }
+    function fitNet(){ netShiftX=0; netShiftY=0; if(innerWidth>=820) return;
+      var cw=cv.clientWidth, ch=cv.clientHeight;
+      var b=netBounds(), wNet=b.mxx-b.mnx, hNet=b.mxy-b.mny;
+      var k=Math.min((cw*0.90)/wNet,(ch*0.80)/hNet,1);
+      if(k<1) VS*=k;
+      b=netBounds();
+      netShiftX = cw/2-(b.mnx+b.mxx)/2;
+      netShiftY = ch/2-(b.mny+b.mxy)/2;
+    }
+    computeBounds(); fitNet();
+    requestAnimationFrame(frame);
+    if(reduce){ setTimeout(()=>{resize(); frame(performance.now());},80); }
+    })();
+    </script>
 
+<!-- ===== Particules énergétiques de fond (subtiles, derrière le contenu) ===== -->
+    <script>
+    (function(){
+      var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+      var c=document.getElementById('bgfx'); if(!c) return;
+      var ctx=c.getContext('2d'), W=0,H=0,DPR=1;
+      function resize(){ DPR=Math.min(devicePixelRatio||1,2); W=innerWidth; H=innerHeight;
+        c.width=W*DPR; c.height=H*DPR; ctx.setTransform(DPR,0,0,DPR,0,0); }
+      resize(); addEventListener('resize',resize);
+      var N=Math.max(28, Math.min(72, Math.round(W*H/28000)));
+      var P=[]; for(var i=0;i<N;i++){ P.push({
+        x:Math.random()*W, y:Math.random()*H,
+        vx:(Math.random()-.5)*0.08, vy:0.35+Math.random()*0.7,   // pluie « matrix » qui tombe
+        r:0.7+Math.random()*1.4, hue:130+Math.random()*55, a:0.10+Math.random()*0.20 }); }
+      function frame(){
+        ctx.clearRect(0,0,W,H);
+        // liens ténus entre particules proches (effet réseau d'énergie)
+        for(var i=0;i<P.length;i++){ for(var j=i+1;j<P.length;j++){
+          var dx=P[i].x-P[j].x, dy=P[i].y-P[j].y, d2=dx*dx+dy*dy;
+          if(d2<12000){ var o=(1-d2/12000)*0.05;
+            ctx.strokeStyle='rgba(120,200,255,'+o.toFixed(3)+')'; ctx.lineWidth=0.6;
+            ctx.beginPath(); ctx.moveTo(P[i].x,P[i].y); ctx.lineTo(P[j].x,P[j].y); ctx.stroke(); } } }
+        for(var k=0;k<P.length;k++){ var p=P[k];
+          p.x+=p.vx; p.y+=p.vy;
+          if(p.y<-12)p.y=H+12; else if(p.y>H+12)p.y=-12;
+          if(p.x<-12)p.x=W+12; else if(p.x>W+12)p.x=-12;
+          var rr=p.r*3.6;
+          var g=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,rr);
+          g.addColorStop(0,'hsla('+p.hue+',95%,72%,'+p.a+')');
+          g.addColorStop(1,'hsla('+p.hue+',95%,72%,0)');
+          ctx.fillStyle=g; ctx.beginPath(); ctx.arc(p.x,p.y,rr,0,7); ctx.fill();
+          ctx.fillStyle='hsla('+p.hue+',100%,88%,'+(p.a*0.85).toFixed(3)+')';
+          ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,7); ctx.fill();
+        }
+        if(!reduce) requestAnimationFrame(frame);
+      }
+      if(reduce){ frame(); } else requestAnimationFrame(frame);
+    })();
+    </script>
