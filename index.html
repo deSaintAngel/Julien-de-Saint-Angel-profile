@@ -109,6 +109,7 @@
                         <span class="tag" data-tag="deeplearning" data-target="publications">Deep Learning</span>
                         <span class="tag" data-tag="hyperspherique" data-target="expertise">Hypersphérique</span>
                         <span class="tag" data-tag="anomalies" data-target="publications">Détection d'anomalies</span>
+                        <span class="tag" data-tag="agentique" data-target="experience">IA agentique</span>
                         <span class="tag" data-tag="llmrag" data-target="projets">LLM + RAG</span>
                         <span class="tag" data-tag="vision" data-target="projets">Vision par ordinateur</span>
                         <span class="tag" data-tag="signal" data-target="projets">Traitement du signal</span>
@@ -120,7 +121,14 @@
                             <p>Expertise en réseaux de neurones profonds : CNN, RNN/LSTM, GAN, Transformers, autoencodeurs, modèles surrogate, optimisation. <strong>LLM, RAG, workflow pour l'automatisation.</strong></p>
                         </div>
                     </div>
-                    
+
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-robot"></i> IA agentique & agents LLM</h3>
+                        <div class="skill-details">
+                            <p>Conception d'agents IA autonomes : orchestration (LangGraph, MCP), boucle ReAct (raisonnement → action → observation), décomposition en sous-objectifs, schema linking, RAG agentique, text-to-SQL / NL2DB, matching sémantique, appels d'outils structurés, exécution 100 % locale (Ollama, SQLite).</p>
+                        </div>
+                    </div>
+
                     <div class="skill-card" onclick="toggleSkill(this)">
                         <h3><i class="fas fa-cogs"></i> Frameworks & Outils</h3>
                         <div class="skill-details">
@@ -168,6 +176,7 @@
                         <span class="tag" data-tag="deeplearning" data-target="publications">Deep Learning</span>
                         <span class="tag" data-tag="hyperspherique" data-target="expertise">Hyperspherical</span>
                         <span class="tag" data-tag="anomalies" data-target="publications">Anomaly Detection</span>
+                        <span class="tag" data-tag="agentique" data-target="experience">Agentic AI</span>
                         <span class="tag" data-tag="vision" data-target="projets">Computer Vision</span>
                         <span class="tag" data-tag="signal" data-target="projets">Signal Processing</span>
                     </div>
@@ -178,7 +187,14 @@
                             <p>Expertise in deep neural networks: CNN, RNN/LSTM, GAN, Transformers, autoencoders, surrogate models, optimization. <strong>LLM, RAG, workflow automation.</strong></p>
                         </div>
                     </div>
-                    
+
+                    <div class="skill-card" onclick="toggleSkill(this)">
+                        <h3><i class="fas fa-robot"></i> Agentic AI & LLM agents</h3>
+                        <div class="skill-details">
+                            <p>Building autonomous AI agents: orchestration (LangGraph, MCP), ReAct loop (reason → act → observe), sub-goal decomposition, schema linking, agentic RAG, text-to-SQL / NL2DB, semantic matching, structured tool calls, fully local execution (Ollama, SQLite).</p>
+                        </div>
+                    </div>
+
                     <div class="skill-card" onclick="toggleSkill(this)">
                         <h3><i class="fas fa-cogs"></i> Frameworks & Tools</h3>
                         <div class="skill-details">
@@ -269,10 +285,11 @@
                         <li>
                             <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.72em;font-weight:700;padding:2px 8px;border-radius:10px;vertical-align:middle;">POSTE ACTUEL</span>
                             <strong>Avr. 2026 – aujourd'hui : Chargé de Projet IA — Unapei 17</strong> (La Rochelle, CDD)<br>
-                            <em>Pilotage et développement d'une plateforme d'IA agentique au service des données RH.</em>
+                            <em>Pilotage et développement d'une plateforme d'IA agentique au service des données RH et comptables.</em>
                             <ul>
-                                <li><strong>Agent IA autonome (langage naturel → base de données) :</strong> conception d'un agent qui répond en français aux questions des équipes RH en interrogeant lui-même les bases, sans aucune compétence technique requise. Un véritable agent qui <em>raisonne et décide</em> (boucle Raisonnement → Action → Observation, décomposition en sous-objectifs, schema linking) — pas une simple interface scriptée. 100 % local (Ollama, SQLite, LangGraph) : aucune donnée ne quitte l'organisation.</li>
-                                <li><strong>Matching sémantique multi-bases :</strong> algorithmes reliant automatiquement des bases hétérogènes et non structurées (RH, comptabilité, activité) en un socle unifié, fiable et exploitable. Architecture <em>auditable et explicable</em> : le code calcule les faits, le LLM raisonne sur ces faits (pas d'hallucination, résultats reproductibles).</li>
+                                <li><strong>Agent IA autonome (langage naturel → base de données) :</strong> conception d'un agent qui répond en français aux questions des équipes RH en interrogeant lui-même les bases, sans aucune compétence technique requise. Un véritable agent qui <em>raisonne et décide</em> (boucle Raisonnement → Action → Observation, décomposition en sous-objectifs, schema linking) — pas une simple interface scriptée.</li>
+                                <li><strong>Confidentialité & conformité RGPD :</strong> l'architecture est <strong>100 % locale</strong> (Ollama, SQLite, LangGraph) — aucune donnée ne quitte l'organisation. C'est un enjeu fondamental : l'Unapei 17 traite des données particulièrement sensibles, et le respect du RGPD a été placé au cœur de la conception.</li>
+                                <li><strong>Matching sémantique multi-bases :</strong> un algorithme que j'ai conçu et développé, reliant automatiquement des bases hétérogènes et non structurées (RH, comptabilité, activité) en un socle unifié, fiable et exploitable. Architecture <em>auditable et explicable</em> : le code calcule les faits, le LLM raisonne sur ces faits — pas d'hallucination, résultats reproductibles, et <strong>traçabilité complète du processus de raisonnement</strong>.</li>
                                 <li><strong>Visualisation & aide à la décision :</strong> tableaux de bord clairs, en temps réel et conformes RGPD, pour guider la prise de décision RH.</li>
                                 <li><em>Technologies :</em> Python, LLM, RAG agentique, LangGraph, MCP, text-to-SQL / NL2DB, matching sémantique, SQLite.</li>
                             </ul>
@@ -384,10 +401,11 @@
                         <li>
                             <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.72em;font-weight:700;padding:2px 8px;border-radius:10px;vertical-align:middle;">CURRENT ROLE</span>
                             <strong>Apr. 2026 – present: AI Project Lead — Unapei 17</strong> (La Rochelle, France)<br>
-                            <em>Leading and building an agentic-AI platform serving HR data.</em>
+                            <em>Leading and building an agentic-AI platform serving HR and accounting data.</em>
                             <ul>
-                                <li><strong>Autonomous AI agent (natural language → database):</strong> designing an agent that answers HR teams' questions in plain language by querying the databases itself, with no technical skills required. A true agent that <em>reasons and decides</em> (Reason → Act → Observe loop, sub-goal decomposition, schema linking) — not a scripted interface. Fully local (Ollama, SQLite, LangGraph): no data ever leaves the organization.</li>
-                                <li><strong>Multi-database semantic matching:</strong> algorithms that automatically link heterogeneous, unstructured databases (HR, accounting, activity) into a unified, reliable, usable foundation. An <em>auditable, explainable</em> architecture: code computes the facts, the LLM reasons over those facts (no hallucination, reproducible results).</li>
+                                <li><strong>Autonomous AI agent (natural language → database):</strong> designing an agent that answers HR teams' questions in plain language by querying the databases itself, with no technical skills required. A true agent that <em>reasons and decides</em> (Reason → Act → Observe loop, sub-goal decomposition, schema linking) — not a scripted interface.</li>
+                                <li><strong>Privacy & GDPR compliance:</strong> the architecture is <strong>fully local</strong> (Ollama, SQLite, LangGraph) — no data ever leaves the organization. This is a fundamental concern: Unapei 17 handles highly sensitive data, and GDPR compliance was placed at the very heart of the design.</li>
+                                <li><strong>Multi-database semantic matching:</strong> an algorithm I designed and developed, automatically linking heterogeneous, unstructured databases (HR, accounting, activity) into a unified, reliable, usable foundation. An <em>auditable, explainable</em> architecture: code computes the facts, the LLM reasons over those facts — no hallucination, reproducible results, and <strong>full traceability of the reasoning process</strong>.</li>
                                 <li><strong>Visualization & decision support:</strong> clear, real-time, GDPR-compliant dashboards to guide HR decision-making.</li>
                                 <li><em>Technologies:</em> Python, LLM, agentic RAG, LangGraph, MCP, text-to-SQL / NL2DB, semantic matching, SQLite.</li>
                             </ul>
@@ -515,6 +533,7 @@
                 <li>Traitement du signal</li>
                 <li>NLP (traitement du langage naturel)</li>
                 <li>Data science & machine learning (analyse, modèles prédictifs, optimisation, MLOps)</li>
+                <li>IA agentique & agents autonomes (interrogation de bases en langage naturel / NL2DB, RAG, orchestration LLM)</li>
                 <li>Applications santé, innovation et agents IA</li>
                 <li>Détection d'anomalies (finance, cybersécurité, ...)</li>
             </ul>
@@ -555,6 +574,7 @@
                 <li>Signal processing (audio, biomedical, trajectory)</li>
                 <li>NLP (natural language processing)</li>
                 <li>Data science & machine learning (analysis, predictive models, optimization, MLOps)</li>
+                <li>Agentic AI & autonomous agents (natural-language database querying / NL2DB, RAG, LLM orchestration)</li>
                 <li>Health applications, innovation, AI-assisted creativity</li>
                 <li>Anomaly detection (finance, cybersecurity, predictive maintenance)</li>
             </ul>
