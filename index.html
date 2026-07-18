@@ -249,6 +249,14 @@
       -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px); }
     .btn-cancel{ background:rgba(255,255,255,.06) !important; color:#aab6cc !important; }
     </style>
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#04060e">
+    <link rel="apple-touch-icon" href="ico/favicon_io/apple-touch-icon.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="J. de Saint Angel">
 </head>
 <body>
     <canvas id="bgfx" aria-hidden="true"></canvas>
@@ -279,8 +287,8 @@
       </div>
 
       <div class="el lang" style="--etz:0deg;--fs:1.45em;--col:#EAF2FF">
-        <a class="langbtn active" id="btn-fr" href="#" onclick="switchLanguage('fr');return false;">FR</a>
-        <a class="langbtn" id="btn-en" href="#" onclick="switchLanguage('en');return false;">EN</a>
+        <a class="langbtn active" id="btn-fr" href="#" onclick="switchLanguage('fr');window.miaHeroLang&&window.miaHeroLang('fr');return false;">FR</a>
+        <a class="langbtn" id="btn-en" href="#" onclick="switchLanguage('en');window.miaHeroLang&&window.miaHeroLang('en');return false;">EN</a>
       </div>
 
       <div class="el cv" style="--etz:3deg;--fs:.95em;--col:#EAF2FF">
@@ -1055,6 +1063,20 @@
     computeBounds(); fitNet();
     requestAnimationFrame(frame);
     if(reduce){ setTimeout(()=>{resize(); frame(performance.now());},80); }
+
+    /* ---- hero bilingue : traduit surtitre / sous-titre / boutons / CV ---- */
+    window.miaHeroLang=function(lang){
+      try{
+        var en=(lang==='en'), q=function(s){return document.querySelector(s);}, el;
+        el=q('#neuralhero .eyebrow'); if(el) el.textContent= en?'PhD in Applied Computer Science · Neural Networks':'Docteur en informatique appliquée · Réseaux de neurones';
+        el=q('#neuralhero .sub p'); if(el) el.textContent= en?'I turn raw data into strategic decision levers to address concrete business challenges.':'Je transforme les données brutes en leviers de décision stratégiques pour répondre à des problématiques métiers concrètes.';
+        el=q('#neuralhero .actions .btn'); if(el) el.textContent= en?'Discover my work':'Découvrir mes travaux';
+        el=q('#neuralhero .access .chip'); if(el) el.textContent= en?'♿ Accessibility':'♿ Accessibilité';
+        el=q('#neuralhero .cv .btn'); if(el){ el.textContent= en?'⇩ Download CV':'⇩ Télécharger le CV';
+          el.setAttribute('href', en?'assets/pdf/cv_julien_de_saint_angel_2025_en.pdf':'assets/pdf/cv_julien_de_saint_angel_2025.pdf'); }
+      }catch(e){}
+    };
+    try{ window.miaHeroLang((document.documentElement.lang==='en')?'en':'fr'); }catch(e){}
     })();
     </script>
 
@@ -1096,4 +1118,8 @@
       }
       if(reduce){ frame(); } else requestAnimationFrame(frame);
     })();
+    </script>
+
+    <script>
+    if('serviceWorker' in navigator){ window.addEventListener('load', function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); }); }
     </script>

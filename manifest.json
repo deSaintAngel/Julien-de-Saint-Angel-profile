@@ -1,0 +1,19 @@
+{
+  "name": "Julien de Saint Angel — Expert IA",
+  "short_name": "J. de Saint Angel",
+  "description": "Docteur en informatique appliquée — réseaux de neurones, IA agentique et détection d'anomalies.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#04060e",
+  "theme_color": "#04060e",
+  "lang": "fr",
+  "dir": "ltr",
+  "categories": ["portfolio", "education", "business"],
+  "icons": [
+    { "src": "ico/favicon_io/android-chrome-192x192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "ico/favicon_io/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "ico/favicon_io/android-chrome-512x512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
