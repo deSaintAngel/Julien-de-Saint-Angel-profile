@@ -122,7 +122,7 @@
                         </div>
                     </div>
 
-                    <div class="skill-card expanded" onclick="toggleSkill(this)" style="border-left:5px solid #0f9d58;background:#f0fbf4;">
+                    <div class="skill-card" onclick="toggleSkill(this)" style="border-left:5px solid #0f9d58;background:#f0fbf4;">
                         <h3><i class="fas fa-robot"></i> IA agentique & agents LLM <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.58em;font-weight:700;padding:2px 7px;border-radius:10px;vertical-align:middle;">SPÉCIALITÉ</span></h3>
                         <div class="skill-details">
                             <p>Conception d'agents IA autonomes : orchestration (LangGraph, MCP), boucle ReAct, schema linking, RAG agentique, text-to-SQL / NL2DB, matching sémantique, RGPD.</p>
@@ -188,7 +188,7 @@
                         </div>
                     </div>
 
-                    <div class="skill-card expanded" onclick="toggleSkill(this)" style="border-left:5px solid #0f9d58;background:#f0fbf4;">
+                    <div class="skill-card" onclick="toggleSkill(this)" style="border-left:5px solid #0f9d58;background:#f0fbf4;">
                         <h3><i class="fas fa-robot"></i> Agentic AI & LLM agents <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.58em;font-weight:700;padding:2px 7px;border-radius:10px;vertical-align:middle;">SPECIALTY</span></h3>
                         <div class="skill-details">
                             <p>Building autonomous AI agents: orchestration (LangGraph, MCP), ReAct loop, schema linking, agentic RAG, text-to-SQL / NL2DB, semantic matching, GDPR.</p>
@@ -239,6 +239,43 @@
                     </button>
                 </section>
 
+                <section id="experience" class="fade-in">
+                    <h2><i class="fas fa-briefcase icon"></i>Expérience professionnelle</h2>
+                    <ul>
+                        <li>
+                            <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.72em;font-weight:700;padding:2px 8px;border-radius:10px;vertical-align:middle;">POSTE ACTUEL</span>
+                            <strong>Avr. 2026 – aujourd'hui : Chargé de Projet IA — Unapei 17</strong> (La Rochelle, CDD)<br>
+                            <em>Pilotage et développement d'une plateforme d'IA agentique au service des données RH et comptables.</em>
+                            <ul>
+                                <li><strong>Agent IA autonome (langage naturel → base de données) :</strong> conception d'un agent qui répond en français aux questions des équipes RH en interrogeant lui-même les bases, sans aucune compétence technique requise. Un véritable agent qui <em>raisonne et décide</em> (boucle Raisonnement → Action → Observation, décomposition en sous-objectifs, schema linking) — pas une simple interface scriptée.</li>
+                                <li><strong>Confidentialité & conformité RGPD :</strong> l'architecture est <strong>100 % locale</strong> (Ollama, SQLite, LangGraph) — aucune donnée ne quitte l'organisation. C'est un enjeu fondamental : l'Unapei 17 traite des données particulièrement sensibles, et le respect du RGPD a été placé au cœur de la conception.</li>
+                                <li><strong>Matching sémantique multi-bases :</strong> un algorithme que j'ai conçu et développé, reliant automatiquement des bases hétérogènes et non structurées (RH, comptabilité, activité) en un socle unifié, fiable et exploitable. Architecture <em>auditable et explicable</em> : le code calcule les faits, le LLM raisonne sur ces faits — pas d'hallucination, résultats reproductibles, et <strong>traçabilité complète du processus de raisonnement</strong>.</li>
+                                <li><strong>Visualisation & aide à la décision :</strong> tableaux de bord clairs, en temps réel et conformes RGPD, pour guider la prise de décision RH.</li>
+                                <li><em>Technologies :</em> Python, LLM, RAG agentique, LangGraph, MCP, text-to-SQL / NL2DB, matching sémantique, SQLite.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Fév.–Mai 2019 :</strong> Stage aux laboratoires XLIM (UMR 7252) et MIA (EA 3165)<br>
+                            <em>Encadrants :</em> B. Tremblais et R. Pétéri<br>
+                            Caractérisation du geste sportif par caméras rapides utilisant l'analyse trajectographique de points critiques.
+                        </li>
+                        <li>
+                            <strong>Mai 2018 :</strong> Stage au laboratoire LIENSs (UMR 7266)<br>
+                            <em>Encadrants :</em> E. Poirier (IGR) et L. Testud<br>
+                            Réalisation d'un marégraphe visuel : lecture automatisée de l'image d'une échelle de marée.
+                        </li>
+                        <li>
+                            <strong>Mar.–Juin 2015 :</strong> Stage au laboratoire SYRTE (UMR 8630), Observatoire de Paris<br>
+                            <em>Encadrant :</em> J.-Y. Richard<br>
+                            Développement d'algorithmes d'interpolation pour les orbites de satellites artificiels (équations différentielles, simulation numérique).
+                        </li>
+                        <li>
+                            <strong>2015–2017 :</strong> Enseignant fonctionnaire second degré, Lycées Saint-Exupéry, La Rochelle<br>
+                            Professeur de mathématiques. Développement de compétences en communication, vulgarisation scientifique et travail en équipe.
+                        </li>
+                    </ul>
+                </section>
+
                 <section id="expertise" class="fade-in" data-tags="hyperspherique ia">
                     <h2><i class="fas fa-star icon"></i>Expertise</h2>
                     <p>Ma thèse a consisté à utiliser des réseaux de neurones à couches hyperphérique avec une approche basée sur l'algèbre conforme pour proposer de nouvelles méthodes de détection d'anomalies. L'objectif est d'exploiter les propriétés géométriques de ces réseaux pour améliorer la capacité à repérer des anomalies dans les données.</p>
@@ -279,42 +316,7 @@
                     <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true" allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
                 </section>
 
-                <section id="experience" class="fade-in">
-                    <h2><i class="fas fa-briefcase icon"></i>Expérience professionnelle</h2>
-                    <ul>
-                        <li>
-                            <span style="display:inline-block;background:#0f9d58;color:#fff;font-size:0.72em;font-weight:700;padding:2px 8px;border-radius:10px;vertical-align:middle;">POSTE ACTUEL</span>
-                            <strong>Avr. 2026 – aujourd'hui : Chargé de Projet IA — Unapei 17</strong> (La Rochelle, CDD)<br>
-                            <em>Pilotage et développement d'une plateforme d'IA agentique au service des données RH et comptables.</em>
-                            <ul>
-                                <li><strong>Agent IA autonome (langage naturel → base de données) :</strong> conception d'un agent qui répond en français aux questions des équipes RH en interrogeant lui-même les bases, sans aucune compétence technique requise. Un véritable agent qui <em>raisonne et décide</em> (boucle Raisonnement → Action → Observation, décomposition en sous-objectifs, schema linking) — pas une simple interface scriptée.</li>
-                                <li><strong>Confidentialité & conformité RGPD :</strong> l'architecture est <strong>100 % locale</strong> (Ollama, SQLite, LangGraph) — aucune donnée ne quitte l'organisation. C'est un enjeu fondamental : l'Unapei 17 traite des données particulièrement sensibles, et le respect du RGPD a été placé au cœur de la conception.</li>
-                                <li><strong>Matching sémantique multi-bases :</strong> un algorithme que j'ai conçu et développé, reliant automatiquement des bases hétérogènes et non structurées (RH, comptabilité, activité) en un socle unifié, fiable et exploitable. Architecture <em>auditable et explicable</em> : le code calcule les faits, le LLM raisonne sur ces faits — pas d'hallucination, résultats reproductibles, et <strong>traçabilité complète du processus de raisonnement</strong>.</li>
-                                <li><strong>Visualisation & aide à la décision :</strong> tableaux de bord clairs, en temps réel et conformes RGPD, pour guider la prise de décision RH.</li>
-                                <li><em>Technologies :</em> Python, LLM, RAG agentique, LangGraph, MCP, text-to-SQL / NL2DB, matching sémantique, SQLite.</li>
-                            </ul>
-                        </li>
-                        <li>
-                            <strong>Fév.–Mai 2019 :</strong> Stage aux laboratoires XLIM (UMR 7252) et MIA (EA 3165)<br>
-                            <em>Encadrants :</em> B. Tremblais et R. Pétéri<br>
-                            Caractérisation du geste sportif par caméras rapides utilisant l'analyse trajectographique de points critiques.
-                        </li>
-                        <li>
-                            <strong>Mai 2018 :</strong> Stage au laboratoire LIENSs (UMR 7266)<br>
-                            <em>Encadrants :</em> E. Poirier (IGR) et L. Testud<br>
-                            Réalisation d'un marégraphe visuel : lecture automatisée de l'image d'une échelle de marée.
-                        </li>
-                        <li>
-                            <strong>Mar.–Juin 2015 :</strong> Stage au laboratoire SYRTE (UMR 8630), Observatoire de Paris<br>
-                            <em>Encadrant :</em> J.-Y. Richard<br>
-                            Développement d'algorithmes d'interpolation pour les orbites de satellites artificiels (équations différentielles, simulation numérique).
-                        </li>
-                        <li>
-                            <strong>2015–2017 :</strong> Enseignant fonctionnaire second degré, Lycées Saint-Exupéry, La Rochelle<br>
-                            Professeur de mathématiques. Développement de compétences en communication, vulgarisation scientifique et travail en équipe.
-                        </li>
-                    </ul>
-                </section>
+                
 
                 <section id="formation" class="fade-in">
                     <h2><i class="fas fa-graduation-cap icon"></i>Formation</h2>
@@ -372,29 +374,6 @@
                     </button>
                 </section>
 
-                <section id="expertise-en" class="fade-in" data-tags="hyperspherique ia">
-                    <h2><i class="fas fa-star icon"></i>Expertise</h2>
-                    <p>My thesis involved using neural networks with hyperspherical layers and a conformal algebra-based approach to propose new anomaly detection methods. The goal is to exploit the geometric properties of these networks to improve the ability to detect anomalies in data.</p>
-                    
-                    <img src="assets/images/im_n.jpg" alt="Expertise in hyperspherical neural networks" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin: 20px auto; display: block;">
-                    
-                    <a href="https://theses.fr/s395345" target="_blank" class="btn-thesis">
-                        <i class="fas fa-book"></i> View full thesis
-                    </a>
-                </section>
-
-                <section id="projects-en" class="fade-in" data-tags="ia vision signal">
-                    <h2><i class="fas fa-project-diagram icon"></i>Contributions & Projects</h2>
-                    <ul>
-                        <li><strong>Deep M-SPH SVDD:</strong> Multi-sphere hyperspherical method for anomaly detection in time series and industrial datasets</li>
-                        <li><strong>Initialization method:</strong> Improved convergence and stability of hyperspherical neural networks</li>
-                        <li><strong>Applications:</strong> Visual tide gauge automation, sports motion tracking, anomaly detection</li>
-                    </ul>
-                    
-                    <h3>Thesis defense video:</h3>
-                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true" allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
-                </section>
-
                 <section id="experience-en" class="fade-in">
                     <h2><i class="fas fa-briefcase icon"></i>Professional Experience</h2>
                     <ul>
@@ -431,6 +410,31 @@
                         </li>
                     </ul>
                 </section>
+
+                <section id="expertise-en" class="fade-in" data-tags="hyperspherique ia">
+                    <h2><i class="fas fa-star icon"></i>Expertise</h2>
+                    <p>My thesis involved using neural networks with hyperspherical layers and a conformal algebra-based approach to propose new anomaly detection methods. The goal is to exploit the geometric properties of these networks to improve the ability to detect anomalies in data.</p>
+                    
+                    <img src="assets/images/im_n.jpg" alt="Expertise in hyperspherical neural networks" style="width: 100%; max-width: 400px; height: auto; border-radius: 8px; margin: 20px auto; display: block;">
+                    
+                    <a href="https://theses.fr/s395345" target="_blank" class="btn-thesis">
+                        <i class="fas fa-book"></i> View full thesis
+                    </a>
+                </section>
+
+                <section id="projects-en" class="fade-in" data-tags="ia vision signal">
+                    <h2><i class="fas fa-project-diagram icon"></i>Contributions & Projects</h2>
+                    <ul>
+                        <li><strong>Deep M-SPH SVDD:</strong> Multi-sphere hyperspherical method for anomaly detection in time series and industrial datasets</li>
+                        <li><strong>Initialization method:</strong> Improved convergence and stability of hyperspherical neural networks</li>
+                        <li><strong>Applications:</strong> Visual tide gauge automation, sports motion tracking, anomaly detection</li>
+                    </ul>
+                    
+                    <h3>Thesis defense video:</h3>
+                    <iframe src="https://videos.univ-lr.fr/video/3472-these-de-julien-de-saint-angel/?is_iframe=true" allowfullscreen title="Thèse de Julien DE SAINT ANGEL"></iframe>
+                </section>
+
+                
 
                 <section id="education-en" class="fade-in">
                     <h2><i class="fas fa-graduation-cap icon"></i>Education</h2>
