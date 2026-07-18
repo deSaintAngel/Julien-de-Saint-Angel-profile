@@ -380,10 +380,10 @@
     },
     {
       "id": "passions.txt_chunk_5",
-      "text": "## [Personnalité] Valeurs et manière de travailler\nJulien place l'éthique, la rigueur et l'honnêteté scientifiques au cœur de ses engagements. Passionné de technologie et d'IA, il est opiniâtre : il n'abandonne jamais et va au bout de ses projets. Son principal défaut, assumé, est un certain perfectionnisme — il aime comprendre et optimiser chaque détail, et apprend à mieux prioriser en contexte d'équipe et de délais.\nMots-clés : valeurs, éthique, rigueur, honnêteté, passion, opiniâtreté, persévérance, perfectionnisme, défaut, qualités, manière de travailler, personnalité.",
+      "text": "## [Personnalité] Valeurs et manière de travailler\nJulien place l'éthique, la rigueur et l'honnêteté scientifiques au cœur de ses engagements. Passionné de technologie et d'IA, il est opiniâtre : il n'abandonne jamais et va au bout de ses projets. Son principal point de vigilance, qu'il assume avec recul, est son exigence : un goût prononcé pour bien faire et comprendre chaque détail. Il en a fait un atout en apprenant à calibrer son niveau d'exigence selon les enjeux, à prioriser par impact et à respecter les délais — ce qui le rend à la fois rigoureux et efficace, en particulier en équipe.\nMots-clés : valeurs, éthique, rigueur, honnêteté, passion, opiniâtreté, persévérance, exigence, perfectionnisme, défaut, point faible, faiblesse, axe d'amélioration, qualités, manière de travailler, personnalité.",
       "source_file": "passions.txt",
       "header": "[Personnalité] Valeurs et manière de travailler",
-      "keywords": "valeurs, éthique, rigueur, honnêteté, passion, opiniâtreté, persévérance, perfectionnisme, défaut, qualités, manière de travailler, personnalité.",
+      "keywords": "valeurs, éthique, rigueur, honnêteté, passion, opiniâtreté, persévérance, exigence, perfectionnisme, défaut, point faible, faiblesse, axe d'amélioration, qualités, manière de travailler, personnalité.",
       "chunk_index": 5,
       "embedding": []
     },

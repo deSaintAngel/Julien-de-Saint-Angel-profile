@@ -21,8 +21,8 @@ Julien has travelled, notably to Singapore, an experience that gave rise to his 
 Keywords: travel, Singapore, international, languages, French, English, Spanish, Romanian, openness, curiosity.
 
 ## [Personality] Values and way of working
-Julien places scientific ethics, rigor and honesty at the heart of his commitments. Passionate about technology and AI, he is tenacious: he never gives up and sees his projects through. His main, acknowledged flaw is a certain perfectionism — he likes to understand and optimize every detail, and is learning to prioritize better in team and deadline contexts.
-Keywords: values, ethics, rigor, honesty, passion, tenacity, perseverance, perfectionism, flaw, qualities, way of working, personality.
+Julien places scientific ethics, rigor and honesty at the heart of his commitments. Passionate about technology and AI, he is tenacious: he never gives up and sees his projects through. His main point of vigilance, which he owns with perspective, is his high standards: a strong drive to do things well and understand every detail. He has turned this into an asset by learning to calibrate his level of detail to what is at stake, to prioritize by impact and to meet deadlines — which makes him both rigorous and efficient, especially in a team.
+Keywords: values, ethics, rigor, honesty, passion, tenacity, perseverance, high standards, perfectionism, flaw, weakness, area for improvement, qualities, way of working, personality.
 
 ## [Info] Vision and ambitions
 In the long term, Julien wishes to keep innovating and contributing to research and scientific dissemination, with openness toward the medical (medical imaging), environmental (coastline) and astronomy fields. In the medium term, to put his expertise in agentic AI, deep learning and signal processing at the service of concrete business problems. In the short term, to contribute immediately to applied AI, data-analysis or image-processing projects.

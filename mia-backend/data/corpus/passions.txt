@@ -21,8 +21,8 @@ Julien a voyagé, notamment à Singapour, expérience qui a donné naissance à 
 Mots-clés : voyage, Singapour, international, langues, français, anglais, espagnol, roumain, ouverture, curiosité.
 
 ## [Personnalité] Valeurs et manière de travailler
-Julien place l'éthique, la rigueur et l'honnêteté scientifiques au cœur de ses engagements. Passionné de technologie et d'IA, il est opiniâtre : il n'abandonne jamais et va au bout de ses projets. Son principal défaut, assumé, est un certain perfectionnisme — il aime comprendre et optimiser chaque détail, et apprend à mieux prioriser en contexte d'équipe et de délais.
-Mots-clés : valeurs, éthique, rigueur, honnêteté, passion, opiniâtreté, persévérance, perfectionnisme, défaut, qualités, manière de travailler, personnalité.
+Julien place l'éthique, la rigueur et l'honnêteté scientifiques au cœur de ses engagements. Passionné de technologie et d'IA, il est opiniâtre : il n'abandonne jamais et va au bout de ses projets. Son principal point de vigilance, qu'il assume avec recul, est son exigence : un goût prononcé pour bien faire et comprendre chaque détail. Il en a fait un atout en apprenant à calibrer son niveau d'exigence selon les enjeux, à prioriser par impact et à respecter les délais — ce qui le rend à la fois rigoureux et efficace, en particulier en équipe.
+Mots-clés : valeurs, éthique, rigueur, honnêteté, passion, opiniâtreté, persévérance, exigence, perfectionnisme, défaut, point faible, faiblesse, axe d'amélioration, qualités, manière de travailler, personnalité.
 
 ## [Info] Vision et ambitions
 À long terme, Julien souhaite continuer à innover et contribuer à la recherche et à la diffusion scientifique, avec une ouverture vers les domaines médical (imagerie médicale), environnemental (littoral) et l'astronomie. À moyen terme, mettre son expertise en IA agentique, deep learning et traitement du signal au service de problématiques concrètes en entreprise. À court terme, contribuer immédiatement à des projets d'IA appliquée, d'analyse de données ou de traitement d'images.

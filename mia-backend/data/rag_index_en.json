@@ -380,10 +380,10 @@
     },
     {
       "id": "passions_en.txt_chunk_5",
-      "text": "## [Personality] Values and way of working\nJulien places scientific ethics, rigor and honesty at the heart of his commitments. Passionate about technology and AI, he is tenacious: he never gives up and sees his projects through. His main, acknowledged flaw is a certain perfectionism — he likes to understand and optimize every detail, and is learning to prioritize better in team and deadline contexts.\nKeywords: values, ethics, rigor, honesty, passion, tenacity, perseverance, perfectionism, flaw, qualities, way of working, personality.",
+      "text": "## [Personality] Values and way of working\nJulien places scientific ethics, rigor and honesty at the heart of his commitments. Passionate about technology and AI, he is tenacious: he never gives up and sees his projects through. His main point of vigilance, which he owns with perspective, is his high standards: a strong drive to do things well and understand every detail. He has turned this into an asset by learning to calibrate his level of detail to what is at stake, to prioritize by impact and to meet deadlines — which makes him both rigorous and efficient, especially in a team.\nKeywords: values, ethics, rigor, honesty, passion, tenacity, perseverance, high standards, perfectionism, flaw, weakness, area for improvement, qualities, way of working, personality.",
       "source_file": "passions_en.txt",
       "header": "[Personality] Values and way of working",
-      "keywords": "values, ethics, rigor, honesty, passion, tenacity, perseverance, perfectionism, flaw, qualities, way of working, personality.",
+      "keywords": "values, ethics, rigor, honesty, passion, tenacity, perseverance, high standards, perfectionism, flaw, weakness, area for improvement, qualities, way of working, personality.",
       "chunk_index": 5,
       "embedding": []
     },
