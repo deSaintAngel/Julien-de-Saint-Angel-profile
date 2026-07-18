@@ -158,13 +158,13 @@ function switchLanguage(lang) {
     // Expose the current site language globally so widgets can read it reliably
     window.siteLang = lang;
     
-    // Mettre à jour les boutons de langue
-    document.getElementById('btn-fr').classList.toggle('active', lang === 'fr');
-    document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+    // Mettre à jour les boutons de langue (null-safe : le nouveau hero peut ne pas les avoir)
+    var _bf=document.getElementById('btn-fr'); if(_bf) _bf.classList.toggle('active', lang === 'fr');
+    var _be=document.getElementById('btn-en'); if(_be) _be.classList.toggle('active', lang === 'en');
 
-    // Mettre à jour le bouton d'accessibilité
-    document.getElementById('handicap-btn-fr').style.display = lang === 'fr' ? 'block' : 'none';
-    document.getElementById('handicap-btn-en').style.display = lang === 'fr' ? 'none' : 'block';
+    // Mettre à jour le bouton d'accessibilité (null-safe)
+    var _hf=document.getElementById('handicap-btn-fr'); if(_hf) _hf.style.display = lang === 'fr' ? 'block' : 'none';
+    var _he=document.getElementById('handicap-btn-en'); if(_he) _he.style.display = lang === 'fr' ? 'none' : 'block';
 
     // Gestion des boutons CV
     const cvBtnFr = document.getElementById('cv-btn-fr');
@@ -186,7 +186,7 @@ function switchLanguage(lang) {
         document.getElementById('en').style.display = 'none';
         document.getElementById('fr-content').style.display = 'block';
         document.getElementById('en-content').style.display = 'none';
-        document.querySelector('.hero-subtitle').innerHTML = '<strong>Ingénieur IA & Informatique appliquée</strong><br>Docteur en informatique appliquée - spécialisé en réseaux de neurones hypersphériques et détection d\'anomalies';
+        var _hsf=document.querySelector('.hero-subtitle'); if(_hsf) _hsf.innerHTML = '<strong>Ingénieur IA & Informatique appliquée</strong><br>Docteur en informatique appliquée - spécialisé en réseaux de neurones hypersphériques et détection d\'anomalies';
         // Bouton Mia en français
         const miaBtn = document.getElementById('open-mia-btn');
         if (miaBtn) {
@@ -197,9 +197,9 @@ function switchLanguage(lang) {
         document.getElementById('en').style.display = 'block';
         document.getElementById('fr-content').style.display = 'none';
         document.getElementById('en-content').style.display = 'block';
-        document.getElementById('modal-handicap').style.display = 'none';
-        document.getElementById('modal-handicap-en').style.display = 'none';
-        document.querySelector('.hero-subtitle').innerHTML = '<strong>AI & Applied Computer Science Engineer</strong><br>PhD in Applied Computer Science - specialized in hyperspherical neural networks and anomaly detection';
+        var _mh=document.getElementById('modal-handicap'); if(_mh) _mh.style.display = 'none';
+        var _mhe=document.getElementById('modal-handicap-en'); if(_mhe) _mhe.style.display = 'none';
+        var _hse=document.querySelector('.hero-subtitle'); if(_hse) _hse.innerHTML = '<strong>AI & Applied Computer Science Engineer</strong><br>PhD in Applied Computer Science - specialized in hyperspherical neural networks and anomaly detection';
         // Bouton Mia en anglais
         const miaBtn = document.getElementById('open-mia-btn');
         if (miaBtn) {

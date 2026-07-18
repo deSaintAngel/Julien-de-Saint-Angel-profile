@@ -74,8 +74,9 @@
     #neuralhero .langbtn{font-family:var(--nh-mono);font-size:var(--fs,.82em);color:var(--col,#F2F8FF);border:1px solid rgba(185,228,255,.42);
       padding:6px 12px;border-radius:8px;background:linear-gradient(135deg,rgba(255,255,255,.22),rgba(255,255,255,.06));
       -webkit-backdrop-filter:blur(13px) saturate(150%);backdrop-filter:blur(13px) saturate(150%);
-      box-shadow:inset 0 1px 0 rgba(255,255,255,.42);cursor:pointer;text-decoration:none;transition:background .2s,border-color .2s}
-    #neuralhero .langbtn:hover{background:linear-gradient(135deg,rgba(150,230,255,.32),rgba(255,255,255,.1));border-color:rgba(150,230,255,.68)}
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.42);cursor:pointer;text-decoration:none;opacity:.5;transition:background .2s,border-color .2s,opacity .2s}
+    #neuralhero .langbtn:hover{background:linear-gradient(135deg,rgba(150,230,255,.32),rgba(255,255,255,.1));border-color:rgba(150,230,255,.68);opacity:.85}
+    #neuralhero .langbtn.active{opacity:1;border-color:rgba(150,230,255,.8);background:linear-gradient(135deg,rgba(150,230,255,.34),rgba(255,255,255,.12));box-shadow:inset 0 1px 0 rgba(255,255,255,.5),0 0 16px rgba(90,200,255,.3)}
     #neuralhero .langbtn.off{opacity:.55}
     #neuralhero .photo img{width:118px;height:118px;border-radius:50%;object-fit:cover;object-position:48% 22%;display:block;
       border:2px solid rgba(120,200,255,.55);box-shadow:0 14px 46px -12px rgba(0,10,30,.85),0 0 0 7px rgba(79,210,255,.07)}
@@ -278,8 +279,8 @@
       </div>
 
       <div class="el lang" style="--etz:0deg;--fs:1.45em;--col:#EAF2FF">
-        <a class="langbtn" href="#" onclick="switchLanguage('fr');return false;">FR</a>
-        <a class="langbtn off" href="#" onclick="switchLanguage('en');return false;">EN</a>
+        <a class="langbtn active" id="btn-fr" href="#" onclick="switchLanguage('fr');return false;">FR</a>
+        <a class="langbtn" id="btn-en" href="#" onclick="switchLanguage('en');return false;">EN</a>
       </div>
 
       <div class="el cv" style="--etz:3deg;--fs:.95em;--col:#EAF2FF">
@@ -900,7 +901,7 @@
 
     <!-- Scripts -->
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="js/main.js?v=2"></script>
 
     <!-- Widget Chat Mia -->
     <div id="mia-chat-button" class="mia-chat-button">
@@ -969,7 +970,7 @@
     for(let g=0;g<stations.length-1;g++){ const pool=edges.filter(e=>e.g===g);
       for(let k=0;k<7&&pool.length;k++) conductors.push(pool[(Math.random()*pool.length)|0]); }
     const allNodes=stations.filter(s=>s.type==='layer').flatMap(s=>s.nodes);
-    const net={ ry:0.296706, rx:0.244346, rz:0.069813, sx:1.74, sy:1.63, sz:1.13, tx:54, ty:50, showBox:true };
+    const net={ ry:0.296706, rx:0.244346, rz:0.069813, sx:1.74, sy:1.63, sz:1.13, tx:54, ty:50, showBox:false };
     function proj(p){ let x=p.x*net.sx, y=p.y*net.sy, z=p.z*net.sz;
       let c=Math.cos(net.ry),s=Math.sin(net.ry); let X=x*c-z*s, Z1=x*s+z*c;
       c=Math.cos(net.rx);s=Math.sin(net.rx); let Y=y*c-Z1*s, Z=y*s+Z1*c;
