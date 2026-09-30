@@ -68,8 +68,8 @@ Julien-de-Saint-Angel-profile/
 │   │   ├── julien.png
 │   │   └── im_n.jpg
 │   └── pdf/
-│       ├── cv_julien_de_saint_angel_2025.pdf
-│       └── cv_julien_de_saint_angel_2025_en.pdf
+│       ├── cv_julien_de_saint_angel_2026.pdf
+│       └── cv_julien_de_saint_angel_2026_en.pdf
 │
 ├── css/
 │   └── style.css
