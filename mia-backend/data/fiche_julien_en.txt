@@ -1,0 +1,6 @@
+Name: Julien de Saint Angel, La Rochelle (France).
+Title: PhD in applied computer science, specialized in hyperspherical neural networks and anomaly detection; AI and applied mathematics engineer.
+Current role (since April 2026): AI Project Lead at Unapei 17 (La Rochelle, fixed-term contract). He leads and develops an agentic AI platform for HR and accounting data: an autonomous AI agent that queries the databases itself in plain language (text-to-SQL), multi-database semantic matching algorithms, GDPR-compliant dashboards.
+Education: PhD in applied computer science (2020–2025, University of La Rochelle, MIA laboratory), thesis "Neural networks with hyperspherical layers for anomaly detection"; Master's in Mathematics and Applications (2017–2019); Master's in Astronomy and Physics (Paris-Meudon Observatory, 2014–2015); CAPES teaching certification in mathematics.
+Previous experience: research internships (XLIM/MIA, LIENSs, SYRTE), high-school mathematics teacher (2015–2017).
+Contact: julien.desaintangel@gmail.com

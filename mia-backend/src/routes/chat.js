@@ -137,7 +137,8 @@ router.post('/', chatLimiter, async (req, res) => {
     let ragResults = [];
     try {
       // Appel RAG avec paramètre lang pour filtrer les fichiers contextuels
-      ragResults = ragService.searchRelevantChunks({ text: message, lang });
+      // Les chunks de l'index (thèse, corpus, projets, passions) remplacent l'envoi des fichiers complets
+      ragResults = ragService.searchRelevantChunks({ text: message, lang }, 6);
       if (Array.isArray(ragResults) && ragResults.length > 0) {
         ragPassages = ragResults.map((p, i) => `Passage RAG ${i+1} :\nSource: ${p.source}\n${p.text}`).join('\n\n');
       }
@@ -145,27 +146,25 @@ router.post('/', chatLimiter, async (req, res) => {
       console.warn('Impossible de récupérer les passages RAG:', e.message);
     }
 
-    let profil = tryReadFile('profil_julien', lang);
-    let these = tryReadFile('these_julien', lang);
+    // Fiche d'identité courte, toujours envoyée (utile quand le RAG ne trouve rien, ex. « bonjour »)
+    const fiche = tryReadFile('fiche_julien', lang);
 
     // Formatage de l'historique (5 dernières paires Q/R)
     let formattedHistory = '';
     if (Array.isArray(history) && history.length > 0) {
       formattedHistory = history.map((msg, idx) => {
-        const role = msg.type === 'user' ? 'Utilisateur' : 'Mia';
+        // Le widget envoie { role: 'user' | 'bot', text }
+        const role = (msg.role || msg.type) === 'user' ? 'Utilisateur' : 'Mia';
         return `${role} : ${msg.text}`;
       }).join('\n');
     }
 
     // Construction du contexte complet pour le LLM (avec RAG)
+    // Contexte = fiche d'identité + chunks RAG pertinents + historique (pas de fichiers complets)
     const context = [
-      '--- Profil de Julien ---',
-      profil,
-      '--- Thèse de Julien ---',
-      these,
-      ragPassages ? '--- Passages pertinents trouvés par RAG ---\n' + ragPassages : '',
-      '--- Historique de la conversation ---',
-      formattedHistory
+      'Fiche de Julien :\n' + fiche,
+      ragPassages ? 'Passages pertinents trouvés par RAG :\n' + ragPassages : '',
+      formattedHistory ? 'Historique de la conversation :\n' + formattedHistory : ''
     ].join('\n\n');
 
     // Affiche le prompt complet pour debug

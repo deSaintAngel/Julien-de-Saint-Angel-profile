@@ -1,0 +1,6 @@
+Nom : Julien de Saint Angel, La Rochelle (France).
+Titre : Docteur en informatique appliquée, spécialisé en réseaux neuronaux hypersphériques et détection d'anomalies ; ingénieur IA et mathématiques appliquées.
+Poste actuel (depuis avril 2026) : Chargé de Projet IA à l'Unapei 17 (La Rochelle, CDD). Il pilote et développe une plateforme d'IA agentique au service des données RH et comptables : agent IA autonome qui interroge lui-même les bases de données en langage naturel (text-to-SQL), algorithmes de matching sémantique multi-bases, tableaux de bord conformes au RGPD.
+Formation : Doctorat en informatique appliquée (2020–2025, Université de La Rochelle, laboratoire MIA), thèse « Réseaux de neurones à couches hypersphériques pour la détection d'anomalies » ; Master Mathématiques et Applications (2017–2019) ; Maîtrise d'Astronomie et Physique (Observatoire de Paris-Meudon, 2014–2015) ; CAPES de mathématiques.
+Expériences antérieures : stages de recherche (XLIM/MIA, LIENSs, SYRTE), professeur de mathématiques en lycée (2015–2017).
+Contact : julien.desaintangel@gmail.com
