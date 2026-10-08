@@ -233,13 +233,9 @@ async function generateResponse(userMessage, context, lang = 'fr') {
   // 2. Ajouter une relance conversationnelle si la réponse est courte
 
 
+    // La longueur est cadrée par le prompt et max_tokens : on ne coupe plus en 3 « phrases »,
+    // ce qui tronquait les listes numérotées (« 1. », « 2. » comptaient comme des fins de phrase).
     if (!isDetailRequest) {
-      // Découper en phrases
-      let sentences = text.split(/(?<=[.!?])\s+/);
-      if (sentences.length > 3) {
-        sentences = sentences.slice(0, 3);
-      }
-      text = sentences.join(' ');
       // Correction générale : Mia parle toujours d'elle-même à la première personne et de Julien à la 3e personne
       // Remplace toute ouverture où Mia parle comme si elle était Julien
       text = text.replace(/^(il|elle) (est|était|sera) (ravi|heureux|heureuse|content|contente|fier|fière|honoré|honorée|ému|émue|reconnaissant|reconnaissante|heureux de vous parler|ravi de parler|ravi de vous parler|vous remercie|vous remercie de votre intérêt|vous remercie pour votre question)[^.!?]*[.!?]?/i,
@@ -250,8 +246,13 @@ async function generateResponse(userMessage, context, lang = 'fr') {
         "I am delighted to present Julien de Saint Angel's work. ");
     }
 
-    // 2. Supprimer les listes à puces
-    text = text.replace(/^[\-*•].*$/gm, '').replace(/\n{2,}/g, '\n').trim();
+    // 2. Retirer la mise en forme markdown (puces, gras, italique) en gardant le texte
+    text = text
+      .replace(/^\s*[\-*•]\s+/gm, '')
+      .replace(/\*\*(.*?)\*\*/g, '$1')
+      .replace(/\*([^*\n]+)\*/g, '$1')
+      .replace(/\n{2,}/g, '\n')
+      .trim();
 
     return {
       success: true,
