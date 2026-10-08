@@ -1,9 +1,12 @@
 const axios = require('axios');
 
 const GROQ_API_KEY = process.env.GROQ_API_KEY;
-const GROQ_MODEL = process.env.GROQ_MODEL || 'llama-3.1-8b-instant';
+// llama-3.1-8b-instant a été arrêté par Groq le 16/08/2026 ; remplaçant recommandé : openai/gpt-oss-20b
+const GROQ_MODEL = process.env.GROQ_MODEL || 'openai/gpt-oss-20b';
+// Les modèles gpt-oss raisonnent avant de répondre : ce raisonnement consomme des tokens de sortie
+const IS_REASONING_MODEL = /gpt-oss|qwen3/i.test(GROQ_MODEL);
 const GROQ_URL = 'https://api.groq.com/openai/v1/chat/completions';
-// Le palier gratuit Groq de llama-3.1-8b-instant est limité à 6 000 tokens/minute
+// Le palier gratuit Groq est limité à quelques milliers de tokens/minute
 // (prompt + max_tokens). On borne donc le contexte injecté (~3,3 caractères/token).
 const MAX_CONTEXT_CHARS = parseInt(process.env.MAX_CONTEXT_CHARS, 10) || 7000;
 // Filtre anti-injection de prompt (mettre PROMPT_GUARD_MODEL=off pour le désactiver)
@@ -207,7 +210,8 @@ async function generateResponse(userMessage, context, lang = 'fr') {
     
   // Réponse courte par défaut, plus longue si l'utilisateur demande du détail
   const isDetailRequest = /détaille|explique|développe|approfondis|plus de détails|exemples?|detail|explain|develop|more details|examples?/i.test(safeUserMessage);
-  const maxTokens = isDetailRequest ? 800 : 400;
+  // Marge supplémentaire pour les modèles à raisonnement (tokens de réflexion + réponse)
+  const maxTokens = (isDetailRequest ? 800 : 400) + (IS_REASONING_MODEL ? 400 : 0);
   const response = await groqPostWithRetry({
         model: GROQ_MODEL,
         messages: [
@@ -215,9 +219,11 @@ async function generateResponse(userMessage, context, lang = 'fr') {
           { role: 'user', content: prompt }
         ],
         max_tokens: maxTokens,
-        temperature: 0.5
+        temperature: 0.5,
+        ...(IS_REASONING_MODEL ? { reasoning_effort: 'low', include_reasoning: false } : {})
       });
-  let text = response.data.choices[0].message.content.trim();
+  let text = (response.data.choices[0].message.content || '').trim();
+  if (!text) throw new Error(`Réponse vide du modèle (finish_reason=${response.data.choices[0].finish_reason})`);
   // Log la réponse brute du LLM pour debug
   console.log('--- RÉPONSE BRUTE LLM ---');
   console.log(text);
